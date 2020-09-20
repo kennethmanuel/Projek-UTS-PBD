@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "IZMvOhU6tYznrn69ClW4ahJUs9mOkQItjdZ2piORZ/ixMKGY9jMTGKdlSnYVvFuFF8c7MOd9ezJIjYSv08Deaw==",
+  "success": true,
+  "projectFilePath": "D:\\Projek-UTS-PBD\\TournamentClassLibrary\\TournamentClassLibrary\\TournamentClassLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
