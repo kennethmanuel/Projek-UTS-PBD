@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projek-UTS-PBD\\TournamentClassLibrary\\TournamentClassLibrary\\TournamentClassLibrary.csproj",
+      "projectUniqueName": "D:\\Projek-UTS-PBD\\Tournament Manager\\TournamentClassLibrary\\TournamentClassLibrary.csproj",
       "projectName": "TournamentClassLibrary",
-      "projectPath": "D:\\Projek-UTS-PBD\\TournamentClassLibrary\\TournamentClassLibrary\\TournamentClassLibrary.csproj",
+      "projectPath": "D:\\Projek-UTS-PBD\\Tournament Manager\\TournamentClassLibrary\\TournamentClassLibrary.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Projek-UTS-PBD\\TournamentClassLibrary\\TournamentClassLibrary\\obj\\",
+      "outputPath": "D:\\Projek-UTS-PBD\\Tournament Manager\\TournamentClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
