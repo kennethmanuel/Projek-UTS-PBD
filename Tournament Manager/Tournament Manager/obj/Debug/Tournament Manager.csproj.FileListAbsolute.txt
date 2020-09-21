@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.exe.config
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.exe
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.pdb
@@ -9,3 +10,16 @@ D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Man
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.csproj.CoreCompileInputs.cache
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.exe
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.pdb
+=======
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.exe.config
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.exe
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.pdb
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.csprojAssemblyReference.cache
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament_Manager.Form1.resources
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament_Manager.FormLogin.resources
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament_Manager.Properties.Resources.resources
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.csproj.GenerateResource.cache
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.csproj.CoreCompileInputs.cache
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.exe
+D:\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.pdb
+>>>>>>> d0228cb2a424376fec8ee3ae48683997a742b985
