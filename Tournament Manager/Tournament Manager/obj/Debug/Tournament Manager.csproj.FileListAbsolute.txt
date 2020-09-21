@@ -1,0 +1,11 @@
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.exe.config
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.exe
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\bin\Debug\Tournament Manager.pdb
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.csprojAssemblyReference.cache
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament_Manager.Form1.resources
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament_Manager.FormLogin.resources
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament_Manager.Properties.Resources.resources
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.csproj.GenerateResource.cache
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.csproj.CoreCompileInputs.cache
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.exe
+D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\Tournament Manager\obj\Debug\Tournament Manager.pdb

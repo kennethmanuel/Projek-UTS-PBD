@@ -29,7 +29,7 @@ namespace Tournament_Manager
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBoxUsername.Clear();
+            
             
         }
 
@@ -41,6 +41,16 @@ namespace Tournament_Manager
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBoxUsername_Click(object sender, EventArgs e)
+        {
+            textBoxUsername.Clear();
+;        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBoxPassword.Clear();
         }
     }
 }
