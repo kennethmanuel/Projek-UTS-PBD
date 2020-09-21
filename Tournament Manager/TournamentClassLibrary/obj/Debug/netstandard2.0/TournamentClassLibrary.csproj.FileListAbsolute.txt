@@ -7,3 +7,12 @@ D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\TournamentClas
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.AssemblyInfo.cs
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.dll
 D:\3\Pemrograman Basis Data\new\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.pdb
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\bin\Debug\netstandard2.0\TournamentClassLibrary.deps.json
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\bin\Debug\netstandard2.0\TournamentClassLibrary.dll
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\bin\Debug\netstandard2.0\TournamentClassLibrary.pdb
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.csprojAssemblyReference.cache
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.csproj.CoreCompileInputs.cache
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.AssemblyInfoInputs.cache
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.AssemblyInfo.cs
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.dll
+F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.pdb

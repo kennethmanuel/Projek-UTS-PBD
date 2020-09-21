@@ -6,7 +6,9 @@ namespace TournamentClassLibrary
 {
     public class TournamentPrize
     {
+        #region DATA MEMBER
         private Prize prize;
         private Tournament tournament;
+        #endregion
     }
 }
