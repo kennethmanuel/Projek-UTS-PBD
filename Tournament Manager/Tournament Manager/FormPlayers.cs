@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Tournament_Manager
 {
-    public partial class Form1 : Form
+    public partial class FormPlayers : Form
     {
-        public Form1()
+        public FormPlayers()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            FormLogin formLogin = new FormLogin();
-            this.Owner = this;
-            formLogin.Show();
         }
     }
 }

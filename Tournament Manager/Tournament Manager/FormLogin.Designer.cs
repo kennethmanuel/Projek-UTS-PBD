@@ -35,8 +35,8 @@
             this.picPass = new System.Windows.Forms.PictureBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonSignIn = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPass)).BeginInit();
@@ -108,6 +108,19 @@
             this.buttonSignIn.UseVisualStyleBackColor = false;
             this.buttonSignIn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsername.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.ForeColor = System.Drawing.Color.White;
+            this.textBoxUsername.Location = new System.Drawing.Point(97, 207);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(180, 20);
+            this.textBoxUsername.TabIndex = 0;
+            this.textBoxUsername.Text = "Username";
+            this.textBoxUsername.Click += new System.EventHandler(this.textBoxUsername_Click);
+            // 
             // buttonClose
             // 
             this.buttonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -121,19 +134,6 @@
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // textBoxUsername
-            // 
-            this.textBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsername.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.ForeColor = System.Drawing.Color.White;
-            this.textBoxUsername.Location = new System.Drawing.Point(97, 207);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(180, 20);
-            this.textBoxUsername.TabIndex = 0;
-            this.textBoxUsername.Text = "Username";
-            this.textBoxUsername.Click += new System.EventHandler(this.textBoxUsername_Click);
             // 
             // FormLogin
             // 
@@ -170,7 +170,7 @@
         private System.Windows.Forms.PictureBox picPass;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonSignIn;
-        private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.Button buttonClose;
     }
 }
