@@ -16,3 +16,12 @@ F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament M
 F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.AssemblyInfo.cs
 F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.dll
 F:\2. Pemrograman Basis Data Kp B (2 sks)\Projek UTS\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.pdb
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\bin\Debug\netstandard2.0\TournamentClassLibrary.deps.json
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\bin\Debug\netstandard2.0\TournamentClassLibrary.dll
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\bin\Debug\netstandard2.0\TournamentClassLibrary.pdb
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.csprojAssemblyReference.cache
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.AssemblyInfoInputs.cache
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.AssemblyInfo.cs
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.csproj.CoreCompileInputs.cache
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.dll
+D:\Projek-UTS-PBD\Tournament Manager\TournamentClassLibrary\obj\Debug\netstandard2.0\TournamentClassLibrary.pdb
