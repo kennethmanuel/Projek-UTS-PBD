@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tournament_Manager
 {
-    public partial class FormPlayers : Form
+    public partial class FormBracketViewer : Form
     {
-        public FormPlayers()
+        public FormBracketViewer()
         {
             InitializeComponent();
         }

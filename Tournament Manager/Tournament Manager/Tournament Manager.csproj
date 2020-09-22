@@ -46,11 +46,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormBracketViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormBracketViewer.Designer.cs">
+      <DependentUpon>FormBracketViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMatch.Designer.cs">
+      <DependentUpon>FormMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player\FormAddPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Player\FormAddPlayer.Designer.cs">
+      <DependentUpon>FormAddPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player\FormDeletePlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Player\FormDeletePlayer.Designer.cs">
+      <DependentUpon>FormDeletePlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Team\FormAddTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Team\FormAddTeam.Designer.cs">
+      <DependentUpon>FormAddTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player\FormEditPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Player\FormEditPlayer.Designer.cs">
+      <DependentUpon>FormEditPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPlayerTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPlayerTeam.Designer.cs">
+      <DependentUpon>FormPlayerTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Team\FormDeleteTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Team\FormDeleteTeam.Designer.cs">
+      <DependentUpon>FormDeleteTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Team\FormEditTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Team\FormEditTeam.Designer.cs">
+      <DependentUpon>FormEditTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Form1B.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Form1B.Designer.cs">
+      <DependentUpon>Form1B.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -58,40 +118,58 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPlayers.cs">
+    <Compile Include="Design\FormLoginB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPlayers.Designer.cs">
-      <DependentUpon>FormPlayers.cs</DependentUpon>
+    <Compile Include="Design\FormLoginB.Designer.cs">
+      <DependentUpon>FormLoginB.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTeam.cs">
+    <Compile Include="Design\FormPlayersB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTeam.Designer.cs">
-      <DependentUpon>FormTeam.cs</DependentUpon>
+    <Compile Include="Design\FormPlayersB.Designer.cs">
+      <DependentUpon>FormPlayersB.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMatches.cs">
+    <Compile Include="Design\FormTeamB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMatches.Designer.cs">
-      <DependentUpon>FormMatches.cs</DependentUpon>
+    <Compile Include="Design\FormTeamB.Designer.cs">
+      <DependentUpon>FormTeamB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\FormMatchesB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\FormMatchesB.Designer.cs">
+      <DependentUpon>FormMatchesB.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPlayers.resx">
-      <DependentUpon>FormPlayers.cs</DependentUpon>
+    <EmbeddedResource Include="FormMatch.resx">
+      <DependentUpon>FormMatch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTeam.resx">
-      <DependentUpon>FormTeam.cs</DependentUpon>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMatches.resx">
-      <DependentUpon>FormMatches.cs</DependentUpon>
+    <EmbeddedResource Include="FormPlayerTeam.resx">
+      <DependentUpon>FormPlayerTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Form1B.resx">
+      <DependentUpon>Form1B.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\FormLoginB.resx">
+      <DependentUpon>FormLoginB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\FormPlayersB.resx">
+      <DependentUpon>FormPlayersB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\FormTeamB.resx">
+      <DependentUpon>FormTeamB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\FormMatchesB.resx">
+      <DependentUpon>FormMatchesB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,5 +193,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

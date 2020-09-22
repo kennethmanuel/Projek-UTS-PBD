@@ -4,7 +4,9 @@ using System.Text;
 
 namespace TournamentClassLibrary
 {
-    class TournamentTeam
+    public class TournamentTeam
     {
+        Tournament tournamentId;
+        Team teamId;
     }
 }

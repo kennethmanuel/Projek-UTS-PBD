@@ -1,6 +1,6 @@
 ﻿namespace Tournament_Manager
 {
-    partial class FormTeam
+    partial class FormTeamB
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeam));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeamB));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonCreateTeam = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -133,7 +133,7 @@
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = false;
             // 
-            // FormTeam
+            // FormTeamB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,7 +149,7 @@
             this.Controls.Add(this.buttonClose);
             this.ForeColor = System.Drawing.Color.Silver;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormTeam";
+            this.Name = "FormTeamB";
             this.Text = "FormTeam";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

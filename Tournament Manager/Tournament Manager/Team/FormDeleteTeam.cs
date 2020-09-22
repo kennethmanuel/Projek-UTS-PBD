@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tournament_Manager.UI
+namespace Tournament_Manager.Team
 {
-    public partial class FormLogin : Form
+    public partial class FormDeleteTeam : Form
     {
-        public FormLogin()
+        public FormDeleteTeam()
         {
             InitializeComponent();
         }

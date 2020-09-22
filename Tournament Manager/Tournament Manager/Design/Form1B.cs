@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tournament_Manager.UI
+namespace Tournament_Manager
 {
-    public partial class FormLogin : Form
+    public partial class Form1 : Form
     {
-        public FormLogin()
+        public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            FormLoginB formLogin = new FormLoginB();
+            this.Owner = this;
+            formLogin.Show();
         }
     }
 }
