@@ -52,6 +52,12 @@
     <Compile Include="FormBracketViewer.Designer.cs">
       <DependentUpon>FormBracketViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMatch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,12 +117,6 @@
     </Compile>
     <Compile Include="Design\Form1B.Designer.cs">
       <DependentUpon>Form1B.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\FormLoginB.cs">
       <SubType>Form</SubType>

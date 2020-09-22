@@ -16,7 +16,7 @@ namespace Tournament_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLoginB());
+            Application.Run(new FormLogin());
         }
     }
 }
