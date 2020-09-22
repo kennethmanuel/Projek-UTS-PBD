@@ -6,12 +6,10 @@ namespace TournamentClassLibrary
 {
     public class Team
     {
-        #region DATA MEMBER
         private int id;
         private string name;
-        #endregion
 
-        #region CONSTRUCTOR
+        #region Constructor
         public Team(int id, string name)
         {
             this.Id = id;
@@ -19,12 +17,9 @@ namespace TournamentClassLibrary
         }
         #endregion
 
-        #region PROPERTIES
+        #region Property
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
-        #endregion
-
-        #region METHOD
         #endregion
     }
 }
