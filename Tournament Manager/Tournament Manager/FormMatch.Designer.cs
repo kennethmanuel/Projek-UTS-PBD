@@ -1,6 +1,6 @@
 ﻿namespace Tournament_Manager.Match
 {
-    partial class Matchup
+    partial class FormMatch
     {
         /// <summary>
         /// Required designer variable.
@@ -158,14 +158,15 @@
             this.dataGridViewPlayer.Size = new System.Drawing.Size(813, 334);
             this.dataGridViewPlayer.TabIndex = 2;
             // 
-            // Matchup
+            // FormMatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 529);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Matchup";
+            this.Name = "FormMatch";
             this.Text = "Matchup";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Matchup_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPageMatchup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeam)).EndInit();

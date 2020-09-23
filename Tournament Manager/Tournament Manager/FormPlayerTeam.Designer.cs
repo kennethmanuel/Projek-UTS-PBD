@@ -30,15 +30,15 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageTeam = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTeam = new System.Windows.Forms.DataGridView();
             this.tabPagePlayer = new System.Windows.Forms.TabPage();
-            this.dataGridViewPlayer = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.dataGridViewPlayer = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPageTeam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeam)).BeginInit();
@@ -69,6 +69,24 @@
             this.tabPageTeam.TabIndex = 0;
             this.tabPageTeam.Text = "Teams";
             this.tabPageTeam.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(690, 46);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(140, 35);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Delete Team";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(544, 46);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 35);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Edit Team";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -103,34 +121,6 @@
             this.tabPagePlayer.Text = "Players";
             this.tabPagePlayer.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewPlayer
-            // 
-            this.dataGridViewPlayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPlayer.Location = new System.Drawing.Point(18, 94);
-            this.dataGridViewPlayer.Name = "dataGridViewPlayer";
-            this.dataGridViewPlayer.RowHeadersWidth = 51;
-            this.dataGridViewPlayer.RowTemplate.Height = 24;
-            this.dataGridViewPlayer.Size = new System.Drawing.Size(813, 334);
-            this.dataGridViewPlayer.TabIndex = 2;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(544, 46);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 35);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Edit Team";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(690, 46);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 35);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Delete Team";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(687, 46);
@@ -158,6 +148,16 @@
             this.button6.Text = "Add New Team";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewPlayer
+            // 
+            this.dataGridViewPlayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPlayer.Location = new System.Drawing.Point(18, 94);
+            this.dataGridViewPlayer.Name = "dataGridViewPlayer";
+            this.dataGridViewPlayer.RowHeadersWidth = 51;
+            this.dataGridViewPlayer.RowTemplate.Height = 24;
+            this.dataGridViewPlayer.Size = new System.Drawing.Size(813, 334);
+            this.dataGridViewPlayer.TabIndex = 2;
+            // 
             // FormPlayerTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -166,6 +166,8 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FormPlayerTeam";
             this.Text = "FormPlayerTeam";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPlayerTeam_FormClosing);
+            this.Load += new System.EventHandler(this.FormPlayerTeam_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageTeam.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeam)).EndInit();

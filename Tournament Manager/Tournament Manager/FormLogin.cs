@@ -40,12 +40,28 @@ namespace Tournament_Manager
 
                     MessageBox.Show("Connection Success.", "Info");
 
+                    this.Hide();
+
+                    FormMenu formMenu = new FormMenu();
+                    formMenu.ShowDialog();
+
+
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Fail to connect!");
             }
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            //temporary
+            textBoxUsername.Text = "fisher";
+            textBoxPassword.Text = "1234";
+            textBoxServer.Text = "localhost";
+            textBoxDatabase.Text = "tournament_db";
         }
     }
 }

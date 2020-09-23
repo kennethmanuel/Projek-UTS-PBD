@@ -1,6 +1,6 @@
 ﻿namespace Tournament_Manager
 {
-    partial class FormMatches
+    partial class FormMatcheB
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatches));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatcheB));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonMatch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -162,7 +162,7 @@
             this.comboBoxTim2.Size = new System.Drawing.Size(121, 24);
             this.comboBoxTim2.TabIndex = 40;
             // 
-            // FormMatches
+            // FormMatcheB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,7 +180,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormMatches";
+            this.Name = "FormMatcheB";
             this.Text = "FormTournamentTeam";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

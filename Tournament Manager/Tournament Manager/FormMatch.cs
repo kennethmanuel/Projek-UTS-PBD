@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Tournament_Manager.Match
 {
-    public partial class Matchup : Form
+    public partial class FormMatch : Form
     {
-        public Matchup()
+        public FormMatch()
         {
             InitializeComponent();
+        }
+
+        private void Matchup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
         }
     }
 }

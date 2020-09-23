@@ -44,7 +44,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TournamentClassLibrary">
+    <Reference Include="TournamentClassLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\TournamentClassLibrary\bin\Debug\TournamentClassLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>

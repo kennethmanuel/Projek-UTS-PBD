@@ -34,13 +34,14 @@
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadAnotherTournamentFromLocalFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTournamentIntoALocalFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewBracketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateTournamentStartingBracketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playersTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTournamentPrizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.generateTournamentStartingBracketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.playersTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teamAndPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,18 +52,17 @@
             this.toolStripMenuItem1,
             this.tournamentToolStripMenuItem,
             this.playersTeamsToolStripMenuItem,
-            this.viewBracketToolStripMenuItem,
             this.viewTournamentPrizesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(881, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1000, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 26);
             // 
             // tournamentToolStripMenuItem
             // 
@@ -72,7 +72,7 @@
             this.saveTournamentIntoALocalFilesToolStripMenuItem,
             this.generateTournamentStartingBracketToolStripMenuItem});
             this.tournamentToolStripMenuItem.Name = "tournamentToolStripMenuItem";
-            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
             this.tournamentToolStripMenuItem.Text = "Tournament";
             // 
             // loadAnotherTournamentFromDatabaseToolStripMenuItem
@@ -93,44 +93,6 @@
             this.saveTournamentIntoALocalFilesToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
             this.saveTournamentIntoALocalFilesToolStripMenuItem.Text = "Save tournament into a local files";
             // 
-            // viewBracketToolStripMenuItem
-            // 
-            this.viewBracketToolStripMenuItem.Name = "viewBracketToolStripMenuItem";
-            this.viewBracketToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
-            this.viewBracketToolStripMenuItem.Text = "Match";
-            // 
-            // viewTournamentPrizesToolStripMenuItem
-            // 
-            this.viewTournamentPrizesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prizeToolStripMenuItem});
-            this.viewTournamentPrizesToolStripMenuItem.Name = "viewTournamentPrizesToolStripMenuItem";
-            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.viewTournamentPrizesToolStripMenuItem.Text = "View Tournament Prizes";
-            // 
-            // prizeToolStripMenuItem
-            // 
-            this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.prizeToolStripMenuItem.Text = "Prize";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(533, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Currenty Edited Tournament:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(730, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "<tournament_name>";
-            // 
             // generateTournamentStartingBracketToolStripMenuItem
             // 
             this.generateTournamentStartingBracketToolStripMenuItem.Name = "generateTournamentStartingBracketToolStripMenuItem";
@@ -139,21 +101,71 @@
             // 
             // playersTeamsToolStripMenuItem
             // 
+            this.playersTeamsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.teamAndPlayerToolStripMenuItem,
+            this.matchToolStripMenuItem});
             this.playersTeamsToolStripMenuItem.Name = "playersTeamsToolStripMenuItem";
-            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
-            this.playersTeamsToolStripMenuItem.Text = "Players and Teams";
+            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
+            this.playersTeamsToolStripMenuItem.Text = "View Data";
+            // 
+            // viewTournamentPrizesToolStripMenuItem
+            // 
+            this.viewTournamentPrizesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.prizeToolStripMenuItem});
+            this.viewTournamentPrizesToolStripMenuItem.Name = "viewTournamentPrizesToolStripMenuItem";
+            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.viewTournamentPrizesToolStripMenuItem.Text = "View Tournament Prizes";
+            // 
+            // prizeToolStripMenuItem
+            // 
+            this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
+            this.prizeToolStripMenuItem.Text = "Prize";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(655, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Currenty Edited Tournament:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(852, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "<tournament_name>";
+            // 
+            // teamAndPlayerToolStripMenuItem
+            // 
+            this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
+            this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
+            // 
+            // matchToolStripMenuItem
+            // 
+            this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.matchToolStripMenuItem.Text = "Match";
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 529);
+            this.ClientSize = new System.Drawing.Size(1000, 564);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMenu";
             this.Text = "FormMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMenu_FormClosing);
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -168,12 +180,13 @@
         private System.Windows.Forms.ToolStripMenuItem loadAnotherTournamentFromDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadAnotherTournamentFromLocalFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveTournamentIntoALocalFilesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewBracketToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem viewTournamentPrizesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateTournamentStartingBracketToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playersTeamsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem teamAndPlayerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matchToolStripMenuItem;
     }
 }
