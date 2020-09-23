@@ -28,53 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonLogin = new System.Windows.Forms.Button();
+            this.textBoxDatabase = new System.Windows.Forms.TextBox();
+            this.textBoxServer = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonLogin
             // 
-            this.button1.Location = new System.Drawing.Point(261, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLogin.Location = new System.Drawing.Point(261, 243);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogin.TabIndex = 17;
+            this.buttonLogin.Text = "Login";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // textBox4
+            // textBoxDatabase
             // 
-            this.textBox4.Location = new System.Drawing.Point(130, 181);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 22);
-            this.textBox4.TabIndex = 16;
+            this.textBoxDatabase.Location = new System.Drawing.Point(130, 181);
+            this.textBoxDatabase.Name = "textBoxDatabase";
+            this.textBoxDatabase.Size = new System.Drawing.Size(206, 22);
+            this.textBoxDatabase.TabIndex = 16;
             // 
-            // textBox3
+            // textBoxServer
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 135);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 22);
-            this.textBox3.TabIndex = 15;
+            this.textBoxServer.Location = new System.Drawing.Point(130, 135);
+            this.textBoxServer.Name = "textBoxServer";
+            this.textBoxServer.Size = new System.Drawing.Size(206, 22);
+            this.textBoxServer.TabIndex = 15;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 22);
-            this.textBox2.TabIndex = 14;
+            this.textBoxPassword.Location = new System.Drawing.Point(130, 90);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(206, 22);
+            this.textBoxPassword.TabIndex = 14;
             // 
-            // textBox1
+            // textBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 22);
-            this.textBox1.TabIndex = 13;
+            this.textBoxUsername.Location = new System.Drawing.Point(130, 40);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(206, 22);
+            this.textBoxUsername.TabIndex = 13;
             // 
             // label4
             // 
@@ -117,11 +118,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 297);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.textBoxDatabase);
+            this.Controls.Add(this.textBoxServer);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -135,11 +136,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.TextBox textBoxDatabase;
+        private System.Windows.Forms.TextBox textBoxServer;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
