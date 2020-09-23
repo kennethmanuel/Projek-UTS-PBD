@@ -19,6 +19,8 @@ namespace TournamentClassLibrary
             dbConnection = new MySqlConnection();
 
             dbConnection.ConnectionString = ConfigurationManager.ConnectionStrings["connectionName"].ConnectionString;
+
+            Connect();
         }
         public Connection(string server, string database, string username, string password)
         {

@@ -38,6 +38,8 @@ namespace Tournament_Manager
                 {
                     Connection connection = new Connection(textBoxServer.Text, textBoxDatabase.Text, textBoxUsername.Text, textBoxPassword.Text);
 
+                    MessageBox.Show("Connection Success.", "Info");
+
                 }
             }
             catch (Exception ex)
