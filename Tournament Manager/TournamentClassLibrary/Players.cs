@@ -9,19 +9,18 @@ namespace TournamentClassLibrary
 {
     public class Players
     {
-        //class 'Players' plural karena ada namespace 'Player'
         private int id;
         private string name;
         private string email;
-        private Team teamId;
+        private Teams team;
 
         #region Constructor
-        public Players(int id, string name, string email, Team teamId)
+        public Players(int id, string name, string email, Teams teamId)
         {
             this.Id = id;
             this.Name = name;
             this.Email = email;
-            this.TeamId = teamId;
+            this.Team = teamId;
         }
         #endregion
 
@@ -29,38 +28,39 @@ namespace TournamentClassLibrary
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Email { get => email; set => email = value; }
-        public Team TeamId { get => teamId; set => teamId = value; }
+        public Teams Team { get => team; set => team = value; }
         #endregion
 
         #region Method
-        //public static List<Players> ReadData(string criteria, string criteriaValue)
-        //{
-        //    string sql = "";
+        public static List<Players> ReadData(string criteria, string criteriaValue)
+        {
+            string sql = "";
 
-        //    if(criteria =="")
-        //    {
-        //        sql = "SELECT * FROM player p INNER JOIN ";
-        //    }
-        //    else
-        //    {
-        //        sql = "SELECT * FROM player WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
-        //    }
+            if (criteria == "")
+            {
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id";
+            }
+            else
+            {
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+            }
 
-        //    MySqlDataReader value = Connection.ExecuteQuery(sql);
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
 
-        //    List<Players> playerList = new List<Players>();
+            List<Players> playerList = new List<Players>();
 
-        //    while (value.Read() == true)
-        //    {
-        //        Team team
-        //        Players p = new Players(
-        //            int.Parse(value.GetValue(0).ToString()),
-        //            value.GetValue(1),
-        //            value.GetValue(2),
-        //            value.GetValue(3),
-        //            )
-        //    }
-        //}
+            while (value.Read() == true)
+            {
+                Teams team = new Teams(int.Parse(value.GetValue(3).ToString()), value.GetValue(4).ToString());
+
+                Players p = new Players(
+                    int.Parse(value.GetValue(0).ToString()),
+                    value.GetValue(1).ToString(),
+                    value.GetValue(2).ToString(),
+                    team);
+            }
+            return playerList;
+        }
 
         #endregion
     }

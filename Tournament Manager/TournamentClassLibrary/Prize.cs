@@ -12,10 +12,10 @@ namespace TournamentClassLibrary
         private string placeName;
         private int prizeAmount;
         private double prizePercentage;
-        private Tournament tournament;
+        private Tournaments tournament;
 
         #region Constructor
-        public Prize(int id, string placeName, int prizeAmount, double prizePercentage, Tournament tournament)
+        public Prize(int id, string placeName, int prizeAmount, double prizePercentage, Tournaments tournament)
         {
             this.Id = id;
             this.PlaceName = placeName;
@@ -30,7 +30,7 @@ namespace TournamentClassLibrary
         public string PlaceName { get => placeName; set => placeName = value; }
         public int PrizeAmount { get => prizeAmount; set => prizeAmount = value; }
         public double PrizePercentage { get => prizePercentage; set => prizePercentage = value; }
-        public Tournament Tournament { get => tournament; set => tournament = value; }
+        public Tournaments Tournament { get => tournament; set => tournament = value; }
         #endregion
     }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace TournamentClassLibrary
 {
-    public class Matchup
+    public class Matchups
     {
         private string id;
-        private Team winnerTeam;
+        private Teams winnerTeam;
         private int round;
 
         #region Constructor
-        public Matchup(string id, Team winnerTeam, int round)
+        public Matchups(string id, Teams winnerTeam, int round)
         {
             this.Id = id;
             this.WinnerTeam = winnerTeam;
@@ -23,7 +23,7 @@ namespace TournamentClassLibrary
 
         #region Property
         public string Id { get => id; set => id = value; }
-        public Team WinnerTeam { get => winnerTeam; set => winnerTeam = value; }
+        public Teams WinnerTeam { get => winnerTeam; set => winnerTeam = value; }
         public int Round { get => round; set => round = value; }
         #endregion
     }

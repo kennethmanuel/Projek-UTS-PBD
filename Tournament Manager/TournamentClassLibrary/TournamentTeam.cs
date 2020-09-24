@@ -8,7 +8,7 @@ namespace TournamentClassLibrary
 {
     public class TournamentTeam
     {
-        Tournament tournamentId;
-        Team teamId;
+        Tournaments tournament;
+        Teams team;
     }
 }

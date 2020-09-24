@@ -8,12 +8,12 @@ namespace TournamentClassLibrary
 {
     public class MatchupEntries
     {
-        Matchup matchup;
-        Team team;
+        Matchups matchup;
+        Teams team;
         int score;
 
         #region Constructor
-        public MatchupEntries(Matchup matchup, Team team, int score)
+        public MatchupEntries(Matchups matchup, Teams team, int score)
         {
             this.Matchup = matchup;
             this.Team = team;
@@ -22,8 +22,8 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Property
-        public Matchup Matchup { get => matchup; set => matchup = value; }
-        public Team Team { get => team; set => team = value; }
+        public Matchups Matchup { get => matchup; set => matchup = value; }
+        public Teams Team { get => team; set => team = value; }
         public int Score { get => score; set => score = value; }
         #endregion
     }
