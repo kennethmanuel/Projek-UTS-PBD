@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,6 +45,28 @@ namespace TournamentClassLibrary
             {
                 sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
             }
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<Players> playerList = new List<Players>();
+
+            while (value.Read() == true)
+            {
+                Teams team = new Teams(int.Parse(value.GetValue(3).ToString()), value.GetValue(4).ToString());
+
+                Players p = new Players(
+                    int.Parse(value.GetValue(0).ToString()),
+                    value.GetValue(1).ToString(),
+                    value.GetValue(2).ToString(),
+                    team);
+
+                playerList.Add(p);
+            }
+            return playerList;
+        }
+        public static List<Players> BatchSearch(string criteriaValue)
+        {
+            string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.id LIKE '%" + criteriaValue + "%' OR p.name LIKE '%" + criteriaValue + "%' OR p.EMAIL LIKE '%" + criteriaValue + "%' or t.name LIKE '%" + criteriaValue + "%'";
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 

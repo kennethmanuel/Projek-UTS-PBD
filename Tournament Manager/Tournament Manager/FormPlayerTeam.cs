@@ -66,5 +66,26 @@ namespace Tournament_Manager
             playerList = Players.ReadData("", "");
             ShowDataGridPlayers();
         }
+
+        private void textBoxSearchPlayer_TextChanged(object sender, EventArgs e)
+        {
+            string criteria = textBoxSearchPlayer.Text;
+            playerList = Players.BatchSearch(criteria);
+            ShowDataGridPlayers();
+        }
+
+        private void textBoxSearchTeam_TextChanged(object sender, EventArgs e)
+        {
+            teamList = Teams.BatchSearch(textBoxSearchTeam.Text);
+
+            if(teamList.Count > 0)
+            {
+                dataGridViewTeam.DataSource = teamList;
+            }
+            else
+            {
+                dataGridViewTeam.DataSource = null;
+            }
+        }
     }
 }

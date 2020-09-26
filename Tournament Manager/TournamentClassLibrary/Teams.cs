@@ -51,6 +51,23 @@ namespace TournamentClassLibrary
             }
             return teamList;
         }
+
+        public static List<Teams> BatchSearch(string criteriaValue)
+        {
+            string sql = "SELECT * FROM teams WHERE id LIKE '%" + criteriaValue + "%' OR name LIKE '%" + criteriaValue + "%'";
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<Teams> teamList = new List<Teams>();
+
+            while (value.Read() == true)
+            {
+                Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString());
+
+                teamList.Add(t);
+            }
+            return teamList;
+        }
         #endregion
 
 
