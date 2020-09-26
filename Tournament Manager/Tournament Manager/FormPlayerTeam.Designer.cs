@@ -48,8 +48,8 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPageTeam);
             this.tabControl1.Controls.Add(this.tabPagePlayer);
+            this.tabControl1.Controls.Add(this.tabPageTeam);
             this.tabControl1.Location = new System.Drawing.Point(12, 38);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;

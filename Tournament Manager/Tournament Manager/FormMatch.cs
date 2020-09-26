@@ -12,6 +12,7 @@ namespace Tournament_Manager.Match
 {
     public partial class FormMatch : Form
     {
+        
         public FormMatch()
         {
             InitializeComponent();

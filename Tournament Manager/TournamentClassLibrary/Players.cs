@@ -58,6 +58,8 @@ namespace TournamentClassLibrary
                     value.GetValue(1).ToString(),
                     value.GetValue(2).ToString(),
                     team);
+
+                playerList.Add(p);
             }
             return playerList;
         }
