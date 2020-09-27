@@ -74,6 +74,12 @@
     <Compile Include="FormPrize.Designer.cs">
       <DependentUpon>FormPrize.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTournament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTournament.Designer.cs">
+      <DependentUpon>FormTournament.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player\FormAddPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBracketViewer.resx">
+      <DependentUpon>FormBracketViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
