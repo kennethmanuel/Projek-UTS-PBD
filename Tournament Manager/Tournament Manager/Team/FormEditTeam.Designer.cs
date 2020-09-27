@@ -28,12 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.textBoxTeamName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxTeamId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(197, 201);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
+            this.buttonEdit.TabIndex = 9;
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            // 
+            // textBoxTeamName
+            // 
+            this.textBoxTeamName.Location = new System.Drawing.Point(40, 149);
+            this.textBoxTeamName.Name = "textBoxTeamName";
+            this.textBoxTeamName.Size = new System.Drawing.Size(232, 22);
+            this.textBoxTeamName.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Team Name";
+            // 
+            // textBoxTeamId
+            // 
+            this.textBoxTeamId.Location = new System.Drawing.Point(40, 78);
+            this.textBoxTeamId.Name = "textBoxTeamId";
+            this.textBoxTeamId.Size = new System.Drawing.Size(232, 22);
+            this.textBoxTeamId.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Team Id";
+            // 
+            // FormEditTeam
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(334, 281);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.textBoxTeamName);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxTeamId);
+            this.Controls.Add(this.label1);
+            this.Name = "FormEditTeam";
             this.Text = "FormEditTeam";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.TextBox textBoxTeamName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxTeamId;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -184,6 +184,15 @@
     <EmbeddedResource Include="FormPrize.resx">
       <DependentUpon>FormPrize.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Player\FormAddPlayer.resx">
+      <DependentUpon>FormAddPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Player\FormDeletePlayer.resx">
+      <DependentUpon>FormDeletePlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Player\FormEditPlayer.resx">
+      <DependentUpon>FormEditPlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -193,6 +202,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Team\FormAddTeam.resx">
+      <DependentUpon>FormAddTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Team\FormDeleteTeam.resx">
+      <DependentUpon>FormDeleteTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Team\FormEditTeam.resx">
+      <DependentUpon>FormEditTeam.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
