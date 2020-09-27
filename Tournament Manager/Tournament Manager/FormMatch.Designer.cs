@@ -33,17 +33,17 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridViewTeam = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMatchup = new System.Windows.Forms.DataGridView();
             this.tabPageMatchupEntry = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.dataGridViewPlayer = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEntry = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPageMatchup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatchup)).BeginInit();
             this.tabPageMatchupEntry.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntry)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -61,7 +61,7 @@
             this.tabPageMatchup.Controls.Add(this.button4);
             this.tabPageMatchup.Controls.Add(this.button3);
             this.tabPageMatchup.Controls.Add(this.button1);
-            this.tabPageMatchup.Controls.Add(this.dataGridViewTeam);
+            this.tabPageMatchup.Controls.Add(this.dataGridViewMatchup);
             this.tabPageMatchup.Location = new System.Drawing.Point(4, 25);
             this.tabPageMatchup.Name = "tabPageMatchup";
             this.tabPageMatchup.Padding = new System.Windows.Forms.Padding(3);
@@ -97,22 +97,22 @@
             this.button1.Text = "Add New Matchup";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTeam
+            // dataGridViewMatchup
             // 
-            this.dataGridViewTeam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTeam.Location = new System.Drawing.Point(17, 98);
-            this.dataGridViewTeam.Name = "dataGridViewTeam";
-            this.dataGridViewTeam.RowHeadersWidth = 51;
-            this.dataGridViewTeam.RowTemplate.Height = 24;
-            this.dataGridViewTeam.Size = new System.Drawing.Size(813, 334);
-            this.dataGridViewTeam.TabIndex = 0;
+            this.dataGridViewMatchup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMatchup.Location = new System.Drawing.Point(17, 98);
+            this.dataGridViewMatchup.Name = "dataGridViewMatchup";
+            this.dataGridViewMatchup.RowHeadersWidth = 51;
+            this.dataGridViewMatchup.RowTemplate.Height = 24;
+            this.dataGridViewMatchup.Size = new System.Drawing.Size(813, 334);
+            this.dataGridViewMatchup.TabIndex = 0;
             // 
             // tabPageMatchupEntry
             // 
             this.tabPageMatchupEntry.Controls.Add(this.button2);
             this.tabPageMatchupEntry.Controls.Add(this.button5);
             this.tabPageMatchupEntry.Controls.Add(this.button6);
-            this.tabPageMatchupEntry.Controls.Add(this.dataGridViewPlayer);
+            this.tabPageMatchupEntry.Controls.Add(this.dataGridViewEntry);
             this.tabPageMatchupEntry.Location = new System.Drawing.Point(4, 25);
             this.tabPageMatchupEntry.Name = "tabPageMatchupEntry";
             this.tabPageMatchupEntry.Padding = new System.Windows.Forms.Padding(3);
@@ -148,15 +148,15 @@
             this.button6.Text = "Add Entry";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewPlayer
+            // dataGridViewEntry
             // 
-            this.dataGridViewPlayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPlayer.Location = new System.Drawing.Point(18, 94);
-            this.dataGridViewPlayer.Name = "dataGridViewPlayer";
-            this.dataGridViewPlayer.RowHeadersWidth = 51;
-            this.dataGridViewPlayer.RowTemplate.Height = 24;
-            this.dataGridViewPlayer.Size = new System.Drawing.Size(813, 334);
-            this.dataGridViewPlayer.TabIndex = 2;
+            this.dataGridViewEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEntry.Location = new System.Drawing.Point(18, 94);
+            this.dataGridViewEntry.Name = "dataGridViewEntry";
+            this.dataGridViewEntry.RowHeadersWidth = 51;
+            this.dataGridViewEntry.RowTemplate.Height = 24;
+            this.dataGridViewEntry.Size = new System.Drawing.Size(813, 334);
+            this.dataGridViewEntry.TabIndex = 2;
             // 
             // FormMatch
             // 
@@ -167,11 +167,12 @@
             this.Name = "FormMatch";
             this.Text = "Matchup";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Matchup_FormClosing);
+            this.Load += new System.EventHandler(this.FormMatch_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageMatchup.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatchup)).EndInit();
             this.tabPageMatchupEntry.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntry)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -183,11 +184,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridViewTeam;
+        private System.Windows.Forms.DataGridView dataGridViewMatchup;
         private System.Windows.Forms.TabPage tabPageMatchupEntry;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridViewPlayer;
+        private System.Windows.Forms.DataGridView dataGridViewEntry;
     }
 }

@@ -36,7 +36,7 @@ namespace Tournament_Manager
             form.ShowDialog();
         }
 
-        private void matchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void matchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             FormMatch form = new FormMatch();
             form.Owner = this;

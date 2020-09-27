@@ -36,12 +36,12 @@
             this.saveTournamentIntoALocalFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateTournamentStartingBracketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playersTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teamAndPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTournamentPrizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.teamAndPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,14 +55,14 @@
             this.viewTournamentPrizesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1000, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1000, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 24);
             // 
             // tournamentToolStripMenuItem
             // 
@@ -72,7 +72,7 @@
             this.saveTournamentIntoALocalFilesToolStripMenuItem,
             this.generateTournamentStartingBracketToolStripMenuItem});
             this.tournamentToolStripMenuItem.Name = "tournamentToolStripMenuItem";
-            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
+            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.tournamentToolStripMenuItem.Text = "Tournament";
             // 
             // loadAnotherTournamentFromDatabaseToolStripMenuItem
@@ -105,21 +105,35 @@
             this.teamAndPlayerToolStripMenuItem,
             this.matchToolStripMenuItem});
             this.playersTeamsToolStripMenuItem.Name = "playersTeamsToolStripMenuItem";
-            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
+            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.playersTeamsToolStripMenuItem.Text = "View Data";
+            // 
+            // teamAndPlayerToolStripMenuItem
+            // 
+            this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
+            this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
+            // 
+            // matchToolStripMenuItem
+            // 
+            this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.matchToolStripMenuItem.Text = "Match";
+            this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
             // viewTournamentPrizesToolStripMenuItem
             // 
             this.viewTournamentPrizesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prizeToolStripMenuItem});
             this.viewTournamentPrizesToolStripMenuItem.Name = "viewTournamentPrizesToolStripMenuItem";
-            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.viewTournamentPrizesToolStripMenuItem.Text = "View Tournament Prizes";
             // 
             // prizeToolStripMenuItem
             // 
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.prizeToolStripMenuItem.Text = "Prize";
             // 
             // label1
@@ -139,19 +153,6 @@
             this.label2.Size = new System.Drawing.Size(139, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "<tournament_name>";
-            // 
-            // teamAndPlayerToolStripMenuItem
-            // 
-            this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
-            this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
-            // 
-            // matchToolStripMenuItem
-            // 
-            this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.matchToolStripMenuItem.Text = "Match";
             // 
             // FormMenu
             // 
