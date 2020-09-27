@@ -41,7 +41,7 @@
             this.viewTournamentPrizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelTournamentName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,14 +111,14 @@
             // teamAndPlayerToolStripMenuItem
             // 
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
             // matchToolStripMenuItem
             // 
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.matchToolStripMenuItem.Text = "Match";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -133,37 +133,38 @@
             // prizeToolStripMenuItem
             // 
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
             this.prizeToolStripMenuItem.Text = "Prize";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(655, 6);
+            this.label1.Location = new System.Drawing.Point(571, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Currenty Edited Tournament:";
             // 
-            // label2
+            // labelTournamentName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(852, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "<tournament_name>";
+            this.labelTournamentName.AutoSize = true;
+            this.labelTournamentName.Location = new System.Drawing.Point(790, 6);
+            this.labelTournamentName.Name = "labelTournamentName";
+            this.labelTournamentName.Size = new System.Drawing.Size(139, 17);
+            this.labelTournamentName.TabIndex = 3;
+            this.labelTournamentName.Text = "<tournament_name>";
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 564);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelTournamentName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMenu_FormClosing);
             this.Load += new System.EventHandler(this.FormMenu_Load);
@@ -182,7 +183,7 @@
         private System.Windows.Forms.ToolStripMenuItem loadAnotherTournamentFromLocalFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveTournamentIntoALocalFilesToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelTournamentName;
         private System.Windows.Forms.ToolStripMenuItem viewTournamentPrizesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateTournamentStartingBracketToolStripMenuItem;

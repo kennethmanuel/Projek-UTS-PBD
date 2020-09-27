@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tournament_Manager.Match;
+using TournamentClassLibrary;
 
 namespace Tournament_Manager
 {
     public partial class FormMenu : Form
     {
+        FormTournament formTournament;
+        
         public FormMenu()
         {
             InitializeComponent();
@@ -20,7 +23,8 @@ namespace Tournament_Manager
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-
+            formTournament = (FormTournament)this.Owner;
+            labelTournamentName.Text = formTournament.selectedTournament.Name;
         }
 
         private void FormMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -41,6 +45,13 @@ namespace Tournament_Manager
             FormMatch form = new FormMatch();
             form.Owner = this;
             this.Hide();
+            form.ShowDialog();
+        }
+
+        private void buttonTestTournamentLoad_Click(object sender, EventArgs e)
+        {
+            FormTournament form = new FormTournament();
+            form.Owner = this;
             form.ShowDialog();
         }
     }

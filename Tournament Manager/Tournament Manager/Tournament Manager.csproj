@@ -193,6 +193,9 @@
     <EmbeddedResource Include="FormPrize.resx">
       <DependentUpon>FormPrize.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTournament.resx">
+      <DependentUpon>FormTournament.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Player\FormAddPlayer.resx">
       <DependentUpon>FormAddPlayer.cs</DependentUpon>
     </EmbeddedResource>

@@ -165,6 +165,7 @@
             this.ClientSize = new System.Drawing.Size(881, 529);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormMatch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matchup";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Matchup_FormClosing);
             this.Load += new System.EventHandler(this.FormMatch_Load);

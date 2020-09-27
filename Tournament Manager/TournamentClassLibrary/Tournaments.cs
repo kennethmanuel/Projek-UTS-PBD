@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace TournamentClassLibrary
 {
@@ -27,5 +29,24 @@ namespace TournamentClassLibrary
         public decimal Entryfee { get => entryfee; set => entryfee = value; }
         #endregion
 
+        public static List<Tournaments> ReadData()
+        {
+            string sql = "SELECT * FROM tournaments";
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<Tournaments> tournamentList = new List<Tournaments>();
+
+            while(value.Read() == true)
+            {
+                Tournaments t = new Tournaments(
+                    int.Parse(value.GetValue(0).ToString()),
+                    value.GetValue(1).ToString(),
+                    decimal.Parse(value.GetValue(2).ToString()));
+
+                tournamentList.Add(t);
+            }
+            return tournamentList;
+        }
     }
 }

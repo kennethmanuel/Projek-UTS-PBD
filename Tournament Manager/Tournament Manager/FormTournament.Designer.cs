@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonLoadTournament = new System.Windows.Forms.Button();
             this.buttonCreateTournament = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTournament = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button2
+            // buttonLoadTournament
             // 
-            this.button2.Location = new System.Drawing.Point(44, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(259, 36);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Load Tournament";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonLoadTournament.Location = new System.Drawing.Point(44, 173);
+            this.buttonLoadTournament.Name = "buttonLoadTournament";
+            this.buttonLoadTournament.Size = new System.Drawing.Size(259, 36);
+            this.buttonLoadTournament.TabIndex = 7;
+            this.buttonLoadTournament.Text = "Load Tournament";
+            this.buttonLoadTournament.UseVisualStyleBackColor = true;
+            this.buttonLoadTournament.Click += new System.EventHandler(this.buttonLoadTournament_Click);
             // 
             // buttonCreateTournament
             // 
@@ -61,25 +62,28 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Tournament Name";
             // 
-            // comboBox1
+            // comboBoxTournament
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(44, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(259, 24);
-            this.comboBox1.TabIndex = 4;
+            this.comboBoxTournament.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTournament.FormattingEnabled = true;
+            this.comboBoxTournament.Location = new System.Drawing.Point(44, 74);
+            this.comboBoxTournament.Name = "comboBoxTournament";
+            this.comboBoxTournament.Size = new System.Drawing.Size(259, 24);
+            this.comboBoxTournament.TabIndex = 4;
             // 
             // FormTournament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 257);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonLoadTournament);
             this.Controls.Add(this.buttonCreateTournament);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxTournament);
             this.Name = "FormTournament";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTournament";
+            this.Load += new System.EventHandler(this.FormTournament_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,9 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonLoadTournament;
         private System.Windows.Forms.Button buttonCreateTournament;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxTournament;
     }
 }

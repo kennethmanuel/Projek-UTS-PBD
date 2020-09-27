@@ -42,11 +42,11 @@ namespace Tournament_Manager
 
                     this.Hide();
 
-                    FormMenu formMenu = new FormMenu();
-                    formMenu.ShowDialog();
+                    FormTournament formTournament = new FormTournament();
+                    formTournament.ShowDialog();
 
-
-
+                    //FormMenu formMenu = new FormMenu();
+                    //formMenu.ShowDialog();
                 }
             }
             catch (Exception ex)

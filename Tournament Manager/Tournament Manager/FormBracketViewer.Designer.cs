@@ -28,68 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonCreateTournament = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(50, 73);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(259, 24);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tournament Name";
-            // 
-            // buttonCreateTournament
-            // 
-            this.buttonCreateTournament.Location = new System.Drawing.Point(50, 130);
-            this.buttonCreateTournament.Name = "buttonCreateTournament";
-            this.buttonCreateTournament.Size = new System.Drawing.Size(259, 36);
-            this.buttonCreateTournament.TabIndex = 2;
-            this.buttonCreateTournament.Text = "Create New Tournament";
-            this.buttonCreateTournament.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(50, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(259, 36);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Load Tournament";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // FormBracketViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 270);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonCreateTournament);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(1012, 478);
             this.Name = "FormBracketViewer";
             this.Text = "FormBracketViewer";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonCreateTournament;
-        private System.Windows.Forms.Button button2;
     }
 }
