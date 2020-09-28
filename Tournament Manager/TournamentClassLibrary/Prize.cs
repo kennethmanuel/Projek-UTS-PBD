@@ -35,6 +35,11 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
+        /// <summary>
+        /// Create list that contains Prize object from selected database with all criteria selected.
+        /// </summary>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
         public static List<Prize> BatchSearch(string criteriaValue)
         {
             string sql = "SELECT p.id, p.placename, p.prizeamount, p.prizepercentage,t.id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id WHERE p.id LIKE '%" + criteriaValue + "%' OR p.placename LIKE '%" + criteriaValue + "%' p.prizeamount LIKE '%" + criteriaValue + "%' OR p.prizepercentage LIKE '%" + criteriaValue + "%' OR t.name LIKE '%" + criteriaValue + "%'";

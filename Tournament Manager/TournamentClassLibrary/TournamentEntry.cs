@@ -26,6 +26,7 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
+        // not tested.
         public static List<TournamentEntry> ReadData(string criteria, string criteriaValue)
         {
             string sql = "";

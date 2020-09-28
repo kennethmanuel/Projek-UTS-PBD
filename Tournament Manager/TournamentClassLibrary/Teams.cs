@@ -26,6 +26,12 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Create a list of Teams object from a selected database with a specified criteria.
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
         public static List<Teams> ReadData(string criteria, string criteriaValue)
         {
             string sql = "";
@@ -52,6 +58,11 @@ namespace TournamentClassLibrary
             return teamList;
         }
 
+        /// <summary>
+        /// Create list of a Teams object from a selected database with all criteria selected.
+        /// </summary>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
         public static List<Teams> BatchSearch(string criteriaValue)
         {
             string sql = "SELECT * FROM teams WHERE id LIKE '%" + criteriaValue + "%' OR name LIKE '%" + criteriaValue + "%'";

@@ -28,6 +28,13 @@ namespace TournamentClassLibrary
         public int Round { get => round; set => round = value; }
         #endregion
 
+        #region Method
+        /// <summary>
+        /// Create list that contains Matchups object from selected database with specified criteria.
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
         public static List<Matchups> ReadData(string criteria, string criteriaValue)
         {
             string sql = "";
@@ -60,5 +67,6 @@ namespace TournamentClassLibrary
             }
             return matchupList;
         }
+        #endregion
     }
 }

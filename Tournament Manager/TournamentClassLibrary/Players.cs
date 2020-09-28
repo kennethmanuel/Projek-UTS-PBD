@@ -33,6 +33,12 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
+        /// <summary>
+        /// Create list that contains Players object from selected database with specified criteria.
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
         public static List<Players> ReadData(string criteria, string criteriaValue)
         {
             string sql = "";
@@ -64,6 +70,12 @@ namespace TournamentClassLibrary
             }
             return playerList;
         }
+
+        /// <summary>
+        /// Create list that contains Players object from selected database with all criteria selected.
+        /// </summary>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
         public static List<Players> BatchSearch(string criteriaValue)
         {
             string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.id LIKE '%" + criteriaValue + "%' OR p.name LIKE '%" + criteriaValue + "%' OR p.EMAIL LIKE '%" + criteriaValue + "%' or t.name LIKE '%" + criteriaValue + "%'";

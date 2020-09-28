@@ -29,6 +29,10 @@ namespace TournamentClassLibrary
         public decimal Entryfee { get => entryfee; set => entryfee = value; }
         #endregion
 
+        /// <summary>
+        /// Create a list of all Tournaments object from a selected database.
+        /// </summary>
+        /// <returns></returns>
         public static List<Tournaments> ReadData()
         {
             string sql = "SELECT * FROM tournaments";

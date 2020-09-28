@@ -9,6 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace TournamentClassLibrary
 {
+    /// <summary>
+    /// Class used to connect to MySQL database and peform queries.
+    /// </summary>
     public class Connection
     {
         private MySqlConnection dbConnection;
@@ -72,6 +75,11 @@ namespace TournamentClassLibrary
 
             ConfigurationManager.RefreshSection("connectionStrings");
         }
+
+        /// <summary>
+        /// Used to perform DML commands such as INSERT, UPDATE, and DELETE.
+        /// </summary>
+        /// <param name="sql">DML Commands (ex: INSERT INTO ...)</param>
         public static void ExecuteDML(string sql)
         {
             Connection connection = new Connection();
@@ -81,6 +89,10 @@ namespace TournamentClassLibrary
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Used to perform SQL queries.  /// </summary>
+        /// <param name="sql">SQL query (ex: SELECT * FROM ...)</param>
+        /// <returns></returns>
         public static MySqlDataReader ExecuteQuery(string sql)
         {
             Connection connection = new Connection();
