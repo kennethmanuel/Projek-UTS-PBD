@@ -69,7 +69,5 @@ namespace TournamentClassLibrary
             return teamList;
         }
         #endregion
-
-
     }
 }
