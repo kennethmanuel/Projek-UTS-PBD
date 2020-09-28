@@ -10,10 +10,12 @@ namespace TournamentClassLibrary
 {
     public class Players
     {
+        #region Data Member
         private int id;
         private string name;
         private string email;
         private Teams team;
+        #endregion
 
         #region Constructor
         public Players(int id, string name, string email, Teams teamId)
@@ -99,6 +101,66 @@ namespace TournamentClassLibrary
             return playerList;
         }
 
+        /// <summary>
+        /// Add Player to database
+        /// </summary>
+        /// <param name="p"></param>
+        public static void AddPlayer(Players p)
+        {
+            string sql = "insert into players(Id, Name, Email, Team_id) values ('" + p.Id + "','" + p.Name.Replace("'", "\\'") + "','" + p.Email + "','" + p.Team.Id + "')";
+            Connection.ExecuteDML(sql);
+        }
+
+        /// <summary>
+        /// Edit player from database
+        /// </summary>
+        /// <param name="p"></param>
+        public static void EditPlayer(Players p)
+        {
+            string sql = "update players set Name='" + p.Name.Replace("'", "\\'") + "',Email='" + p.Email + "',Team_id='" + p.Team.Id + "'";
+            Connection.ExecuteDML(sql);
+        }
+
+        /// <summary>
+        /// Delete Player from database
+        /// </summary>
+        /// <param name="pl"></param>
+        /// <returns></returns>
+        public static string DeletePlayer(Players pl)
+        {
+            string sql = "Delete from players where Id='" + pl.Id + "'";
+            try
+            {
+                Connection.ExecuteDML(sql);
+                return "1";
+            }
+            catch(MySqlException ex)
+            {
+                return ex.Message + ". Sql Command: " + sql;
+            }
+        }
+
+        /// <summary>
+        /// Generate new Id
+        /// </summary>
+        /// <returns></returns>
+        public static string GenerateCode()
+        {
+            string sql = "select max(Id) from Players";
+            string code = "";
+            MySqlDataReader result = Connection.ExecuteQuery(sql);
+
+            if (result.Read() == true)
+            {
+                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
+                code = newCode.ToString();
+            }
+            else
+            {
+                code = "1";
+            }
+            return code;
+        }
         #endregion
     }
 }

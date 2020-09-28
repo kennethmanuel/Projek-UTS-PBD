@@ -87,5 +87,19 @@ namespace Tournament_Manager
                 dataGridViewTeam.DataSource = null;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormAddTeam frm = new FormAddTeam();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormAddPlayer frm = new FormAddPlayer();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
     }
 }

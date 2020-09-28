@@ -38,57 +38,65 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 42);
+            this.label1.Location = new System.Drawing.Point(28, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Team Id";
             // 
             // textBoxTeamId
             // 
-            this.textBoxTeamId.Location = new System.Drawing.Point(40, 73);
+            this.textBoxTeamId.Location = new System.Drawing.Point(30, 59);
+            this.textBoxTeamId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxTeamId.Name = "textBoxTeamId";
-            this.textBoxTeamId.Size = new System.Drawing.Size(232, 22);
+            this.textBoxTeamId.Size = new System.Drawing.Size(175, 20);
             this.textBoxTeamId.TabIndex = 1;
             // 
             // textBoxTeamName
             // 
-            this.textBoxTeamName.Location = new System.Drawing.Point(40, 144);
+            this.textBoxTeamName.Location = new System.Drawing.Point(30, 117);
+            this.textBoxTeamName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxTeamName.Name = "textBoxTeamName";
-            this.textBoxTeamName.Size = new System.Drawing.Size(232, 22);
+            this.textBoxTeamName.Size = new System.Drawing.Size(175, 20);
             this.textBoxTeamName.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 113);
+            this.label2.Location = new System.Drawing.Point(28, 92);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Team Name";
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(197, 196);
+            this.buttonAdd.Location = new System.Drawing.Point(139, 159);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(65, 22);
             this.buttonAdd.TabIndex = 4;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // FormAddTeam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 295);
+            this.ClientSize = new System.Drawing.Size(251, 240);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxTeamName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxTeamId);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormAddTeam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddTeam";
+            this.Load += new System.EventHandler(this.FormAddTeam_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
