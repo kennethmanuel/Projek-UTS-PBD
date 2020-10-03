@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tournament_Manager.Player;
+using Tournament_Manager.Team;
 using TournamentClassLibrary;
 
 namespace Tournament_Manager
@@ -98,6 +100,34 @@ namespace Tournament_Manager
         private void button6_Click(object sender, EventArgs e)
         {
             FormAddPlayer frm = new FormAddPlayer();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormDeletePlayer frm = new FormDeletePlayer();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormEditPlayer frm = new FormEditPlayer();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormEditTeam frm = new FormEditTeam();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormDeleteTeam frm = new FormDeleteTeam();
             frm.Owner = this;
             frm.ShowDialog();
         }
