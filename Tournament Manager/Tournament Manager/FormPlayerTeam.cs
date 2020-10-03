@@ -17,6 +17,8 @@ namespace Tournament_Manager
     {
         List<Teams> teamList = new List<Teams>();
         List<Players> playerList = new List<Players>();
+        
+        FormMenu formMenu;
         public FormPlayerTeam()
         {
             InitializeComponent();
@@ -53,9 +55,11 @@ namespace Tournament_Manager
 
         private void FormPlayerTeam_Load(object sender, EventArgs e)
         {
-            teamList = Teams.ReadData("", "");
+            //Team
+            formMenu = (FormMenu)this.Owner;
+            teamList = TournamentEntry.ReadTeam(formMenu.selectedTournament, "");
 
-            if(teamList.Count > 0)
+            if(teamList.Count >0)
             {
                 dataGridViewTeam.DataSource = teamList;
             }
@@ -64,21 +68,22 @@ namespace Tournament_Manager
                 dataGridViewTeam.DataSource = null;
             }
 
+            //Player
             FormatDataGridPlayers();
-            playerList = Players.ReadData("", "");
+            playerList = TournamentEntry.ReadPlayer(formMenu.selectedTournament, "");
             ShowDataGridPlayers();
         }
 
         private void textBoxSearchPlayer_TextChanged(object sender, EventArgs e)
         {
             string criteria = textBoxSearchPlayer.Text;
-            playerList = Players.BatchSearch(criteria);
+            playerList = TournamentEntry.ReadPlayer(formMenu.selectedTournament, criteria);
             ShowDataGridPlayers();
         }
 
         private void textBoxSearchTeam_TextChanged(object sender, EventArgs e)
         {
-            teamList = Teams.BatchSearch(textBoxSearchTeam.Text);
+            teamList = TournamentEntry.ReadTeam(formMenu.selectedTournament, textBoxSearchTeam.Text);
 
             if(teamList.Count > 0)
             {
