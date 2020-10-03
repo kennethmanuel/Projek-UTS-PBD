@@ -42,92 +42,89 @@
             // comboBoxTeam
             // 
             this.comboBoxTeam.FormattingEnabled = true;
-            this.comboBoxTeam.Location = new System.Drawing.Point(38, 233);
-            this.comboBoxTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxTeam.Location = new System.Drawing.Point(51, 287);
+            this.comboBoxTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxTeam.Name = "comboBoxTeam";
-            this.comboBoxTeam.Size = new System.Drawing.Size(175, 21);
+            this.comboBoxTeam.Size = new System.Drawing.Size(232, 24);
             this.comboBoxTeam.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 207);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(48, 255);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 26;
             this.label1.Text = "Team";
             // 
             // textBoxPlayerEmail
             // 
-            this.textBoxPlayerEmail.Location = new System.Drawing.Point(38, 175);
-            this.textBoxPlayerEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPlayerEmail.Location = new System.Drawing.Point(51, 215);
+            this.textBoxPlayerEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPlayerEmail.Name = "textBoxPlayerEmail";
-            this.textBoxPlayerEmail.Size = new System.Drawing.Size(175, 20);
+            this.textBoxPlayerEmail.Size = new System.Drawing.Size(232, 22);
             this.textBoxPlayerEmail.TabIndex = 25;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 150);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(48, 185);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(86, 17);
             this.label4.TabIndex = 24;
             this.label4.Text = "Player Email";
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(156, 275);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEdit.Location = new System.Drawing.Point(208, 338);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(56, 19);
+            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
             this.buttonEdit.TabIndex = 23;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // textBoxPlayerName
             // 
-            this.textBoxPlayerName.Location = new System.Drawing.Point(38, 123);
-            this.textBoxPlayerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPlayerName.Location = new System.Drawing.Point(51, 151);
+            this.textBoxPlayerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPlayerName.Name = "textBoxPlayerName";
-            this.textBoxPlayerName.Size = new System.Drawing.Size(175, 20);
+            this.textBoxPlayerName.Size = new System.Drawing.Size(232, 22);
             this.textBoxPlayerName.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 98);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(48, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 21;
             this.label2.Text = "Player Name";
             // 
             // textBoxPlayerId
             // 
-            this.textBoxPlayerId.Location = new System.Drawing.Point(38, 65);
-            this.textBoxPlayerId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPlayerId.Location = new System.Drawing.Point(51, 80);
+            this.textBoxPlayerId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPlayerId.Name = "textBoxPlayerId";
-            this.textBoxPlayerId.Size = new System.Drawing.Size(175, 20);
+            this.textBoxPlayerId.Size = new System.Drawing.Size(232, 22);
             this.textBoxPlayerId.TabIndex = 20;
             this.textBoxPlayerId.TextChanged += new System.EventHandler(this.textBoxPlayerId_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 40);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(48, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 19;
             this.label3.Text = "Player Id";
             // 
             // FormEditPlayer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 328);
+            this.ClientSize = new System.Drawing.Size(344, 404);
             this.Controls.Add(this.comboBoxTeam);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPlayerEmail);
@@ -137,7 +134,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxPlayerId);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormEditPlayer";
             this.Text = "FormEditPlayer";
             this.Load += new System.EventHandler(this.FormEditPlayer_Load);

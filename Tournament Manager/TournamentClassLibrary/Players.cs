@@ -52,6 +52,7 @@ namespace TournamentClassLibrary
             else
             {
                 sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -117,7 +118,8 @@ namespace TournamentClassLibrary
         /// <param name="p"></param>
         public static void EditPlayer(Players p)
         {
-            string sql = "update players set Name='" + p.Name.Replace("'", "\\'") + "',Email='" + p.Email + "',Team_id='" + p.Team.Id + "'";
+            string sql = "update players set Name='" + p.Name.Replace("'", "\\'") + "',Email='" + p.Email + "',Team_Id='" + p.Team.Id +
+                "'where Id='" + p.Id + "'";
             Connection.ExecuteDML(sql);
         }
 
@@ -128,7 +130,7 @@ namespace TournamentClassLibrary
         /// <returns></returns>
         public static string DeletePlayer(Players pl)
         {
-            string sql = "Delete from players where Id='" + pl.Id + "'";
+            string sql = "Delete from players p where p.Id='" + pl.Id + "'";
             try
             {
                 Connection.ExecuteDML(sql);

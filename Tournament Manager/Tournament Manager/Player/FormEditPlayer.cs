@@ -24,13 +24,31 @@ namespace Tournament_Manager
         {
             listTeams = Teams.ReadData("", "");
 
-            comboBoxTeam.DataSource = listPlayers;
-            comboBoxTeam.DisplayMember = "Name";            
+            comboBoxTeam.DataSource = listTeams;
+            comboBoxTeam.DisplayMember = "Name";
+            comboBoxTeam.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void textBoxPlayerId_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Teams team = (Teams)comboBoxTeam.SelectedItem;
+                Players p = new Players(int.Parse(textBoxPlayerId.Text), textBoxPlayerName.Text, textBoxPlayerEmail.Text, team);
+                Players.EditPlayer(p);
+                MessageBox.Show("Player has been changed", "Information");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Player cannot be saved. Error Message: " + ex.Message, "Error");
+            }
         }
     }
 }

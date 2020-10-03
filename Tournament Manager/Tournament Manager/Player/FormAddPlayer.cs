@@ -47,5 +47,10 @@ namespace Tournament_Manager
                 MessageBox.Show("Player cannot be saved. Error Message: " + ex.Message, "Error");
             }
         }
+
+        private void comboBoxTeam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
