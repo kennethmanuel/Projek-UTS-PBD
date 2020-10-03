@@ -95,42 +95,42 @@ namespace Tournament_Manager
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddTeam_Click(object sender, EventArgs e)
         {
             FormAddTeam frm = new FormAddTeam();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonAddPlayer_Click(object sender, EventArgs e)
         {
             FormAddPlayer frm = new FormAddPlayer();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonDeletePlayer_Click(object sender, EventArgs e)
         {
             FormDeletePlayer frm = new FormDeletePlayer();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonEditPlayer_Click(object sender, EventArgs e)
         {
             FormEditPlayer frm = new FormEditPlayer();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonEditTeam_Click(object sender, EventArgs e)
         {
             FormEditTeam frm = new FormEditTeam();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonDeleteTeam_Click(object sender, EventArgs e)
         {
             FormDeleteTeam frm = new FormDeleteTeam();
             frm.Owner = this;
