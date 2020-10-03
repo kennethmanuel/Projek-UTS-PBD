@@ -17,6 +17,8 @@ namespace Tournament_Manager
     {
         List<Teams> teamList = new List<Teams>();
         List<Players> playerList = new List<Players>();
+        
+        FormMenu formMenu;
         public FormPlayerTeam()
         {
             InitializeComponent();
@@ -53,9 +55,11 @@ namespace Tournament_Manager
 
         private void FormPlayerTeam_Load(object sender, EventArgs e)
         {
-            teamList = Teams.ReadData("", "");
+            //Team
+            formMenu = (FormMenu)this.Owner;
+            teamList = TournamentEntry.ReadTeam(formMenu.selectedTournament, "");
 
-            if(teamList.Count > 0)
+            if(teamList.Count >0)
             {
                 dataGridViewTeam.DataSource = teamList;
             }
@@ -64,21 +68,22 @@ namespace Tournament_Manager
                 dataGridViewTeam.DataSource = null;
             }
 
+            //Player
             FormatDataGridPlayers();
-            playerList = Players.ReadData("", "");
+            playerList = TournamentEntry.ReadPlayer(formMenu.selectedTournament, "");
             ShowDataGridPlayers();
         }
 
         private void textBoxSearchPlayer_TextChanged(object sender, EventArgs e)
         {
             string criteria = textBoxSearchPlayer.Text;
-            playerList = Players.BatchSearch(criteria);
+            playerList = TournamentEntry.ReadPlayer(formMenu.selectedTournament, criteria);
             ShowDataGridPlayers();
         }
 
         private void textBoxSearchTeam_TextChanged(object sender, EventArgs e)
         {
-            teamList = Teams.BatchSearch(textBoxSearchTeam.Text);
+            teamList = TournamentEntry.ReadTeam(formMenu.selectedTournament, textBoxSearchTeam.Text);
 
             if(teamList.Count > 0)
             {
@@ -90,42 +95,42 @@ namespace Tournament_Manager
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddTeam_Click(object sender, EventArgs e)
         {
             FormAddTeam frm = new FormAddTeam();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonAddPlayer_Click(object sender, EventArgs e)
         {
             FormAddPlayer frm = new FormAddPlayer();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonDeletePlayer_Click(object sender, EventArgs e)
         {
             FormDeletePlayer frm = new FormDeletePlayer();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonEditPlayer_Click(object sender, EventArgs e)
         {
             FormEditPlayer frm = new FormEditPlayer();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonEditTeam_Click(object sender, EventArgs e)
         {
             FormEditTeam frm = new FormEditTeam();
             frm.Owner = this;
             frm.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonDeleteTeam_Click(object sender, EventArgs e)
         {
             FormDeleteTeam frm = new FormDeleteTeam();
             frm.Owner = this;

@@ -15,6 +15,7 @@ namespace Tournament_Manager
     public partial class FormMenu : Form
     {
         FormTournament formTournament;
+        public Tournaments selectedTournament;
         
         public FormMenu()
         {
@@ -24,7 +25,8 @@ namespace Tournament_Manager
         private void FormMenu_Load(object sender, EventArgs e)
         {
             formTournament = (FormTournament)this.Owner;
-            labelTournamentName.Text = formTournament.selectedTournament.Name;
+            selectedTournament = formTournament.selectedTournament;
+            labelTournamentName.Text = selectedTournament.Name;
         }
 
         private void FormMenu_FormClosing(object sender, FormClosingEventArgs e)

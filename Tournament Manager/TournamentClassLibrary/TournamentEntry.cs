@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,39 +27,72 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
-        // not tested.
-        public static List<TournamentEntry> ReadData(string criteria, string criteriaValue)
+        /// <summary>
+        /// Create a list of team object that participate on parameter selectedTournament
+        /// </summary>
+        /// <param name="selectedTournament">Selected tournament</param>
+        /// <returns></returns>
+        public static List<Teams> ReadTeam(Tournaments selectedTournament, string criteria)
         {
+            int tournamentId = selectedTournament.Id;
             string sql = "";
 
-            if(criteria == "")
+            if(criteria=="")
             {
-                sql = "SELECT tr.id, tr.name, tr.entryfee, t.id, t.name FROM tournamentteams tt INNER JOIN tournaments tr ON tr.id = tt.tournaments_id INNER JOIN teams t ON tt.teams_id = t.id";
+                sql = "SELECT * FROM teams t WHERE t.id IN (SELECT teams_id FROM tournamentteams WHERE tournaments_id=" + tournamentId + ")";
             }
             else
             {
-                sql = "SELECT tr.id, tr.name, tr.entryfee, t.id, t.name FROM tournamentteams tt INNER JOIN tournaments tr ON tr.id = tt.tournaments_id INNER JOIN teams t ON tt.teams_id = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                sql = "SELECT * FROM teams t WHERE t.id IN (SELECT teams_id FROM tournamentteams WHERE tournaments_id=" + tournamentId + ") AND ( t.name LIKE '%" + criteria + "%' OR t.id LIKE '%" + criteria + "%')";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
-            List<TournamentEntry> tournamentTeamList = new List<TournamentEntry>();
+            List<Teams> teamList = new List<Teams>();
 
             while(value.Read() == true)
             {
-                Tournaments tournament = new Tournaments(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    decimal.Parse(value.GetValue(2).ToString()));
-
                 Teams team = new Teams(
-                    int.Parse(value.GetValue(3).ToString()),
-                    value.GetValue(4).ToString()
+                    int.Parse(value.GetValue(0).ToString()),
+                    value.GetValue(1).ToString()
                     );
 
-                TournamentEntry te = new TournamentEntry(tournament, team);
+                teamList.Add(team);
             }
-            return tournamentTeamList;
+            return teamList;
+        }
+
+        public static List<Players> ReadPlayer(Tournaments selectedTournament, string criteria)
+        {
+            int tournamentid = selectedTournament.Id;
+            string sql = "";
+
+            if(criteria == "")
+            {
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.team_id IN (SELECT tt.teams_id FROM tournamentteams tt WHERE tournaments_id=" + tournamentid + ")";
+            }
+            else
+            {
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.team_id IN (SELECT tt.teams_id FROM tournamentteams tt WHERE tournaments_id=" + tournamentid + ") AND ( p.id LIKE '%" + criteria + "%' OR p.name LIKE '%" + criteria + "%' OR p.email LIKE '%" + criteria + "%' or t.name LIKE '%" + criteria + "%' )"; 
+            }
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<Players> listPlayer = new List<Players>();
+
+            while(value.Read() == true)
+            {
+                Teams team = new Teams(int.Parse(value.GetValue(3).ToString()), value.GetValue(4).ToString());
+
+                Players p = new Players(
+                    int.Parse(value.GetValue(0).ToString()),
+                    value.GetValue(1).ToString(),
+                    value.GetValue(2).ToString(),
+                    team);
+
+                listPlayer.Add(p);
+            }
+            return listPlayer;
         }
         #endregion
     }

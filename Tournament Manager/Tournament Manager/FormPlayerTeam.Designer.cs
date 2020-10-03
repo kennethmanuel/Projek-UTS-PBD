@@ -31,15 +31,15 @@
             this.tabControlTeam = new System.Windows.Forms.TabControl();
             this.tabPagePlayer = new System.Windows.Forms.TabPage();
             this.textBoxSearchPlayer = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonDeletePlayer = new System.Windows.Forms.Button();
+            this.buttonEditPlayer = new System.Windows.Forms.Button();
+            this.buttonAddPlayer = new System.Windows.Forms.Button();
             this.dataGridViewPlayer = new System.Windows.Forms.DataGridView();
             this.tabPageTeam = new System.Windows.Forms.TabPage();
             this.textBoxSearchTeam = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonDeleteTeam = new System.Windows.Forms.Button();
+            this.buttonEditTeam = new System.Windows.Forms.Button();
+            this.buttonAddTeam = new System.Windows.Forms.Button();
             this.dataGridViewTeam = new System.Windows.Forms.DataGridView();
             this.tabControlTeam.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
@@ -62,9 +62,9 @@
             // tabPagePlayer
             // 
             this.tabPagePlayer.Controls.Add(this.textBoxSearchPlayer);
-            this.tabPagePlayer.Controls.Add(this.button2);
-            this.tabPagePlayer.Controls.Add(this.button5);
-            this.tabPagePlayer.Controls.Add(this.button6);
+            this.tabPagePlayer.Controls.Add(this.buttonDeletePlayer);
+            this.tabPagePlayer.Controls.Add(this.buttonEditPlayer);
+            this.tabPagePlayer.Controls.Add(this.buttonAddPlayer);
             this.tabPagePlayer.Controls.Add(this.dataGridViewPlayer);
             this.tabPagePlayer.Location = new System.Drawing.Point(4, 22);
             this.tabPagePlayer.Margin = new System.Windows.Forms.Padding(2);
@@ -84,38 +84,38 @@
             this.textBoxSearchPlayer.TabIndex = 7;
             this.textBoxSearchPlayer.TextChanged += new System.EventHandler(this.textBoxSearchPlayer_TextChanged);
             // 
-            // button2
+            // buttonDeletePlayer
             // 
-            this.button2.Location = new System.Drawing.Point(515, 37);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 28);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Delete Player";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDeletePlayer.Location = new System.Drawing.Point(515, 37);
+            this.buttonDeletePlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDeletePlayer.Name = "buttonDeletePlayer";
+            this.buttonDeletePlayer.Size = new System.Drawing.Size(105, 28);
+            this.buttonDeletePlayer.TabIndex = 6;
+            this.buttonDeletePlayer.Text = "Delete Player";
+            this.buttonDeletePlayer.UseVisualStyleBackColor = true;
+            this.buttonDeletePlayer.Click += new System.EventHandler(this.buttonDeletePlayer_Click);
             // 
-            // button5
+            // buttonEditPlayer
             // 
-            this.button5.Location = new System.Drawing.Point(406, 37);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(105, 28);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Edit Player";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.buttonEditPlayer.Location = new System.Drawing.Point(406, 37);
+            this.buttonEditPlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEditPlayer.Name = "buttonEditPlayer";
+            this.buttonEditPlayer.Size = new System.Drawing.Size(105, 28);
+            this.buttonEditPlayer.TabIndex = 5;
+            this.buttonEditPlayer.Text = "Edit Player";
+            this.buttonEditPlayer.UseVisualStyleBackColor = true;
+            this.buttonEditPlayer.Click += new System.EventHandler(this.buttonEditPlayer_Click);
             // 
-            // button6
+            // buttonAddPlayer
             // 
-            this.button6.Location = new System.Drawing.Point(296, 37);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(105, 28);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Add New Player";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.buttonAddPlayer.Location = new System.Drawing.Point(296, 37);
+            this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddPlayer.Name = "buttonAddPlayer";
+            this.buttonAddPlayer.Size = new System.Drawing.Size(105, 28);
+            this.buttonAddPlayer.TabIndex = 4;
+            this.buttonAddPlayer.Text = "Add New Player";
+            this.buttonAddPlayer.UseVisualStyleBackColor = true;
+            this.buttonAddPlayer.Click += new System.EventHandler(this.buttonAddPlayer_Click);
             // 
             // dataGridViewPlayer
             // 
@@ -131,9 +131,9 @@
             // tabPageTeam
             // 
             this.tabPageTeam.Controls.Add(this.textBoxSearchTeam);
-            this.tabPageTeam.Controls.Add(this.button4);
-            this.tabPageTeam.Controls.Add(this.button3);
-            this.tabPageTeam.Controls.Add(this.button1);
+            this.tabPageTeam.Controls.Add(this.buttonDeleteTeam);
+            this.tabPageTeam.Controls.Add(this.buttonEditTeam);
+            this.tabPageTeam.Controls.Add(this.buttonAddTeam);
             this.tabPageTeam.Controls.Add(this.dataGridViewTeam);
             this.tabPageTeam.Location = new System.Drawing.Point(4, 22);
             this.tabPageTeam.Margin = new System.Windows.Forms.Padding(2);
@@ -153,38 +153,38 @@
             this.textBoxSearchTeam.TabIndex = 8;
             this.textBoxSearchTeam.TextChanged += new System.EventHandler(this.textBoxSearchTeam_TextChanged);
             // 
-            // button4
+            // buttonDeleteTeam
             // 
-            this.button4.Location = new System.Drawing.Point(518, 37);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 28);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Delete Team";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonDeleteTeam.Location = new System.Drawing.Point(518, 37);
+            this.buttonDeleteTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDeleteTeam.Name = "buttonDeleteTeam";
+            this.buttonDeleteTeam.Size = new System.Drawing.Size(105, 28);
+            this.buttonDeleteTeam.TabIndex = 3;
+            this.buttonDeleteTeam.Text = "Delete Team";
+            this.buttonDeleteTeam.UseVisualStyleBackColor = true;
+            this.buttonDeleteTeam.Click += new System.EventHandler(this.buttonDeleteTeam_Click);
             // 
-            // button3
+            // buttonEditTeam
             // 
-            this.button3.Location = new System.Drawing.Point(408, 37);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 28);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Edit Team";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonEditTeam.Location = new System.Drawing.Point(408, 37);
+            this.buttonEditTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEditTeam.Name = "buttonEditTeam";
+            this.buttonEditTeam.Size = new System.Drawing.Size(105, 28);
+            this.buttonEditTeam.TabIndex = 2;
+            this.buttonEditTeam.Text = "Edit Team";
+            this.buttonEditTeam.UseVisualStyleBackColor = true;
+            this.buttonEditTeam.Click += new System.EventHandler(this.buttonEditTeam_Click);
             // 
-            // button1
+            // buttonAddTeam
             // 
-            this.button1.Location = new System.Drawing.Point(298, 37);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add New Team";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddTeam.Location = new System.Drawing.Point(298, 37);
+            this.buttonAddTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddTeam.Name = "buttonAddTeam";
+            this.buttonAddTeam.Size = new System.Drawing.Size(105, 28);
+            this.buttonAddTeam.TabIndex = 1;
+            this.buttonAddTeam.Text = "Add New Team";
+            this.buttonAddTeam.UseVisualStyleBackColor = true;
+            this.buttonAddTeam.Click += new System.EventHandler(this.buttonAddTeam_Click);
             // 
             // dataGridViewTeam
             // 
@@ -224,15 +224,15 @@
 
         private System.Windows.Forms.TabControl tabControlTeam;
         private System.Windows.Forms.TabPage tabPageTeam;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAddTeam;
         private System.Windows.Forms.DataGridView dataGridViewTeam;
         private System.Windows.Forms.TabPage tabPagePlayer;
         private System.Windows.Forms.DataGridView dataGridViewPlayer;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonDeleteTeam;
+        private System.Windows.Forms.Button buttonEditTeam;
+        private System.Windows.Forms.Button buttonDeletePlayer;
+        private System.Windows.Forms.Button buttonEditPlayer;
+        private System.Windows.Forms.Button buttonAddPlayer;
         private System.Windows.Forms.TextBox textBoxSearchPlayer;
         private System.Windows.Forms.TextBox textBoxSearchTeam;
     }
