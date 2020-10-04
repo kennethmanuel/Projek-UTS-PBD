@@ -27,7 +27,7 @@ namespace Tournament_Manager.Player
             {
                 Teams team = (Teams)comboBoxTeam.SelectedItem;
                 Players p = new Players(int.Parse(textBoxPlayerId.Text), textBoxPlayerName.Text, textBoxPlayerEmail.Text, team);
-               string add= Players.DeletePlayer(p);
+                string add = Players.DeletePlayer(p);
                 if (add == "1")
                 {
                     MessageBox.Show("Player has been deleted.", "information");
@@ -36,7 +36,7 @@ namespace Tournament_Manager.Player
                 {
                     MessageBox.Show("Player Failed to deleted. Message error: ", add);
                 }
-               
+
             }
         }
 
@@ -48,20 +48,18 @@ namespace Tournament_Manager.Player
 
         private void textBoxPlayerId_TextChanged(object sender, EventArgs e)
         {
-            
-                listPlayers = Players.ReadData("Id", textBoxPlayerId.Text);
-                if (listTeams.Count > 0)
-                {
-                    textBoxPlayerName.Text = listPlayers[0].Name;
-                    buttonDelete.Focus();
-                }
-                else
-                {
-                    MessageBox.Show("Player Id is not found.", "Error");
-                    textBoxPlayerName.Text = "";
-                }
-            
-                
+            listPlayers = Players.ReadData("Id", textBoxPlayerId.Text);
+            if (listTeams.Count > 0)
+            {
+                textBoxPlayerName.Text = listPlayers[0].Name;
+                textBoxPlayerEmail.Text = listPlayers[0].Email;                
+                buttonDelete.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Player Id is not found.", "Error");
+                textBoxPlayerName.Text = "";
+            }
         }
     }
 }

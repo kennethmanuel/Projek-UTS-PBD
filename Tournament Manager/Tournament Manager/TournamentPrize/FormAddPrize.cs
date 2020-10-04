@@ -20,7 +20,10 @@ namespace Tournament_Manager.TournamentPrize
 
         private void FormAddPrize_Load(object sender, EventArgs e)
         {
-
+            string newId = Prize.GenerateCode();
+            textBoxPrizeId.Text = newId;
+            textBoxPrizeId.Enabled = false;
+            textBoxPrizePlaceName.Focus();
         }
     }
 }
