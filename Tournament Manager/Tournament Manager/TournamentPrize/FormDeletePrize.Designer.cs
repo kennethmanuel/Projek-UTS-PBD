@@ -44,20 +44,20 @@
             // comboBoxTournamentsName
             // 
             this.comboBoxTournamentsName.FormattingEnabled = true;
-            this.comboBoxTournamentsName.Location = new System.Drawing.Point(177, 229);
-            this.comboBoxTournamentsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxTournamentsName.Location = new System.Drawing.Point(288, 372);
+            this.comboBoxTournamentsName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxTournamentsName.Name = "comboBoxTournamentsName";
-            this.comboBoxTournamentsName.Size = new System.Drawing.Size(236, 24);
+            this.comboBoxTournamentsName.Size = new System.Drawing.Size(381, 34);
             this.comboBoxTournamentsName.TabIndex = 21;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(35, 233);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(57, 379);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 17);
+            this.label5.Size = new System.Drawing.Size(235, 27);
             this.label5.TabIndex = 20;
             this.label5.Text = "Tournaments Name: ";
             // 
@@ -65,54 +65,54 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Location = new System.Drawing.Point(315, 272);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Location = new System.Drawing.Point(512, 442);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(100, 28);
+            this.buttonDelete.Size = new System.Drawing.Size(162, 46);
             this.buttonDelete.TabIndex = 19;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
             // 
             // textBoxPriceAmount
             // 
-            this.textBoxPriceAmount.Location = new System.Drawing.Point(177, 180);
-            this.textBoxPriceAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPriceAmount.Location = new System.Drawing.Point(288, 292);
+            this.textBoxPriceAmount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxPriceAmount.Name = "textBoxPriceAmount";
-            this.textBoxPriceAmount.Size = new System.Drawing.Size(236, 22);
+            this.textBoxPriceAmount.Size = new System.Drawing.Size(381, 34);
             this.textBoxPriceAmount.TabIndex = 18;
             // 
             // textBoxPrizePercentage
             // 
-            this.textBoxPrizePercentage.Location = new System.Drawing.Point(177, 130);
-            this.textBoxPrizePercentage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrizePercentage.Location = new System.Drawing.Point(288, 211);
+            this.textBoxPrizePercentage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxPrizePercentage.Name = "textBoxPrizePercentage";
-            this.textBoxPrizePercentage.Size = new System.Drawing.Size(236, 22);
+            this.textBoxPrizePercentage.Size = new System.Drawing.Size(381, 34);
             this.textBoxPrizePercentage.TabIndex = 17;
             // 
             // textBoxPrizePlaceName
             // 
-            this.textBoxPrizePlaceName.Location = new System.Drawing.Point(177, 78);
-            this.textBoxPrizePlaceName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrizePlaceName.Location = new System.Drawing.Point(288, 127);
+            this.textBoxPrizePlaceName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxPrizePlaceName.Name = "textBoxPrizePlaceName";
-            this.textBoxPrizePlaceName.Size = new System.Drawing.Size(236, 22);
+            this.textBoxPrizePlaceName.Size = new System.Drawing.Size(381, 34);
             this.textBoxPrizePlaceName.TabIndex = 16;
             // 
             // textBoxPrizeId
             // 
-            this.textBoxPrizeId.Location = new System.Drawing.Point(177, 30);
-            this.textBoxPrizeId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrizeId.Location = new System.Drawing.Point(288, 49);
+            this.textBoxPrizeId.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxPrizeId.Name = "textBoxPrizeId";
-            this.textBoxPrizeId.Size = new System.Drawing.Size(127, 22);
+            this.textBoxPrizeId.Size = new System.Drawing.Size(204, 34);
             this.textBoxPrizeId.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(35, 183);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(57, 297);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 17);
+            this.label4.Size = new System.Drawing.Size(169, 27);
             this.label4.TabIndex = 14;
             this.label4.Text = "Prize Amount: ";
             // 
@@ -120,10 +120,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(35, 134);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(57, 218);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 17);
+            this.label3.Size = new System.Drawing.Size(210, 27);
             this.label3.TabIndex = 13;
             this.label3.Text = "Prize Percentage: ";
             // 
@@ -131,10 +131,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(35, 81);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(57, 132);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.Size = new System.Drawing.Size(156, 27);
             this.label2.TabIndex = 12;
             this.label2.Text = "Place Name: ";
             // 
@@ -142,19 +142,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(57, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 17);
+            this.label1.Size = new System.Drawing.Size(46, 27);
             this.label1.TabIndex = 11;
             this.label1.Text = "Id: ";
             // 
             // FormDeletePrize
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(457, 334);
+            this.ClientSize = new System.Drawing.Size(743, 543);
             this.Controls.Add(this.comboBoxTournamentsName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonDelete);
@@ -166,8 +166,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FormDeletePrize";
             this.Text = "FormDeletePrize";
             this.ResumeLayout(false);
