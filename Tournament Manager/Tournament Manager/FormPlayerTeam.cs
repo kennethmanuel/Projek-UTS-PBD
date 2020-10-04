@@ -31,6 +31,7 @@ namespace Tournament_Manager
 
         private void FormatDataGridPlayers()
         {
+            dataGridViewPlayer.Columns.Clear();
             dataGridViewPlayer.Columns.Add("Id", "Id");
             dataGridViewPlayer.Columns.Add("Name", "Name");
             dataGridViewPlayer.Columns.Add("Email", "Email");
@@ -53,7 +54,7 @@ namespace Tournament_Manager
             }
         }
 
-        private void FormPlayerTeam_Load(object sender, EventArgs e)
+        public void FormPlayerTeam_Load(object sender, EventArgs e)
         {
             //Team
             teamList = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
@@ -123,7 +124,7 @@ namespace Tournament_Manager
 
             FormEditPlayer frm = new FormEditPlayer();
             frm.Owner = this;
-            frm.ShowDialog();
+            frm.Show();
             
         }
 

@@ -62,11 +62,18 @@ namespace Tournament_Manager
                 Players p = new Players(int.Parse(textBoxPlayerId.Text), textBoxPlayerName.Text, textBoxPlayerEmail.Text, team);
                 Players.EditPlayer(p);
                 MessageBox.Show("Player has been changed", "Information");
+
+                FormPlayerTeam formPlayerTeam = (FormPlayerTeam)this.Owner;
+                formPlayerTeam.FormPlayerTeam_Load(buttonEdit, e);
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Player cannot be saved. Error Message: " + ex.Message, "Error");
+
             }
+
+
         }
     }
 }
