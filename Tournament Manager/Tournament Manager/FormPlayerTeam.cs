@@ -112,6 +112,9 @@ namespace Tournament_Manager
 
         private void buttonDeletePlayer_Click(object sender, EventArgs e)
         {
+            int selectedIndex = dataGridViewPlayer.CurrentCell.RowIndex;
+            selectedPlayer = (int)dataGridViewPlayer.Rows[selectedIndex].Cells[0].Value;
+
             FormDeletePlayer frm = new FormDeletePlayer();
             frm.Owner = this;
             frm.ShowDialog();

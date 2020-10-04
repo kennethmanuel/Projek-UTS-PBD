@@ -148,7 +148,7 @@ namespace TournamentClassLibrary
         /// <returns></returns>
         public static string DeletePlayer(Players pl)
         {
-            string sql = "Delete from players p where p.Id='" + pl.Id + "'";
+            string sql = "Delete from players where Id='" + pl.Id + "'";
             try
             {
                 Connection.ExecuteDML(sql);

@@ -52,5 +52,12 @@ namespace Tournament_Manager
         {
 
         }
+
+        private void FormAddPlayer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormPlayerTeam frm = (FormPlayerTeam)this.Owner;
+            frm.FormPlayerTeam_Load(buttonAdd, e);
+            this.Close();
+        }
     }
 }

@@ -159,6 +159,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.Name = "FormAddPlayer";
             this.Text = "FormAddPlayer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddPlayer_FormClosed);
             this.Load += new System.EventHandler(this.FormAddPlayer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

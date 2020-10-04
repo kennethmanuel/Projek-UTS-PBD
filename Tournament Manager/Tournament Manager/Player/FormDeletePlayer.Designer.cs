@@ -125,7 +125,6 @@
             this.textBoxPlayerId.Name = "textBoxPlayerId";
             this.textBoxPlayerId.Size = new System.Drawing.Size(375, 34);
             this.textBoxPlayerId.TabIndex = 20;
-            this.textBoxPlayerId.TextChanged += new System.EventHandler(this.textBoxPlayerId_TextChanged);
             // 
             // label3
             // 
@@ -144,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(682, 632);
+            this.ClientSize = new System.Drawing.Size(623, 632);
             this.Controls.Add(this.comboBoxTeam);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPlayerEmail);

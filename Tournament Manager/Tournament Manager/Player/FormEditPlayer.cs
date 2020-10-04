@@ -49,11 +49,6 @@ namespace Tournament_Manager
             comboBoxTeam.SelectedIndex = comboBoxTeam.FindStringExact(teamName);
         }
 
-        private void textBoxPlayerId_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             try
@@ -70,10 +65,7 @@ namespace Tournament_Manager
             catch (Exception ex)
             {
                 MessageBox.Show("Player cannot be saved. Error Message: " + ex.Message, "Error");
-
             }
-
-
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Tournament_Manager.Player
     {
         List<Players> listPlayers = new List<Players>();
         List<Teams> listTeams = new List<Teams>();
+        int selectedPlayerId = FormPlayerTeam.selectedPlayer;
         public FormDeletePlayer()
         {
             InitializeComponent();
@@ -31,35 +32,31 @@ namespace Tournament_Manager.Player
                 if (add == "1")
                 {
                     MessageBox.Show("Player has been deleted.", "information");
+                    FormPlayerTeam frm = (FormPlayerTeam)this.Owner;
+                    frm.FormPlayerTeam_Load(buttonDelete, e);
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Player Failed to deleted. Message error: ", add);
                 }
-
             }
         }
 
         private void FormDeletePlayer_Load(object sender, EventArgs e)
         {
+            listTeams = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
 
-            textBoxPlayerName.Enabled = false;
+            Players selectedPlayer = Players.SelectPlayer(selectedPlayerId);
+                       
+            textBoxPlayerId.Text = selectedPlayer.Id.ToString();
+            textBoxPlayerName.Text = selectedPlayer.Name;
+            textBoxPlayerEmail.Text = selectedPlayer.Email;
+            comboBoxTeam.Text = selectedPlayer.Team.Name;
         }
 
         private void textBoxPlayerId_TextChanged(object sender, EventArgs e)
         {
-            listPlayers = Players.ReadData("Id", textBoxPlayerId.Text);
-            if (listTeams.Count > 0)
-            {
-                textBoxPlayerName.Text = listPlayers[0].Name;
-                textBoxPlayerEmail.Text = listPlayers[0].Email;                
-                buttonDelete.Focus();
-            }
-            else
-            {
-                MessageBox.Show("Player Id is not found.", "Error");
-                textBoxPlayerName.Text = "";
-            }
         }
     }
 }

@@ -20,10 +20,10 @@ namespace Tournament_Manager
             InitializeComponent();
         }
 
-        private void FormPrize_Load(object sender, EventArgs e)
+        public void FormPrize_Load(object sender, EventArgs e)
         {
             FormatDataGrid();
-            listPrize = Prize.ReadData("", "");
+            listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
             ViewDataGrid();
         }
 

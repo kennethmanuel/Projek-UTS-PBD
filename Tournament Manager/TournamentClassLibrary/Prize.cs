@@ -69,16 +69,17 @@ namespace TournamentClassLibrary
         /// <param name="criteria"></param>
         /// <param name="criteriaValue"></param>
         /// <returns></returns>
-        public static List<Prize> ReadData(string criteria, string criteriaValue)
+        public static List<Prize> ReadData(Tournaments selectedTournaments, string criteria)
         {
+            int tournamentsId = selectedTournaments.Id;
             string sql = "";
             if (criteria == "")
             {
-                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee From prizes p inner join tournaments t on p.tournaments_id = t.id";
+                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee From prizes p inner join tournaments t on p.tournaments_id = t.id where p.tournaments_id in (select tt.id from tournaments tt where tournaments_id=" + tournamentsId + ")";
             }
             else
             {
-                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id where p.tournaments_id in (select tt.id from tournaments tt where tournaments_id=" + tournamentsId + ") AND ( p.id LIKE '%" + criteria + "%' OR p.placeName LIKE '%" + criteria + "%' OR p.prizeAmount LIKE '%" + criteria + "%' OR p.prizePercentage LIKE '%" + criteria + "%' OR p.tournaments_id LIKE '%" + criteria + "%' OR t.name like '%" + criteria + "%' )";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -113,6 +114,11 @@ namespace TournamentClassLibrary
                 code = "1";
             }
             return code;
+        }
+        public static void AddData(Prize p)
+        {
+            string sql = "insert into Prizes(Id, PlaceName, PriceAmount, PrizePercentage, Tournaments_Id) values ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
+            Connection.ExecuteDML(sql);
         }
         #endregion
     }

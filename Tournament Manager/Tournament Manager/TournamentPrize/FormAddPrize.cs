@@ -13,6 +13,8 @@ namespace Tournament_Manager.TournamentPrize
 {
     public partial class FormAddPrize : Form
     {
+        List<Prize> listPrize = new List<Prize>();
+        List<Tournaments> listTournaments = new List<Tournaments>();
         public FormAddPrize()
         {
             InitializeComponent();
@@ -20,10 +22,38 @@ namespace Tournament_Manager.TournamentPrize
 
         private void FormAddPrize_Load(object sender, EventArgs e)
         {
+            listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
+            listTournaments = Tournaments.ReadData();
+            comboBoxTournamentsName.DataSource = listTournaments;
+            comboBoxTournamentsName.DisplayMember = "Name";
+            comboBoxTournamentsName.DropDownStyle = ComboBoxStyle.DropDownList;
+
             string newId = Prize.GenerateCode();
             textBoxPrizeId.Text = newId;
             textBoxPrizeId.Enabled = false;
             textBoxPrizePlaceName.Focus();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Tournaments t = (Tournaments)comboBoxTournamentsName.SelectedItem;
+                Prize prize = new Prize(int.Parse(textBoxPrizeId.Text), textBoxPrizePlaceName.Text, int.Parse(textBoxPriceAmount.Text), double.Parse(textBoxPrizePercentage.Text), t);
+                Prize.AddData(prize);
+                MessageBox.Show("Prize has been saved", "information");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Prize cannot be saved. Error Message: " + ex.Message, "Error");
+            }
+        }
+
+        private void FormAddPrize_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormPrize frm = (FormPrize)this.Owner;
+            frm.FormPrize_Load(buttonAdd, e);
+            this.Close();
         }
     }
 }

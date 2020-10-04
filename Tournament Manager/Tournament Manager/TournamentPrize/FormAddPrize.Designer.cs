@@ -46,7 +46,7 @@
             this.comboBoxTournamentsName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTournamentsName.FormattingEnabled = true;
             this.comboBoxTournamentsName.Location = new System.Drawing.Point(299, 419);
-            this.comboBoxTournamentsName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBoxTournamentsName.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxTournamentsName.Name = "comboBoxTournamentsName";
             this.comboBoxTournamentsName.Size = new System.Drawing.Size(381, 34);
             this.comboBoxTournamentsName.TabIndex = 21;
@@ -69,18 +69,19 @@
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Location = new System.Drawing.Point(498, 483);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(6);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(162, 46);
             this.buttonAdd.TabIndex = 19;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // textBoxPriceAmount
             // 
             this.textBoxPriceAmount.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPriceAmount.Location = new System.Drawing.Point(299, 340);
-            this.textBoxPriceAmount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxPriceAmount.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPriceAmount.Name = "textBoxPriceAmount";
             this.textBoxPriceAmount.Size = new System.Drawing.Size(381, 34);
             this.textBoxPriceAmount.TabIndex = 18;
@@ -89,7 +90,7 @@
             // 
             this.textBoxPrizePercentage.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrizePercentage.Location = new System.Drawing.Point(299, 260);
-            this.textBoxPrizePercentage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxPrizePercentage.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPrizePercentage.Name = "textBoxPrizePercentage";
             this.textBoxPrizePercentage.Size = new System.Drawing.Size(381, 34);
             this.textBoxPrizePercentage.TabIndex = 17;
@@ -98,7 +99,7 @@
             // 
             this.textBoxPrizePlaceName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrizePlaceName.Location = new System.Drawing.Point(299, 174);
-            this.textBoxPrizePlaceName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxPrizePlaceName.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPrizePlaceName.Name = "textBoxPrizePlaceName";
             this.textBoxPrizePlaceName.Size = new System.Drawing.Size(381, 34);
             this.textBoxPrizePlaceName.TabIndex = 16;
@@ -107,7 +108,7 @@
             // 
             this.textBoxPrizeId.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrizeId.Location = new System.Drawing.Point(299, 96);
-            this.textBoxPrizeId.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxPrizeId.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPrizeId.Name = "textBoxPrizeId";
             this.textBoxPrizeId.Size = new System.Drawing.Size(203, 34);
             this.textBoxPrizeId.TabIndex = 15;
@@ -179,9 +180,10 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormAddPrize";
             this.Text = "FormAddPrize";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddPrize_FormClosed);
             this.Load += new System.EventHandler(this.FormAddPrize_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
