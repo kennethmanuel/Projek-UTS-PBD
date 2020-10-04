@@ -63,5 +63,13 @@ namespace Tournament_Manager
             frm.Owner = this;
             frm.ShowDialog();
         }
+
+        private void loadAnotherTournamentFromDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTournament form = new FormTournament();
+            form.Owner = this;
+            this.Hide();
+            form.ShowDialog();
+        }
     }
 }
