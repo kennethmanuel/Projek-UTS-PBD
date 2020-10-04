@@ -41,38 +41,44 @@
             // 
             // comboBoxTeam
             // 
+            this.comboBoxTeam.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTeam.FormattingEnabled = true;
-            this.comboBoxTeam.Location = new System.Drawing.Point(51, 287);
-            this.comboBoxTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxTeam.Location = new System.Drawing.Point(89, 520);
+            this.comboBoxTeam.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.comboBoxTeam.Name = "comboBoxTeam";
-            this.comboBoxTeam.Size = new System.Drawing.Size(232, 24);
+            this.comboBoxTeam.Size = new System.Drawing.Size(403, 34);
             this.comboBoxTeam.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(48, 255);
+            this.label1.Location = new System.Drawing.Point(84, 462);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.Size = new System.Drawing.Size(69, 27);
             this.label1.TabIndex = 26;
             this.label1.Text = "Team";
             // 
             // textBoxPlayerEmail
             // 
-            this.textBoxPlayerEmail.Location = new System.Drawing.Point(51, 215);
-            this.textBoxPlayerEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPlayerEmail.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPlayerEmail.Location = new System.Drawing.Point(89, 390);
+            this.textBoxPlayerEmail.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxPlayerEmail.Name = "textBoxPlayerEmail";
-            this.textBoxPlayerEmail.Size = new System.Drawing.Size(232, 22);
+            this.textBoxPlayerEmail.Size = new System.Drawing.Size(403, 34);
             this.textBoxPlayerEmail.TabIndex = 25;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(48, 185);
+            this.label4.Location = new System.Drawing.Point(84, 335);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 17);
+            this.label4.Size = new System.Drawing.Size(147, 27);
             this.label4.TabIndex = 24;
             this.label4.Text = "Player Email";
             // 
@@ -80,11 +86,11 @@
             // 
             this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEdit.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEdit.Location = new System.Drawing.Point(208, 338);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonEdit.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEdit.Location = new System.Drawing.Point(364, 613);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
+            this.buttonEdit.Size = new System.Drawing.Size(131, 42);
             this.buttonEdit.TabIndex = 23;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
@@ -92,47 +98,53 @@
             // 
             // textBoxPlayerName
             // 
-            this.textBoxPlayerName.Location = new System.Drawing.Point(51, 151);
-            this.textBoxPlayerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPlayerName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPlayerName.Location = new System.Drawing.Point(89, 274);
+            this.textBoxPlayerName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxPlayerName.Name = "textBoxPlayerName";
-            this.textBoxPlayerName.Size = new System.Drawing.Size(232, 22);
+            this.textBoxPlayerName.Size = new System.Drawing.Size(403, 34);
             this.textBoxPlayerName.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(48, 121);
+            this.label2.Location = new System.Drawing.Point(84, 219);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 17);
+            this.label2.Size = new System.Drawing.Size(150, 27);
             this.label2.TabIndex = 21;
             this.label2.Text = "Player Name";
             // 
             // textBoxPlayerId
             // 
             this.textBoxPlayerId.Enabled = false;
-            this.textBoxPlayerId.Location = new System.Drawing.Point(51, 80);
-            this.textBoxPlayerId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPlayerId.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPlayerId.Location = new System.Drawing.Point(89, 145);
+            this.textBoxPlayerId.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxPlayerId.Name = "textBoxPlayerId";
-            this.textBoxPlayerId.Size = new System.Drawing.Size(232, 22);
+            this.textBoxPlayerId.Size = new System.Drawing.Size(403, 34);
             this.textBoxPlayerId.TabIndex = 20;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(48, 49);
+            this.label3.Location = new System.Drawing.Point(84, 89);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(107, 27);
             this.label3.TabIndex = 19;
             this.label3.Text = "Player Id";
             // 
             // FormEditPlayer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(344, 404);
+            this.ClientSize = new System.Drawing.Size(602, 732);
             this.Controls.Add(this.comboBoxTeam);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPlayerEmail);
@@ -142,8 +154,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxPlayerId);
             this.Controls.Add(this.label3);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FormEditPlayer";
             this.Text = "Edit Player";
             this.Load += new System.EventHandler(this.FormEditPlayer_Load);
