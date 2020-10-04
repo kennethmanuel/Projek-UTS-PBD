@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TournamentClassLibrary;
 
-namespace Tournament_Manager.Prize
+namespace Tournament_Manager.TournamentPrize
 {
-    public partial class FormDeletePrize : Form
+    public partial class FormAddPrize : Form
     {
-        public FormDeletePrize()
+        public FormAddPrize()
         {
             InitializeComponent();
         }
 
-        private void FormDeletePrize_Load(object sender, EventArgs e)
+        private void FormAddPrize_Load(object sender, EventArgs e)
         {
 
         }

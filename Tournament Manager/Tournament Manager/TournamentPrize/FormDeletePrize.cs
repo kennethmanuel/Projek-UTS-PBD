@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tournament_Manager.Prize
+namespace Tournament_Manager.TournamentPrize
 {
-    public partial class FormAddPrize : Form
+    public partial class FormDeletePrize : Form
     {
-        public FormAddPrize()
+        public FormDeletePrize()
         {
             InitializeComponent();
-        }
-
-        private void FormAddPrize_Load(object sender, EventArgs e)
-        {
-            textBoxPrizeId.Enabled = false;
         }
     }
 }

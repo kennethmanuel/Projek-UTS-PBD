@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tournament_Manager.Prize
+namespace Tournament_Manager.TournamentPrize
 {
     public partial class FormEditPrize : Form
     {
