@@ -44,98 +44,112 @@
             // comboBoxTournamentsName
             // 
             this.comboBoxTournamentsName.FormattingEnabled = true;
-            this.comboBoxTournamentsName.Location = new System.Drawing.Point(122, 174);
+            this.comboBoxTournamentsName.Location = new System.Drawing.Point(161, 258);
+            this.comboBoxTournamentsName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxTournamentsName.Name = "comboBoxTournamentsName";
-            this.comboBoxTournamentsName.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxTournamentsName.Size = new System.Drawing.Size(207, 24);
             this.comboBoxTournamentsName.TabIndex = 21;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 177);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(23, 258);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.Size = new System.Drawing.Size(138, 16);
             this.label5.TabIndex = 20;
             this.label5.Text = "Tournaments Name: ";
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(225, 209);
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(268, 297);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(87, 28);
             this.buttonAdd.TabIndex = 19;
             this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             // 
             // textBoxPriceAmount
             // 
-            this.textBoxPriceAmount.Location = new System.Drawing.Point(122, 134);
+            this.textBoxPriceAmount.Location = new System.Drawing.Point(161, 209);
+            this.textBoxPriceAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPriceAmount.Name = "textBoxPriceAmount";
-            this.textBoxPriceAmount.Size = new System.Drawing.Size(178, 20);
+            this.textBoxPriceAmount.Size = new System.Drawing.Size(207, 22);
             this.textBoxPriceAmount.TabIndex = 18;
             // 
             // textBoxPrizePercentage
             // 
-            this.textBoxPrizePercentage.Location = new System.Drawing.Point(122, 94);
+            this.textBoxPrizePercentage.Location = new System.Drawing.Point(161, 160);
+            this.textBoxPrizePercentage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPrizePercentage.Name = "textBoxPrizePercentage";
-            this.textBoxPrizePercentage.Size = new System.Drawing.Size(178, 20);
+            this.textBoxPrizePercentage.Size = new System.Drawing.Size(207, 22);
             this.textBoxPrizePercentage.TabIndex = 17;
             // 
             // textBoxPrizePlaceName
             // 
-            this.textBoxPrizePlaceName.Location = new System.Drawing.Point(122, 51);
+            this.textBoxPrizePlaceName.Location = new System.Drawing.Point(161, 107);
+            this.textBoxPrizePlaceName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPrizePlaceName.Name = "textBoxPrizePlaceName";
-            this.textBoxPrizePlaceName.Size = new System.Drawing.Size(178, 20);
+            this.textBoxPrizePlaceName.Size = new System.Drawing.Size(207, 22);
             this.textBoxPrizePlaceName.TabIndex = 16;
             // 
             // textBoxPrizeId
             // 
-            this.textBoxPrizeId.Location = new System.Drawing.Point(122, 12);
+            this.textBoxPrizeId.Location = new System.Drawing.Point(161, 59);
+            this.textBoxPrizeId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPrizeId.Name = "textBoxPrizeId";
-            this.textBoxPrizeId.Size = new System.Drawing.Size(96, 20);
+            this.textBoxPrizeId.Size = new System.Drawing.Size(111, 22);
             this.textBoxPrizeId.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 137);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(23, 209);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.Size = new System.Drawing.Size(98, 16);
             this.label4.TabIndex = 14;
             this.label4.Text = "Prize Amount: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 97);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(23, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.Size = new System.Drawing.Size(124, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Prize Percentage: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 54);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(23, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(91, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Place Name: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(23, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 13);
+            this.label1.Size = new System.Drawing.Size(27, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Id: ";
             // 
             // FormAddPrize
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 242);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.ClientSize = new System.Drawing.Size(404, 353);
             this.Controls.Add(this.comboBoxTournamentsName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonAdd);
@@ -147,6 +161,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAddPrize";
             this.Text = "FormAddPrize";
             this.Load += new System.EventHandler(this.FormAddPrize_Load);

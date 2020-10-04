@@ -30,6 +30,7 @@
         {
             this.tabControlTeam = new System.Windows.Forms.TabControl();
             this.tabPagePlayer = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBoxSearchPlayer = new System.Windows.Forms.TextBox();
             this.buttonDeletePlayer = new System.Windows.Forms.Button();
             this.buttonEditPlayer = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.buttonEditTeam = new System.Windows.Forms.Button();
             this.buttonAddTeam = new System.Windows.Forms.Button();
             this.dataGridViewTeam = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControlTeam.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlayer)).BeginInit();
@@ -53,7 +53,7 @@
             // 
             this.tabControlTeam.Controls.Add(this.tabPagePlayer);
             this.tabControlTeam.Controls.Add(this.tabPageTeam);
-            this.tabControlTeam.Location = new System.Drawing.Point(12, 38);
+            this.tabControlTeam.Location = new System.Drawing.Point(12, 39);
             this.tabControlTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControlTeam.Name = "tabControlTeam";
             this.tabControlTeam.SelectedIndex = 0;
@@ -77,6 +77,19 @@
             this.tabPagePlayer.Text = "Players";
             this.tabPagePlayer.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(752, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // textBoxSearchPlayer
             // 
             this.textBoxSearchPlayer.Location = new System.Drawing.Point(19, 59);
@@ -88,39 +101,49 @@
             // 
             // buttonDeletePlayer
             // 
+            this.buttonDeletePlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonDeletePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeletePlayer.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeletePlayer.Location = new System.Drawing.Point(687, 46);
             this.buttonDeletePlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeletePlayer.Name = "buttonDeletePlayer";
             this.buttonDeletePlayer.Size = new System.Drawing.Size(140, 34);
             this.buttonDeletePlayer.TabIndex = 6;
             this.buttonDeletePlayer.Text = "Delete Player";
-            this.buttonDeletePlayer.UseVisualStyleBackColor = true;
+            this.buttonDeletePlayer.UseVisualStyleBackColor = false;
             this.buttonDeletePlayer.Click += new System.EventHandler(this.buttonDeletePlayer_Click);
             // 
             // buttonEditPlayer
             // 
+            this.buttonEditPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonEditPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditPlayer.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditPlayer.Location = new System.Drawing.Point(541, 46);
             this.buttonEditPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEditPlayer.Name = "buttonEditPlayer";
             this.buttonEditPlayer.Size = new System.Drawing.Size(140, 34);
             this.buttonEditPlayer.TabIndex = 5;
             this.buttonEditPlayer.Text = "Edit Player";
-            this.buttonEditPlayer.UseVisualStyleBackColor = true;
+            this.buttonEditPlayer.UseVisualStyleBackColor = false;
             this.buttonEditPlayer.Click += new System.EventHandler(this.buttonEditPlayer_Click);
             // 
             // buttonAddPlayer
             // 
+            this.buttonAddPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonAddPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddPlayer.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddPlayer.Location = new System.Drawing.Point(395, 46);
             this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAddPlayer.Name = "buttonAddPlayer";
             this.buttonAddPlayer.Size = new System.Drawing.Size(140, 34);
             this.buttonAddPlayer.TabIndex = 4;
             this.buttonAddPlayer.Text = "Add New Player";
-            this.buttonAddPlayer.UseVisualStyleBackColor = true;
+            this.buttonAddPlayer.UseVisualStyleBackColor = false;
             this.buttonAddPlayer.Click += new System.EventHandler(this.buttonAddPlayer_Click);
             // 
             // dataGridViewPlayer
             // 
+            this.dataGridViewPlayer.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewPlayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPlayer.Location = new System.Drawing.Point(19, 94);
             this.dataGridViewPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -158,39 +181,49 @@
             // 
             // buttonDeleteTeam
             // 
+            this.buttonDeleteTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonDeleteTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteTeam.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeleteTeam.Location = new System.Drawing.Point(691, 46);
             this.buttonDeleteTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeleteTeam.Name = "buttonDeleteTeam";
             this.buttonDeleteTeam.Size = new System.Drawing.Size(140, 34);
             this.buttonDeleteTeam.TabIndex = 3;
             this.buttonDeleteTeam.Text = "Delete Team";
-            this.buttonDeleteTeam.UseVisualStyleBackColor = true;
+            this.buttonDeleteTeam.UseVisualStyleBackColor = false;
             this.buttonDeleteTeam.Click += new System.EventHandler(this.buttonDeleteTeam_Click);
             // 
             // buttonEditTeam
             // 
+            this.buttonEditTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonEditTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditTeam.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditTeam.Location = new System.Drawing.Point(544, 46);
             this.buttonEditTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEditTeam.Name = "buttonEditTeam";
             this.buttonEditTeam.Size = new System.Drawing.Size(140, 34);
             this.buttonEditTeam.TabIndex = 2;
             this.buttonEditTeam.Text = "Edit Team";
-            this.buttonEditTeam.UseVisualStyleBackColor = true;
+            this.buttonEditTeam.UseVisualStyleBackColor = false;
             this.buttonEditTeam.Click += new System.EventHandler(this.buttonEditTeam_Click);
             // 
             // buttonAddTeam
             // 
+            this.buttonAddTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonAddTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddTeam.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddTeam.Location = new System.Drawing.Point(397, 46);
             this.buttonAddTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAddTeam.Name = "buttonAddTeam";
             this.buttonAddTeam.Size = new System.Drawing.Size(140, 34);
             this.buttonAddTeam.TabIndex = 1;
             this.buttonAddTeam.Text = "Add New Team";
-            this.buttonAddTeam.UseVisualStyleBackColor = true;
+            this.buttonAddTeam.UseVisualStyleBackColor = false;
             this.buttonAddTeam.Click += new System.EventHandler(this.buttonAddTeam_Click);
             // 
             // dataGridViewTeam
             // 
+            this.dataGridViewTeam.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewTeam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTeam.Location = new System.Drawing.Point(17, 98);
             this.dataGridViewTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -201,22 +234,14 @@
             this.dataGridViewTeam.Size = new System.Drawing.Size(813, 334);
             this.dataGridViewTeam.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(752, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormPlayerTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(881, 529);
             this.Controls.Add(this.tabControlTeam);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPlayerTeam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

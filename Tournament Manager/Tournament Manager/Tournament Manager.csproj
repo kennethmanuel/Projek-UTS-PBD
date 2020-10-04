@@ -261,6 +261,12 @@
     <EmbeddedResource Include="Tournament Matchup\FormAddMatchup.resx">
       <DependentUpon>FormAddMatchup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tournament Matchup\FormDeleteMatchup.resx">
+      <DependentUpon>FormDeleteMatchup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tournament Matchup\FormEditMatchup.resx">
+      <DependentUpon>FormEditMatchup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TournamentPrize\FormAddPrize.resx">
       <DependentUpon>FormAddPrize.cs</DependentUpon>
     </EmbeddedResource>

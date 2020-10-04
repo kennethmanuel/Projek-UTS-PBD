@@ -58,5 +58,10 @@ namespace Tournament_Manager.Match
             matchupList = Matchups.ReadData("", "");
             ShowDataGridMatchup();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

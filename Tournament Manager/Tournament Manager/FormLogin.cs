@@ -61,5 +61,10 @@ namespace Tournament_Manager
             textBoxServer.Text = "localhost";
             textBoxDatabase.Text = "tournament_db";
         }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

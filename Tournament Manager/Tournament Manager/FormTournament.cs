@@ -39,5 +39,11 @@ namespace Tournament_Manager
             this.Hide();
             form.ShowDialog();
         }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
     }
 }
