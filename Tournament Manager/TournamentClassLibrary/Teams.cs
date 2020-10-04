@@ -84,9 +84,10 @@ namespace TournamentClassLibrary
         /// Add new team to database
         /// </summary>
         /// <param name="p"></param>
-        public static void AddTeams(Teams t)
+        public static void AddTeams(Teams t, Tournaments selectedTournament)
         {
-            string sql = "insert into teams(Id, Name) values ('" + t.Id + "','" + t.Name.Replace("'", "\\'") + "')";
+            string sql = "insert into teams(Id, Name) values ('" + t.Id + "','" + t.Name.Replace("'", "\\'") + "');  INSERT INTO tournamententry VALUES ('"+ selectedTournament.Id + "', '" + t.Id +  "');";
+            
             Connection.ExecuteDML(sql);
         }
 
@@ -103,11 +104,12 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Delete Team from database
         /// </summary>
-        /// <param name="te"></param>
+        /// <param name="team"></param>
         /// <returns></returns>
-        public static string DeleteTeams(Teams te)
+        public static string DeleteTeams(Teams team)
         {
-            string sql = "Delete from teams where Id = '" + te.Id + "'";
+            string sql = "DELETE FROM players WHERE team_id="+ team
+                .Id+"; DELETE FROM tournamententry  WHERE teams_id="+team.Id+"; DELETE FROM Teams WHERE Id = '" + team.Id + "';";
             try
             {
                 Connection.ExecuteDML(sql);
@@ -141,6 +143,18 @@ namespace TournamentClassLibrary
             return code;
         }
 
+        public static Teams SelectTeam(int teamId)
+        {
+            string sql = "SELECT * FROM teams t WHERE t.id=" + teamId;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            value.Read();
+
+            Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString());
+
+            return t;
+        }
         
         #endregion
     }

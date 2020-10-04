@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Tournament_Manager.Team
     public partial class FormDeleteTeam : Form
     {
         List<Teams> listTeams = new List<Teams>();
+        int selectedTeamId = FormPlayerTeam.selectedTeam;
         public FormDeleteTeam()
         {
             InitializeComponent();
@@ -22,7 +24,10 @@ namespace Tournament_Manager.Team
 
         private void FormDeleteTeam_Load(object sender, EventArgs e)
         {
-            textBoxTeamName.Enabled = false;
+            Teams selectedTeam = Teams.SelectTeam(selectedTeamId);
+
+            textBoxTeamId.Text = selectedTeam.Id.ToString();
+            textBoxTeamName.Text = selectedTeam.Name;
         }
 
         private void textBoxTeamId_TextChanged(object sender, EventArgs e)
@@ -57,6 +62,10 @@ namespace Tournament_Manager.Team
                 {
                     MessageBox.Show("Team Failed to deleted. Message error: ", add);
                 }
+
+                FormPlayerTeam formPlayerTeam = (FormPlayerTeam)this.Owner;
+                formPlayerTeam.FormPlayerTeam_Load(buttonDelete, e);
+                this.Close();
             }
         }
     }

@@ -23,7 +23,7 @@ namespace Tournament_Manager
             try
             {
                 Teams t = new Teams(int.Parse(textBoxTeamId.Text), textBoxTeamName.Text);
-                Teams.AddTeams(t);
+                Teams.AddTeams(t, FormMenu.selectedTournament);
                 MessageBox.Show("Team has been Saved", "information");
             }
             catch (Exception ex)
@@ -39,6 +39,14 @@ namespace Tournament_Manager
             textBoxTeamId.Text = newCode;
             textBoxTeamId.Enabled = false;
             textBoxTeamName.Focus();
+        }
+
+        private void FormAddTeam_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormPlayerTeam formPlayerTeam = (FormPlayerTeam)this.Owner;
+            formPlayerTeam.FormPlayerTeam_Load(formPlayerTeam, e);
+            this.Close();
+
         }
     }
 }

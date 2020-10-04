@@ -101,6 +101,7 @@
             this.Name = "FormAddTeam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddTeam";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddTeam_FormClosed);
             this.Load += new System.EventHandler(this.FormAddTeam_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -51,6 +51,7 @@
             // 
             // textBoxTeamName
             // 
+            this.textBoxTeamName.Enabled = false;
             this.textBoxTeamName.Location = new System.Drawing.Point(34, 142);
             this.textBoxTeamName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTeamName.Name = "textBoxTeamName";
@@ -69,6 +70,7 @@
             // 
             // textBoxTeamId
             // 
+            this.textBoxTeamId.Enabled = false;
             this.textBoxTeamId.Location = new System.Drawing.Point(34, 71);
             this.textBoxTeamId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTeamId.Name = "textBoxTeamId";

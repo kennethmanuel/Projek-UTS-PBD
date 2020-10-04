@@ -18,6 +18,7 @@ namespace Tournament_Manager
         List<Teams> teamList = new List<Teams>();
         List<Players> playerList = new List<Players>();
         public static int selectedPlayer;
+        public static int selectedTeam;
         
         public FormPlayerTeam()
         {
@@ -130,6 +131,9 @@ namespace Tournament_Manager
 
         private void buttonEditTeam_Click(object sender, EventArgs e)
         {
+            int selectedIndex = dataGridViewTeam.CurrentCell.RowIndex;
+            selectedTeam = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
+
             FormEditTeam frm = new FormEditTeam();
             frm.Owner = this;
             frm.ShowDialog();
@@ -137,6 +141,9 @@ namespace Tournament_Manager
 
         private void buttonDeleteTeam_Click(object sender, EventArgs e)
         {
+            int selectedIndex = dataGridViewTeam.CurrentCell.RowIndex;
+            selectedTeam = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
+
             FormDeleteTeam frm = new FormDeleteTeam();
             frm.Owner = this;
             frm.ShowDialog();

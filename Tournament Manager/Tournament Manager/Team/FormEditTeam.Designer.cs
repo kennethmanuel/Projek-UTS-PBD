@@ -70,12 +70,12 @@
             // 
             // textBoxTeamId
             // 
+            this.textBoxTeamId.Enabled = false;
             this.textBoxTeamId.Location = new System.Drawing.Point(40, 78);
             this.textBoxTeamId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTeamId.Name = "textBoxTeamId";
             this.textBoxTeamId.Size = new System.Drawing.Size(232, 22);
             this.textBoxTeamId.TabIndex = 6;
-            this.textBoxTeamId.TextChanged += new System.EventHandler(this.textBoxTeamId_TextChanged);
             // 
             // label1
             // 
