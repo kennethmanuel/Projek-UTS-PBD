@@ -56,5 +56,12 @@ namespace Tournament_Manager
             form.Owner = this;
             form.ShowDialog();
         }
+
+        private void prizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPrize frm = new FormPrize();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
     }
 }

@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Tournament_Manager.Prize
+{
+    public partial class FormDeletePrize : Form
+    {
+        public FormDeletePrize()
+        {
+            InitializeComponent();
+        }
+
+        private void FormDeletePrize_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

@@ -9,11 +9,13 @@ namespace TournamentClassLibrary
 {
     public class Prize
     {
+        #region Data Member
         private int id; //id is also a place number
         private string placeName;
         private int prizeAmount;
         private double prizePercentage;
         private Tournaments tournament;
+        #endregion
 
         #region Constructor
         public Prize(int id, string placeName, int prizeAmount, double prizePercentage, Tournaments tournament)
@@ -63,7 +65,36 @@ namespace TournamentClassLibrary
             }
             return prizeList;
         }
+        /// <summary>
+        /// read data prize
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
+        public static List<Prize> ReadData(string criteria, string criteriaValue)
+        {
+            string sql = "";
+            if (criteria == "")
+            {
+                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee From prizes p inner join tournaments t on p.tournaments_id = t.id";
+            }
+            else
+            {
+                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+            }
 
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<Prize> listPrize = new List<Prize>();
+
+            while (value.Read() == true)
+            {
+                Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
+                Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), int.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
+                listPrize.Add(prize);
+            }
+            return listPrize;
+        }
         #endregion
     }
 }
