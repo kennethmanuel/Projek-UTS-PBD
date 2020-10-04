@@ -15,6 +15,8 @@ namespace Tournament_Manager
     {
         List<Players> listPlayers = new List<Players>();
         List<Teams> listTeams = new List<Teams>();
+        int selectedPlayerId = FormPlayerTeam.selectedPlayer;
+
         public FormEditPlayer()
         {
             InitializeComponent();
@@ -22,12 +24,29 @@ namespace Tournament_Manager
 
         private void FormEditPlayer_Load(object sender, EventArgs e)
         {
-            listTeams = Teams.ReadData("", "");
+            listTeams = TournamentEntry.ReadTeam(FormMenu.selectedTournament,"");
 
             comboBoxTeam.DataSource = listTeams;
             comboBoxTeam.DisplayMember = "Name";
             comboBoxTeam.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            Players selectedPlayer = Players.SelectPlayer(selectedPlayerId);
+
+            int selectedTeamId = selectedPlayer.Team.Id;
+            string teamName = "";
+
+            foreach(Teams t in listTeams)
+            {
+                if(t.Id == selectedTeamId)
+                {
+                    teamName = t.Name;
+                }
+            }
+
+            textBoxPlayerId.Text = selectedPlayer.Id.ToString();
+            textBoxPlayerName.Text = selectedPlayer.Name;
+            textBoxPlayerEmail.Text = selectedPlayer.Email;
+            comboBoxTeam.SelectedIndex = comboBoxTeam.FindStringExact(teamName);
         }
 
         private void textBoxPlayerId_TextChanged(object sender, EventArgs e)
@@ -37,7 +56,6 @@ namespace Tournament_Manager
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-
             try
             {
                 Teams team = (Teams)comboBoxTeam.SelectedItem;

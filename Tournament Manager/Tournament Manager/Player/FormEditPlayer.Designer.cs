@@ -104,12 +104,12 @@
             // 
             // textBoxPlayerId
             // 
+            this.textBoxPlayerId.Enabled = false;
             this.textBoxPlayerId.Location = new System.Drawing.Point(51, 80);
             this.textBoxPlayerId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPlayerId.Name = "textBoxPlayerId";
             this.textBoxPlayerId.Size = new System.Drawing.Size(232, 22);
             this.textBoxPlayerId.TabIndex = 20;
-            this.textBoxPlayerId.TextChanged += new System.EventHandler(this.textBoxPlayerId_TextChanged);
             // 
             // label3
             // 

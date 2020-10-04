@@ -10,12 +10,10 @@ namespace TournamentClassLibrary
 {
     public class Players
     {
-        #region Data Member
         private int id;
         private string name;
         private string email;
         private Teams team;
-        #endregion
 
         #region Constructor
         public Players(int id, string name, string email, Teams teamId)
@@ -36,7 +34,7 @@ namespace TournamentClassLibrary
 
         #region Method
         /// <summary>
-        /// Create list that contains Players object from selected database with specified criteria.
+        /// Create list that contains Players object from all database with specified criteria.
         /// </summary>
         /// <param name="criteria"></param>
         /// <param name="criteriaValue"></param>
@@ -100,6 +98,26 @@ namespace TournamentClassLibrary
                 playerList.Add(p);
             }
             return playerList;
+        }
+
+
+        public static Players SelectPlayer(int playerId)
+        {
+            string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id  WHERE p.id=" + playerId;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            value.Read();
+            
+            Teams team = new Teams(int.Parse(value.GetValue(3).ToString()), value.GetValue(4).ToString());
+
+            Players p = new Players(
+                    int.Parse(value.GetValue(0).ToString()),
+                    value.GetValue(1).ToString(),
+                    value.GetValue(2).ToString(),
+                   team);
+           
+            return p;
         }
 
         /// <summary>

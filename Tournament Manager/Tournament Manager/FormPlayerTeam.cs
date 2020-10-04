@@ -17,8 +17,8 @@ namespace Tournament_Manager
     {
         List<Teams> teamList = new List<Teams>();
         List<Players> playerList = new List<Players>();
+        public static int selectedPlayer;
         
-        FormMenu formMenu;
         public FormPlayerTeam()
         {
             InitializeComponent();
@@ -56,8 +56,7 @@ namespace Tournament_Manager
         private void FormPlayerTeam_Load(object sender, EventArgs e)
         {
             //Team
-            formMenu = (FormMenu)this.Owner;
-            teamList = TournamentEntry.ReadTeam(formMenu.selectedTournament, "");
+            teamList = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
 
             if(teamList.Count >0)
             {
@@ -70,20 +69,20 @@ namespace Tournament_Manager
 
             //Player
             FormatDataGridPlayers();
-            playerList = TournamentEntry.ReadPlayer(formMenu.selectedTournament, "");
+            playerList = TournamentEntry.ReadPlayer(FormMenu.selectedTournament, "");
             ShowDataGridPlayers();
         }
 
         private void textBoxSearchPlayer_TextChanged(object sender, EventArgs e)
         {
             string criteria = textBoxSearchPlayer.Text;
-            playerList = TournamentEntry.ReadPlayer(formMenu.selectedTournament, criteria);
+            playerList = TournamentEntry.ReadPlayer(FormMenu.selectedTournament, criteria);
             ShowDataGridPlayers();
         }
 
         private void textBoxSearchTeam_TextChanged(object sender, EventArgs e)
         {
-            teamList = TournamentEntry.ReadTeam(formMenu.selectedTournament, textBoxSearchTeam.Text);
+            teamList = TournamentEntry.ReadTeam(FormMenu.selectedTournament, textBoxSearchTeam.Text);
 
             if(teamList.Count > 0)
             {
@@ -118,9 +117,14 @@ namespace Tournament_Manager
 
         private void buttonEditPlayer_Click(object sender, EventArgs e)
         {
+            // selected index from datagridview
+            int selectedIndex = dataGridViewPlayer.CurrentCell.RowIndex;
+            selectedPlayer = (int)dataGridViewPlayer.Rows[selectedIndex].Cells[0].Value;
+
             FormEditPlayer frm = new FormEditPlayer();
             frm.Owner = this;
             frm.ShowDialog();
+            
         }
 
         private void buttonEditTeam_Click(object sender, EventArgs e)
@@ -135,6 +139,11 @@ namespace Tournament_Manager
             FormDeleteTeam frm = new FormDeleteTeam();
             frm.Owner = this;
             frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(selectedPlayer.ToString());
         }
     }
 }

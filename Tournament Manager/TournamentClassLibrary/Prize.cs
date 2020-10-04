@@ -9,13 +9,11 @@ namespace TournamentClassLibrary
 {
     public class Prize
     {
-        #region Data Member
         private int id; //id is also a place number
         private string placeName;
         private int prizeAmount;
         private double prizePercentage;
         private Tournaments tournament;
-        #endregion
 
         #region Constructor
         public Prize(int id, string placeName, int prizeAmount, double prizePercentage, Tournaments tournament)

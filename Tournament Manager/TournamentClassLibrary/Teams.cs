@@ -9,10 +9,8 @@ namespace TournamentClassLibrary
 {
     public class Teams
     {
-        #region Data Member
         private int id;
         private string name;
-        #endregion
 
         #region Constructor
         public Teams(int id, string name)

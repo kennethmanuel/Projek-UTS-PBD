@@ -28,7 +28,7 @@ namespace TournamentClassLibrary
 
         #region Method
         /// <summary>
-        /// Create a list of team object that participate on parameter selectedTournament
+        /// Create a list of team object that participate on the selectedTournament 
         /// </summary>
         /// <param name="selectedTournament">Selected tournament</param>
         /// <returns></returns>
@@ -39,11 +39,11 @@ namespace TournamentClassLibrary
 
             if(criteria=="")
             {
-                sql = "SELECT * FROM teams t WHERE t.id IN (SELECT teams_id FROM tournamentteams WHERE tournaments_id=" + tournamentId + ")";
+                sql = "SELECT * FROM teams t WHERE t.id IN (SELECT teams_id FROM tournamententry WHERE tournaments_id=" + tournamentId + ")";
             }
             else
             {
-                sql = "SELECT * FROM teams t WHERE t.id IN (SELECT teams_id FROM tournamentteams WHERE tournaments_id=" + tournamentId + ") AND ( t.name LIKE '%" + criteria + "%' OR t.id LIKE '%" + criteria + "%')";
+                sql = "SELECT * FROM teams t WHERE t.id IN (SELECT teams_id FROM tournamententry WHERE tournaments_id=" + tournamentId + ") AND ( t.name LIKE '%" + criteria + "%' OR t.id LIKE '%" + criteria + "%')";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -62,6 +62,12 @@ namespace TournamentClassLibrary
             return teamList;
         }
 
+        /// <summary>
+        /// Create a list of player that participate on the selectedTournament
+        /// </summary>
+        /// <param name="selectedTournament"></param>
+        /// <param name="criteria"></param>
+        /// <returns></returns>
         public static List<Players> ReadPlayer(Tournaments selectedTournament, string criteria)
         {
             int tournamentid = selectedTournament.Id;
@@ -69,11 +75,11 @@ namespace TournamentClassLibrary
 
             if(criteria == "")
             {
-                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.team_id IN (SELECT tt.teams_id FROM tournamentteams tt WHERE tournaments_id=" + tournamentid + ")";
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.team_id IN (SELECT tt.teams_id FROM tournamententry tt WHERE tournaments_id=" + tournamentid + ")";
             }
             else
             {
-                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.team_id IN (SELECT tt.teams_id FROM tournamentteams tt WHERE tournaments_id=" + tournamentid + ") AND ( p.id LIKE '%" + criteria + "%' OR p.name LIKE '%" + criteria + "%' OR p.email LIKE '%" + criteria + "%' or t.name LIKE '%" + criteria + "%' )"; 
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.team_id IN (SELECT tt.teams_id FROM tournamententry tt WHERE tournaments_id=" + tournamentid + ") AND ( p.id LIKE '%" + criteria + "%' OR p.name LIKE '%" + criteria + "%' OR p.email LIKE '%" + criteria + "%' or t.name LIKE '%" + criteria + "%' )"; 
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);

@@ -15,7 +15,7 @@ namespace Tournament_Manager
     public partial class FormMenu : Form
     {
         FormTournament formTournament;
-        public Tournaments selectedTournament;
+        public static Tournaments selectedTournament;
         
         public FormMenu()
         {
