@@ -93,6 +93,27 @@ namespace TournamentClassLibrary
             }
             return listPrize;
         }
+        /// <summary>
+        /// Generate new ID
+        /// </summary>
+        /// <returns></returns>
+        public static string GenerateCode()
+        {
+            string sql = "select max(Id) from Prizes";
+            string code = "";
+            MySqlDataReader result = Connection.ExecuteQuery(sql);
+
+            if (result.Read() == true)
+            {
+                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
+                code = newCode.ToString();
+            }
+            else
+            {
+                code = "1";
+            }
+            return code;
+        }
         #endregion
     }
 }

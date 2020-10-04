@@ -45,6 +45,7 @@
             this.buttonDeletePrize.TabIndex = 7;
             this.buttonDeletePrize.Text = "Delete Prize";
             this.buttonDeletePrize.UseVisualStyleBackColor = true;
+            this.buttonDeletePrize.Click += new System.EventHandler(this.buttonDeletePrize_Click);
             // 
             // buttonEditPrize
             // 
@@ -55,6 +56,7 @@
             this.buttonEditPrize.TabIndex = 6;
             this.buttonEditPrize.Text = "Edit Prize";
             this.buttonEditPrize.UseVisualStyleBackColor = true;
+            this.buttonEditPrize.Click += new System.EventHandler(this.buttonEditPrize_Click);
             // 
             // buttonAddPrice
             // 
@@ -65,6 +67,7 @@
             this.buttonAddPrice.TabIndex = 5;
             this.buttonAddPrice.Text = "Add New Prize";
             this.buttonAddPrice.UseVisualStyleBackColor = true;
+            this.buttonAddPrice.Click += new System.EventHandler(this.buttonAddPrice_Click);
             // 
             // dataGridViewPrize
             // 
