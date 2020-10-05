@@ -48,11 +48,6 @@ namespace Tournament_Manager
             }
         }
 
-        private void comboBoxTeam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormAddPlayer_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormPlayerTeam frm = (FormPlayerTeam)this.Owner;

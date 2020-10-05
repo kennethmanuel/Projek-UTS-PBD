@@ -123,7 +123,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FormNewTournament";
             this.Text = "FormNewTournament";
-            this.Load += new System.EventHandler(this.FormNewTournament_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

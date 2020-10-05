@@ -46,7 +46,6 @@ namespace Tournament_Manager
             FormPlayerTeam formPlayerTeam = (FormPlayerTeam)this.Owner;
             formPlayerTeam.FormPlayerTeam_Load(formPlayerTeam, e);
             this.Close();
-
         }
     }
 }

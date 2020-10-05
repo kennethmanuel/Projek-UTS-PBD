@@ -54,9 +54,5 @@ namespace Tournament_Manager.Player
             textBoxPlayerEmail.Text = selectedPlayer.Email;
             comboBoxTeam.Text = selectedPlayer.Team.Name;
         }
-
-        private void textBoxPlayerId_TextChanged(object sender, EventArgs e)
-        {
-        }
     }
 }
