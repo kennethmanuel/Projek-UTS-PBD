@@ -126,6 +126,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "FormDeleteTeam";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDeleteTeam";
             this.Load += new System.EventHandler(this.FormDeleteTeam_Load);
             this.ResumeLayout(false);

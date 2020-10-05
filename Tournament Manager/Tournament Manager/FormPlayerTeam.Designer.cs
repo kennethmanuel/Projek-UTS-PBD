@@ -245,7 +245,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControlTeam);
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPlayerTeam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

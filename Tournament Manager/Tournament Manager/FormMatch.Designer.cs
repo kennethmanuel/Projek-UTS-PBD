@@ -104,9 +104,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(348, 46);
+            this.button1.Location = new System.Drawing.Point(266, 46);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 35);
+            this.button1.Size = new System.Drawing.Size(204, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add New Matchup";
             this.button1.UseVisualStyleBackColor = false;
@@ -203,7 +203,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matchup";

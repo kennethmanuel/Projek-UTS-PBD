@@ -175,6 +175,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "FormAddPlayer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddPlayer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddPlayer_FormClosed);
             this.Load += new System.EventHandler(this.FormAddPlayer_Load);

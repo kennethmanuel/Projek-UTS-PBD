@@ -43,7 +43,7 @@
             this.buttonDeletePrize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeletePrize.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonDeletePrize.Location = new System.Drawing.Point(619, 110);
-            this.buttonDeletePrize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDeletePrize.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeletePrize.Name = "buttonDeletePrize";
             this.buttonDeletePrize.Size = new System.Drawing.Size(122, 34);
             this.buttonDeletePrize.TabIndex = 7;
@@ -57,7 +57,7 @@
             this.buttonEditPrize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditPrize.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonEditPrize.Location = new System.Drawing.Point(493, 110);
-            this.buttonEditPrize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEditPrize.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditPrize.Name = "buttonEditPrize";
             this.buttonEditPrize.Size = new System.Drawing.Size(122, 34);
             this.buttonEditPrize.TabIndex = 6;
@@ -71,7 +71,7 @@
             this.buttonAddPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddPrice.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonAddPrice.Location = new System.Drawing.Point(367, 110);
-            this.buttonAddPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddPrice.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddPrice.Name = "buttonAddPrice";
             this.buttonAddPrice.Size = new System.Drawing.Size(122, 34);
             this.buttonAddPrice.TabIndex = 5;
@@ -84,7 +84,7 @@
             this.dataGridViewPrize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(92)))), ((int)(((byte)(84)))));
             this.dataGridViewPrize.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPrize.Location = new System.Drawing.Point(29, 159);
-            this.dataGridViewPrize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewPrize.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPrize.Name = "dataGridViewPrize";
             this.dataGridViewPrize.RowHeadersWidth = 51;
             this.dataGridViewPrize.RowTemplate.Height = 24;
@@ -127,9 +127,10 @@
             this.Controls.Add(this.buttonAddPrice);
             this.Controls.Add(this.dataGridViewPrize);
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrize";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrize";
             this.Load += new System.EventHandler(this.FormPrize_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrize)).EndInit();

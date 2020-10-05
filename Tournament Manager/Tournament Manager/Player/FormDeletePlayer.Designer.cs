@@ -174,6 +174,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "FormDeletePlayer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Player";
             this.Load += new System.EventHandler(this.FormDeletePlayer_Load);
             this.ResumeLayout(false);
