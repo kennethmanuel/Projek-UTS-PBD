@@ -14,13 +14,15 @@
         <Member type="Field">int Id</Member>
         <Member type="Field">string Name</Member>
         <Member type="Method">public static List&lt;Tournaments&gt; ReadData()</Member>
+        <Member type="Method">public static void AddTournament()</Member>
+        <Member type="Method">public static int GenerateCode()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Prizes</Name>
         <Access>Public</Access>
         <Location left="69" top="10" />
-        <Size width="162" height="230" />
+        <Size width="162" height="247" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int Id</Member>
         <Member type="Field">int PlaceNumber</Member>
@@ -31,13 +33,14 @@
         <Member type="Method">public static List&lt;Prize&gt; ReadData()</Member>
         <Member type="Method">public static string GenerateCode()</Member>
         <Member type="Method">public static void AddData()</Member>
+        <Member type="Method">public static Prize SelectPrize(int PrizeId)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Teams</Name>
         <Access>Public</Access>
         <Location left="774" top="312" />
-        <Size width="162" height="227" />
+        <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int Id</Member>
         <Member type="Field">string Name</Member>
@@ -47,6 +50,7 @@
         <Member type="Method">public static void EditTeams()</Member>
         <Member type="Method">public static string DeleteTeams()</Member>
         <Member type="Method">public static string GenerateCode()</Member>
+        <Member type="Method">public static Teams SelectedTeam()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -116,7 +120,7 @@
         </BendPoint>
         <BendPoint relativeToStartShape="False">
           <X>151</X>
-          <Y>265</Y>
+          <Y>282</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -172,7 +176,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>805</X>
-          <Y>564</Y>
+          <Y>567</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -186,7 +190,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>910</X>
-          <Y>564</Y>
+          <Y>567</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
