@@ -51,7 +51,8 @@
             // 
             this.tabControl1.Controls.Add(this.tabPageMatchup);
             this.tabControl1.Controls.Add(this.tabPageMatchupEntry);
-            this.tabControl1.Location = new System.Drawing.Point(21, 114);
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tabControl1.Location = new System.Drawing.Point(9, 93);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(750, 479);
@@ -64,10 +65,10 @@
             this.tabPageMatchup.Controls.Add(this.button3);
             this.tabPageMatchup.Controls.Add(this.button1);
             this.tabPageMatchup.Controls.Add(this.dataGridViewMatchup);
-            this.tabPageMatchup.Location = new System.Drawing.Point(4, 25);
+            this.tabPageMatchup.Location = new System.Drawing.Point(4, 32);
             this.tabPageMatchup.Name = "tabPageMatchup";
             this.tabPageMatchup.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMatchup.Size = new System.Drawing.Size(742, 450);
+            this.tabPageMatchup.Size = new System.Drawing.Size(742, 443);
             this.tabPageMatchup.TabIndex = 0;
             this.tabPageMatchup.Text = "Matchup";
             // 
@@ -75,6 +76,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(604, 46);
             this.button4.Name = "button4";
@@ -87,6 +89,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(476, 46);
             this.button3.Name = "button3";
@@ -99,10 +102,11 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(316, 46);
+            this.button1.Location = new System.Drawing.Point(266, 46);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 35);
+            this.button1.Size = new System.Drawing.Size(204, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add New Matchup";
             this.button1.UseVisualStyleBackColor = false;
@@ -110,13 +114,13 @@
             // 
             // dataGridViewMatchup
             // 
-            this.dataGridViewMatchup.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewMatchup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(92)))), ((int)(((byte)(84)))));
             this.dataGridViewMatchup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMatchup.Location = new System.Drawing.Point(15, 98);
+            this.dataGridViewMatchup.Location = new System.Drawing.Point(15, 96);
             this.dataGridViewMatchup.Name = "dataGridViewMatchup";
             this.dataGridViewMatchup.RowHeadersWidth = 51;
             this.dataGridViewMatchup.RowTemplate.Height = 24;
-            this.dataGridViewMatchup.Size = new System.Drawing.Size(711, 334);
+            this.dataGridViewMatchup.Size = new System.Drawing.Size(712, 334);
             this.dataGridViewMatchup.TabIndex = 0;
             // 
             // tabPageMatchupEntry
@@ -126,10 +130,10 @@
             this.tabPageMatchupEntry.Controls.Add(this.button5);
             this.tabPageMatchupEntry.Controls.Add(this.button6);
             this.tabPageMatchupEntry.Controls.Add(this.dataGridViewEntry);
-            this.tabPageMatchupEntry.Location = new System.Drawing.Point(4, 25);
+            this.tabPageMatchupEntry.Location = new System.Drawing.Point(4, 32);
             this.tabPageMatchupEntry.Name = "tabPageMatchupEntry";
             this.tabPageMatchupEntry.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMatchupEntry.Size = new System.Drawing.Size(742, 450);
+            this.tabPageMatchupEntry.Size = new System.Drawing.Size(742, 443);
             this.tabPageMatchupEntry.TabIndex = 1;
             this.tabPageMatchupEntry.Text = "Entry";
             // 
@@ -168,24 +172,24 @@
             // 
             // dataGridViewEntry
             // 
-            this.dataGridViewEntry.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewEntry.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(92)))), ((int)(((byte)(84)))));
             this.dataGridViewEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEntry.Location = new System.Drawing.Point(16, 94);
+            this.dataGridViewEntry.Location = new System.Drawing.Point(15, 98);
             this.dataGridViewEntry.Name = "dataGridViewEntry";
             this.dataGridViewEntry.RowHeadersWidth = 51;
             this.dataGridViewEntry.RowTemplate.Height = 24;
-            this.dataGridViewEntry.Size = new System.Drawing.Size(711, 334);
+            this.dataGridViewEntry.Size = new System.Drawing.Size(712, 334);
             this.dataGridViewEntry.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(295, 35);
+            this.label5.Location = new System.Drawing.Point(243, 31);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 39);
+            this.label5.Size = new System.Drawing.Size(240, 59);
             this.label5.TabIndex = 20;
             this.label5.Text = "MATCHUP";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,11 +199,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(791, 605);
+            this.ClientSize = new System.Drawing.Size(771, 580);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matchup";

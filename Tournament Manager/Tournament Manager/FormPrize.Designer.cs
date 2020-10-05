@@ -39,9 +39,10 @@
             // 
             // buttonDeletePrize
             // 
-            this.buttonDeletePrize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonDeletePrize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonDeletePrize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeletePrize.Location = new System.Drawing.Point(615, 104);
+            this.buttonDeletePrize.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.buttonDeletePrize.Location = new System.Drawing.Point(619, 110);
             this.buttonDeletePrize.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeletePrize.Name = "buttonDeletePrize";
             this.buttonDeletePrize.Size = new System.Drawing.Size(122, 34);
@@ -52,9 +53,10 @@
             // 
             // buttonEditPrize
             // 
-            this.buttonEditPrize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonEditPrize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonEditPrize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditPrize.Location = new System.Drawing.Point(487, 104);
+            this.buttonEditPrize.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.buttonEditPrize.Location = new System.Drawing.Point(493, 110);
             this.buttonEditPrize.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditPrize.Name = "buttonEditPrize";
             this.buttonEditPrize.Size = new System.Drawing.Size(122, 34);
@@ -65,9 +67,10 @@
             // 
             // buttonAddPrice
             // 
-            this.buttonAddPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonAddPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonAddPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddPrice.Location = new System.Drawing.Point(360, 104);
+            this.buttonAddPrice.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.buttonAddPrice.Location = new System.Drawing.Point(367, 110);
             this.buttonAddPrice.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddPrice.Name = "buttonAddPrice";
             this.buttonAddPrice.Size = new System.Drawing.Size(122, 34);
@@ -78,9 +81,9 @@
             // 
             // dataGridViewPrize
             // 
-            this.dataGridViewPrize.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewPrize.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(92)))), ((int)(((byte)(84)))));
             this.dataGridViewPrize.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPrize.Location = new System.Drawing.Point(27, 155);
+            this.dataGridViewPrize.Location = new System.Drawing.Point(29, 159);
             this.dataGridViewPrize.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPrize.Name = "dataGridViewPrize";
             this.dataGridViewPrize.RowHeadersWidth = 51;
@@ -91,22 +94,23 @@
             // textBoxSearch
             // 
             this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.textBoxSearch.Location = new System.Drawing.Point(27, 110);
+            this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxSearch.Location = new System.Drawing.Point(29, 110);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(307, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(307, 30);
             this.textBoxSearch.TabIndex = 8;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // label5
             // 
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(316, 27);
+            this.label5.Location = new System.Drawing.Point(307, 29);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 39);
+            this.label5.Size = new System.Drawing.Size(182, 56);
             this.label5.TabIndex = 20;
             this.label5.Text = "PRIZE";
             // 
@@ -115,7 +119,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(754, 514);
+            this.ClientSize = new System.Drawing.Size(771, 520);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.buttonDeletePrize);
@@ -123,9 +127,10 @@
             this.Controls.Add(this.buttonAddPrice);
             this.Controls.Add(this.dataGridViewPrize);
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrize";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrize";
             this.Load += new System.EventHandler(this.FormPrize_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrize)).EndInit();
