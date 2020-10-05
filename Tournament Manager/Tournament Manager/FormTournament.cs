@@ -30,9 +30,12 @@ namespace Tournament_Manager
             }
         }
 
-        private void buttonLoadTournament_Click(object sender, EventArgs e)
+        public void buttonLoadTournament_Click(object sender, EventArgs e)
         {
-            selectedTournament = (Tournaments)comboBoxTournament.SelectedItem;
+            if (selectedTournament == null)
+            {
+                selectedTournament = (Tournaments)comboBoxTournament.SelectedItem;
+            }
 
             FormMenu form = new FormMenu();
             form.Owner = this;
@@ -46,9 +49,12 @@ namespace Tournament_Manager
             
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void buttonCreateTournament_Click(object sender, EventArgs e)
         {
-
+            FormNewTournament form = new FormNewTournament();
+            form.Owner = this;
+            this.Hide();
+            form.ShowDialog();
         }
     }
 }
