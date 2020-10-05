@@ -39,46 +39,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label1.Location = new System.Drawing.Point(55, 103);
+            this.label1.Location = new System.Drawing.Point(44, 144);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 27);
+            this.label1.Size = new System.Drawing.Size(70, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Team Id";
             // 
             // textBoxTeamId
             // 
             this.textBoxTeamId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.textBoxTeamId.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTeamId.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxTeamId.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxTeamId.Location = new System.Drawing.Point(60, 148);
+            this.textBoxTeamId.Location = new System.Drawing.Point(48, 170);
             this.textBoxTeamId.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxTeamId.Name = "textBoxTeamId";
-            this.textBoxTeamId.Size = new System.Drawing.Size(318, 34);
+            this.textBoxTeamId.Size = new System.Drawing.Size(318, 30);
             this.textBoxTeamId.TabIndex = 1;
             // 
             // textBoxTeamName
             // 
             this.textBoxTeamName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.textBoxTeamName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTeamName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxTeamName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxTeamName.Location = new System.Drawing.Point(60, 250);
+            this.textBoxTeamName.Location = new System.Drawing.Point(48, 253);
             this.textBoxTeamName.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxTeamName.Name = "textBoxTeamName";
-            this.textBoxTeamName.Size = new System.Drawing.Size(318, 34);
+            this.textBoxTeamName.Size = new System.Drawing.Size(318, 30);
             this.textBoxTeamName.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label2.Location = new System.Drawing.Point(55, 206);
+            this.label2.Location = new System.Drawing.Point(44, 227);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 27);
+            this.label2.Size = new System.Drawing.Size(101, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Team Name";
             // 
@@ -86,9 +86,9 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonAdd.ForeColor = System.Drawing.Color.Black;
-            this.buttonAdd.Location = new System.Drawing.Point(260, 324);
+            this.buttonAdd.Location = new System.Drawing.Point(247, 310);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(119, 39);
@@ -100,12 +100,12 @@
             // label5
             // 
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(112, 36);
+            this.label5.Location = new System.Drawing.Point(95, 52);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(210, 39);
+            this.label5.Size = new System.Drawing.Size(243, 70);
             this.label5.TabIndex = 20;
             this.label5.Text = "ADD TEAM";
             // 
@@ -113,8 +113,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(460, 388);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ClientSize = new System.Drawing.Size(423, 388);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxTeamName);

@@ -38,13 +38,14 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonDelete.ForeColor = System.Drawing.Color.Black;
-            this.buttonDelete.Location = new System.Drawing.Point(281, 308);
+            this.buttonDelete.Location = new System.Drawing.Point(248, 319);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(104, 45);
+            this.buttonDelete.Size = new System.Drawing.Size(119, 39);
             this.buttonDelete.TabIndex = 9;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -54,7 +55,8 @@
             // 
             this.textBoxTeamName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxTeamName.Enabled = false;
-            this.textBoxTeamName.Location = new System.Drawing.Point(64, 233);
+            this.textBoxTeamName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxTeamName.Location = new System.Drawing.Point(49, 263);
             this.textBoxTeamName.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxTeamName.Name = "textBoxTeamName";
             this.textBoxTeamName.Size = new System.Drawing.Size(318, 30);
@@ -63,11 +65,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label2.Location = new System.Drawing.Point(61, 189);
+            this.label2.Location = new System.Drawing.Point(45, 237);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 23);
+            this.label2.Size = new System.Drawing.Size(101, 23);
             this.label2.TabIndex = 7;
             this.label2.Text = "Team Name";
             // 
@@ -75,33 +78,35 @@
             // 
             this.textBoxTeamId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxTeamId.Enabled = false;
-            this.textBoxTeamId.Location = new System.Drawing.Point(64, 131);
+            this.textBoxTeamId.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxTeamId.Location = new System.Drawing.Point(51, 181);
             this.textBoxTeamId.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxTeamId.Name = "textBoxTeamId";
-            this.textBoxTeamId.Size = new System.Drawing.Size(318, 30);
+            this.textBoxTeamId.Size = new System.Drawing.Size(316, 30);
             this.textBoxTeamId.TabIndex = 6;
             this.textBoxTeamId.TextChanged += new System.EventHandler(this.textBoxTeamId_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label1.Location = new System.Drawing.Point(61, 85);
+            this.label1.Location = new System.Drawing.Point(45, 155);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 23);
+            this.label1.Size = new System.Drawing.Size(70, 23);
             this.label1.TabIndex = 5;
             this.label1.Text = "Team Id";
             // 
             // label5
             // 
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(98, 29);
+            this.label5.Location = new System.Drawing.Point(78, 60);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(256, 39);
+            this.label5.Size = new System.Drawing.Size(276, 56);
             this.label5.TabIndex = 20;
             this.label5.Text = "DELETE TEAM";
             // 
@@ -109,8 +114,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(460, 388);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ClientSize = new System.Drawing.Size(423, 388);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.textBoxTeamName);

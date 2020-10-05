@@ -49,12 +49,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBracketViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBracketViewer.Designer.cs">
-      <DependentUpon>FormBracketViewer.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,36 +121,6 @@
     <Compile Include="Team\FormEditTeam.Designer.cs">
       <DependentUpon>FormEditTeam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Form1B.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Design\Form1B.Designer.cs">
-      <DependentUpon>Form1B.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\FormLoginB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Design\FormLoginB.Designer.cs">
-      <DependentUpon>FormLoginB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\FormPlayersB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Design\FormPlayersB.Designer.cs">
-      <DependentUpon>FormPlayersB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\FormTeamB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Design\FormTeamB.Designer.cs">
-      <DependentUpon>FormTeamB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\FormMatchesB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Design\FormMatchesB.Designer.cs">
-      <DependentUpon>FormMatchesB.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tournament Matchup\FormAddMatchup.cs">
@@ -195,9 +159,6 @@
     <Compile Include="TournamentPrize\FormEditPrize.Designer.cs">
       <DependentUpon>FormEditPrize.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormBracketViewer.resx">
-      <DependentUpon>FormBracketViewer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,21 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPlayerTeam.resx">
       <DependentUpon>FormPlayerTeam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\Form1B.resx">
-      <DependentUpon>Form1B.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\FormLoginB.resx">
-      <DependentUpon>FormLoginB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\FormPlayersB.resx">
-      <DependentUpon>FormPlayersB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\FormTeamB.resx">
-      <DependentUpon>FormTeamB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\FormMatchesB.resx">
-      <DependentUpon>FormMatchesB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrize.resx">
       <DependentUpon>FormPrize.cs</DependentUpon>
@@ -289,8 +235,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tournaments Entry\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
