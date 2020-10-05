@@ -101,6 +101,11 @@ namespace TournamentClassLibrary
         }
 
 
+        /// <summary>
+        /// Select a player as object based on its id
+        /// </summary>
+        /// <param name="playerId"></param>
+        /// <returns></returns>
         public static Players SelectPlayer(int playerId)
         {
             string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id  WHERE p.id=" + playerId;

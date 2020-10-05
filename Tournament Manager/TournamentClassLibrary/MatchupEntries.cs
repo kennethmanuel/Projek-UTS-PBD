@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace TournamentClassLibrary
 {
+    /// <summary>
+    /// Matchup entries show a team's single match
+    /// </summary>
     public class MatchupEntries
     {
+        /// <summary>
+        /// Show 
+        /// </summary>
         Matchups matchup;
         Teams team;
         int score;
