@@ -123,6 +123,38 @@ namespace TournamentClassLibrary
             string sql = "insert into Prizes(Id, PlaceName, PriceAmount, PrizePercentage, Tournaments_Id) values ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
             Connection.ExecuteDML(sql);
         }
+        public static string DeletePrize(Prize  p)
+        {
+            string sql = "Delete from prize where Id='" + p.Id + "'";
+            try
+            {
+                Connection.ExecuteDML(sql);
+                return "1";
+            }
+            catch (MySqlException ex)
+            {
+                return ex.Message + ". Sql Command: " + sql;
+            }
+        }
+        public static Prize SelectPrize(int prizeId)
+        {
+            string sql = "SELECT p.Id, p.PlaceName, p.PrizeAmount, p.PrizePercentage, t.Id FROM prizes p INNER JOIN tournaments t ON p.Tournaments_Id = t.Id  WHERE p.id=" + prizeId;
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            value.Read();
+
+            
+            Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()),
+                    value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
+
+            Prize p = new Prize(int.Parse(value.GetValue(0).ToString()),
+                value.GetValue(1).ToString(),
+                int.Parse(value.GetValue(2).ToString()),
+                double.Parse(value.GetValue(3).ToString()),
+                tournaments
+                );
+            return p;
+        }
         #endregion
     }
 }
