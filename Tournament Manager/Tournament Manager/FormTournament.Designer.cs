@@ -61,6 +61,7 @@
             this.buttonCreateTournament.TabIndex = 6;
             this.buttonCreateTournament.Text = "Create New Tournament";
             this.buttonCreateTournament.UseVisualStyleBackColor = false;
+            this.buttonCreateTournament.Click += new System.EventHandler(this.buttonCreateTournament_Click);
             // 
             // label1
             // 
@@ -98,7 +99,6 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "TOURNAMENT";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // FormTournament
             // 

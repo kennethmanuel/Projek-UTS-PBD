@@ -52,5 +52,25 @@ namespace TournamentClassLibrary
             }
             return tournamentList;
         }
+         public static void AddTournament(Tournaments t)
+        {
+            string sql = "INSERT INTO tournaments (id, name, entryfee) VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "');";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public static int GenerateCode()
+        {
+            string sql = "SELECT MAX(id) FROM tournaments";
+            int code=1; 
+            MySqlDataReader result = Connection.ExecuteQuery(sql);
+
+            if(result.Read() == true)
+            {
+                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
+                code = newCode;
+            }
+            return code;
+        }
     }
 }
