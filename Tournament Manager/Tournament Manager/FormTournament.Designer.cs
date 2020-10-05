@@ -39,10 +39,10 @@
             // 
             this.buttonLoadTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.buttonLoadTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLoadTournament.Location = new System.Drawing.Point(77, 457);
-            this.buttonLoadTournament.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonLoadTournament.Location = new System.Drawing.Point(55, 315);
+            this.buttonLoadTournament.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLoadTournament.Name = "buttonLoadTournament";
-            this.buttonLoadTournament.Size = new System.Drawing.Size(453, 65);
+            this.buttonLoadTournament.Size = new System.Drawing.Size(324, 45);
             this.buttonLoadTournament.TabIndex = 7;
             this.buttonLoadTournament.Text = "Load Tournament";
             this.buttonLoadTournament.UseVisualStyleBackColor = false;
@@ -52,10 +52,10 @@
             // 
             this.buttonCreateTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.buttonCreateTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCreateTournament.Location = new System.Drawing.Point(77, 381);
-            this.buttonCreateTournament.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonCreateTournament.Location = new System.Drawing.Point(55, 262);
+            this.buttonCreateTournament.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCreateTournament.Name = "buttonCreateTournament";
-            this.buttonCreateTournament.Size = new System.Drawing.Size(453, 65);
+            this.buttonCreateTournament.Size = new System.Drawing.Size(324, 45);
             this.buttonCreateTournament.TabIndex = 6;
             this.buttonCreateTournament.Text = "Create New Tournament";
             this.buttonCreateTournament.UseVisualStyleBackColor = false;
@@ -64,10 +64,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(72, 218);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(51, 150);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 29);
+            this.label1.Size = new System.Drawing.Size(147, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tournament Name";
             // 
@@ -76,10 +76,10 @@
             this.comboBoxTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxTournament.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTournament.FormattingEnabled = true;
-            this.comboBoxTournament.Location = new System.Drawing.Point(77, 277);
-            this.comboBoxTournament.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboBoxTournament.Location = new System.Drawing.Point(55, 191);
+            this.comboBoxTournament.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxTournament.Name = "comboBoxTournament";
-            this.comboBoxTournament.Size = new System.Drawing.Size(450, 37);
+            this.comboBoxTournament.Size = new System.Drawing.Size(323, 28);
             this.comboBoxTournament.TabIndex = 4;
             // 
             // label5
@@ -88,8 +88,8 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(65, 123);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Location = new System.Drawing.Point(90, 64);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(279, 39);
             this.label5.TabIndex = 19;
@@ -97,18 +97,18 @@
             // 
             // FormTournament
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(639, 584);
+            this.ClientSize = new System.Drawing.Size(456, 402);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonLoadTournament);
             this.Controls.Add(this.buttonCreateTournament);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxTournament);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormTournament";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTournament";
