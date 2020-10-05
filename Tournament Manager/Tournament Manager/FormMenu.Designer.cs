@@ -45,6 +45,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -61,7 +62,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 24);
             // 
             // tournamentToolStripMenuItem
             // 
@@ -69,20 +70,20 @@
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem,
             this.generateTournamentStartingBracketToolStripMenuItem});
             this.tournamentToolStripMenuItem.Name = "tournamentToolStripMenuItem";
-            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.tournamentToolStripMenuItem.Text = "Tournament";
             // 
             // loadAnotherTournamentFromDatabaseToolStripMenuItem
             // 
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Name = "loadAnotherTournamentFromDatabaseToolStripMenuItem";
-            this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(354, 26);
+            this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Text = "Load another tournament from database";
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.loadAnotherTournamentFromDatabaseToolStripMenuItem_Click);
             // 
             // generateTournamentStartingBracketToolStripMenuItem
             // 
             this.generateTournamentStartingBracketToolStripMenuItem.Name = "generateTournamentStartingBracketToolStripMenuItem";
-            this.generateTournamentStartingBracketToolStripMenuItem.Size = new System.Drawing.Size(354, 26);
+            this.generateTournamentStartingBracketToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
             this.generateTournamentStartingBracketToolStripMenuItem.Text = "Generate Tournament Starting Bracket";
             // 
             // playersTeamsToolStripMenuItem
@@ -91,20 +92,20 @@
             this.teamAndPlayerToolStripMenuItem,
             this.matchToolStripMenuItem});
             this.playersTeamsToolStripMenuItem.Name = "playersTeamsToolStripMenuItem";
-            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.playersTeamsToolStripMenuItem.Text = "View Data";
             // 
             // teamAndPlayerToolStripMenuItem
             // 
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
             // matchToolStripMenuItem
             // 
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.matchToolStripMenuItem.Text = "Match";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -113,22 +114,22 @@
             this.viewTournamentPrizesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prizeToolStripMenuItem});
             this.viewTournamentPrizesToolStripMenuItem.Name = "viewTournamentPrizesToolStripMenuItem";
-            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.viewTournamentPrizesToolStripMenuItem.Text = "View Tournament Prizes";
             // 
             // prizeToolStripMenuItem
             // 
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
             this.prizeToolStripMenuItem.Text = "Prize";
             this.prizeToolStripMenuItem.Click += new System.EventHandler(this.prizeToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.label1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(572, 8);
+            this.label1.Location = new System.Drawing.Point(572, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 16);
@@ -138,9 +139,9 @@
             // labelTournamentName
             // 
             this.labelTournamentName.AutoSize = true;
-            this.labelTournamentName.BackColor = System.Drawing.Color.White;
+            this.labelTournamentName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.labelTournamentName.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTournamentName.Location = new System.Drawing.Point(788, 8);
+            this.labelTournamentName.Location = new System.Drawing.Point(788, 6);
             this.labelTournamentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTournamentName.Name = "labelTournamentName";
             this.labelTournamentName.Size = new System.Drawing.Size(139, 16);
@@ -151,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1045, 776);
             this.Controls.Add(this.labelTournamentName);
             this.Controls.Add(this.label1);

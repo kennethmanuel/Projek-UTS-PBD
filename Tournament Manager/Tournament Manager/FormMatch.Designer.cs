@@ -51,7 +51,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPageMatchup);
             this.tabControl1.Controls.Add(this.tabPageMatchupEntry);
-            this.tabControl1.Location = new System.Drawing.Point(9, 100);
+            this.tabControl1.Location = new System.Drawing.Point(21, 114);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(750, 479);
@@ -59,21 +59,21 @@
             // 
             // tabPageMatchup
             // 
+            this.tabPageMatchup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.tabPageMatchup.Controls.Add(this.button4);
             this.tabPageMatchup.Controls.Add(this.button3);
             this.tabPageMatchup.Controls.Add(this.button1);
             this.tabPageMatchup.Controls.Add(this.dataGridViewMatchup);
             this.tabPageMatchup.Location = new System.Drawing.Point(4, 25);
             this.tabPageMatchup.Name = "tabPageMatchup";
-            this.tabPageMatchup.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageMatchup.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageMatchup.Size = new System.Drawing.Size(742, 450);
             this.tabPageMatchup.TabIndex = 0;
             this.tabPageMatchup.Text = "Matchup";
-            this.tabPageMatchup.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(604, 46);
@@ -85,7 +85,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(476, 46);
@@ -97,12 +97,12 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(348, 50);
+            this.button1.Location = new System.Drawing.Point(316, 46);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 31);
+            this.button1.Size = new System.Drawing.Size(154, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add New Matchup";
             this.button1.UseVisualStyleBackColor = false;
@@ -121,21 +121,21 @@
             // 
             // tabPageMatchupEntry
             // 
+            this.tabPageMatchupEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.tabPageMatchupEntry.Controls.Add(this.button2);
             this.tabPageMatchupEntry.Controls.Add(this.button5);
             this.tabPageMatchupEntry.Controls.Add(this.button6);
             this.tabPageMatchupEntry.Controls.Add(this.dataGridViewEntry);
             this.tabPageMatchupEntry.Location = new System.Drawing.Point(4, 25);
             this.tabPageMatchupEntry.Name = "tabPageMatchupEntry";
-            this.tabPageMatchupEntry.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageMatchupEntry.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageMatchupEntry.Size = new System.Drawing.Size(742, 450);
             this.tabPageMatchupEntry.TabIndex = 1;
             this.tabPageMatchupEntry.Text = "Entry";
-            this.tabPageMatchupEntry.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(601, 46);
             this.button2.Name = "button2";
@@ -146,7 +146,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(473, 46);
             this.button5.Name = "button5";
@@ -157,7 +157,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(346, 46);
             this.button6.Name = "button6";
@@ -179,23 +179,23 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(269, 21);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
+            this.label5.Location = new System.Drawing.Point(295, 35);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(200, 39);
             this.label5.TabIndex = 20;
             this.label5.Text = "MATCHUP";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(771, 591);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ClientSize = new System.Drawing.Size(791, 605);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,7 +211,6 @@
             this.tabPageMatchupEntry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntry)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

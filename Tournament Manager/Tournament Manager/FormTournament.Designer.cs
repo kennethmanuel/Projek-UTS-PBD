@@ -37,10 +37,10 @@
             // 
             // buttonLoadTournament
             // 
-            this.buttonLoadTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonLoadTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonLoadTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoadTournament.Location = new System.Drawing.Point(55, 315);
-            this.buttonLoadTournament.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLoadTournament.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLoadTournament.Name = "buttonLoadTournament";
             this.buttonLoadTournament.Size = new System.Drawing.Size(324, 45);
             this.buttonLoadTournament.TabIndex = 7;
@@ -50,10 +50,10 @@
             // 
             // buttonCreateTournament
             // 
-            this.buttonCreateTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.buttonCreateTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonCreateTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreateTournament.Location = new System.Drawing.Point(55, 262);
-            this.buttonCreateTournament.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCreateTournament.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateTournament.Name = "buttonCreateTournament";
             this.buttonCreateTournament.Size = new System.Drawing.Size(324, 45);
             this.buttonCreateTournament.TabIndex = 6;
@@ -73,33 +73,34 @@
             // 
             // comboBoxTournament
             // 
-            this.comboBoxTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.comboBoxTournament.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTournament.FormattingEnabled = true;
             this.comboBoxTournament.Location = new System.Drawing.Point(55, 191);
-            this.comboBoxTournament.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxTournament.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxTournament.Name = "comboBoxTournament";
             this.comboBoxTournament.Size = new System.Drawing.Size(323, 28);
             this.comboBoxTournament.TabIndex = 4;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(90, 64);
+            this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
+            this.label5.Location = new System.Drawing.Point(47, 59);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(279, 39);
+            this.label5.Size = new System.Drawing.Size(348, 55);
             this.label5.TabIndex = 19;
             this.label5.Text = "TOURNAMENT";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // FormTournament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(456, 402);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonLoadTournament);
@@ -108,7 +109,7 @@
             this.Controls.Add(this.comboBoxTournament);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTournament";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTournament";

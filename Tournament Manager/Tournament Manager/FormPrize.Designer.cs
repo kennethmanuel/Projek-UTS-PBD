@@ -42,7 +42,7 @@
             this.buttonDeletePrize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.buttonDeletePrize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeletePrize.Location = new System.Drawing.Point(615, 104);
-            this.buttonDeletePrize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDeletePrize.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeletePrize.Name = "buttonDeletePrize";
             this.buttonDeletePrize.Size = new System.Drawing.Size(122, 34);
             this.buttonDeletePrize.TabIndex = 7;
@@ -55,7 +55,7 @@
             this.buttonEditPrize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.buttonEditPrize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditPrize.Location = new System.Drawing.Point(487, 104);
-            this.buttonEditPrize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEditPrize.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditPrize.Name = "buttonEditPrize";
             this.buttonEditPrize.Size = new System.Drawing.Size(122, 34);
             this.buttonEditPrize.TabIndex = 6;
@@ -68,7 +68,7 @@
             this.buttonAddPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.buttonAddPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddPrice.Location = new System.Drawing.Point(360, 104);
-            this.buttonAddPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddPrice.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddPrice.Name = "buttonAddPrice";
             this.buttonAddPrice.Size = new System.Drawing.Size(122, 34);
             this.buttonAddPrice.TabIndex = 5;
@@ -81,7 +81,7 @@
             this.dataGridViewPrize.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewPrize.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPrize.Location = new System.Drawing.Point(27, 155);
-            this.dataGridViewPrize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewPrize.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPrize.Name = "dataGridViewPrize";
             this.dataGridViewPrize.RowHeadersWidth = 51;
             this.dataGridViewPrize.RowTemplate.Height = 24;
@@ -90,6 +90,7 @@
             // 
             // textBoxSearch
             // 
+            this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxSearch.Location = new System.Drawing.Point(27, 110);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSearch.Name = "textBoxSearch";
@@ -99,10 +100,9 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Coral;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
             this.label5.Location = new System.Drawing.Point(316, 27);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(754, 514);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxSearch);
@@ -124,7 +124,7 @@
             this.Controls.Add(this.dataGridViewPrize);
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrize";
             this.Text = "FormPrize";
             this.Load += new System.EventHandler(this.FormPrize_Load);

@@ -56,6 +56,7 @@
             // 
             // textBoxPlayerName
             // 
+            this.textBoxPlayerName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxPlayerName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPlayerName.Location = new System.Drawing.Point(70, 247);
             this.textBoxPlayerName.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -77,6 +78,7 @@
             // 
             // textBoxPlayerId
             // 
+            this.textBoxPlayerId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxPlayerId.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPlayerId.Location = new System.Drawing.Point(70, 147);
             this.textBoxPlayerId.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -110,6 +112,7 @@
             // 
             // textBoxPlayerEmail
             // 
+            this.textBoxPlayerEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxPlayerEmail.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPlayerEmail.Location = new System.Drawing.Point(70, 339);
             this.textBoxPlayerEmail.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -131,6 +134,7 @@
             // 
             // comboBoxTeam
             // 
+            this.comboBoxTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.comboBoxTeam.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTeam.FormattingEnabled = true;
             this.comboBoxTeam.Location = new System.Drawing.Point(70, 444);
@@ -142,11 +146,10 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Perpetua Titling MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(131, 8);
+            this.label5.Location = new System.Drawing.Point(114, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(249, 39);
             this.label5.TabIndex = 21;
