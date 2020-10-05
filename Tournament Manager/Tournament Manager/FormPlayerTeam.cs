@@ -156,5 +156,10 @@ namespace Tournament_Manager
         {
             MessageBox.Show(selectedPlayer.ToString());
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

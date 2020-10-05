@@ -13,9 +13,9 @@ namespace Tournament_Manager.TournamentPrize
 {
     public partial class FormDeletePrize : Form
     {
-        List<Prize> listPrize = new List<Prize>();
+        List<Prize> listPrize = new List<Prize>();        
+        List<Tournaments> listTournaments = new List<Tournaments>();
         int selectedPrizeId = FormPrize.selectedPrize;
-
 
         public FormDeletePrize()
         {
@@ -24,12 +24,12 @@ namespace Tournament_Manager.TournamentPrize
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            DialogResult konfirmasi = MessageBox.Show("Data prize akan terhapus , Apakah anda yakin?", "Konfirmasi", MessageBoxButtons.YesNo);
+            DialogResult konfirmasi = MessageBox.Show("Prize has been deleted , are you sure?", "confirmation", MessageBoxButtons.YesNo);
             if (konfirmasi == System.Windows.Forms.DialogResult.Yes)
             {
-                
+
                 Tournaments tournaments = (Tournaments)comboBoxTournamentsName.SelectedItem;
-                Prize p = new Prize(int.Parse(textBoxPrizeId.Text), textBoxPrizePlaceName.Text, int.Parse(textBoxPriceAmount.Text), double.Parse(textBoxPrizePercentage.Text),tournaments);
+                Prize p = new Prize(int.Parse(textBoxPrizeId.Text), textBoxPrizePlaceName.Text, int.Parse(textBoxPriceAmount.Text), double.Parse(textBoxPrizePercentage.Text), tournaments);
                 string add = Prize.DeletePrize(p);
                 if (add == "1")
                 {
@@ -47,12 +47,17 @@ namespace Tournament_Manager.TournamentPrize
 
         private void FormDeletePrize_Load(object sender, EventArgs e)
         {
-          // Prize selectedPrize = Prize.SelectPrize(selectedPrizeId);
+            listTournaments = Tournaments.ReadCombo(FormMenu.selectedTournament);
+            Prize selectedPrize = Prize.SelectPrize(selectedPrizeId);
 
-           //textBoxPrizeId.Text = selectedPrize.Id.ToString();
-            //textBoxPrizePlaceName.Text = selectedPrize.PlaceName;
-          
-            //comboBoxTournamentsName.Text = selectedPrize.Tournament.Name;
+            comboBoxTournamentsName.DataSource = listTournaments;
+            comboBoxTournamentsName.DisplayMember = "Name";
+            comboBoxTournamentsName.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            textBoxPrizeId.Text = selectedPrize.Id.ToString();
+            textBoxPrizePlaceName.Text = selectedPrize.PlaceName;
+            textBoxPriceAmount.Text = selectedPrize.PrizeAmount.ToString();
+            comboBoxTournamentsName.Text = selectedPrize.Tournament.Name;
         }
     }
 }

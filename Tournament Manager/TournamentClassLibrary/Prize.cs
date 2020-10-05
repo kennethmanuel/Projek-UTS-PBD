@@ -12,7 +12,7 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Id is also place number (Id 1 is first place, id 2 is second place and so on)
         /// </summary>
-        private int id; 
+        private int id;
         private string placeName;
         private int prizeAmount;
         private double prizePercentage;
@@ -51,7 +51,7 @@ namespace TournamentClassLibrary
 
             List<Prize> prizeList = new List<Prize>();
 
-            while(value.Read() == true)
+            while (value.Read() == true)
             {
                 Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
 
@@ -123,7 +123,7 @@ namespace TournamentClassLibrary
             string sql = "insert into Prizes(Id, PlaceName, PriceAmount, PrizePercentage, Tournaments_Id) values ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
             Connection.ExecuteDML(sql);
         }
-        public static string DeletePrize(Prize  p)
+        public static string DeletePrize(Prize p)
         {
             string sql = "Delete from prize where Id='" + p.Id + "'";
             try
@@ -138,22 +138,18 @@ namespace TournamentClassLibrary
         }
         public static Prize SelectPrize(int prizeId)
         {
-            string sql = "SELECT p.Id, p.PlaceName, p.PrizeAmount, p.PrizePercentage, t.Id FROM prizes p INNER JOIN tournaments t ON p.Tournaments_Id = t.Id  WHERE p.id=" + prizeId;
-            MySqlDataReader value = Connection.ExecuteQuery(sql);
+            string sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.Tournaments_Id = t.Id  WHERE p.id=" + prizeId;
 
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
             value.Read();
 
-            
-            Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()),
-                    value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
+            Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
+            Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), int.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
 
-            Prize p = new Prize(int.Parse(value.GetValue(0).ToString()),
-                value.GetValue(1).ToString(),
-                int.Parse(value.GetValue(2).ToString()),
-                double.Parse(value.GetValue(3).ToString()),
-                tournaments
-                );
-            return p;
+           
+
+            
+            return prize;
         }
         #endregion
     }

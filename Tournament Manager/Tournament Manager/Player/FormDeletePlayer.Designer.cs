@@ -43,12 +43,13 @@
             // comboBoxTeam
             // 
             this.comboBoxTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.comboBoxTeam.Enabled = false;
             this.comboBoxTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBoxTeam.FormattingEnabled = true;
             this.comboBoxTeam.Location = new System.Drawing.Point(52, 429);
             this.comboBoxTeam.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.comboBoxTeam.Name = "comboBoxTeam";
-            this.comboBoxTeam.Size = new System.Drawing.Size(318, 31);
+            this.comboBoxTeam.Size = new System.Drawing.Size(318, 25);
             this.comboBoxTeam.TabIndex = 27;
             // 
             // label1
@@ -59,18 +60,19 @@
             this.label1.Location = new System.Drawing.Point(48, 403);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 23);
+            this.label1.Size = new System.Drawing.Size(41, 19);
             this.label1.TabIndex = 26;
             this.label1.Text = "Team";
             // 
             // textBoxPlayerEmail
             // 
             this.textBoxPlayerEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.textBoxPlayerEmail.Enabled = false;
             this.textBoxPlayerEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxPlayerEmail.Location = new System.Drawing.Point(52, 341);
             this.textBoxPlayerEmail.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxPlayerEmail.Name = "textBoxPlayerEmail";
-            this.textBoxPlayerEmail.Size = new System.Drawing.Size(318, 30);
+            this.textBoxPlayerEmail.Size = new System.Drawing.Size(318, 25);
             this.textBoxPlayerEmail.TabIndex = 25;
             // 
             // label4
@@ -81,7 +83,7 @@
             this.label4.Location = new System.Drawing.Point(48, 315);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 23);
+            this.label4.Size = new System.Drawing.Size(82, 19);
             this.label4.TabIndex = 24;
             this.label4.Text = "Player Email";
             // 
@@ -102,11 +104,12 @@
             // textBoxPlayerName
             // 
             this.textBoxPlayerName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.textBoxPlayerName.Enabled = false;
             this.textBoxPlayerName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxPlayerName.Location = new System.Drawing.Point(52, 252);
             this.textBoxPlayerName.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxPlayerName.Name = "textBoxPlayerName";
-            this.textBoxPlayerName.Size = new System.Drawing.Size(318, 30);
+            this.textBoxPlayerName.Size = new System.Drawing.Size(318, 25);
             this.textBoxPlayerName.TabIndex = 22;
             // 
             // label2
@@ -117,18 +120,19 @@
             this.label2.Location = new System.Drawing.Point(48, 226);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 23);
+            this.label2.Size = new System.Drawing.Size(86, 19);
             this.label2.TabIndex = 21;
             this.label2.Text = "Player Name";
             // 
             // textBoxPlayerId
             // 
             this.textBoxPlayerId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.textBoxPlayerId.Enabled = false;
             this.textBoxPlayerId.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxPlayerId.Location = new System.Drawing.Point(52, 165);
             this.textBoxPlayerId.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxPlayerId.Name = "textBoxPlayerId";
-            this.textBoxPlayerId.Size = new System.Drawing.Size(318, 30);
+            this.textBoxPlayerId.Size = new System.Drawing.Size(318, 25);
             this.textBoxPlayerId.TabIndex = 20;
             // 
             // label3
@@ -139,7 +143,7 @@
             this.label3.Location = new System.Drawing.Point(48, 139);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 23);
+            this.label3.Size = new System.Drawing.Size(62, 19);
             this.label3.TabIndex = 19;
             this.label3.Text = "Player Id";
             // 
@@ -157,7 +161,7 @@
             // 
             // FormDeletePlayer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(429, 546);

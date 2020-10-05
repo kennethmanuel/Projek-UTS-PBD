@@ -23,7 +23,7 @@ namespace Tournament_Manager.TournamentPrize
         private void FormAddPrize_Load(object sender, EventArgs e)
         {
             listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
-            listTournaments = Tournaments.ReadData();
+            listTournaments = Tournaments.ReadCombo(FormMenu.selectedTournament);
             comboBoxTournamentsName.DataSource = listTournaments;
             comboBoxTournamentsName.DisplayMember = "Name";
             comboBoxTournamentsName.DropDownStyle = ComboBoxStyle.DropDownList;

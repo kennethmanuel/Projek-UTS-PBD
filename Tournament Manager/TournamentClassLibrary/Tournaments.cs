@@ -72,5 +72,25 @@ namespace TournamentClassLibrary
             }
             return code;
         }
+        public static List<Tournaments> ReadCombo(Tournaments selected)
+        {
+            int tournamentsId = selected.Id;
+            string sql = "SELECT * FROM tournaments where id='" + tournamentsId + "'";
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<Tournaments> tournamentList = new List<Tournaments>();
+
+            while (value.Read() == true)
+            {
+                Tournaments t = new Tournaments(
+                    int.Parse(value.GetValue(0).ToString()),
+                    value.GetValue(1).ToString(),
+                    decimal.Parse(value.GetValue(2).ToString()));
+
+                tournamentList.Add(t);
+            }
+            return tournamentList;
+        }
     }
 }

@@ -44,11 +44,12 @@
             // 
             // comboBoxTournamentsName
             // 
+            this.comboBoxTournamentsName.Enabled = false;
             this.comboBoxTournamentsName.FormattingEnabled = true;
             this.comboBoxTournamentsName.Location = new System.Drawing.Point(247, 404);
             this.comboBoxTournamentsName.Margin = new System.Windows.Forms.Padding(5);
             this.comboBoxTournamentsName.Name = "comboBoxTournamentsName";
-            this.comboBoxTournamentsName.Size = new System.Drawing.Size(323, 31);
+            this.comboBoxTournamentsName.Size = new System.Drawing.Size(323, 26);
             this.comboBoxTournamentsName.TabIndex = 21;
             // 
             // label5
@@ -58,7 +59,7 @@
             this.label5.Location = new System.Drawing.Point(51, 410);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(191, 23);
+            this.label5.Size = new System.Drawing.Size(150, 18);
             this.label5.TabIndex = 20;
             this.label5.Text = "Tournaments Name: ";
             // 
@@ -77,34 +78,38 @@
             // 
             // textBoxPriceAmount
             // 
+            this.textBoxPriceAmount.Enabled = false;
             this.textBoxPriceAmount.Location = new System.Drawing.Point(247, 333);
             this.textBoxPriceAmount.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxPriceAmount.Name = "textBoxPriceAmount";
-            this.textBoxPriceAmount.Size = new System.Drawing.Size(323, 30);
+            this.textBoxPriceAmount.Size = new System.Drawing.Size(323, 26);
             this.textBoxPriceAmount.TabIndex = 18;
             // 
             // textBoxPrizePercentage
             // 
+            this.textBoxPrizePercentage.Enabled = false;
             this.textBoxPrizePercentage.Location = new System.Drawing.Point(247, 262);
             this.textBoxPrizePercentage.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxPrizePercentage.Name = "textBoxPrizePercentage";
-            this.textBoxPrizePercentage.Size = new System.Drawing.Size(323, 30);
+            this.textBoxPrizePercentage.Size = new System.Drawing.Size(323, 26);
             this.textBoxPrizePercentage.TabIndex = 17;
             // 
             // textBoxPrizePlaceName
             // 
+            this.textBoxPrizePlaceName.Enabled = false;
             this.textBoxPrizePlaceName.Location = new System.Drawing.Point(247, 187);
             this.textBoxPrizePlaceName.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxPrizePlaceName.Name = "textBoxPrizePlaceName";
-            this.textBoxPrizePlaceName.Size = new System.Drawing.Size(323, 30);
+            this.textBoxPrizePlaceName.Size = new System.Drawing.Size(323, 26);
             this.textBoxPrizePlaceName.TabIndex = 16;
             // 
             // textBoxPrizeId
             // 
+            this.textBoxPrizeId.Enabled = false;
             this.textBoxPrizeId.Location = new System.Drawing.Point(247, 118);
             this.textBoxPrizeId.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxPrizeId.Name = "textBoxPrizeId";
-            this.textBoxPrizeId.Size = new System.Drawing.Size(173, 30);
+            this.textBoxPrizeId.Size = new System.Drawing.Size(173, 26);
             this.textBoxPrizeId.TabIndex = 15;
             // 
             // label4
@@ -114,7 +119,7 @@
             this.label4.Location = new System.Drawing.Point(51, 338);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 23);
+            this.label4.Size = new System.Drawing.Size(108, 18);
             this.label4.TabIndex = 14;
             this.label4.Text = "Prize Amount: ";
             // 
@@ -125,7 +130,7 @@
             this.label3.Location = new System.Drawing.Point(51, 268);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 23);
+            this.label3.Size = new System.Drawing.Size(137, 18);
             this.label3.TabIndex = 13;
             this.label3.Text = "Prize Percentage: ";
             // 
@@ -136,7 +141,7 @@
             this.label2.Location = new System.Drawing.Point(51, 192);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 23);
+            this.label2.Size = new System.Drawing.Size(102, 18);
             this.label2.TabIndex = 12;
             this.label2.Text = "Place Name: ";
             // 
@@ -147,7 +152,7 @@
             this.label1.Location = new System.Drawing.Point(51, 123);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 23);
+            this.label1.Size = new System.Drawing.Size(28, 18);
             this.label1.TabIndex = 11;
             this.label1.Text = "Id: ";
             // 
@@ -160,13 +165,13 @@
             this.label6.Location = new System.Drawing.Point(182, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(258, 39);
+            this.label6.Size = new System.Drawing.Size(214, 32);
             this.label6.TabIndex = 22;
             this.label6.Text = "DELETE PRIZE";
             // 
             // FormDeletePrize
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(629, 534);

@@ -21,7 +21,7 @@ namespace Tournament_Manager
 
         private void FormAddPlayer_Load(object sender, EventArgs e)
         {
-            listteam = Teams.ReadData("", "");
+            listteam = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
             comboBoxTeam.DataSource = listteam;
             comboBoxTeam.DisplayMember = "Name";
             comboBoxTeam.DropDownStyle = ComboBoxStyle.DropDownList;
