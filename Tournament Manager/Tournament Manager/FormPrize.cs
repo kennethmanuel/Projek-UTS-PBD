@@ -16,6 +16,7 @@ namespace Tournament_Manager
     public partial class FormPrize : Form
     {
         List<Prize> listPrize = new List<Prize>();
+        public static int selectedPrize;
         public FormPrize()
         {
             InitializeComponent();
@@ -51,6 +52,9 @@ namespace Tournament_Manager
 
         private void buttonDeletePrize_Click(object sender, EventArgs e)
         {
+            int selectedIndex = dataGridViewPrize.CurrentCell.RowIndex;
+            selectedPrize = (int)dataGridViewPrize.Rows[selectedIndex].Cells[0].Value;
+
             FormDeletePrize frm = new FormDeletePrize();
             frm.Owner = this;
             frm.ShowDialog();
