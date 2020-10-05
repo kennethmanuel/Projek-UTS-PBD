@@ -7,10 +7,23 @@ using System.Threading.Tasks;
 
 namespace TournamentClassLibrary
 {
+    // Masih belum (N-M relationship)
+    /// <summary>
+    /// Matchups show what team which team win a matchupentry
+    /// </summary>
     public class Matchups
     {
+        /// <summary>
+        /// Matchup Id
+        /// </summary>
         private string id;
+        /// <summary>
+        /// Team that wins the matchup
+        /// </summary>
         private Teams winnerTeam;
+        /// <summary>
+        /// Round is the pairing number (ex: first pairing in single bracket match is round 1, the next pairing is round 2 and so on)
+        /// </summary>
         private int round;
 
         #region Constructor
@@ -29,12 +42,7 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
-        /// <summary>
-        /// Create list that contains Matchups object from selected database with specified criteria.
-        /// </summary>
-        /// <param name="criteria"></param>
-        /// <param name="criteriaValue"></param>
-        /// <returns></returns>
+        // Masih salah
         public static List<Matchups> ReadData(string criteria, string criteriaValue)
         {
             string sql = "";

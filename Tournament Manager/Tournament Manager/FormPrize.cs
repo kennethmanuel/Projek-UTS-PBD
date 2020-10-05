@@ -12,6 +12,7 @@ using TournamentClassLibrary;
 
 namespace Tournament_Manager
 {
+    //MASIH SALAH
     public partial class FormPrize : Form
     {
         List<Prize> listPrize = new List<Prize>();

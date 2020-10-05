@@ -143,6 +143,11 @@ namespace TournamentClassLibrary
             return code;
         }
 
+        /// <summary>
+        /// Select a team based on its id
+        /// </summary>
+        /// <param name="teamId"></param>
+        /// <returns></returns>
         public static Teams SelectTeam(int teamId)
         {
             string sql = "SELECT * FROM teams t WHERE t.id=" + teamId;

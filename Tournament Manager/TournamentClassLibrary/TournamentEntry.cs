@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace TournamentClassLibrary
 {
+    /// <summary>
+    /// Tournament entry show what team join what tournament
+    /// </summary>
     public class TournamentEntry
     {
         Tournaments tournament;

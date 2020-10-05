@@ -9,7 +9,10 @@ namespace TournamentClassLibrary
 {
     public class Prize
     {
-        private int id; //id is also a place number
+        /// <summary>
+        /// Id is also place number (Id 1 is first place, id 2 is second place and so on)
+        /// </summary>
+        private int id; 
         private string placeName;
         private int prizeAmount;
         private double prizePercentage;

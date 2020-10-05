@@ -66,10 +66,5 @@ namespace Tournament_Manager
         {
             this.Close();
         }
-
-        private void textBoxUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

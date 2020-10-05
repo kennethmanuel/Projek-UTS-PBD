@@ -142,7 +142,6 @@
             this.comboBoxTeam.Name = "comboBoxTeam";
             this.comboBoxTeam.Size = new System.Drawing.Size(318, 34);
             this.comboBoxTeam.TabIndex = 18;
-            this.comboBoxTeam.SelectedIndexChanged += new System.EventHandler(this.comboBoxTeam_SelectedIndexChanged);
             // 
             // label5
             // 
