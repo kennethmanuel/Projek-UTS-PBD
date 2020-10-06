@@ -13,8 +13,6 @@ namespace Tournament_Manager.TournamentPrize
 {
     public partial class FormEditPrize : Form
     {
-        int selectedPrizeId = FormPrize.selectedPrize;
-
         public FormEditPrize()
         {
             InitializeComponent();
@@ -22,11 +20,9 @@ namespace Tournament_Manager.TournamentPrize
 
         private void FormEditPrize_Load(object sender, EventArgs e)
         {
-            Prize selectedPrize = Prize.SelectPrize(selectedPrizeId);
+            Prize selectedPrize = Prize.SelectPrize(FormPrize.selectedPrize);
 
-            string newId = Prize.GenerateCode();
-
-            textBoxPrizeId.Text = newId;
+            textBoxPrizeId.Text = selectedPrize.Id.ToString();
 
             textBoxPriceAmount.Text = selectedPrize.PrizeAmount.ToString();
 
