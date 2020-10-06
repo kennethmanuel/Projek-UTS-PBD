@@ -32,7 +32,7 @@ namespace Tournament_Manager
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string criteria = textBoxSearch.Text;
-            listPrize = Prize.BatchSearch(criteria);
+            listPrize = Prize.ReadData(FormMenu.selectedTournament,criteria);
             ViewDataGrid();
         }
 
@@ -45,6 +45,8 @@ namespace Tournament_Manager
 
         private void buttonEditPrize_Click(object sender, EventArgs e)
         {
+            int selectedIndex = dataGridViewPrize.CurrentCell.RowIndex;
+            selectedPrize = (int)dataGridViewPrize.Rows[selectedIndex].Cells[0].Value;
             FormEditPrize frm = new FormEditPrize();
             frm.Owner = this;
             frm.ShowDialog();

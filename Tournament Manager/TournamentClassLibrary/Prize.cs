@@ -82,7 +82,7 @@ namespace TournamentClassLibrary
             }
             else
             {
-                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id where p.tournaments_id in (select tt.id from tournaments tt where tournaments_id=" + tournamentsId + ") AND ( p.id LIKE '%" + criteria + "%' OR p.placeName LIKE '%" + criteria + "%' OR p.prizeAmount LIKE '%" + criteria + "%' OR p.prizePercentage LIKE '%" + criteria + "%' OR p.tournaments_id LIKE '%" + criteria + "%' OR t.name like '%" + criteria + "%' )";
+                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id where p.tournaments_id in (select tt.id from tournaments tt where tournaments_id=" + tournamentsId + ") AND ( p.id LIKE '%" + criteria + "%' OR p.placeName LIKE '%" + criteria + "%' OR p.prizeAmount LIKE '%" + criteria + "%' OR p.prizePercentage LIKE '%" + criteria + "%'   )";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -120,12 +120,12 @@ namespace TournamentClassLibrary
         }
         public static void AddData(Prize p)
         {
-            string sql = "insert into Prizes(Id, PlaceName, PriceAmount, PrizePercentage, Tournaments_Id) values ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
+            string sql = "insert into Prizes(Id, PlaceName, PrizeAmount, PrizePercentage, Tournaments_Id) values ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
             Connection.ExecuteDML(sql);
         }
         public static string DeletePrize(Prize p)
         {
-            string sql = "Delete from prize where Id='" + p.Id + "'";
+            string sql = "Delete from prizes where Id='" + p.Id + "'";
             try
             {
                 Connection.ExecuteDML(sql);
@@ -150,6 +150,12 @@ namespace TournamentClassLibrary
 
             
             return prize;
+        }
+        public static void EditPrize(Prize p)
+        {
+            string sql = "update prizes set PlaceName='" + p.PlaceName.Replace("'", "\\'") + "',PrizeAmount='" + p.PrizeAmount + "',PrizePercentage='" + p.PrizePercentage + "',Tournaments_Id='" + p.Tournament.Id+
+                "'where Id='" + p.Id + "'";
+            Connection.ExecuteDML(sql);
         }
         #endregion
     }

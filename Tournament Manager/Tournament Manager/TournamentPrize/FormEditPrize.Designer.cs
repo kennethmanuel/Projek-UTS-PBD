@@ -76,6 +76,7 @@
             this.buttonEdit.TabIndex = 19;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // textBoxPriceAmount
             // 
@@ -178,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(669, 534);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBoxTournamentsName);
@@ -197,6 +198,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FormEditPrize";
             this.Text = "FormEditPrize";
+            this.Load += new System.EventHandler(this.FormEditPrize_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

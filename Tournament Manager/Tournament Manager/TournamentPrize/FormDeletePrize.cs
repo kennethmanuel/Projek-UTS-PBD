@@ -34,8 +34,8 @@ namespace Tournament_Manager.TournamentPrize
                 if (add == "1")
                 {
                     MessageBox.Show("Prize has been deleted.", "information");
-                    FormPlayerTeam frm = (FormPlayerTeam)this.Owner;
-                    frm.FormPlayerTeam_Load(buttonDelete, e);
+                    FormPrize formPrize = (FormPrize)this.Owner;
+                    formPrize.FormPrize_Load(buttonDelete, e);
                     this.Close();
                 }
                 else
@@ -57,6 +57,7 @@ namespace Tournament_Manager.TournamentPrize
             textBoxPrizeId.Text = selectedPrize.Id.ToString();
             textBoxPrizePlaceName.Text = selectedPrize.PlaceName;
             textBoxPriceAmount.Text = selectedPrize.PrizeAmount.ToString();
+            textBoxPrizePercentage.Text = selectedPrize.PrizePercentage.ToString();
             comboBoxTournamentsName.Text = selectedPrize.Tournament.Name;
         }
     }
