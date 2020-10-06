@@ -41,9 +41,9 @@ namespace Tournament_Manager.TournamentPrize
 
                 Prize prize = new Prize(
                     int.Parse(textBoxPrizeId.Text),
-                    textBoxPrizePlaceName.Text,
-                    decimal.Parse(textBoxPriceAmount.Text),
-                    double.Parse(textBoxPrizePercentage.Text), t);
+                    textBoxPrizePlaceName.Text, decimal.Parse(textBoxPriceAmount.Text),
+                    double.Parse(textBoxPrizePercentage.Text),
+                    FormMenu.selectedTournament);
 
                 Prize.EditPrize(prize);
 
@@ -56,6 +56,21 @@ namespace Tournament_Manager.TournamentPrize
             catch (Exception ex)
             {
                 MessageBox.Show("Prize cannot be saved. Error Message: " + ex.Message, "Error");
+            }
+        }
+
+        private void textBoxPrizePercentage_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxPrizePercentage.Text != "")
+            {
+                decimal prize = decimal.Parse(textBoxPrizePercentage.Text) * TournamentEntry.CalculateParticipant(FormMenu.selectedTournament) * FormMenu.selectedTournament.Entryfee;
+
+                textBoxPriceAmount.Text = prize.ToString();
+                if(double.Parse(textBoxPrizePercentage.Text)>1)
+                {
+                    MessageBox.Show("Please enter a fraction (value from 0-1)");
+                    textBoxPrizePercentage.Clear();
+                }
             }
         }
     }

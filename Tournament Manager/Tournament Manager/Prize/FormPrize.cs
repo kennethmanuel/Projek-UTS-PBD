@@ -49,7 +49,7 @@ namespace Tournament_Manager
             selectedPrize = (int)dataGridViewPrize.Rows[selectedIndex].Cells[0].Value;
             FormEditPrize frm = new FormEditPrize();
             frm.Owner = this;
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void buttonDeletePrize_Click(object sender, EventArgs e)
@@ -88,6 +88,11 @@ namespace Tournament_Manager
             {
                 dataGridViewPrize.DataSource = null;
             }
+        }
+
+        private void FormPrize_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
         }
     }
 }

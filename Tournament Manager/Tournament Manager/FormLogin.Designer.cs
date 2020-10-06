@@ -46,7 +46,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
-            this.buttonLogin.Location = new System.Drawing.Point(232, 492);
+            this.buttonLogin.Location = new System.Drawing.Point(236, 492);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(150, 36);
@@ -60,7 +60,7 @@
             this.textBoxDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxDatabase.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.textBoxDatabase.Location = new System.Drawing.Point(54, 430);
+            this.textBoxDatabase.Location = new System.Drawing.Point(58, 441);
             this.textBoxDatabase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxDatabase.Name = "textBoxDatabase";
             this.textBoxDatabase.Size = new System.Drawing.Size(328, 30);
@@ -71,7 +71,7 @@
             this.textBoxServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxServer.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.textBoxServer.Location = new System.Drawing.Point(54, 344);
+            this.textBoxServer.Location = new System.Drawing.Point(58, 356);
             this.textBoxServer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxServer.Name = "textBoxServer";
             this.textBoxServer.Size = new System.Drawing.Size(328, 30);
@@ -82,7 +82,7 @@
             this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(54, 263);
+            this.textBoxPassword.Location = new System.Drawing.Point(58, 282);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(328, 30);
@@ -93,7 +93,7 @@
             this.textBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.textBoxUsername.Location = new System.Drawing.Point(54, 179);
+            this.textBoxUsername.Location = new System.Drawing.Point(58, 206);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(328, 30);
@@ -104,7 +104,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
-            this.label4.Location = new System.Drawing.Point(50, 393);
+            this.label4.Location = new System.Drawing.Point(54, 405);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 23);
@@ -116,7 +116,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
-            this.label3.Location = new System.Drawing.Point(50, 308);
+            this.label3.Location = new System.Drawing.Point(54, 320);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 23);
@@ -128,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
-            this.label2.Location = new System.Drawing.Point(50, 227);
+            this.label2.Location = new System.Drawing.Point(54, 246);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 23);
@@ -140,7 +140,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
-            this.label1.Location = new System.Drawing.Point(50, 140);
+            this.label1.Location = new System.Drawing.Point(54, 167);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 23);
@@ -150,9 +150,9 @@
             // label5
             // 
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(119, 50);
+            this.label5.Location = new System.Drawing.Point(116, 59);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(211, 59);
@@ -165,7 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(457, 584);
+            this.ClientSize = new System.Drawing.Size(457, 573);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxDatabase);

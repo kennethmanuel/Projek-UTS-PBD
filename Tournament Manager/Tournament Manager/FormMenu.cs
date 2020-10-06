@@ -63,6 +63,7 @@ namespace Tournament_Manager
         {
             FormPrize frm = new FormPrize();
             frm.Owner = this;
+            this.Hide();
             frm.ShowDialog();
         }
 
@@ -74,47 +75,47 @@ namespace Tournament_Manager
             form.ShowDialog();
         }
 
-        private void buttonGeneratePairingSE_Click(object sender, EventArgs e)
+        private void generateTournamentStartingBracketToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listBoxPairingSE.Items.Clear();
-
-            List<Teams> listTeam = TournamentEntry.ReadTeam(selectedTournament, "");
-
-            Random rnd = new Random();
-
-            for (int i = listTeam.Count() - 1; i > 0; i--)
-            {
-                Teams temp = listTeam[i];
-                int index = rnd.Next(0, i + 1);
-                listTeam[i] = listTeam[index];
-                listTeam[index] = temp;
-            }
-
-            var teamstack = new Stack<Teams>(listTeam);
-
-            while (teamstack.Count != 0 && teamstack.Count()!= 1)
-            {
-                listBoxPairingSE.Items.Add(teamstack.Pop().Name + " vs " + teamstack.Pop().Name);
-            }
-            listBoxPairingSE.Items.Add(teamstack.Pop().Name + " vs bye");
+            FormBracketGenerator form = new FormBracketGenerator();
+            form.Owner = this;
+            form.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonViewTeam_Click(object sender, EventArgs e)
         {
-            listBoxPairingRR.Items.Clear();
-
-            List<Teams> listTeam = TournamentEntry.ReadTeam(selectedTournament, "");
-
-            int listteamcount = listTeam.Count();
-            int iterasi = listteamcount - 1;
-            for (int i = 0; i <= iterasi; i++ )
-            {
-                for(int j=i+1; j<=listteamcount-1; j++)
-                {
-                    listBoxPairingRR.Items.Add(listTeam[i].Name + " vs " + listTeam[j].Name);
-                }
-            }
+            teamAndPlayerToolStripMenuItem_Click(sender, e);
         }
-        
+
+        private void buttonViewPlayer_Click(object sender, EventArgs e)
+        {
+            teamAndPlayerToolStripMenuItem_Click(sender, e);
+        }
+
+        private void buttonView_Click(object sender, EventArgs e)
+        {
+            prizeToolStripMenuItem_Click(sender, e);
+        }
+
+        private void buttonViewMatchups_Click(object sender, EventArgs e)
+        {
+            matchToolStripMenuItem_Click_1(sender, e);
+        }
+
+        private void buttonMatchupEntries_Click(object sender, EventArgs e)
+        {
+            matchToolStripMenuItem_Click_1(sender, e);
+        }
+
+        private void buttonViewPairing_Click(object sender, EventArgs e)
+        {
+            generateTournamentStartingBracketToolStripMenuItem_Click(sender, e);
+        }
+
+        private void linkLabelAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/kennethmanuel/Projek-UTS-PBD");
+
+        }
     }
 }

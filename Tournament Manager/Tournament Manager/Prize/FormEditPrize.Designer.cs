@@ -57,6 +57,7 @@
             // textBoxPriceAmount
             // 
             this.textBoxPriceAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.textBoxPriceAmount.Enabled = false;
             this.textBoxPriceAmount.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxPriceAmount.Location = new System.Drawing.Point(46, 400);
             this.textBoxPriceAmount.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -73,6 +74,7 @@
             this.textBoxPrizePercentage.Name = "textBoxPrizePercentage";
             this.textBoxPrizePercentage.Size = new System.Drawing.Size(320, 30);
             this.textBoxPrizePercentage.TabIndex = 17;
+            this.textBoxPrizePercentage.TextChanged += new System.EventHandler(this.textBoxPrizePercentage_TextChanged);
             // 
             // textBoxPrizePlaceName
             // 
@@ -87,6 +89,7 @@
             // textBoxPrizeId
             // 
             this.textBoxPrizeId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.textBoxPrizeId.Enabled = false;
             this.textBoxPrizeId.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxPrizeId.Location = new System.Drawing.Point(46, 175);
             this.textBoxPrizeId.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);

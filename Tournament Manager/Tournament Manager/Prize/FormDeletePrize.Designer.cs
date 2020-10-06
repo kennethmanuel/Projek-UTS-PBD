@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxTournamentsName = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.textBoxPriceAmount = new System.Windows.Forms.TextBox();
             this.textBoxPrizePercentage = new System.Windows.Forms.TextBox();
@@ -42,36 +40,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBoxTournamentsName
-            // 
-            this.comboBoxTournamentsName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.comboBoxTournamentsName.Enabled = false;
-            this.comboBoxTournamentsName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxTournamentsName.FormattingEnabled = true;
-            this.comboBoxTournamentsName.Location = new System.Drawing.Point(55, 473);
-            this.comboBoxTournamentsName.Margin = new System.Windows.Forms.Padding(5);
-            this.comboBoxTournamentsName.Name = "comboBoxTournamentsName";
-            this.comboBoxTournamentsName.Size = new System.Drawing.Size(320, 31);
-            this.comboBoxTournamentsName.TabIndex = 21;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(51, 429);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 23);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Tournaments Name: ";
-            // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonDelete.Location = new System.Drawing.Point(238, 531);
+            this.buttonDelete.Location = new System.Drawing.Point(238, 452);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(5);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(137, 41);
@@ -190,10 +164,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(427, 617);
+            this.ClientSize = new System.Drawing.Size(427, 549);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBoxTournamentsName);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.textBoxPriceAmount);
             this.Controls.Add(this.textBoxPrizePercentage);
@@ -215,9 +187,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxTournamentsName;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.TextBox textBoxPriceAmount;
         private System.Windows.Forms.TextBox textBoxPrizePercentage;
