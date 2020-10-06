@@ -13,7 +13,6 @@ namespace Tournament_Manager
 {
     public partial class FormEditPlayer : Form
     {
-        List<Players> listPlayers = new List<Players>();
         List<Teams> listTeams = new List<Teams>();
         int selectedPlayerId = FormPlayerTeam.selectedPlayer;
 

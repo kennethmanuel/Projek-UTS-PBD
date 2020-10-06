@@ -14,12 +14,12 @@ namespace TournamentClassLibrary
         /// </summary>
         private int id;
         private string placeName;
-        private int prizeAmount;
+        private decimal prizeAmount;
         private double prizePercentage;
         private Tournaments tournament;
 
         #region Constructor
-        public Prize(int id, string placeName, int prizeAmount, double prizePercentage, Tournaments tournament)
+        public Prize(int id, string placeName, decimal prizeAmount, double prizePercentage, Tournaments tournament)
         {
             this.Id = id;
             this.PlaceName = placeName;
@@ -32,7 +32,7 @@ namespace TournamentClassLibrary
         #region Property
         public int Id { get => id; set => id = value; }
         public string PlaceName { get => placeName; set => placeName = value; }
-        public int PrizeAmount { get => prizeAmount; set => prizeAmount = value; }
+        public decimal PrizeAmount { get => prizeAmount; set => prizeAmount = value; }
         public double PrizePercentage { get => prizePercentage; set => prizePercentage = value; }
         public Tournaments Tournament { get => tournament; set => tournament = value; }
         #endregion
@@ -58,7 +58,7 @@ namespace TournamentClassLibrary
                 Prize p = new Prize(
                     int.Parse(value.GetValue(0).ToString()),
                     value.GetValue(1).ToString(),
-                    int.Parse(value.GetValue(2).ToString()),
+                    decimal.Parse(value.GetValue(2).ToString()),
                     double.Parse(value.GetValue(3).ToString()),
                     tournaments);
 
@@ -92,7 +92,7 @@ namespace TournamentClassLibrary
             while (value.Read() == true)
             {
                 Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
-                Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), int.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
+                Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), decimal.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
                 listPrize.Add(prize);
             }
             return listPrize;
@@ -141,20 +141,21 @@ namespace TournamentClassLibrary
             string sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.Tournaments_Id = t.Id  WHERE p.id=" + prizeId;
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
+
             value.Read();
 
             Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
-            Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), int.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
-
-           
-
+            
+            Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), decimal.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
+            
             
             return prize;
         }
         public static void EditPrize(Prize p)
         {
-            string sql = "update prizes set PlaceName='" + p.PlaceName.Replace("'", "\\'") + "',PrizeAmount='" + p.PrizeAmount + "',PrizePercentage='" + p.PrizePercentage + "',Tournaments_Id='" + p.Tournament.Id+
-                "'where Id='" + p.Id + "'";
+            string sql = 
+                "UPDATE prizes SET placename='" + p.PlaceName.Replace("'", "\\'") + "', prizeamount=" + p.PrizeAmount + ", prizepercentage=" + p.PrizePercentage +  ", tournaments_id=" + p.Tournament.Id + " WHERE id=" + p.Id ;
+
             Connection.ExecuteDML(sql);
         }
         #endregion

@@ -49,7 +49,7 @@ namespace Tournament_Manager
             selectedPrize = (int)dataGridViewPrize.Rows[selectedIndex].Cells[0].Value;
             FormEditPrize frm = new FormEditPrize();
             frm.Owner = this;
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void buttonDeletePrize_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace Tournament_Manager
             dataGridViewPrize.Columns.Clear();
 
             dataGridViewPrize.Columns.Add("Id", "Id");
-            dataGridViewPrize.Columns.Add("placeName", "Place Name");
+            dataGridViewPrize.Columns.Add("PlaceName", "Place Name");
             dataGridViewPrize.Columns.Add("PrizeAmount", "Prize Amount");
             dataGridViewPrize.Columns.Add("PricePercentage", "Price Percentage");
             dataGridViewPrize.Columns.Add("Tournaments_Id", "Tournament Id");           

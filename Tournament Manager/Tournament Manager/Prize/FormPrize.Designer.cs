@@ -107,10 +107,10 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(307, 29);
+            this.label5.Location = new System.Drawing.Point(312, 26);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(182, 56);
+            this.label5.Size = new System.Drawing.Size(151, 56);
             this.label5.TabIndex = 20;
             this.label5.Text = "PRIZE";
             // 

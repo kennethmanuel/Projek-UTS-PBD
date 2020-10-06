@@ -55,52 +55,52 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMatch.cs">
+    <Compile Include="Matchup\FormMatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMatch.Designer.cs">
+    <Compile Include="Matchup\FormMatch.Designer.cs">
       <DependentUpon>FormMatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNewTournament.cs">
+    <Compile Include="Tournament\FormNewTournament.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNewTournament.Designer.cs">
+    <Compile Include="Tournament\FormNewTournament.Designer.cs">
       <DependentUpon>FormNewTournament.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrize.cs">
+    <Compile Include="Prize\FormPrize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrize.Designer.cs">
+    <Compile Include="Prize\FormPrize.Designer.cs">
       <DependentUpon>FormPrize.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTournament.cs">
+    <Compile Include="Tournament\FormTournament.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTournament.Designer.cs">
+    <Compile Include="Tournament\FormTournament.Designer.cs">
       <DependentUpon>FormTournament.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player\FormAddPlayer.cs">
+    <Compile Include="Player and Team\Player\FormAddPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Player\FormAddPlayer.Designer.cs">
+    <Compile Include="Player and Team\Player\FormAddPlayer.Designer.cs">
       <DependentUpon>FormAddPlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player\FormDeletePlayer.cs">
+    <Compile Include="Player and Team\Player\FormDeletePlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Player\FormDeletePlayer.Designer.cs">
+    <Compile Include="Player and Team\Player\FormDeletePlayer.Designer.cs">
       <DependentUpon>FormDeletePlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Team\FormAddTeam.cs">
+    <Compile Include="Player and Team\Team\FormAddTeam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Team\FormAddTeam.Designer.cs">
+    <Compile Include="Player and Team\Team\FormAddTeam.Designer.cs">
       <DependentUpon>FormAddTeam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player\FormEditPlayer.cs">
+    <Compile Include="Player and Team\Player\FormEditPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Player\FormEditPlayer.Designer.cs">
+    <Compile Include="Player and Team\Player\FormEditPlayer.Designer.cs">
       <DependentUpon>FormEditPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenu.cs">
@@ -109,90 +109,90 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPlayerTeam.cs">
+    <Compile Include="Player and Team\FormPlayerTeam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPlayerTeam.Designer.cs">
+    <Compile Include="Player and Team\FormPlayerTeam.Designer.cs">
       <DependentUpon>FormPlayerTeam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Team\FormDeleteTeam.cs">
+    <Compile Include="Player and Team\Team\FormDeleteTeam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Team\FormDeleteTeam.Designer.cs">
+    <Compile Include="Player and Team\Team\FormDeleteTeam.Designer.cs">
       <DependentUpon>FormDeleteTeam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Team\FormEditTeam.cs">
+    <Compile Include="Player and Team\Team\FormEditTeam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Team\FormEditTeam.Designer.cs">
+    <Compile Include="Player and Team\Team\FormEditTeam.Designer.cs">
       <DependentUpon>FormEditTeam.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tournament Matchup\FormAddMatchup.cs">
+    <Compile Include="Matchup\FormAddMatchup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tournament Matchup\FormAddMatchup.Designer.cs">
+    <Compile Include="Matchup\FormAddMatchup.Designer.cs">
       <DependentUpon>FormAddMatchup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tournament Matchup\FormDeleteMatchup.cs">
+    <Compile Include="Matchup\FormDeleteMatchup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tournament Matchup\FormDeleteMatchup.Designer.cs">
+    <Compile Include="Matchup\FormDeleteMatchup.Designer.cs">
       <DependentUpon>FormDeleteMatchup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tournament Matchup\FormEditMatchup.cs">
+    <Compile Include="Matchup\FormEditMatchup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tournament Matchup\FormEditMatchup.Designer.cs">
+    <Compile Include="Matchup\FormEditMatchup.Designer.cs">
       <DependentUpon>FormEditMatchup.cs</DependentUpon>
     </Compile>
-    <Compile Include="TournamentPrize\FormAddPrize.cs">
+    <Compile Include="Prize\FormAddPrize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TournamentPrize\FormAddPrize.Designer.cs">
+    <Compile Include="Prize\FormAddPrize.Designer.cs">
       <DependentUpon>FormAddPrize.cs</DependentUpon>
     </Compile>
-    <Compile Include="TournamentPrize\FormDeletePrize.cs">
+    <Compile Include="Prize\FormDeletePrize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TournamentPrize\FormDeletePrize.Designer.cs">
+    <Compile Include="Prize\FormDeletePrize.Designer.cs">
       <DependentUpon>FormDeletePrize.cs</DependentUpon>
     </Compile>
-    <Compile Include="TournamentPrize\FormEditPrize.cs">
+    <Compile Include="Prize\FormEditPrize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TournamentPrize\FormEditPrize.Designer.cs">
+    <Compile Include="Prize\FormEditPrize.Designer.cs">
       <DependentUpon>FormEditPrize.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMatch.resx">
+    <EmbeddedResource Include="Matchup\FormMatch.resx">
       <DependentUpon>FormMatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNewTournament.resx">
+    <EmbeddedResource Include="Tournament\FormNewTournament.resx">
       <DependentUpon>FormNewTournament.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPlayerTeam.resx">
+    <EmbeddedResource Include="Player and Team\FormPlayerTeam.resx">
       <DependentUpon>FormPlayerTeam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrize.resx">
+    <EmbeddedResource Include="Prize\FormPrize.resx">
       <DependentUpon>FormPrize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTournament.resx">
+    <EmbeddedResource Include="Tournament\FormTournament.resx">
       <DependentUpon>FormTournament.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Player\FormAddPlayer.resx">
+    <EmbeddedResource Include="Player and Team\Player\FormAddPlayer.resx">
       <DependentUpon>FormAddPlayer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Player\FormDeletePlayer.resx">
+    <EmbeddedResource Include="Player and Team\Player\FormDeletePlayer.resx">
       <DependentUpon>FormDeletePlayer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Player\FormEditPlayer.resx">
+    <EmbeddedResource Include="Player and Team\Player\FormEditPlayer.resx">
       <DependentUpon>FormEditPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -204,31 +204,31 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Team\FormAddTeam.resx">
+    <EmbeddedResource Include="Player and Team\Team\FormAddTeam.resx">
       <DependentUpon>FormAddTeam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Team\FormDeleteTeam.resx">
+    <EmbeddedResource Include="Player and Team\Team\FormDeleteTeam.resx">
       <DependentUpon>FormDeleteTeam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Team\FormEditTeam.resx">
+    <EmbeddedResource Include="Player and Team\Team\FormEditTeam.resx">
       <DependentUpon>FormEditTeam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tournament Matchup\FormAddMatchup.resx">
+    <EmbeddedResource Include="Matchup\FormAddMatchup.resx">
       <DependentUpon>FormAddMatchup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tournament Matchup\FormDeleteMatchup.resx">
+    <EmbeddedResource Include="Matchup\FormDeleteMatchup.resx">
       <DependentUpon>FormDeleteMatchup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tournament Matchup\FormEditMatchup.resx">
+    <EmbeddedResource Include="Matchup\FormEditMatchup.resx">
       <DependentUpon>FormEditMatchup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TournamentPrize\FormAddPrize.resx">
+    <EmbeddedResource Include="Prize\FormAddPrize.resx">
       <DependentUpon>FormAddPrize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TournamentPrize\FormDeletePrize.resx">
+    <EmbeddedResource Include="Prize\FormDeletePrize.resx">
       <DependentUpon>FormDeletePrize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TournamentPrize\FormEditPrize.resx">
+    <EmbeddedResource Include="Prize\FormEditPrize.resx">
       <DependentUpon>FormEditPrize.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

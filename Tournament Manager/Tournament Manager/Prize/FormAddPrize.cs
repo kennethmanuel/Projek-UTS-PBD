@@ -24,9 +24,6 @@ namespace Tournament_Manager.TournamentPrize
         {
             listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
             listTournaments = Tournaments.ReadCombo(FormMenu.selectedTournament);
-            comboBoxTournamentsName.DataSource = listTournaments;
-            comboBoxTournamentsName.DisplayMember = "Name";
-            comboBoxTournamentsName.DropDownStyle = ComboBoxStyle.DropDownList;
 
             string newId = Prize.GenerateCode();
             textBoxPrizeId.Text = newId;
@@ -38,9 +35,14 @@ namespace Tournament_Manager.TournamentPrize
         {
             try
             {
-                Tournaments t = (Tournaments)comboBoxTournamentsName.SelectedItem;
-                Prize prize = new Prize(int.Parse(textBoxPrizeId.Text), textBoxPrizePlaceName.Text, int.Parse(textBoxPriceAmount.Text), double.Parse(textBoxPrizePercentage.Text), t);
+                Prize prize = new Prize(
+                    int.Parse(textBoxPrizeId.Text),
+                    textBoxPrizePlaceName.Text, int.Parse(textBoxPriceAmount.Text),
+                    double.Parse(textBoxPrizePercentage.Text),
+                    FormMenu.selectedTournament);
+
                 Prize.AddData(prize);
+
                 MessageBox.Show("Prize has been saved", "information");
             }
             catch (Exception ex)

@@ -69,11 +69,11 @@
             this.tabPagePlayer.Controls.Add(this.buttonEditPlayer);
             this.tabPagePlayer.Controls.Add(this.buttonAddPlayer);
             this.tabPagePlayer.Controls.Add(this.dataGridViewPlayer);
-            this.tabPagePlayer.Location = new System.Drawing.Point(4, 26);
+            this.tabPagePlayer.Location = new System.Drawing.Point(4, 32);
             this.tabPagePlayer.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePlayer.Name = "tabPagePlayer";
             this.tabPagePlayer.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePlayer.Size = new System.Drawing.Size(742, 449);
+            this.tabPagePlayer.Size = new System.Drawing.Size(742, 443);
             this.tabPagePlayer.TabIndex = 1;
             this.tabPagePlayer.Text = "Players";
             // 
@@ -83,7 +83,7 @@
             this.textBoxSearchPlayer.Location = new System.Drawing.Point(16, 50);
             this.textBoxSearchPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchPlayer.Name = "textBoxSearchPlayer";
-            this.textBoxSearchPlayer.Size = new System.Drawing.Size(307, 25);
+            this.textBoxSearchPlayer.Size = new System.Drawing.Size(307, 30);
             this.textBoxSearchPlayer.TabIndex = 7;
             this.textBoxSearchPlayer.TextChanged += new System.EventHandler(this.textBoxSearchPlayer_TextChanged);
             // 
@@ -150,11 +150,11 @@
             this.tabPageTeam.Controls.Add(this.buttonEditTeam);
             this.tabPageTeam.Controls.Add(this.buttonAddTeam);
             this.tabPageTeam.Controls.Add(this.dataGridViewTeam);
-            this.tabPageTeam.Location = new System.Drawing.Point(4, 26);
+            this.tabPageTeam.Location = new System.Drawing.Point(4, 32);
             this.tabPageTeam.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageTeam.Name = "tabPageTeam";
             this.tabPageTeam.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageTeam.Size = new System.Drawing.Size(742, 449);
+            this.tabPageTeam.Size = new System.Drawing.Size(742, 443);
             this.tabPageTeam.TabIndex = 0;
             this.tabPageTeam.Text = "Teams";
             // 
@@ -165,7 +165,7 @@
             this.textBoxSearchTeam.Location = new System.Drawing.Point(15, 50);
             this.textBoxSearchTeam.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchTeam.Name = "textBoxSearchTeam";
-            this.textBoxSearchTeam.Size = new System.Drawing.Size(307, 25);
+            this.textBoxSearchTeam.Size = new System.Drawing.Size(307, 30);
             this.textBoxSearchTeam.TabIndex = 8;
             this.textBoxSearchTeam.TextChanged += new System.EventHandler(this.textBoxSearchTeam_TextChanged);
             // 
@@ -229,17 +229,17 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(182, 28);
+            this.label5.Location = new System.Drawing.Point(183, 28);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(415, 60);
+            this.label5.Size = new System.Drawing.Size(392, 60);
             this.label5.TabIndex = 20;
             this.label5.Text = "PLAYER AND TEAMS";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // FormPlayerTeam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(771, 580);
