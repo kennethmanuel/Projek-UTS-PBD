@@ -40,6 +40,10 @@
             this.prizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.labelTournamentName = new System.Windows.Forms.Label();
+            this.listBoxPairingSE = new System.Windows.Forms.ListBox();
+            this.buttonGeneratePairingSE = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBoxPairingRR = new System.Windows.Forms.ListBox();
             this.menuStripControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +108,7 @@
             this.teamAndPlayerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.teamAndPlayerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
@@ -113,7 +117,7 @@
             this.matchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.matchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
             this.matchToolStripMenuItem.Text = "Match and Entry";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -129,7 +133,7 @@
             // 
             this.prizeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(131, 28);
             this.prizeToolStripMenuItem.Text = "Prize";
             this.prizeToolStripMenuItem.Click += new System.EventHandler(this.prizeToolStripMenuItem_Click);
             // 
@@ -158,12 +162,66 @@
             this.labelTournamentName.Text = "<tournament_name>";
             this.labelTournamentName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // listBoxPairingSE
+            // 
+            this.listBoxPairingSE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.listBoxPairingSE.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.listBoxPairingSE.FormattingEnabled = true;
+            this.listBoxPairingSE.ItemHeight = 23;
+            this.listBoxPairingSE.Location = new System.Drawing.Point(30, 152);
+            this.listBoxPairingSE.Name = "listBoxPairingSE";
+            this.listBoxPairingSE.Size = new System.Drawing.Size(354, 441);
+            this.listBoxPairingSE.TabIndex = 4;
+            // 
+            // buttonGeneratePairingSE
+            // 
+            this.buttonGeneratePairingSE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
+            this.buttonGeneratePairingSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGeneratePairingSE.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.buttonGeneratePairingSE.Location = new System.Drawing.Point(30, 87);
+            this.buttonGeneratePairingSE.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonGeneratePairingSE.Name = "buttonGeneratePairingSE";
+            this.buttonGeneratePairingSE.Size = new System.Drawing.Size(354, 41);
+            this.buttonGeneratePairingSE.TabIndex = 20;
+            this.buttonGeneratePairingSE.Text = "Generate single elimination pairing";
+            this.buttonGeneratePairingSE.UseVisualStyleBackColor = false;
+            this.buttonGeneratePairingSE.Click += new System.EventHandler(this.buttonGeneratePairingSE_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button1.Location = new System.Drawing.Point(415, 87);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(354, 41);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Generate round robin pairing";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBoxPairingRR
+            // 
+            this.listBoxPairingRR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.listBoxPairingRR.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.listBoxPairingRR.FormattingEnabled = true;
+            this.listBoxPairingRR.ItemHeight = 23;
+            this.listBoxPairingRR.Location = new System.Drawing.Point(415, 152);
+            this.listBoxPairingRR.Name = "listBoxPairingRR";
+            this.listBoxPairingRR.Size = new System.Drawing.Size(354, 441);
+            this.listBoxPairingRR.TabIndex = 21;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1045, 776);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listBoxPairingRR);
+            this.Controls.Add(this.buttonGeneratePairingSE);
+            this.Controls.Add(this.listBoxPairingSE);
             this.Controls.Add(this.labelTournamentName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStripControl);
@@ -196,5 +254,9 @@
         private System.Windows.Forms.ToolStripMenuItem playersTeamsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teamAndPlayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matchToolStripMenuItem;
+        private System.Windows.Forms.ListBox listBoxPairingSE;
+        private System.Windows.Forms.Button buttonGeneratePairingSE;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBoxPairingRR;
     }
 }
