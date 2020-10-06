@@ -39,5 +39,16 @@ namespace Tournament_Manager
                 MessageBox.Show("Tournament cannot be created: " + ex.Message, "Error");
             }
         }
+
+        private void FormNewTournament_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
+
+        }
+
+        private void FormNewTournament_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

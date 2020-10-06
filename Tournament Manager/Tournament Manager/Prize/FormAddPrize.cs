@@ -27,7 +27,6 @@ namespace Tournament_Manager.TournamentPrize
 
             string newId = Prize.GenerateCode();
             textBoxPrizeId.Text = newId;
-            textBoxPrizeId.Enabled = false;
             textBoxPrizePlaceName.Focus();
         }
 
@@ -37,7 +36,7 @@ namespace Tournament_Manager.TournamentPrize
             {
                 Prize prize = new Prize(
                     int.Parse(textBoxPrizeId.Text),
-                    textBoxPrizePlaceName.Text, int.Parse(textBoxPriceAmount.Text),
+                    textBoxPrizePlaceName.Text, decimal.Parse(textBoxPriceAmount.Text),
                     double.Parse(textBoxPrizePercentage.Text),
                     FormMenu.selectedTournament);
 
@@ -56,6 +55,26 @@ namespace Tournament_Manager.TournamentPrize
             FormPrize frm = (FormPrize)this.Owner;
             frm.FormPrize_Load(buttonAdd, e);
             this.Close();
+        }
+
+        private void textBoxPrizePercentage_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxPrizePercentage.Text != "")
+            {
+                decimal prize = decimal.Parse(textBoxPrizePercentage.Text) * TournamentEntry.CalculateParticipant(FormMenu.selectedTournament) * FormMenu.selectedTournament.Entryfee;
+
+                textBoxPriceAmount.Text = prize.ToString();
+                if(double.Parse(textBoxPrizePercentage.Text)>1)
+                {
+                    MessageBox.Show("Please enter a fraction (value from 0-1)");
+                    textBoxPrizePercentage.Clear();
+                }
+            }
+        }
+
+        private void textBoxPriceAmount_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

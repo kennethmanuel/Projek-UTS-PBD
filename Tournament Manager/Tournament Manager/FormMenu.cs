@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace Tournament_Manager
     {
         FormTournament formTournament;
         public static Tournaments selectedTournament;
-        
+
         public FormMenu()
         {
             InitializeComponent();
@@ -61,6 +63,7 @@ namespace Tournament_Manager
         {
             FormPrize frm = new FormPrize();
             frm.Owner = this;
+            this.Hide();
             frm.ShowDialog();
         }
 
@@ -70,6 +73,71 @@ namespace Tournament_Manager
             form.Owner = this;
             this.Hide();
             form.ShowDialog();
+        }
+
+        private void generateTournamentStartingBracketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBracketGenerator form = new FormBracketGenerator();
+            form.Owner = this;
+            form.ShowDialog();
+        }
+
+        private void buttonViewTeam_Click(object sender, EventArgs e)
+        {
+            teamAndPlayerToolStripMenuItem_Click(sender, e);
+        }
+
+        private void buttonViewPlayer_Click(object sender, EventArgs e)
+        {
+            teamAndPlayerToolStripMenuItem_Click(sender, e);
+        }
+
+        private void buttonView_Click(object sender, EventArgs e)
+        {
+            prizeToolStripMenuItem_Click(sender, e);
+        }
+
+        private void buttonViewMatchups_Click(object sender, EventArgs e)
+        {
+            matchToolStripMenuItem_Click_1(sender, e);
+        }
+
+        private void buttonMatchupEntries_Click(object sender, EventArgs e)
+        {
+            matchToolStripMenuItem_Click_1(sender, e);
+        }
+
+        private void buttonViewPairing_Click(object sender, EventArgs e)
+        {
+            generateTournamentStartingBracketToolStripMenuItem_Click(sender, e);
+        }
+
+        private void linkLabelAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/kennethmanuel/Projek-UTS-PBD");
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult konfirmasi = MessageBox.Show("Current tournament will be deleted , Are you sure?", "Konfirmasi", MessageBoxButtons.YesNo);
+            if (konfirmasi == System.Windows.Forms.DialogResult.Yes)
+            {
+                string add = Tournaments.DeleteTournament(selectedTournament);
+                if (add == "1")
+                {
+                    MessageBox.Show("Tournament has been deleted.", "information");
+
+                    FormTournament form = new FormTournament();
+                    form.Owner = this;
+                    this.Hide();
+                    form.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Fail to delete tournament. Message error: ", add);
+                }
+            }
         }
     }
 }

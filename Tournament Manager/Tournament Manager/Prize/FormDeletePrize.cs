@@ -28,7 +28,7 @@ namespace Tournament_Manager.TournamentPrize
             if (konfirmasi == System.Windows.Forms.DialogResult.Yes)
             {
 
-                Tournaments tournaments = (Tournaments)comboBoxTournamentsName.SelectedItem;
+                Tournaments tournaments = FormMenu.selectedTournament;
                 Prize p = new Prize(int.Parse(textBoxPrizeId.Text), textBoxPrizePlaceName.Text, int.Parse(textBoxPriceAmount.Text), double.Parse(textBoxPrizePercentage.Text), tournaments);
                 string add = Prize.DeletePrize(p);
                 if (add == "1")
@@ -50,15 +50,10 @@ namespace Tournament_Manager.TournamentPrize
             listTournaments = Tournaments.ReadCombo(FormMenu.selectedTournament);
             Prize selectedPrize = Prize.SelectPrize(selectedPrizeId);
 
-            comboBoxTournamentsName.DataSource = listTournaments;
-            comboBoxTournamentsName.DisplayMember = "Name";
-            comboBoxTournamentsName.DropDownStyle = ComboBoxStyle.DropDownList;
-
             textBoxPrizeId.Text = selectedPrize.Id.ToString();
             textBoxPrizePlaceName.Text = selectedPrize.PlaceName;
             textBoxPriceAmount.Text = selectedPrize.PrizeAmount.ToString();
             textBoxPrizePercentage.Text = selectedPrize.PrizePercentage.ToString();
-            comboBoxTournamentsName.Text = selectedPrize.Tournament.Name;
         }
     }
 }

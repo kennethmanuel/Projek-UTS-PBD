@@ -103,6 +103,16 @@ namespace TournamentClassLibrary
             }
             return listPlayer;
         }
+        
+        public static int CalculateParticipant(Tournaments t)
+        {
+            string sql = "SELECT COUNT(*) FROM tournamententry WHERE Tournaments_Id=" + t.Id;
+
+            MySqlDataReader participantQry =  Connection.ExecuteQuery(sql);
+            participantQry.Read();
+            int participant = int.Parse(participantQry.GetValue(0).ToString());
+            return participant;
+        }
         #endregion
     }
 } 

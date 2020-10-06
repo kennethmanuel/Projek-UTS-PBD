@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace TournamentClassLibrary
 
             List<Tournaments> tournamentList = new List<Tournaments>();
 
-            while(value.Read() == true)
+            while (value.Read() == true)
             {
                 Tournaments t = new Tournaments(
                     int.Parse(value.GetValue(0).ToString()),
@@ -52,7 +53,7 @@ namespace TournamentClassLibrary
             }
             return tournamentList;
         }
-         public static void AddTournament(Tournaments t)
+        public static void AddTournament(Tournaments t)
         {
             string sql = "INSERT INTO tournaments (id, name, entryfee) VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "');";
 
@@ -62,15 +63,31 @@ namespace TournamentClassLibrary
         public static int GenerateCode()
         {
             string sql = "SELECT MAX(id) FROM tournaments";
-            int code=1; 
+            int code = 1;
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
-            if(result.Read() == true)
+            if (result.Read() == true)
             {
                 int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
                 code = newCode;
             }
             return code;
+        }
+
+        public static string DeleteTournament(Tournaments t)
+        {
+            string sql = "DELETE FROM tournaments WHERE id=" + t.Id;
+
+            try
+            {
+                Connection.ExecuteDML(sql);
+                return "1";
+            }
+            catch(MySqlException ex)
+            {
+                return ex.Message + ". Sql Command: " + sql;
+            }
+
         }
         public static List<Tournaments> ReadCombo(Tournaments selected)
         {

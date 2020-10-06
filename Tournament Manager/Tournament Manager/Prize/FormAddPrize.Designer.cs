@@ -30,7 +30,6 @@
         {
             this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxPriceAmount = new System.Windows.Forms.TextBox();
-            this.textBoxPrizePercentage = new System.Windows.Forms.TextBox();
             this.textBoxPrizePlaceName = new System.Windows.Forms.TextBox();
             this.textBoxPrizeId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBoxPrizePercentage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -61,18 +61,10 @@
             this.textBoxPriceAmount.Location = new System.Drawing.Point(49, 399);
             this.textBoxPriceAmount.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxPriceAmount.Name = "textBoxPriceAmount";
+            this.textBoxPriceAmount.ReadOnly = true;
             this.textBoxPriceAmount.Size = new System.Drawing.Size(320, 30);
             this.textBoxPriceAmount.TabIndex = 18;
-            // 
-            // textBoxPrizePercentage
-            // 
-            this.textBoxPrizePercentage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.textBoxPrizePercentage.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBoxPrizePercentage.Location = new System.Drawing.Point(49, 318);
-            this.textBoxPrizePercentage.Margin = new System.Windows.Forms.Padding(5);
-            this.textBoxPrizePercentage.Name = "textBoxPrizePercentage";
-            this.textBoxPrizePercentage.Size = new System.Drawing.Size(320, 30);
-            this.textBoxPrizePercentage.TabIndex = 17;
+            this.textBoxPriceAmount.TextChanged += new System.EventHandler(this.textBoxPriceAmount_TextChanged);
             // 
             // textBoxPrizePlaceName
             // 
@@ -91,8 +83,10 @@
             this.textBoxPrizeId.Location = new System.Drawing.Point(49, 166);
             this.textBoxPrizeId.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxPrizeId.Name = "textBoxPrizeId";
+            this.textBoxPrizeId.ReadOnly = true;
             this.textBoxPrizeId.Size = new System.Drawing.Size(320, 30);
             this.textBoxPrizeId.TabIndex = 15;
+            this.textBoxPrizeId.TabStop = false;
             // 
             // label4
             // 
@@ -155,6 +149,17 @@
             this.label6.TabIndex = 22;
             this.label6.Text = "ADD PRIZE";
             // 
+            // textBoxPrizePercentage
+            // 
+            this.textBoxPrizePercentage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.textBoxPrizePercentage.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxPrizePercentage.Location = new System.Drawing.Point(49, 318);
+            this.textBoxPrizePercentage.Margin = new System.Windows.Forms.Padding(5);
+            this.textBoxPrizePercentage.Name = "textBoxPrizePercentage";
+            this.textBoxPrizePercentage.Size = new System.Drawing.Size(320, 30);
+            this.textBoxPrizePercentage.TabIndex = 17;
+            this.textBoxPrizePercentage.TextChanged += new System.EventHandler(this.textBoxPrizePercentage_TextChanged);
+            // 
             // FormAddPrize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -186,7 +191,6 @@
         #endregion
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.TextBox textBoxPriceAmount;
-        private System.Windows.Forms.TextBox textBoxPrizePercentage;
         private System.Windows.Forms.TextBox textBoxPrizePlaceName;
         private System.Windows.Forms.TextBox textBoxPrizeId;
         private System.Windows.Forms.Label label4;
@@ -194,5 +198,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxPrizePercentage;
     }
 }

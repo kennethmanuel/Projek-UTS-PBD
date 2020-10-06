@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBracketGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBracketGenerator.Designer.cs">
+      <DependentUpon>FormBracketGenerator.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     <Compile Include="Prize\FormEditPrize.Designer.cs">
       <DependentUpon>FormEditPrize.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormBracketGenerator.resx">
+      <DependentUpon>FormBracketGenerator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +212,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Player and Team\Team\FormAddTeam.resx">
       <DependentUpon>FormAddTeam.cs</DependentUpon>
@@ -244,6 +254,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

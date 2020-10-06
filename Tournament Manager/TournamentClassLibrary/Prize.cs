@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -153,8 +154,7 @@ namespace TournamentClassLibrary
         }
         public static void EditPrize(Prize p)
         {
-            string sql = 
-                "UPDATE prizes SET placename='" + p.PlaceName.Replace("'", "\\'") + "', prizeamount=" + p.PrizeAmount + ", prizepercentage=" + p.PrizePercentage +  ", tournaments_id=" + p.Tournament.Id + " WHERE id=" + p.Id ;
+            string sql = "UPDATE prizes SET placename='" + p.PlaceName.Replace("'", "\\'") + "', prizeamount=" + p.PrizeAmount + ", prizepercentage=" + p.PrizePercentage +  ", tournaments_id=" + p.Tournament.Id + " WHERE id=" + p.Id ;
 
             Connection.ExecuteDML(sql);
         }

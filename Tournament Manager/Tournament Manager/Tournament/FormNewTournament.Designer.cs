@@ -122,7 +122,10 @@
             this.Controls.Add(this.textBoxTournamentName);
             this.Controls.Add(this.label1);
             this.Name = "FormNewTournament";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNewTournament";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormNewTournament_FormClosing);
+            this.Load += new System.EventHandler(this.FormNewTournament_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

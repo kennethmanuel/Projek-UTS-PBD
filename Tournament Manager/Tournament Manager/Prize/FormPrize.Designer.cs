@@ -132,6 +132,7 @@
             this.Name = "FormPrize";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrize";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrize_FormClosing);
             this.Load += new System.EventHandler(this.FormPrize_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrize)).EndInit();
             this.ResumeLayout(false);
