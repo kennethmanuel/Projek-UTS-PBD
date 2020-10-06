@@ -45,5 +45,10 @@ namespace Tournament_Manager
             this.Owner.Show();
 
         }
+
+        private void FormNewTournament_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

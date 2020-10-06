@@ -56,10 +56,10 @@ namespace Tournament_Manager
         private void FormLogin_Load(object sender, EventArgs e)
         {
             //temporary
-            textBoxUsername.Text = "fisher";
-            textBoxPassword.Text = "1234";
-            textBoxServer.Text = "localhost";
-            textBoxDatabase.Text = "tournament_db";
+            //textBoxUsername.Text = "fisher";
+            //textBoxPassword.Text = "1234";
+            //textBoxServer.Text = "localhost";
+            //textBoxDatabase.Text = "tournament_db";
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

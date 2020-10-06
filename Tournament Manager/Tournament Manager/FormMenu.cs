@@ -117,5 +117,27 @@ namespace Tournament_Manager
             System.Diagnostics.Process.Start("https://github.com/kennethmanuel/Projek-UTS-PBD");
 
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult konfirmasi = MessageBox.Show("Current tournament will be deleted , Are you sure?", "Konfirmasi", MessageBoxButtons.YesNo);
+            if (konfirmasi == System.Windows.Forms.DialogResult.Yes)
+            {
+                string add = Tournaments.DeleteTournament(selectedTournament);
+                if (add == "1")
+                {
+                    MessageBox.Show("Tournament has been deleted.", "information");
+
+                    FormTournament form = new FormTournament();
+                    form.Owner = this;
+                    this.Hide();
+                    form.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Fail to delete tournament. Message error: ", add);
+                }
+            }
+        }
     }
 }

@@ -139,7 +139,7 @@
             // 
             this.prizeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(131, 28);
             this.prizeToolStripMenuItem.Text = "Prize";
             this.prizeToolStripMenuItem.Click += new System.EventHandler(this.prizeToolStripMenuItem_Click);
             // 
@@ -172,7 +172,7 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(36)))), ((int)(((byte)(29)))));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.buttonDelete.Location = new System.Drawing.Point(690, 605);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonDelete.Name = "buttonDelete";
@@ -180,13 +180,14 @@
             this.buttonDelete.TabIndex = 24;
             this.buttonDelete.Text = "Delete Current Tournament";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonViewPlayer
             // 
             this.buttonViewPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(136)))));
             this.buttonViewPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewPlayer.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonViewPlayer.Location = new System.Drawing.Point(60, 221);
+            this.buttonViewPlayer.Location = new System.Drawing.Point(51, 205);
             this.buttonViewPlayer.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonViewPlayer.Name = "buttonViewPlayer";
             this.buttonViewPlayer.Size = new System.Drawing.Size(314, 39);
@@ -200,7 +201,7 @@
             this.buttonViewTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(98)))), ((int)(((byte)(134)))));
             this.buttonViewTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewTeam.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonViewTeam.Location = new System.Drawing.Point(60, 266);
+            this.buttonViewTeam.Location = new System.Drawing.Point(51, 266);
             this.buttonViewTeam.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonViewTeam.Name = "buttonViewTeam";
             this.buttonViewTeam.Size = new System.Drawing.Size(314, 39);
@@ -214,7 +215,7 @@
             this.buttonView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(26)))));
             this.buttonView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonView.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonView.Location = new System.Drawing.Point(60, 311);
+            this.buttonView.Location = new System.Drawing.Point(51, 323);
             this.buttonView.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonView.Name = "buttonView";
             this.buttonView.Size = new System.Drawing.Size(314, 39);
@@ -228,7 +229,7 @@
             this.buttonViewMatchups.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(153)))), ((int)(((byte)(33)))));
             this.buttonViewMatchups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewMatchups.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonViewMatchups.Location = new System.Drawing.Point(60, 356);
+            this.buttonViewMatchups.Location = new System.Drawing.Point(51, 381);
             this.buttonViewMatchups.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonViewMatchups.Name = "buttonViewMatchups";
             this.buttonViewMatchups.Size = new System.Drawing.Size(314, 39);
@@ -242,7 +243,7 @@
             this.buttonMatchupEntries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(157)))), ((int)(((byte)(106)))));
             this.buttonMatchupEntries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMatchupEntries.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonMatchupEntries.Location = new System.Drawing.Point(60, 401);
+            this.buttonMatchupEntries.Location = new System.Drawing.Point(51, 442);
             this.buttonMatchupEntries.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonMatchupEntries.Name = "buttonMatchupEntries";
             this.buttonMatchupEntries.Size = new System.Drawing.Size(314, 39);
@@ -256,7 +257,7 @@
             this.buttonViewPairing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(93)))), ((int)(((byte)(14)))));
             this.buttonViewPairing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewPairing.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonViewPairing.Location = new System.Drawing.Point(60, 446);
+            this.buttonViewPairing.Location = new System.Drawing.Point(51, 500);
             this.buttonViewPairing.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonViewPairing.Name = "buttonViewPairing";
             this.buttonViewPairing.Size = new System.Drawing.Size(314, 39);
@@ -285,7 +286,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
             this.label2.Location = new System.Drawing.Point(26, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(626, 60);
+            this.label2.Size = new System.Drawing.Size(612, 59);
             this.label2.TabIndex = 32;
             this.label2.Text = "TOURNAMENT MANAGER ♔";
             // 
@@ -313,7 +314,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormMenu";
+            this.Text = "v";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMenu_FormClosing);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.menuStripControl.ResumeLayout(false);
