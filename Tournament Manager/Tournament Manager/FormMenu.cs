@@ -17,6 +17,8 @@ namespace Tournament_Manager
     public partial class FormMenu : Form
     {
         FormTournament formTournament;
+
+        // Selected tournament from FormTournament.cs
         public static Tournaments selectedTournament;
 
         public FormMenu()
@@ -27,7 +29,11 @@ namespace Tournament_Manager
         private void FormMenu_Load(object sender, EventArgs e)
         {
             formTournament = (FormTournament)this.Owner;
+
+            // Get selectedTournament from FormTournament.cs
             selectedTournament = formTournament.selectedTournament;
+
+            // Change selected tournament label with the proper one
             labelTournamentName.Text = selectedTournament.Name;
         }
 
@@ -114,16 +120,19 @@ namespace Tournament_Manager
 
         private void linkLabelAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // Open GitHub URL on browser
             System.Diagnostics.Process.Start("https://github.com/kennethmanuel/Projek-UTS-PBD");
-
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            // Confirm
             DialogResult konfirmasi = MessageBox.Show("Current tournament will be deleted , Are you sure?", "Konfirmasi", MessageBoxButtons.YesNo);
+
             if (konfirmasi == System.Windows.Forms.DialogResult.Yes)
             {
                 string add = Tournaments.DeleteTournament(selectedTournament);
+
                 if (add == "1")
                 {
                     MessageBox.Show("Tournament has been deleted.", "information");

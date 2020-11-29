@@ -42,9 +42,6 @@ namespace Tournament_Manager
 
                     FormTournament formTournament = new FormTournament();
                     formTournament.ShowDialog();
-
-                    //FormMenu formMenu = new FormMenu();
-                    //formMenu.ShowDialog();
                 }
             }
             catch (Exception ex)
