@@ -23,15 +23,19 @@ namespace Tournament_Manager
         {
             try
             {
+                // Generate new tournament id
                 int newCode = Tournaments.GenerateCode();
+
+                // Create tournament 
                 Tournaments t = new Tournaments(newCode, textBoxTournamentName.Text, decimal.Parse(textBoxEntryFee.Text));
+                
+                // Add tournament to db
                 Tournaments.AddTournament(t);
 
+                // Load selected tournament
                 FormTournament form = (FormTournament)this.Owner;
                 form.selectedTournament = t;
-
-                this.Hide();
-
+                this.Hide(); 
                 form.buttonLoadTournament_Click(buttonCreateTournament, e);
             }
             catch(Exception ex)
@@ -42,13 +46,8 @@ namespace Tournament_Manager
 
         private void FormNewTournament_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Get back to FormTournament
             this.Owner.Show();
-
-        }
-
-        private void FormNewTournament_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

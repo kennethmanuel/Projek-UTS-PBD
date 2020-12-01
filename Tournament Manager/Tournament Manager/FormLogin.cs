@@ -22,28 +22,36 @@ namespace Tournament_Manager
         {
             try
             {
+                // Username is empty
                 if (textBoxUsername.Text == "")
                 {
                     MessageBox.Show("Username can't be empty.");
                 }
+                // Server is empty
                 else if (textBoxServer.Text == "")
                 {
                     MessageBox.Show("Server name can't be empty.");
                 }
+                // Database is empty
                 else if (textBoxDatabase.Text == "")
                 {
                     MessageBox.Show("Database name can't be empty.");
                 }
+                // All necessarry info fulfilled
                 else
                 {
+                    // Connect to database
                     Connection connection = new Connection(textBoxServer.Text, textBoxDatabase.Text, textBoxUsername.Text, textBoxPassword.Text);
 
+                    // Hide FormLogin
                     this.Hide();
 
+                    // Show FormTournament
                     FormTournament formTournament = new FormTournament();
                     formTournament.ShowDialog();
                 }
             }
+            // Login credentials invalid
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Fail to connect!");
@@ -52,16 +60,17 @@ namespace Tournament_Manager
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            //temporary
-            //textBoxUsername.Text = "fisher";
-            //textBoxPassword.Text = "1234";
-            //textBoxServer.Text = "localhost";
-            //textBoxDatabase.Text = "tournament_db";
+            // Temporary login info
+            textBoxUsername.Text = "beth";
+            textBoxPassword.Text = "harmon";
+            textBoxServer.Text = "localhost";
+            textBoxDatabase.Text = "tournament_db";
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // Exit application
+            Application.Exit();
         }
     }
 }

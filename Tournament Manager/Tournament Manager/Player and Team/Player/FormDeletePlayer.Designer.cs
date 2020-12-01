@@ -157,7 +157,6 @@
             this.label5.Size = new System.Drawing.Size(319, 51);
             this.label5.TabIndex = 28;
             this.label5.Text = "DELETE PLAYER";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // FormDeletePlayer
             // 

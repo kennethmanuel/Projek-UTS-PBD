@@ -53,6 +53,11 @@ namespace TournamentClassLibrary
             }
             return tournamentList;
         }
+
+        /// <summary>
+        /// Add tournament to db
+        /// </summary>
+        /// <param name="t"></param>
         public static void AddTournament(Tournaments t)
         {
             string sql = "INSERT INTO tournaments (id, name, entryfee) VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "');";
@@ -74,21 +79,29 @@ namespace TournamentClassLibrary
             return code;
         }
 
-        public static string DeleteTournament(Tournaments t)
+        /// <summary>
+        /// Delete tournament
+        /// </summary>
+        /// <param name="t">Tournament name</param>
+        /// <param name="exceptionMessage">Error message for debugging</param>
+        /// <returns>true = delete success, false = delete failed</returns>
+        public static bool DeleteTournament(Tournaments t, out string exceptionMessage)
         {
             string sql = "DELETE FROM tournaments WHERE id=" + t.Id;
+            exceptionMessage = "";
 
             try
             {
                 Connection.ExecuteDML(sql);
-                return "1";
+                return true;
             }
             catch(MySqlException ex)
             {
-                return ex.Message + ". Sql Command: " + sql;
+                exceptionMessage = ex.Message;
+                return false;
             }
-
         }
+
         public static List<Tournaments> ReadCombo(Tournaments selected)
         {
             int tournamentsId = selected.Id;

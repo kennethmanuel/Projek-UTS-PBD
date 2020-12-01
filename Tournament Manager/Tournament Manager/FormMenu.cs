@@ -39,11 +39,13 @@ namespace Tournament_Manager
 
         private void FormMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Close program
             Application.Exit();
         }
 
         private void teamAndPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Open FormPlayerTeam
             FormPlayerTeam form = new FormPlayerTeam();
             form.Owner = this;
             this.Hide();
@@ -52,21 +54,16 @@ namespace Tournament_Manager
 
         private void matchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            // Open FormMatch
             FormMatch form = new FormMatch();
             form.Owner = this;
             this.Hide();
             form.ShowDialog();
         }
 
-        private void buttonTestTournamentLoad_Click(object sender, EventArgs e)
-        {
-            FormTournament form = new FormTournament();
-            form.Owner = this;
-            form.ShowDialog();
-        }
-
         private void prizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Open FormPrize
             FormPrize frm = new FormPrize();
             frm.Owner = this;
             this.Hide();
@@ -75,6 +72,7 @@ namespace Tournament_Manager
 
         private void loadAnotherTournamentFromDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Open FormTournament
             FormTournament form = new FormTournament();
             form.Owner = this;
             this.Hide();
@@ -83,6 +81,7 @@ namespace Tournament_Manager
 
         private void generateTournamentStartingBracketToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Open FormBracketGenerator
             FormBracketGenerator form = new FormBracketGenerator();
             form.Owner = this;
             form.ShowDialog();
@@ -90,31 +89,37 @@ namespace Tournament_Manager
 
         private void buttonViewTeam_Click(object sender, EventArgs e)
         {
+            // Open FormPlayerTeam
             teamAndPlayerToolStripMenuItem_Click(sender, e);
         }
 
         private void buttonViewPlayer_Click(object sender, EventArgs e)
         {
+            // Open FormPlayerTeam
             teamAndPlayerToolStripMenuItem_Click(sender, e);
         }
 
         private void buttonView_Click(object sender, EventArgs e)
         {
+            // Open FormPrize
             prizeToolStripMenuItem_Click(sender, e);
         }
 
         private void buttonViewMatchups_Click(object sender, EventArgs e)
         {
+            // Open FormMatch
             matchToolStripMenuItem_Click_1(sender, e);
         }
 
         private void buttonMatchupEntries_Click(object sender, EventArgs e)
         {
+            // Open FormMatch
             matchToolStripMenuItem_Click_1(sender, e);
         }
 
         private void buttonViewPairing_Click(object sender, EventArgs e)
         {
+            // Open FormBracketGenerator
             generateTournamentStartingBracketToolStripMenuItem_Click(sender, e);
         }
 
@@ -126,14 +131,15 @@ namespace Tournament_Manager
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            // Confirm
+            // Confirm delete message
             DialogResult konfirmasi = MessageBox.Show("Current tournament will be deleted , Are you sure?", "Konfirmasi", MessageBoxButtons.YesNo);
 
+            // Confirm deletion
             if (konfirmasi == System.Windows.Forms.DialogResult.Yes)
             {
-                string add = Tournaments.DeleteTournament(selectedTournament);
+                bool sucess = Tournaments.DeleteTournament(selectedTournament, out string exceptionMessage);
 
-                if (add == "1")
+                if (sucess)
                 {
                     MessageBox.Show("Tournament has been deleted.", "information");
 
@@ -144,7 +150,7 @@ namespace Tournament_Manager
                 }
                 else
                 {
-                    MessageBox.Show("Fail to delete tournament. Message error: ", add);
+                    MessageBox.Show("Fail to delete tournament: " + exceptionMessage);
                 }
             }
         }

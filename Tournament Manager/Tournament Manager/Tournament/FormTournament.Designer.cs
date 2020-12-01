@@ -117,6 +117,7 @@
             this.Name = "FormTournament";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTournament";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTournament_FormClosing);
             this.Load += new System.EventHandler(this.FormTournament_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

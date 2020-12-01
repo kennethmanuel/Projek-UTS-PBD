@@ -151,25 +151,43 @@ namespace TournamentClassLibrary
         /// </summary>
         /// <param name="pl"></param>
         /// <returns></returns>
-        public static string DeletePlayer(Players pl)
+        public static bool DeletePlayer(Players p, out string exceptionMessage)
         {
-            string sql = "Delete from players where Id='" + pl.Id + "'";
+            string sql = "Delete from players where Id='" + p.Id + "'";
+
+            exceptionMessage = "";
             try
             {
                 Connection.ExecuteDML(sql);
-                return "1";
+                return true;
             }
             catch(MySqlException ex)
             {
-                return ex.Message + ". Sql Command: " + sql;
+                exceptionMessage = ex.Message;
+                return false;
             }
         }
+
+        //public static string DeletePlayer(Players pl)
+        //{
+        //    string sql = "Delete from players where Id='" + pl.Id + "'";
+        //    try
+        //    {
+        //        Connection.ExecuteDML(sql);
+        //        return "1";
+        //    }
+        //    catch(MySqlException ex)
+        //    {
+        //        return ex.Message + ". Sql Command: " + sql;
+        //    }
+        //}
+
 
         /// <summary>
         /// Generate new Id
         /// </summary>
         /// <returns></returns>
-        public static string GenerateCode()
+        public static string GenerateId()
         {
             string sql = "select max(Id) from Players";
             string code = "";

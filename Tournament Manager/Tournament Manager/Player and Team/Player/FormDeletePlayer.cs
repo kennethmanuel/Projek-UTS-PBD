@@ -13,9 +13,12 @@ namespace Tournament_Manager.Player
 {
     public partial class FormDeletePlayer : Form
     {
-        List<Players> listPlayers = new List<Players>();
+        // Listed team on combobox
         List<Teams> listTeams = new List<Teams>();
+
+        // Selected player to be deleted
         int selectedPlayerId = FormPlayerTeam.selectedPlayer;
+
         public FormDeletePlayer()
         {
             InitializeComponent();
@@ -23,13 +26,19 @@ namespace Tournament_Manager.Player
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            // Confirm
             DialogResult konfirmasi = MessageBox.Show("Data player akan terhapus , Apakah anda yakin?", "Konfirmasi", MessageBoxButtons.YesNo);
+
+            // Confirm yes
             if (konfirmasi == System.Windows.Forms.DialogResult.Yes)
             {
                 Teams team = (Teams)comboBoxTeam.SelectedItem;
+
                 Players p = new Players(int.Parse(textBoxPlayerId.Text), textBoxPlayerName.Text, textBoxPlayerEmail.Text, team);
-                string add = Players.DeletePlayer(p);
-                if (add == "1")
+
+                bool success = Players.DeletePlayer(p, out string exceptionMessage);
+
+                if (success)
                 {
                     MessageBox.Show("Player has been deleted.", "information");
                     FormPlayerTeam frm = (FormPlayerTeam)this.Owner;
@@ -38,26 +47,24 @@ namespace Tournament_Manager.Player
                 }
                 else
                 {
-                    MessageBox.Show("Player Failed to deleted. Message error: ", add);
+                    MessageBox.Show("Player Failed to deleted. Message error: " + exceptionMessage);
                 }
             }
         }
 
         private void FormDeletePlayer_Load(object sender, EventArgs e)
         {
+            // Get team for combobox
             listTeams = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
 
+            // Get selected player to be deleted
             Players selectedPlayer = Players.SelectPlayer(selectedPlayerId);
                        
+            // Show selected player to be deleted's data to form
             textBoxPlayerId.Text = selectedPlayer.Id.ToString();
             textBoxPlayerName.Text = selectedPlayer.Name;
             textBoxPlayerEmail.Text = selectedPlayer.Email;
             comboBoxTeam.Text = selectedPlayer.Team.Name;
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

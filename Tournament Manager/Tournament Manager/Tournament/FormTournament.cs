@@ -13,7 +13,7 @@ namespace Tournament_Manager
 {
     public partial class FormTournament : Form
     {
-        // List available tournament to select
+        // List available tournament to select on combobox
         List<Tournaments> listTournament = new List<Tournaments>();
 
         // Selected tournament (passed onto FormMenu)
@@ -26,7 +26,7 @@ namespace Tournament_Manager
 
         private void FormTournament_Load(object sender, EventArgs e)
         {
-            // Get tournament data from tournament table to listTournament
+            // Get tournament data from tournament table to listTournament 
             listTournament = Tournaments.ReadData();
 
             // Display tournament name on comboBox
@@ -39,29 +39,32 @@ namespace Tournament_Manager
 
         public void buttonLoadTournament_Click(object sender, EventArgs e)
         {
-            // Get selected 
+            // Get selected tournament from combobox
             if (selectedTournament == null)
             {
                 selectedTournament = (Tournaments)comboBoxTournament.SelectedItem;
             }
 
+            // Hide FormTournament, show FormMenu
             FormMenu form = new FormMenu();
             form.Owner = this;
             this.Hide();
             form.ShowDialog();
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void buttonCreateTournament_Click(object sender, EventArgs e)
         {
+            // Hide FormTournament, show FormNewTournament
             FormNewTournament form = new FormNewTournament();
             form.Owner = this;
             this.Hide();
             form.ShowDialog();
+        }
+
+        private void FormTournament_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Close application
+            Application.Exit();
         }
     }
 }
