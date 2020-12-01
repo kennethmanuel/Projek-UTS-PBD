@@ -1,2 +1,2 @@
 # Projek-UTS-PBD
-Projek UTS tournament manager pemrograman basis data menggunakan framework .NET C# dengan DBMS MySQL.
+Projek PBD Ubaya 2020 smt. ganjil
