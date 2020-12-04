@@ -13,8 +13,8 @@ namespace Tournament_Manager
 {
     public partial class FormAddPlayer : Form
     {
-        // Available team on combobox
-        List<Teams> listteam = new List<Teams>();
+        // Available team on combobox, data loaded at FormLoad
+        List<Teams> listteam = new List<Teams>();        
 
         public FormAddPlayer()
         {
@@ -23,7 +23,7 @@ namespace Tournament_Manager
 
         private void FormAddPlayer_Load(object sender, EventArgs e)
         {
-            // Get available team
+            // Get data for teamlist
             listteam = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
 
             // Show available team on combobox

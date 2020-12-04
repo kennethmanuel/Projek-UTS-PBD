@@ -13,7 +13,7 @@ namespace Tournament_Manager.Player
 {
     public partial class FormDeletePlayer : Form
     {
-        // Listed team on combobox
+        // Listed team on combobox, data loaded at FormLoad
         List<Teams> listTeams = new List<Teams>();
 
         // Selected player to be deleted
@@ -26,6 +26,8 @@ namespace Tournament_Manager.Player
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            listTeams = new List<Teams>();
+
             // Confirm
             DialogResult konfirmasi = MessageBox.Show("Data player akan terhapus , Apakah anda yakin?", "Konfirmasi", MessageBoxButtons.YesNo);
 
