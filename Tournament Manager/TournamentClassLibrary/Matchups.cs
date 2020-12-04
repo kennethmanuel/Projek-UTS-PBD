@@ -13,6 +13,7 @@ namespace TournamentClassLibrary
     /// </summary>
     public class Matchups
     {
+        #region Data Member
         /// <summary>
         /// Matchup Id
         /// </summary>
@@ -25,6 +26,7 @@ namespace TournamentClassLibrary
         /// Round is the pairing number (ex: first pairing in single bracket match is round 1, the next pairing is round 2 and so on)
         /// </summary>
         private int round;
+        #endregion
 
         #region Constructor
         public Matchups(string id, Teams winnerTeam, int round)

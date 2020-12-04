@@ -35,6 +35,14 @@ namespace Tournament_Manager.Match
             dataGridViewMatchup.Columns.Add("WinnerTeam", "WinnerTeam");
             dataGridViewMatchup.Columns.Add("Round", "Round");
         }
+        private void FormatDataGridMatchupEntries()
+        {
+            dataGridViewEntry.Columns.Add("ParentMatchup_Id", "ParentMatchupId");
+            dataGridViewEntry.Columns.Add("TeamsId", "TeamsId");
+            dataGridViewEntry.Columns.Add("score", "Score");            
+            dataGridViewEntry.Columns.Add("Round", "Round");
+            dataGridViewEntry.Columns.Add("name", "Name");
+        }
 
         private void ShowDataGridMatchup()
         {
@@ -51,13 +59,32 @@ namespace Tournament_Manager.Match
                 dataGridViewMatchup.DataSource = null;
             }
         }
-
+        private void ShowDataGridMatchupEntries()
+        {
+            if (entryList.Count > 0)
+            {
+                dataGridViewEntry.Rows.Clear();
+                foreach (MatchupEntries e in entryList)
+                {
+                    dataGridViewEntry.Rows.Add(e.Matchup.Id, e.Team.Id, e.Score, e.Matchup.Round, e.Team.Name);
+                }
+            }
+            else
+            {
+                dataGridViewMatchup.DataSource = null;
+            }
+        }
 
         private void FormMatch_Load(object sender, EventArgs e)
         {
-            FormatDataGridMatchup();
-            matchupList = Matchups.ReadData("", "");
+            FormatDataGridMatchup();            
+            matchupList = Matchups.ReadData("", "");            
             ShowDataGridMatchup();
+            
+
+            FormatDataGridMatchupEntries();
+            entryList = MatchupEntries.ReadData("", "");
+            ShowDataGridMatchupEntries();
         }
 
         private void button1_Click(object sender, EventArgs e)
