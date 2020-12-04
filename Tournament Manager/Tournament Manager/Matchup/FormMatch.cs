@@ -11,23 +11,15 @@ using System.Windows.Forms;
 using TournamentClassLibrary;
 
 namespace Tournament_Manager.Match
-{
-    // MASIH SALAH 
+{    
     public partial class FormMatch : Form
     {
+        #region GlobalVar
         List<Matchups> matchupList = new List<Matchups>();
         List<MatchupEntries> entryList = new List<MatchupEntries>();
-        
-        public FormMatch()
-        {
-            InitializeComponent();
-        }
+        #endregion
 
-        private void Matchup_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Owner.Show();
-        }
-
+        #region Function
         private void FormatDataGridMatchup()
         {
             dataGridViewMatchup.Columns.Add("Id", "Id");
@@ -39,17 +31,17 @@ namespace Tournament_Manager.Match
         {
             dataGridViewEntry.Columns.Add("ParentMatchup_Id", "ParentMatchupId");
             dataGridViewEntry.Columns.Add("TeamsId", "TeamsId");
-            dataGridViewEntry.Columns.Add("score", "Score");            
+            dataGridViewEntry.Columns.Add("score", "Score");
             dataGridViewEntry.Columns.Add("Round", "Round");
             dataGridViewEntry.Columns.Add("name", "Name");
         }
 
         private void ShowDataGridMatchup()
         {
-            if(matchupList.Count > 0)
+            if (matchupList.Count > 0)
             {
                 dataGridViewMatchup.Rows.Clear();
-                foreach(Matchups m in matchupList)
+                foreach (Matchups m in matchupList)
                 {
                     dataGridViewMatchup.Rows.Add(m.Id, m.WinnerTeam.Id, m.WinnerTeam.Name, m.Round);
                 }
@@ -59,6 +51,7 @@ namespace Tournament_Manager.Match
                 dataGridViewMatchup.DataSource = null;
             }
         }
+
         private void ShowDataGridMatchupEntries()
         {
             if (entryList.Count > 0)
@@ -74,14 +67,26 @@ namespace Tournament_Manager.Match
                 dataGridViewMatchup.DataSource = null;
             }
         }
+        #endregion
+
+        public FormMatch()
+        {
+            InitializeComponent();
+        }
+
+        private void Matchup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
+        }       
 
         private void FormMatch_Load(object sender, EventArgs e)
         {
+            //Menampilkan Data dari database tabel matchup
             FormatDataGridMatchup();            
             matchupList = Matchups.ReadData("", "");            
             ShowDataGridMatchup();
             
-
+            //Menampilkan Data dari database tabel matchupEntries
             FormatDataGridMatchupEntries();
             entryList = MatchupEntries.ReadData("", "");
             ShowDataGridMatchupEntries();
