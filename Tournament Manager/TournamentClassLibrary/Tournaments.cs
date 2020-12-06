@@ -14,13 +14,15 @@ namespace TournamentClassLibrary
         private int id;
         private string name;
         private decimal entryfee;
+        private int currentRound;
 
         #region Constructor
-        public Tournaments(int id, string name, decimal entryfee)
+        public Tournaments(int id, string name, decimal entryfee, int currentRound)
         {
             this.Id = id;
             this.Name = name;
             this.Entryfee = entryfee;
+            this.CurrentRound = currentRound;
         }
         #endregion
 
@@ -28,6 +30,7 @@ namespace TournamentClassLibrary
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public decimal Entryfee { get => entryfee; set => entryfee = value; }
+        public int CurrentRound { get => currentRound; set => currentRound = value; }
         #endregion
 
         /// <summary>
@@ -47,11 +50,32 @@ namespace TournamentClassLibrary
                 Tournaments t = new Tournaments(
                     int.Parse(value.GetValue(0).ToString()),
                     value.GetValue(1).ToString(),
-                    decimal.Parse(value.GetValue(2).ToString()));
+                    decimal.Parse(value.GetValue(2).ToString()),
+                    int.Parse(value.GetValue(3).ToString()));
 
                 tournamentList.Add(t);
             }
             return tournamentList;
+        }
+
+        /// <summary>
+        /// Get current tournament's round
+        /// </summary>
+        /// <returns></returns>
+        public int GetCurrentRound()
+        {
+            string sql = "SELECT currentround " +
+                         "FROM tournaments " +
+                         "WHERE name = '" + this.Name + "'";
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            int round = -1;
+            if(value.Read())
+            {
+                round = int.Parse(value.GetValue(0).ToString());
+            }
+            return round;
         }
 
         /// <summary>
@@ -116,7 +140,8 @@ namespace TournamentClassLibrary
                 Tournaments t = new Tournaments(
                     int.Parse(value.GetValue(0).ToString()),
                     value.GetValue(1).ToString(),
-                    decimal.Parse(value.GetValue(2).ToString()));
+                    decimal.Parse(value.GetValue(2).ToString()),
+                    int.Parse(value.GetValue(3).ToString()));
 
                 tournamentList.Add(t);
             }

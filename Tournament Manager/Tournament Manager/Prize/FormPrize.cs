@@ -25,14 +25,14 @@ namespace Tournament_Manager
         public void FormPrize_Load(object sender, EventArgs e)
         {
             FormatDataGrid();
-            listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
+            //listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
             ViewDataGrid();
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string criteria = textBoxSearch.Text;
-            listPrize = Prize.ReadData(FormMenu.selectedTournament,criteria);
+            //listPrize = Prize.ReadData(FormMenu.selectedTournament,criteria);
             ViewDataGrid();
         }
 

@@ -11,18 +11,21 @@ namespace TournamentClassLibrary
     {
         private int id;
         private string name;
+        private double totalScore;
 
         #region Constructor
-        public Teams(int id, string name)
+        public Teams(int id, string name, double totalScore)
         {
             this.Id = id;
             this.Name = name;
+            this.TotalScore = totalScore;
         }
         #endregion
 
         #region Property
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
+        public double TotalScore { get => totalScore; set => totalScore = value; }
         #endregion
 
         #region Methods
@@ -51,7 +54,11 @@ namespace TournamentClassLibrary
 
             while(value.Read() == true)
             {
-                Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString());
+                int teamId = int.Parse(value.GetValue(0).ToString());
+                string teamName = value.GetValue(1).ToString();
+                double totalScore = double.Parse(value.GetValue(2).ToString());
+
+                Teams t = new Teams(teamId, teamName, totalScore);
 
                 teamList.Add(t);
             }
@@ -73,10 +80,15 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString());
+                int teamId = int.Parse(value.GetValue(0).ToString());
+                string teamName = value.GetValue(1).ToString();
+                double totalScore = double.Parse(value.GetValue(2).ToString());
+
+                Teams t = new Teams(teamId, teamName, totalScore);
 
                 teamList.Add(t);
             }
+
             return teamList;
         }
 
@@ -86,8 +98,8 @@ namespace TournamentClassLibrary
         /// <param name="p"></param>
         public static void AddTeams(Teams t, Tournaments selectedTournament)
         {
-            string sql = "insert into teams(Id, Name) values ('" + t.Id + "','" + t.Name.Replace("'", "\\'") + "');  INSERT INTO tournamententry VALUES ('"+ selectedTournament.Id + "', '" + t.Id +  "');";
-            
+            string sql = "INSERT INTO teams(Id, Name, totalscore) VALUES ('" + t.Id + "','" + t.Name.Replace("'", "\\'") + "','" + t.totalScore + "');  INSERT INTO tournamententry VALUES ('"+ selectedTournament.Id + "', '" + t.Id +  "');";
+
             Connection.ExecuteDML(sql);
         }
 
@@ -156,7 +168,7 @@ namespace TournamentClassLibrary
 
             value.Read();
 
-            Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString());
+            Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), double.Parse(value.GetValue(2).ToString()));
 
             return t;
         }

@@ -27,7 +27,7 @@ namespace Tournament_Manager
                 int newCode = Tournaments.GenerateCode();
 
                 // Create tournament 
-                Tournaments t = new Tournaments(newCode, textBoxTournamentName.Text, decimal.Parse(textBoxEntryFee.Text));
+                Tournaments t = new Tournaments(newCode, textBoxTournamentName.Text, decimal.Parse(textBoxEntryFee.Text), 1);
                 
                 // Add tournament to db
                 Tournaments.AddTournament(t);

@@ -38,8 +38,8 @@
             this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTournamentPrizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelTournamentName = new System.Windows.Forms.Label();
+            this.labelTournament = new System.Windows.Forms.Label();
+            this.labelTournamentValue = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonViewPlayer = new System.Windows.Forms.Button();
             this.buttonViewTeam = new System.Windows.Forms.Button();
@@ -49,6 +49,8 @@
             this.buttonViewPairing = new System.Windows.Forms.Button();
             this.linkLabelAbout = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelRound = new System.Windows.Forms.Label();
+            this.labelRoundValue = new System.Windows.Forms.Label();
             this.menuStripControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             this.menuStripControl.Location = new System.Drawing.Point(0, 0);
             this.menuStripControl.Name = "menuStripControl";
             this.menuStripControl.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStripControl.Size = new System.Drawing.Size(993, 31);
+            this.menuStripControl.Size = new System.Drawing.Size(1061, 31);
             this.menuStripControl.TabIndex = 1;
             this.menuStripControl.Text = "menuStrip1";
             // 
@@ -114,7 +116,7 @@
             this.teamAndPlayerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.teamAndPlayerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
@@ -123,7 +125,7 @@
             this.matchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.matchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.matchToolStripMenuItem.Text = "Match and Entry";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -143,37 +145,37 @@
             this.prizeToolStripMenuItem.Text = "Prize";
             this.prizeToolStripMenuItem.Click += new System.EventHandler(this.prizeToolStripMenuItem_Click);
             // 
-            // label1
+            // labelTournament
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(461, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Currenty Edited Tournament:";
+            this.labelTournament.AutoSize = true;
+            this.labelTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
+            this.labelTournament.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTournament.Location = new System.Drawing.Point(461, 5);
+            this.labelTournament.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTournament.Name = "labelTournament";
+            this.labelTournament.Size = new System.Drawing.Size(231, 23);
+            this.labelTournament.TabIndex = 2;
+            this.labelTournament.Text = "Currenty Edited Tournament:";
             // 
-            // labelTournamentName
+            // labelTournamentValue
             // 
-            this.labelTournamentName.AutoSize = true;
-            this.labelTournamentName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.labelTournamentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTournamentName.Location = new System.Drawing.Point(700, 5);
-            this.labelTournamentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTournamentName.Name = "labelTournamentName";
-            this.labelTournamentName.Size = new System.Drawing.Size(175, 23);
-            this.labelTournamentName.TabIndex = 3;
-            this.labelTournamentName.Text = "<tournament_name>";
-            this.labelTournamentName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelTournamentValue.AutoSize = true;
+            this.labelTournamentValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.labelTournamentValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTournamentValue.Location = new System.Drawing.Point(700, 5);
+            this.labelTournamentValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTournamentValue.Name = "labelTournamentValue";
+            this.labelTournamentValue.Size = new System.Drawing.Size(175, 23);
+            this.labelTournamentValue.TabIndex = 3;
+            this.labelTournamentValue.Text = "<tournament_name>";
+            this.labelTournamentValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(36)))), ((int)(((byte)(29)))));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonDelete.Location = new System.Drawing.Point(690, 605);
+            this.buttonDelete.Location = new System.Drawing.Point(764, 570);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(271, 39);
@@ -271,7 +273,7 @@
             this.linkLabelAbout.AutoSize = true;
             this.linkLabelAbout.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.linkLabelAbout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
-            this.linkLabelAbout.Location = new System.Drawing.Point(56, 613);
+            this.linkLabelAbout.Location = new System.Drawing.Point(47, 580);
             this.linkLabelAbout.Name = "linkLabelAbout";
             this.linkLabelAbout.Size = new System.Drawing.Size(194, 23);
             this.linkLabelAbout.TabIndex = 31;
@@ -284,18 +286,45 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label2.Location = new System.Drawing.Point(26, 58);
+            this.label2.Location = new System.Drawing.Point(12, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(612, 59);
             this.label2.TabIndex = 32;
             this.label2.Text = "TOURNAMENT MANAGER ♔";
+            // 
+            // labelRound
+            // 
+            this.labelRound.AutoSize = true;
+            this.labelRound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
+            this.labelRound.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRound.Location = new System.Drawing.Point(883, 5);
+            this.labelRound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRound.Name = "labelRound";
+            this.labelRound.Size = new System.Drawing.Size(70, 23);
+            this.labelRound.TabIndex = 33;
+            this.labelRound.Text = "Round: ";
+            // 
+            // labelRoundValue
+            // 
+            this.labelRoundValue.AutoSize = true;
+            this.labelRoundValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.labelRoundValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRoundValue.Location = new System.Drawing.Point(955, 5);
+            this.labelRoundValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRoundValue.Name = "labelRoundValue";
+            this.labelRoundValue.Size = new System.Drawing.Size(80, 23);
+            this.labelRoundValue.TabIndex = 34;
+            this.labelRoundValue.Text = "<round>";
+            this.labelRoundValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(993, 686);
+            this.ClientSize = new System.Drawing.Size(1061, 651);
+            this.Controls.Add(this.labelRoundValue);
+            this.Controls.Add(this.labelRound);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabelAbout);
             this.Controls.Add(this.buttonViewPairing);
@@ -305,8 +334,8 @@
             this.Controls.Add(this.buttonViewTeam);
             this.Controls.Add(this.buttonViewPlayer);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.labelTournamentName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelTournamentValue);
+            this.Controls.Add(this.labelTournament);
             this.Controls.Add(this.menuStripControl);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -314,7 +343,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "v";
+            this.Text = "Tournament Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMenu_FormClosing);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.menuStripControl.ResumeLayout(false);
@@ -329,8 +358,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tournamentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadAnotherTournamentFromDatabaseToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelTournamentName;
+        private System.Windows.Forms.Label labelTournament;
+        private System.Windows.Forms.Label labelTournamentValue;
         private System.Windows.Forms.ToolStripMenuItem viewTournamentPrizesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateTournamentStartingBracketToolStripMenuItem;
@@ -346,5 +375,7 @@
         private System.Windows.Forms.Button buttonViewPairing;
         private System.Windows.Forms.LinkLabel linkLabelAbout;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelRound;
+        private System.Windows.Forms.Label labelRoundValue;
     }
 }

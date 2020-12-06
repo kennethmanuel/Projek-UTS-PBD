@@ -100,7 +100,7 @@
             this.buttonCreateTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonCreateTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreateTournament.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonCreateTournament.Location = new System.Drawing.Point(53, 306);
+            this.buttonCreateTournament.Location = new System.Drawing.Point(53, 303);
             this.buttonCreateTournament.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateTournament.Name = "buttonCreateTournament";
             this.buttonCreateTournament.Size = new System.Drawing.Size(324, 45);
@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(457, 396);
+            this.ClientSize = new System.Drawing.Size(457, 402);
             this.Controls.Add(this.buttonCreateTournament);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);

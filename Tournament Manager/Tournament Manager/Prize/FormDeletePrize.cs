@@ -48,12 +48,12 @@ namespace Tournament_Manager.TournamentPrize
         private void FormDeletePrize_Load(object sender, EventArgs e)
         {
             listTournaments = Tournaments.ReadCombo(FormMenu.selectedTournament);
-            Prize selectedPrize = Prize.SelectPrize(selectedPrizeId);
+            //Prize selectedPrize = Prize.SelectPrize(selectedPrizeId);
 
-            textBoxPrizeId.Text = selectedPrize.Id.ToString();
-            textBoxPrizePlaceName.Text = selectedPrize.PlaceName;
-            textBoxPriceAmount.Text = selectedPrize.PrizeAmount.ToString();
-            textBoxPrizePercentage.Text = selectedPrize.PrizePercentage.ToString();
+            //textBoxPrizeId.Text = selectedPrize.Id.ToString();
+            //textBoxPrizePlaceName.Text = selectedPrize.PlaceName;
+            //textBoxPriceAmount.Text = selectedPrize.PrizeAmount.ToString();
+            //textBoxPrizePercentage.Text = selectedPrize.PrizePercentage.ToString();
         }
     }
 }

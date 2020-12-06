@@ -34,7 +34,10 @@ namespace Tournament_Manager
             selectedTournament = formTournament.selectedTournament;
 
             // Change selected tournament label with the proper one
-            labelTournamentName.Text = selectedTournament.Name;
+            labelTournamentValue.Text = selectedTournament.Name;
+
+            // Get tournament's current round
+            labelRoundValue.Text = selectedTournament.GetCurrentRound().ToString();
         }
 
         private void FormMenu_FormClosing(object sender, FormClosingEventArgs e)

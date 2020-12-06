@@ -20,15 +20,15 @@ namespace Tournament_Manager.TournamentPrize
 
         private void FormEditPrize_Load(object sender, EventArgs e)
         {
-            Prize selectedPrize = Prize.SelectPrize(FormPrize.selectedPrize);
+            //Prize selectedPrize = Prize.SelectPrize(FormPrize.selectedPrize);
 
-            textBoxPrizeId.Text = selectedPrize.Id.ToString();
+            //textBoxPrizeId.Text = selectedPrize.Id.ToString();
 
-            textBoxPriceAmount.Text = selectedPrize.PrizeAmount.ToString();
+            //textBoxPriceAmount.Text = selectedPrize.PrizeAmount.ToString();
 
-            textBoxPrizePercentage.Text = selectedPrize.PrizePercentage.ToString();
+            //textBoxPrizePercentage.Text = selectedPrize.PrizePercentage.ToString();
 
-            textBoxPrizePlaceName.Text = selectedPrize.PlaceName;
+            //textBoxPrizePlaceName.Text = selectedPrize.PlaceName;
 
             textBoxPrizePlaceName.Focus();
         }
