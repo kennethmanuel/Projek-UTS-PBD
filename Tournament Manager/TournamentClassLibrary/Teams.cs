@@ -98,7 +98,15 @@ namespace TournamentClassLibrary
         /// <param name="p"></param>
         public static void AddTeams(Teams t, Tournaments selectedTournament)
         {
-            string sql = "INSERT INTO teams(Id, Name, totalscore) VALUES ('" + t.Id + "','" + t.Name.Replace("'", "\\'") + "','" + t.totalScore + "');  INSERT INTO tournamententry VALUES ('"+ selectedTournament.Id + "', '" + t.Id +  "');";
+            string sql = 
+                // INSERT to teams
+                "INSERT INTO teams(id, name, totalscore) " +
+                "VALUES ('" + t.Id + "','"
+                            + t.Name.Replace("'", "\\'") 
+                            + "','" + t.totalScore + "'); " +
+                // INSERT to tournamentEntry
+                "INSERT INTO tournamententry " +
+                "VALUES ('"+ selectedTournament.Id + "', '" + t.Id + "');";
 
             Connection.ExecuteDML(sql);
         }
@@ -109,27 +117,44 @@ namespace TournamentClassLibrary
         /// <param name="t"></param>
         public static void EditTeams(Teams t)
         {
-            string sql = "update teams set Name='" + t.Name.Replace("'", "\\'") + "' where Id='" + t.Id + "'";
+            string sql = "UPDATE teams " +
+                         "SET name='" + t.Name.Replace("'", "\\'") + "' " +
+                         "SET totalscore'" + t.TotalScore + "' " +
+                         "WHERE id='" + t.Id + "'";
+
             Connection.ExecuteDML(sql);
         }
 
         /// <summary>
-        /// Delete Team from database
+        /// Delete team
         /// </summary>
-        /// <param name="team"></param>
+        /// <param name="team">Teaem that will be deleted</param>
+        /// <param name="errorMessage">Error message for debugging</param>
         /// <returns></returns>
-        public static string DeleteTeams(Teams team)
+        public static bool DeleteTeams(Teams team, out string errorMessage)
         {
-            string sql = "DELETE FROM players WHERE team_id="+ team
-                .Id+"; DELETE FROM tournamententry  WHERE teams_id="+team.Id+"; DELETE FROM Teams WHERE Id = '" + team.Id + "';";
+            errorMessage = "";
+
+            string sql = 
+                         // DELETE from Player
+                         "DELETE FROM players " +
+                         "WHERE team_id=" + team.Id + "; " +
+                         // DELETE FROM TournamentEntry
+                         "DELETE FROM tournamententry " +
+                         "WHERE teams_id = " + team.Id + "; " +
+                         // DELETE FROM Teams
+                         "DELETE FROM Teams " +
+                         "WHERE Id = '" + team.Id + "';";
+
             try
             {
                 Connection.ExecuteDML(sql);
-                return "1";
+                return true;
             }
             catch (MySqlException ex)
             {
-                return ex.Message + ". Sql Command: " + sql;
+                errorMessage = ex.Message;
+                return false;
             }
         }
 
@@ -139,20 +164,19 @@ namespace TournamentClassLibrary
         /// <returns></returns>
         public static string GenerateCode()
         {
-            string sql = "select max(Id) from Teams";
-            string code = "";
+            string sql = "SELECT MAX(Id) FROM Teams";
+            int code;
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
             if (result.Read() == true)
             {
-                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
-                code = newCode.ToString();
+                code = int.Parse(result.GetValue(0).ToString()) + 1;
             }
             else
             {
-                code = "1";
+                code = 1;
             }
-            return code;
+            return code.ToString();
         }
 
         /// <summary>
@@ -162,13 +186,17 @@ namespace TournamentClassLibrary
         /// <returns></returns>
         public static Teams SelectTeam(int teamId)
         {
-            string sql = "SELECT * FROM teams t WHERE t.id=" + teamId;
+            string sql = "SELECT * FROM teams t " +
+                         "WHERE t.id=" + teamId;
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
             value.Read();
 
-            Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), double.Parse(value.GetValue(2).ToString()));
+            string teamName = value.GetValue(1).ToString();
+            double totalScore = double.Parse(value.GetValue(2).ToString());
+
+            Teams t = new Teams(teamId, teamName, totalScore);
 
             return t;
         }

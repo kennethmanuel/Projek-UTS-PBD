@@ -47,11 +47,12 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                Tournaments t = new Tournaments(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    decimal.Parse(value.GetValue(2).ToString()),
-                    int.Parse(value.GetValue(3).ToString()));
+                int tournamentId = int.Parse(value.GetValue(0).ToString());
+                string tournamentName = value.GetValue(1).ToString();
+                decimal entryFee = decimal.Parse(value.GetValue(2).ToString());
+                int round = int.Parse(value.GetValue(3).ToString());
+                   
+                Tournaments t = new Tournaments(tournamentId, tournamentName, entryFee, round);
 
                 tournamentList.Add(t);
             }
@@ -61,7 +62,7 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Get current tournament's round
         /// </summary>
-        /// <returns></returns>
+        /// <returns>-1 is error, 1 is round 1, 2 is round 2, and so on.</returns>
         public int GetCurrentRound()
         {
             string sql = "SELECT currentround " +
@@ -71,6 +72,7 @@ namespace TournamentClassLibrary
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
             int round = -1;
+
             if(value.Read())
             {
                 round = int.Parse(value.GetValue(0).ToString());
@@ -81,14 +83,18 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Add tournament to db
         /// </summary>
-        /// <param name="t"></param>
+        /// <param name="t">Tournament that will be inserted</param>
         public static void AddTournament(Tournaments t)
         {
-            string sql = "INSERT INTO tournaments (id, name, entryfee) VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "');";
+            string sql = "INSERT INTO tournaments (id, name, entryfee, round) VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "','" + t.CurrentRound + "');";
 
             Connection.ExecuteDML(sql);
         }
 
+        /// <summary>
+        /// Generate tournament's id
+        /// </summary>
+        /// <returns></returns>
         public static int GenerateCode()
         {
             string sql = "SELECT MAX(id) FROM tournaments";
@@ -97,8 +103,7 @@ namespace TournamentClassLibrary
 
             if (result.Read() == true)
             {
-                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
-                code = newCode;
+                code = int.Parse(result.GetValue(0).ToString()) + 1;
             }
             return code;
         }
@@ -126,6 +131,11 @@ namespace TournamentClassLibrary
             }
         }
 
+        /// <summary>
+        /// Get a list of single tournament (GAK JELAS SOPO SING NGGAE METHOD IKI??)
+        /// </summary>
+        /// <param name="selected"></param>
+        /// <returns></returns>
         public static List<Tournaments> ReadCombo(Tournaments selected)
         {
             int tournamentsId = selected.Id;
