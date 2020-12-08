@@ -39,17 +39,25 @@ namespace TournamentClassLibrary
         /// <param name="criteria"></param>
         /// <param name="criteriaValue"></param>
         /// <returns></returns>
-        public static List<Players> ReadData(string criteria, string criteriaValue)
+        public static List<Players> ReadData(string criteria = "", string criteriaValue = "")
         {
-            string sql = "";
+            string sql;
 
+            // no arg (ex: ReadData())
             if (criteria == "")
             {
-                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id";
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name, t.totalscore " +
+                      "FROM players p " +
+                      "INNER JOIN teams t ON p.team_id = t.id";
             }
+            // with arg (ex: ReadData(name, 'beth harmon'))
             else
             {
-                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name, t.totalscore " +
+                      "FROM players p " +
+                      "INNER JOIN teams t ON p.team_id = t.id " +
+                      "WHERE " + criteria + " " +
+                      "LIKE '%" + criteriaValue + "%'";
                 
             }
 
@@ -59,16 +67,28 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                Teams team = new Teams(int.Parse(value.GetValue(3).ToString()), value.GetValue(4).ToString());
+                // player id
+                int playerId = int.Parse(value.GetValue(0).ToString());
 
-                Players p = new Players(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    value.GetValue(2).ToString(),
-                    team);
+                // player name
+                string playerName = value.GetValue(1).ToString();
 
+                // player email
+                string playerEmail = value.GetValue(2).ToString();
+
+                // player team
+                int teamId = int.Parse(value.GetValue(3).ToString());
+                string teamName = value.GetValue(4).ToString();
+                double teamTotalScore = double.Parse(value.GetValue(5).ToString());
+                Teams team = new Teams(teamId, teamName, teamTotalScore);
+
+                // player
+                Players p = new Players(playerId, playerName, playerEmail, team);
+
+                // add to list
                 playerList.Add(p);
             }
+
             return playerList;
         }
 
@@ -79,7 +99,13 @@ namespace TournamentClassLibrary
         /// <returns></returns>
         public static List<Players> BatchSearch(string criteriaValue)
         {
-            string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.id LIKE '%" + criteriaValue + "%' OR p.name LIKE '%" + criteriaValue + "%' OR p.EMAIL LIKE '%" + criteriaValue + "%' or t.name LIKE '%" + criteriaValue + "%'";
+            string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name " +
+                         "FROM players p " +
+                         "INNER JOIN teams t ON p.team_id = t.id " +
+                         "WHERE p.id LIKE '%" + criteriaValue + "%' " +
+                         "OR p.name LIKE '%" + criteriaValue + "%' " +
+                         "OR p.EMAIL LIKE '%" + criteriaValue + "%' " +
+                         "OR t.name LIKE '%" + criteriaValue + "%'";
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 

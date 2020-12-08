@@ -34,9 +34,9 @@ namespace TournamentClassLibrary
         #endregion
 
         /// <summary>
-        /// Create a list of all Tournaments object from a selected database.
+        /// Create a list of all Tournaments object.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>list of tournament</returns>
         public static List<Tournaments> ReadData()
         {
             string sql = "SELECT * FROM tournaments";
@@ -47,22 +47,31 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
+                // tournamentid
                 int tournamentId = int.Parse(value.GetValue(0).ToString());
-                string tournamentName = value.GetValue(1).ToString();
-                decimal entryFee = decimal.Parse(value.GetValue(2).ToString());
-                int round = int.Parse(value.GetValue(3).ToString());
-                   
-                Tournaments t = new Tournaments(tournamentId, tournamentName, entryFee, round);
 
-                tournamentList.Add(t);
+                // tournament name
+                string tournamentName = value.GetValue(1).ToString();
+
+                // tournament entryfee
+                decimal entryFee = decimal.Parse(value.GetValue(2).ToString());
+
+                // current tournament round
+                int currentRound = int.Parse(value.GetValue(3).ToString());
+                   
+                // tournament
+                Tournaments tournament = new Tournaments(tournamentId, tournamentName, entryFee, currentRound);
+
+                tournamentList.Add(tournament);
             }
+
             return tournamentList;
         }
 
         /// <summary>
-        /// Get current tournament's round
+        /// Get this tournament's current round
         /// </summary>
-        /// <returns>-1 is error, 1 is round 1, 2 is round 2, and so on.</returns>
+        /// <returns>return -1 if there is error, 1 is round 1, 2 is round 2, and so on.</returns>
         public int GetCurrentRound()
         {
             string sql = "SELECT currentround " +
@@ -81,30 +90,34 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Add tournament to db
+        /// Add tournament to database
         /// </summary>
         /// <param name="t">Tournament that will be inserted</param>
         public static void AddTournament(Tournaments t)
         {
-            string sql = "INSERT INTO tournaments (id, name, entryfee, round) VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "','" + t.CurrentRound + "');";
+            string sql = "INSERT INTO tournaments (id, name, entryfee, round) " +
+                         "VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "','" + t.CurrentRound + "');";
 
             Connection.ExecuteDML(sql);
         }
 
         /// <summary>
-        /// Generate tournament's id
+        /// Generate tournament id
         /// </summary>
         /// <returns></returns>
         public static int GenerateCode()
         {
             string sql = "SELECT MAX(id) FROM tournaments";
+
             int code = 1;
+
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
             if (result.Read() == true)
             {
                 code = int.Parse(result.GetValue(0).ToString()) + 1;
             }
+
             return code;
         }
 
@@ -117,6 +130,7 @@ namespace TournamentClassLibrary
         public static bool DeleteTournament(Tournaments t, out string exceptionMessage)
         {
             string sql = "DELETE FROM tournaments WHERE id=" + t.Id;
+
             exceptionMessage = "";
 
             try
@@ -136,26 +150,27 @@ namespace TournamentClassLibrary
         /// </summary>
         /// <param name="selected"></param>
         /// <returns></returns>
-        public static List<Tournaments> ReadCombo(Tournaments selected)
-        {
-            int tournamentsId = selected.Id;
-            string sql = "SELECT * FROM tournaments where id='" + tournamentsId + "'";
+        //public static List<Tournaments> ReadCombo(Tournaments selected)
+        //{
+        //    int tournamentsId = selected.Id;
 
-            MySqlDataReader value = Connection.ExecuteQuery(sql);
+        //    string sql = "SELECT * FROM tournaments where id='" + tournamentsId + "'";
 
-            List<Tournaments> tournamentList = new List<Tournaments>();
+        //    MySqlDataReader value = Connection.ExecuteQuery(sql);
 
-            while (value.Read() == true)
-            {
-                Tournaments t = new Tournaments(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    decimal.Parse(value.GetValue(2).ToString()),
-                    int.Parse(value.GetValue(3).ToString()));
+        //    List<Tournaments> tournamentList = new List<Tournaments>();
 
-                tournamentList.Add(t);
-            }
-            return tournamentList;
-        }
+        //    while (value.Read() == true)
+        //    {
+        //        Tournaments t = new Tournaments(
+        //            int.Parse(value.GetValue(0).ToString()),
+        //            value.GetValue(1).ToString(),
+        //            decimal.Parse(value.GetValue(2).ToString()),
+        //            int.Parse(value.GetValue(3).ToString()));
+
+        //        tournamentList.Add(t);
+        //    }
+        //    return tournamentList;
+        //}
     }
 }
