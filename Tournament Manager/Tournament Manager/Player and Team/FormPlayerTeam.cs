@@ -26,7 +26,7 @@ namespace Tournament_Manager
         public static int selectedPlayer;
 
         // Selected team when button edit or delete clicked, data loaded at FormLoad
-        public static int selectedTeam;
+        public static int selectedTeamId;
         #endregion
 
         #region Functions
@@ -43,6 +43,7 @@ namespace Tournament_Manager
         // Show data to datagridplayer
         private void ShowDataGridPlayers()
         {
+            // if playerList have player
             if(playerList.Count >0)
             {
                 dataGridViewPlayer.Rows.Clear();
@@ -51,6 +52,7 @@ namespace Tournament_Manager
                     dataGridViewPlayer.Rows.Add(p.Id, p.Name, p.Email, p.Team.Name);
                 }
             }
+            // playerlist doesn't have any player
             else
             {
                 dataGridViewPlayer.DataSource = null;
@@ -86,13 +88,13 @@ namespace Tournament_Manager
         public void FormPlayerTeam_Load(object sender, EventArgs e)
         {
             // Get data from db
-            teamList = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
+            teamList = TournamentEntry.ReadTeam(FormMenu.selectedTournament);
 
             // Show data to datagridteams
             ShowDataGridTeams();
 
             // Get player data from db
-            playerList = TournamentEntry.ReadPlayer(FormMenu.selectedTournament, "");
+            playerList = TournamentEntry.ReadPlayer(FormMenu.selectedTournament);
 
             // Format datagridplayer
             FormatDataGridPlayers();
@@ -163,7 +165,7 @@ namespace Tournament_Manager
         private void buttonEditTeam_Click(object sender, EventArgs e)
         {
             int selectedIndex = dataGridViewTeam.CurrentCell.RowIndex;
-            selectedTeam = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
+            selectedTeamId = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
 
             FormEditTeam frm = new FormEditTeam();
             frm.Owner = this;
@@ -174,7 +176,7 @@ namespace Tournament_Manager
         private void buttonDeleteTeam_Click(object sender, EventArgs e)
         {
             int selectedIndex = dataGridViewTeam.CurrentCell.RowIndex;
-            selectedTeam = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
+            selectedTeamId = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
 
             FormDeleteTeam frm = new FormDeleteTeam();
             frm.Owner = this;

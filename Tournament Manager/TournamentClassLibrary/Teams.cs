@@ -35,17 +35,21 @@ namespace TournamentClassLibrary
         /// <param name="criteria"></param>
         /// <param name="criteriaValue"></param>
         /// <returns></returns>
-        public static List<Teams> ReadData(string criteria, string criteriaValue)
+        public static List<Teams> ReadData(string criteria, string criteriaValue = "")
         {
-            string sql = "";
+            string sql;
 
             if(criteria == "")
             {
-                sql = "SELECT * FROM teams";
+                sql = "SELECT * " +
+                      "FROM teams";
             }
             else
             {
-                sql = "SELECT * FROM teams WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                sql = "SELECT * " +
+                      "FROM teams " +
+                      "WHERE " + criteria + " " +
+                      "LIKE '%" + criteriaValue + "%'";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -62,6 +66,7 @@ namespace TournamentClassLibrary
 
                 teamList.Add(t);
             }
+
             return teamList;
         }
 
@@ -126,25 +131,25 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Delete team
+        /// Delete specific team.
         /// </summary>
-        /// <param name="team">Teaem that will be deleted</param>
-        /// <param name="errorMessage">Error message for debugging</param>
-        /// <returns></returns>
-        public static bool DeleteTeams(Teams team, out string errorMessage)
+        /// <param name="teamId">Team that will be deleted's id.</param>
+        /// <param name="errorMessage">Error message for debugging.</param>
+        /// <returns>Return true if success, false otherwise.</returns>
+        public static bool DeleteTeams(int teamId, out string errorMessage)
         {
             errorMessage = "";
 
             string sql = 
                          // DELETE from Player
                          "DELETE FROM players " +
-                         "WHERE team_id=" + team.Id + "; " +
+                         "WHERE team_id=" + teamId + "; " +
                          // DELETE FROM TournamentEntry
                          "DELETE FROM tournamententry " +
-                         "WHERE teams_id = " + team.Id + "; " +
+                         "WHERE teams_id = " + teamId + "; " +
                          // DELETE FROM Teams
                          "DELETE FROM Teams " +
-                         "WHERE Id = '" + team.Id + "';";
+                         "WHERE Id = '" + teamId + "';";
 
             try
             {

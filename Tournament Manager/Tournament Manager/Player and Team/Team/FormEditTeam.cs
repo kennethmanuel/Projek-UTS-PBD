@@ -14,7 +14,7 @@ namespace Tournament_Manager.Team
     public partial class FormEditTeam : Form
     {
         List<Teams> listteams = new List<Teams>();
-        int selectedTeamId = FormPlayerTeam.selectedTeam;
+        int selectedTeamId = FormPlayerTeam.selectedTeamId;
         public FormEditTeam()
         {
             InitializeComponent();

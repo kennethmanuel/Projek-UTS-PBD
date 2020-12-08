@@ -50,20 +50,20 @@ namespace TournamentClassLibrary
             // empty arg ReadData()
             if (criteria == "")
             {
-                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, mc.id, mc.winnerid, mc.round, t.name, t.totalscore" +
-                      " FROM teams t" +
-                      " INNER JOIN matchupentries m ON t.id = m.Teams_Id" +
-                      " INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id" +
-                      " ORDER BY m.ParentMatchup_Id ASC";
+                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, mc.id, mc.winnerid, mc.round, t.name, t.totalscore " +
+                      "FROM teams t " +
+                      "INNER JOIN matchupentries m ON t.id = m.Teams_Id " +
+                      "INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id " +
+                      "ORDER BY m.ParentMatchup_Id ASC";
             }
             // with arg ReadData(id, 1)
             else
             {
-                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, mc.id, mc.winnerid, mc.round, t.name, t.totalscore" +
-                      " FROM teams t" +
-                      " INNER JOIN matchupentries m ON t.id = m.Teams_Id" +
-                      " INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id" +
-                      " ORDER BY m.ParentMatchup_Id ASC WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, mc.id, mc.winnerid, mc.round, t.name, t.totalscore " +
+                      "FROM teams t" +
+                      "INNER JOIN matchupentries m ON t.id = m.Teams_Id " +
+                      "INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id " +
+                      "ORDER BY m.ParentMatchup_Id ASC WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);

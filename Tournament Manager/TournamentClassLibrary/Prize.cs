@@ -105,37 +105,49 @@ namespace TournamentClassLibrary
         /// <returns></returns>
         public static string GenerateCode()
         {
-            string sql = "select max(Id) from Prizes";
-            string code = "";
+            string sql = "SELECT MAX(Id) " +
+                         "FROM Prizes";
+
+            string newId;
+
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
-            if (result.Read() == true)
+            if (result.Read())
             {
-                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
-                code = newCode.ToString();
+                int newIdInt = int.Parse(result.GetValue(0).ToString()) + 1;
+                newId = newIdInt.ToString();
             }
             else
             {
-                code = "1";
+                newId = "1";
             }
-            return code;
+            return newId;
         }
+
         public static void AddData(Prize p)
         {
-            string sql = "insert into Prizes(Id, PlaceName, PrizeAmount, PrizePercentage, Tournaments_Id) values ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
+            string sql = "INSERT INTO Prizes(Id, PlaceName, PrizeAmount, PrizePercentage, Tournaments_Id) " +
+                         "VALUES ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
+
             Connection.ExecuteDML(sql);
         }
-        public static string DeletePrize(Prize p)
+
+        public static bool DeletePrize(Prize p, out string exceptionMessage)
         {
-            string sql = "Delete from prizes where Id='" + p.Id + "'";
+            string sql = "DELELTE FROM prizes " +
+                         "WHERE Id='" + p.Id + "'";
+
+            exceptionMessage = "";
+
             try
             {
                 Connection.ExecuteDML(sql);
-                return "1";
+                return true;
             }
             catch (MySqlException ex)
             {
-                return ex.Message + ". Sql Command: " + sql;
+                exceptionMessage = ex.Message;
+                return false;
             }
         }
         //public static Prize SelectPrize(int prizeId)
@@ -156,7 +168,9 @@ namespace TournamentClassLibrary
 
         public static void EditPrize(Prize p)
         {
-            string sql = "UPDATE prizes SET placename='" + p.PlaceName.Replace("'", "\\'") + "', prizeamount=" + p.PrizeAmount + ", prizepercentage=" + p.PrizePercentage +  ", tournaments_id=" + p.Tournament.Id + " WHERE id=" + p.Id ;
+            string sql = "UPDATE prizes " +
+                         "SET placename='" + p.PlaceName.Replace("'", "\\'") + "', prizeamount=" + p.PrizeAmount + ", prizepercentage=" + p.PrizePercentage +  ", tournaments_id=" + p.Tournament.Id + " " +
+                         "WHERE id=" + p.Id ;
 
             Connection.ExecuteDML(sql);
         }

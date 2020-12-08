@@ -59,6 +59,7 @@
             this.textBoxTeamName.Location = new System.Drawing.Point(49, 263);
             this.textBoxTeamName.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxTeamName.Name = "textBoxTeamName";
+            this.textBoxTeamName.ReadOnly = true;
             this.textBoxTeamName.Size = new System.Drawing.Size(318, 30);
             this.textBoxTeamName.TabIndex = 8;
             // 
@@ -82,9 +83,9 @@
             this.textBoxTeamId.Location = new System.Drawing.Point(51, 181);
             this.textBoxTeamId.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBoxTeamId.Name = "textBoxTeamId";
+            this.textBoxTeamId.ReadOnly = true;
             this.textBoxTeamId.Size = new System.Drawing.Size(316, 30);
             this.textBoxTeamId.TabIndex = 6;
-            this.textBoxTeamId.TextChanged += new System.EventHandler(this.textBoxTeamId_TextChanged);
             // 
             // label1
             // 

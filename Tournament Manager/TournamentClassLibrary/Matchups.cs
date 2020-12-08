@@ -14,17 +14,8 @@ namespace TournamentClassLibrary
     public class Matchups
     {
         #region Data Member
-        /// <summary>
-        /// Matchup Id
-        /// </summary>
         private string id;
-        /// <summary>
-        /// Team that wins the matchup
-        /// </summary>
         private Teams winnerTeam;
-        /// <summary>
-        /// Round is the pairing number (ex: first pairing in single bracket match is round 1, the next pairing is round 2 and so on)
-        /// </summary>
         private int round;
         #endregion
 
@@ -44,18 +35,23 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
-        // Masih salah
-        public static List<Matchups> ReadData(string criteria, string criteriaValue)
+        public static List<Matchups> ReadData(string criteria = "", string criteriaValue = "")
         {
-            string sql = "";
+            string sql;
 
             if(criteria == "")
             {
-                sql = "SELECT m.id, m.winnerid, m.round, t.name FROM matchup m INNER JOIN teams t ON m.winnerid = t.id";
+                sql = "SELECT m.id, m.winnerid, m.round, t.name, t.totalscore " +
+                      "FROM matchup m " +
+                      "INNER JOIN teams t ON m.winnerid = t.id";
             }
             else
             {
-                sql = "SELECT m.id, m.winnerid, m.round, t.name FROM matchup m INNER JOIN teams t ON m.winnerid = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                sql = "SELECT m.id, m.winnerid, m.round, t.name, t.totalscore " +
+                      "FROM matchup m " +
+                      "INNER JOIN teams t ON m.winnerid = t.id " +
+                      "WHERE " + criteria + " " +
+                      "LIKE '%" + criteriaValue + "%'";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -64,17 +60,23 @@ namespace TournamentClassLibrary
 
             while(value.Read() == true)
             {
-                Teams team = new Teams(
-                    int.Parse(value.GetValue(1).ToString()),
-                    value.GetValue(3).ToString());
+                // matchup id
+                string matchupId = value.GetValue(0).ToString();
 
-                Matchups m = new Matchups(
-                    value.GetValue(0).ToString(),
-                    team,
-                    int.Parse(value.GetValue(2).ToString()));
+                // winner team
+                int teamId = int.Parse(value.GetValue(1).ToString());
+                string teamName = value.GetValue(3).ToString();
+                double teamTotalScore = double.Parse(value.GetValue(4).ToString());
+                Teams team = new Teams(teamId, teamName, teamTotalScore);
+
+                // matchup round
+                int matchupRound = int.Parse(value.GetValue(2).ToString());
+
+                Matchups m = new Matchups(matchupId, team, matchupRound);
 
                 matchupList.Add(m);
             }
+
             return matchupList;
         }
         #endregion
