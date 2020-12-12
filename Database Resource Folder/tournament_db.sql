@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2020 at 01:21 PM
+-- Generation Time: Dec 12, 2020 at 01:58 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -59,14 +59,14 @@ INSERT INTO `matchup` (`Id`, `WinnerId`, `Round`) VALUES
 CREATE TABLE `matchupentries` (
   `ParentMatchup_Id` varchar(45) NOT NULL,
   `Teams_Id` int(11) NOT NULL,
-  `score` int(11) DEFAULT NULL
+  `Score` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `matchupentries`
 --
 
-INSERT INTO `matchupentries` (`ParentMatchup_Id`, `Teams_Id`, `score`) VALUES
+INSERT INTO `matchupentries` (`ParentMatchup_Id`, `Teams_Id`, `Score`) VALUES
 ('001', 6, 1),
 ('001', 7, 0),
 ('002', 3, 0),
@@ -171,55 +171,27 @@ INSERT INTO `prizes` (`Id`, `PlaceName`, `PrizeAmount`, `PrizePercentage`, `Tour
 
 CREATE TABLE `teams` (
   `Id` int(11) NOT NULL,
-  `Name` varchar(45) DEFAULT NULL
+  `Name` varchar(45) DEFAULT NULL,
+  `Totalscore` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `teams`
 --
 
-INSERT INTO `teams` (`Id`, `Name`) VALUES
-(1, 'Cows'),
-(2, 'Blushing Flys'),
-(3, 'Bright Sheep'),
-(4, 'AEON'),
-(5, 'Cat Lover'),
-(6, 'Shadow Ninja'),
-(7, 'Wibu lokal'),
-(8, 'Ligma Balls'),
-(9, 'Flying Ninja'),
-(10, 'Sister Destroyer'),
-(11, 'Ligma Dig'),
-(12, 'Sugma Dig');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tournamententry`
---
-
-CREATE TABLE `tournamententry` (
-  `Tournaments_Id` int(11) NOT NULL,
-  `Teams_Id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tournamententry`
---
-
-INSERT INTO `tournamententry` (`Tournaments_Id`, `Teams_Id`) VALUES
-(1, 1),
-(1, 2),
-(1, 3),
-(1, 4),
-(1, 5),
-(1, 6),
-(1, 7),
-(1, 8),
-(2, 9),
-(2, 10),
-(2, 11),
-(2, 12);
+INSERT INTO `teams` (`Id`, `Name`, `Totalscore`) VALUES
+(1, 'Cows', 0),
+(2, 'Blushing Flys', 0),
+(3, 'Bright Sheep', 0),
+(4, 'AEON', 0),
+(5, 'Cat Lover', 0),
+(6, 'Shadow Ninja', 0),
+(7, 'Wibu lokal', 0),
+(8, 'Ligma Balls', 0),
+(9, 'Flying Ninja', 0),
+(10, 'Sister Destroyer', 0),
+(11, 'Ligma Dig', 0),
+(12, 'Sugma Dig', 0);
 
 -- --------------------------------------------------------
 
@@ -230,16 +202,17 @@ INSERT INTO `tournamententry` (`Tournaments_Id`, `Teams_Id`) VALUES
 CREATE TABLE `tournaments` (
   `Id` int(11) NOT NULL,
   `Name` varchar(45) DEFAULT NULL,
-  `EntryFee` decimal(10,0) DEFAULT NULL
+  `EntryFee` decimal(10,0) DEFAULT NULL,
+  `Round` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tournaments`
 --
 
-INSERT INTO `tournaments` (`Id`, `Name`, `EntryFee`) VALUES
-(1, 'Team Chess Tournament', '300000'),
-(2, 'Badminton Ganda 2v2', '200000');
+INSERT INTO `tournaments` (`Id`, `Name`, `EntryFee`, `Round`) VALUES
+(1, 'Team Chess Tournament', '300000', 1),
+(2, 'Badminton Ganda 2v2', '200000', 1);
 
 --
 -- Indexes for dumped tables
@@ -281,14 +254,6 @@ ALTER TABLE `teams`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `tournamententry`
---
-ALTER TABLE `tournamententry`
-  ADD PRIMARY KEY (`Tournaments_Id`,`Teams_Id`),
-  ADD KEY `fk_Tournaments_has_Teams_Teams1_idx` (`Teams_Id`),
-  ADD KEY `fk_Tournaments_has_Teams_Tournaments1_idx` (`Tournaments_Id`);
-
---
 -- Indexes for table `tournaments`
 --
 ALTER TABLE `tournaments`
@@ -322,13 +287,6 @@ ALTER TABLE `players`
 --
 ALTER TABLE `prizes`
   ADD CONSTRAINT `fk_Prizes_Tournaments1` FOREIGN KEY (`Tournaments_Id`) REFERENCES `tournaments` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `tournamententry`
---
-ALTER TABLE `tournamententry`
-  ADD CONSTRAINT `fk_Tournaments_has_Teams_Teams1` FOREIGN KEY (`Teams_Id`) REFERENCES `teams` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Tournaments_has_Teams_Tournaments1` FOREIGN KEY (`Tournaments_Id`) REFERENCES `tournaments` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

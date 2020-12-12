@@ -33,16 +33,16 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Create list of participating team on selected tournament
         /// </summary>
-        /// <param name="selectedTournament">selected tournament</param>
-        /// <param name="criteria"></param>
-        /// <returns></returns>
-        public static List<Teams> ReadTeam(Tournaments selectedTournament, string criteria = "")
+        /// <param name="selectedTournament">Selected tournament</param>
+        /// <param name="criteriaValue">Search value for team (team name or team id)</param>
+        /// <returns>List of team participating on the selected tournament</returns>
+        public static List<Teams> ReadTeam(Tournaments selectedTournament, string criteriaValue = "")
         {
             int tournamentId = selectedTournament.Id;
 
-            string sql = "";
+            string sql;
 
-            if(criteria=="")
+            if(criteriaValue=="")
             {
                 sql = "SELECT * FROM teams t " +
                       "WHERE t.id IN (SELECT teams_id " +
@@ -56,8 +56,8 @@ namespace TournamentClassLibrary
                       "WHERE t.id IN (SELECT teams_id " +
                                      "FROM tournamententry " +
                                      "WHERE tournaments_id=" + tournamentId + ") " +
-                                     "AND ( t.name LIKE '%" + criteria + "%' " +
-                                     "OR t.id LIKE '%" + criteria + "%')";
+                                     "AND ( t.name LIKE '%" + criteriaValue + "%' " +
+                                     "OR t.id LIKE '%" + criteriaValue + "%')";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -88,17 +88,17 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Create a list of player that participate on the selectedTournament
         /// </summary>
-        /// <param name="selectedTournament"></param>
-        /// <param name="criteria"></param>
-        /// <returns></returns>
-        public static List<Players> ReadPlayer(Tournaments selectedTournament, string criteria = "")
+        /// <param name="selectedTournament">Selected tournament</param>
+        /// <param name="criteriaValue">Search value for player search (player name, player email or player's team name)</param>
+        /// <returns>List of player participate in selected tournament</returns>
+        public static List<Players> ReadPlayer(Tournaments selectedTournament, string criteriaValue = "")
         {
             int tournamentid = selectedTournament.Id;
 
             string sql;
 
             // no criteria (ex: ReadPlayer(tournament)
-            if(criteria == "")
+            if(criteriaValue == "")
             {
                 sql = "SELECT p.id, p.name, p.email, p.team_id, t.name, t.totalscore " +
                       "FROM players p " +
@@ -116,10 +116,10 @@ namespace TournamentClassLibrary
                       "WHERE p.team_id IN (SELECT tt.teams_id " +
                                           "FROM tournamententry tt " +
                                           "WHERE tournaments_id=" + tournamentid + ") " +
-                                          "AND ( p.id LIKE '%" + criteria + "%' " +
-                                                     "OR p.name LIKE '%" + criteria + "%' " +
-                                                     "OR p.email LIKE '%" + criteria + "%' " +
-                                                     "OR t.name LIKE '%" + criteria + "%' )"; 
+                                          "AND ( p.id LIKE '%" + criteriaValue + "%' " +
+                                                     "OR p.name LIKE '%" + criteriaValue + "%' " +
+                                                     "OR p.email LIKE '%" + criteriaValue + "%' " +
+                                                     "OR t.name LIKE '%" + criteriaValue + "%' )"; 
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -156,13 +156,13 @@ namespace TournamentClassLibrary
         /// <summary>
         /// See how much participating team in selected tournament
         /// </summary>
-        /// <param name="t"></param>
-        /// <returns></returns>
-        public static int CalculateParticipant(Tournaments t)
+        /// <param name="tournaments">Selected tournaments</param>
+        /// <returns>Total of participating team</returns>
+        public static int CalculateParticipant(Tournaments tournaments)
         {
             string sql = "SELECT COUNT(*) " +
                          "FROM tournamententry " +
-                         "WHERE Tournaments_Id=" + t.Id;
+                         "WHERE Tournaments_Id=" + tournaments.Id;
 
             MySqlDataReader participantQry =  Connection.ExecuteQuery(sql);
 

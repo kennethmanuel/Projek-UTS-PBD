@@ -28,16 +28,12 @@ namespace Tournament_Manager
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            formTournament = (FormTournament)this.Owner;
-
             // Get selectedTournament from FormTournament.cs
+            formTournament = (FormTournament)this.Owner;
             selectedTournament = formTournament.selectedTournament;
 
             // Change selected tournament label with the proper one
             labelTournamentValue.Text = selectedTournament.Name;
-
-            // Get tournament's current round
-            labelRoundValue.Text = selectedTournament.GetCurrentRound().ToString();
         }
 
         private void FormMenu_FormClosing(object sender, FormClosingEventArgs e)

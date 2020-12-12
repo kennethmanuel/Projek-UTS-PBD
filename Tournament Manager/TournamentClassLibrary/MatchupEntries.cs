@@ -12,14 +12,9 @@ namespace TournamentClassLibrary
     /// </summary>
     public class MatchupEntries
     {
-        #region Data Member
-        /// <summary>
-        /// Show 
-        /// </summary>
         Matchups matchup;
         Teams team;
         int score;
-        #endregion
 
         #region Constructor
         public MatchupEntries(Matchups matchup, Teams team, int score)
@@ -40,17 +35,19 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Create list that contains matchup entries object from all database with specified criteria.
         /// </summary>
-        /// <param name="criteria"></param>
+        /// <param name="criteria">Search criteria for MatchupEntries (parentmatchup_id, team_id, score, matchup_winner_id, matchup_round, team_name, team_totalscore)</param>
         /// <param name="criteriaValue"></param>
-        /// <returns></returns>
-        public static List<MatchupEntries> ReadData(string criteria = "", string criteriaValue = "") // optional param
+        /// <returns>Return list of MatchUpEntries with specified criteria.</returns>
+        public static List<MatchupEntries> ReadData(string criteria = "", string criteriaValue = "") 
         {
             string sql;
 
             // empty arg ReadData()
             if (criteria == "")
             {
-                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, mc.id, mc.winnerid, mc.round, t.name, t.totalscore " +
+                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, " +
+                             "mc.winnerid as matchup_winner_id, mc.round as matchup_round, " +
+                             "t.name as team_name, t.totalscore as team_totalscore" +
                       "FROM teams t " +
                       "INNER JOIN matchupentries m ON t.id = m.Teams_Id " +
                       "INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id " +
@@ -59,7 +56,9 @@ namespace TournamentClassLibrary
             // with arg ReadData(id, 1)
             else
             {
-                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, mc.id, mc.winnerid, mc.round, t.name, t.totalscore " +
+                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, " +
+                             "mc.winnerid as matchup_winner_id, mc.round as matchup_round, " +
+                             "t.name as team_name, t.totalscore as team_totalscore" +
                       "FROM teams t" +
                       "INNER JOIN matchupentries m ON t.id = m.Teams_Id " +
                       "INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id " +

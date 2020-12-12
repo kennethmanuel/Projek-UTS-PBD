@@ -35,19 +35,25 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
+        /// <summary>
+        /// Create list of matchups.
+        /// </summary>
+        /// <param name="criteria">Criteria for search (id, winnerid, round, winner_name, winner_totalscore).</param>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
         public static List<Matchups> ReadData(string criteria = "", string criteriaValue = "")
         {
             string sql;
 
             if(criteria == "")
             {
-                sql = "SELECT m.id, m.winnerid, m.round, t.name, t.totalscore " +
+                sql = "SELECT m.id, m.winnerid, m.round, t.name as winner_name, t.totalscore winner_totalscore" +
                       "FROM matchup m " +
                       "INNER JOIN teams t ON m.winnerid = t.id";
             }
             else
             {
-                sql = "SELECT m.id, m.winnerid, m.round, t.name, t.totalscore " +
+                sql = "SELECT m.id, m.winnerid, m.round, t.name as winner_name, t.totalscore winner_totalscore" +
                       "FROM matchup m " +
                       "INNER JOIN teams t ON m.winnerid = t.id " +
                       "WHERE " + criteria + " " +

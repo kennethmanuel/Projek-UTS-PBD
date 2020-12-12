@@ -14,7 +14,7 @@ namespace TournamentClassLibrary
         private double totalScore;
 
         #region Constructor
-        public Teams(int id, string name, double totalScore)
+        public Teams(int id, string name, double totalScore = 0)
         {
             this.Id = id;
             this.Name = name;
@@ -32,8 +32,8 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Create a list of Teams object from a selected database with a specified criteria.
         /// </summary>
-        /// <param name="criteria"></param>
-        /// <param name="criteriaValue"></param>
+        /// <param name="criteria">Search criteria for team (ex: "id" or "name")</param>
+        /// <param name="criteriaValue">Search value for selected criteria (ex: "1" or "team secret")</param>
         /// <returns></returns>
         public static List<Teams> ReadData(string criteria, string criteriaValue = "")
         {
@@ -71,10 +71,10 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Create list of a Teams object from a selected database with all criteria selected.
+        /// Create list of team from all tournament.
         /// </summary>
-        /// <param name="criteriaValue"></param>
-        /// <returns></returns>
+        /// <param name="criteriaValue">Search value from all criteria.</param>
+        /// <returns>List of team with selected criteria.</returns>
         public static List<Teams> BatchSearch(string criteriaValue)
         {
             string sql = "SELECT * FROM teams WHERE id LIKE '%" + criteriaValue + "%' OR name LIKE '%" + criteriaValue + "%'";
@@ -98,20 +98,21 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Add new team to database
+        /// Add team to specific tournament.
         /// </summary>
-        /// <param name="p"></param>
-        public static void AddTeams(Teams t, Tournaments selectedTournament)
+        /// <param name="team">Team that will be added.</param>
+        /// <param name="selectedTournament">Selected tournament.</param>
+        public static void AddTeams(Teams team, Tournaments selectedTournament)
         {
             string sql = 
                 // INSERT to teams
                 "INSERT INTO teams(id, name, totalscore) " +
-                "VALUES ('" + t.Id + "','"
-                            + t.Name.Replace("'", "\\'") 
-                            + "','" + t.totalScore + "'); " +
+                "VALUES ('" + team.Id + "','"
+                            + team.Name.Replace("'", "\\'") 
+                            + "','" + team.totalScore + "'); " +
                 // INSERT to tournamentEntry
                 "INSERT INTO tournamententry " +
-                "VALUES ('"+ selectedTournament.Id + "', '" + t.Id + "');";
+                "VALUES ('"+ selectedTournament.Id + "', '" + team.Id + "');";
 
             Connection.ExecuteDML(sql);
         }
@@ -119,13 +120,13 @@ namespace TournamentClassLibrary
         /// <summary>
         /// EditTeam from database
         /// </summary>
-        /// <param name="t"></param>
-        public static void EditTeams(Teams t)
+        /// <param name="teams"></param>
+        public static void EditTeams(Teams teams)
         {
             string sql = "UPDATE teams " +
-                         "SET name='" + t.Name.Replace("'", "\\'") + "' " +
-                         "SET totalscore'" + t.TotalScore + "' " +
-                         "WHERE id='" + t.Id + "'";
+                         "SET name='" + teams.Name.Replace("'", "\\'") + "' " +
+                         "SET totalscore'" + teams.TotalScore + "' " +
+                         "WHERE id='" + teams.Id + "'";
 
             Connection.ExecuteDML(sql);
         }
@@ -164,9 +165,9 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Generate new Id
+        /// Generate new team Id.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>New id for team.</returns>
         public static string GenerateCode()
         {
             string sql = "SELECT MAX(Id) FROM Teams";
@@ -185,10 +186,10 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Select a team based on its id
+        /// Select a team with specific id.
         /// </summary>
-        /// <param name="teamId"></param>
-        /// <returns></returns>
+        /// <param name="teamId">Team's id that will be selected</param>
+        /// <returns>Return a team corresponding selected team id</returns>
         public static Teams SelectTeam(int teamId)
         {
             string sql = "SELECT * FROM teams t " +

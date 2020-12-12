@@ -23,7 +23,7 @@ namespace Tournament_Manager.TournamentPrize
         private void FormAddPrize_Load(object sender, EventArgs e)
         {
             //listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
-            listTournaments = Tournaments.ReadCombo(FormMenu.selectedTournament);
+            //listTournaments = Tournaments.ReadCombo(FormMenu.selectedTournament);
 
             string newId = Prize.GenerateCode();
             textBoxPrizeId.Text = newId;

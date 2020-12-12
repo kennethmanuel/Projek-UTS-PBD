@@ -69,14 +69,14 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Get this tournament's current round
+        /// Get tournament's current round.
         /// </summary>
-        /// <returns>return -1 if there is error, 1 is round 1, 2 is round 2, and so on.</returns>
+        /// <returns></returns>
         public int GetCurrentRound()
         {
             string sql = "SELECT currentround " +
                          "FROM tournaments " +
-                         "WHERE name = '" + this.Name + "'";
+                         "WHERE id = '" + this.Id + "'";
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
@@ -86,17 +86,18 @@ namespace TournamentClassLibrary
             {
                 round = int.Parse(value.GetValue(0).ToString());
             }
+
             return round;
         }
 
         /// <summary>
         /// Add tournament to database
         /// </summary>
-        /// <param name="t">Tournament that will be inserted</param>
-        public static void AddTournament(Tournaments t)
+        /// <param name="tournaments">Tournament that will be inserted</param>
+        public static void AddTournament(Tournaments tournaments)
         {
-            string sql = "INSERT INTO tournaments (id, name, entryfee, round) " +
-                         "VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "','" + t.CurrentRound + "');";
+            string sql = "INSERT INTO tournaments " +
+                         "VALUES('" + tournaments.Id + "','" + tournaments.Name + "','" + tournaments.Entryfee + "','" + 1 + "');";
 
             Connection.ExecuteDML(sql);
         }
@@ -104,7 +105,7 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Generate tournament id
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Create id for tournament</returns>
         public static int GenerateCode()
         {
             string sql = "SELECT MAX(id) FROM tournaments";
@@ -148,7 +149,6 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Get a list of single tournament (GAK JELAS SOPO SING NGGAE METHOD IKI??)
         /// </summary>
-        /// <param name="selected"></param>
         /// <returns></returns>
         //public static List<Tournaments> ReadCombo(Tournaments selected)
         //{

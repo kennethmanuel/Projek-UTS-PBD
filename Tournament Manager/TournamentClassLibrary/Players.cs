@@ -36,9 +36,9 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Create list that contains Players object from all database with specified criteria.
         /// </summary>
-        /// <param name="criteria"></param>
+        /// <param name="criteria">Criteria for player fields (available value: id, name, email, team_id, team_name, team_totalscore)</param>
         /// <param name="criteriaValue"></param>
-        /// <returns></returns>
+        /// <returns>List of player</returns>
         public static List<Players> ReadData(string criteria = "", string criteriaValue = "")
         {
             string sql;
@@ -46,14 +46,14 @@ namespace TournamentClassLibrary
             // no arg (ex: ReadData())
             if (criteria == "")
             {
-                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name, t.totalscore " +
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name as team_name, t.totalscore as team_totalscore " +
                       "FROM players p " +
                       "INNER JOIN teams t ON p.team_id = t.id";
             }
             // with arg (ex: ReadData(name, 'beth harmon'))
             else
             {
-                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name, t.totalscore " +
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name as team_name, t.totalscore as team_totalscore " +
                       "FROM players p " +
                       "INNER JOIN teams t ON p.team_id = t.id " +
                       "WHERE " + criteria + " " +
@@ -174,39 +174,41 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Add Player to database
+        /// Add specific player to database.
         /// </summary>
-        /// <param name="p"></param>
-        public static void AddPlayer(Players p)
+        /// <param name="player">Selected player.</param>
+        public static void AddPlayer(Players player)
         {
             string sql = "INSERT INTO players(Id, Name, Email, Team_id) " +
-                         "VALUES ('" + p.Id + "','" + p.Name.Replace("'", "\\'") + "','" + p.Email + "','" + p.Team.Id + "')";
+                         "VALUES ('" + player.Id + "','" + player.Name.Replace("'", "\\'") + "','" + player.Email + "','" + player.Team.Id + "')";
 
             Connection.ExecuteDML(sql);
         }
 
         /// <summary>
-        /// Edit player from database
+        /// Edit specific player.
         /// </summary>
-        /// <param name="p"></param>
-        public static void EditPlayer(Players p)
+        /// <param name="player">Selected player.</param>
+        public static void EditPlayer(Players player)
         {
             string sql = "UPDATE players " +
-                         "SET Name='" + p.Name.Replace("'", "\\'") + "',Email='" + p.Email + "',Team_Id='" + p.Team.Id + "'" +
+                         "SET Name='" + player.Name.Replace("'", "\\'") + "',Email='" + player.Email + "',Team_Id='" + player.Team.Id + "'" +
 
-                         "WHERE Id='" + p.Id + "'";
+                         "WHERE Id='" + player.Id + "'";
+
             Connection.ExecuteDML(sql);
         }
 
         /// <summary>
-        /// Delete Player from database
+        /// Delete specific player.
         /// </summary>
-        /// <param name="pl"></param>
-        /// <returns></returns>
-        public static bool DeletePlayer(Players p, out string exceptionMessage)
+        /// <param name="player">Selected player.</param>
+        /// <param name="exceptionMessage">Exception message for debugging.</param>
+        /// <returns>True if delete player success, false if fail to delete the player.</returns>
+        public static bool DeletePlayer(Players player, out string exceptionMessage)
         {
             string sql = "DELETE FROM players " +
-                         "WHERE Id='" + p.Id + "'";
+                         "WHERE Id='" + player.Id + "'";
 
             exceptionMessage = "";
 
@@ -223,9 +225,9 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
-        /// Generate new Id
+        /// Generate new Id.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>New id for players.</returns>
         public static string GenerateId()
         {
             string sql = "SELECT MAX(Id) FROM Players";
