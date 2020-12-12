@@ -132,6 +132,19 @@ namespace TournamentClassLibrary
         }
 
         /// <summary>
+        /// Edit Point from database
+        /// </summary>
+        /// <param name="teams"></param>
+        public static void EditPoint(Teams teams)
+        {
+            string sql = "UPDATE teams " +
+                         "SET totalscore ='" + teams.TotalScore + "' " +
+                         "WHERE id='" + teams.Id + "'";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        /// <summary>
         /// Delete specific team.
         /// </summary>
         /// <param name="teamId">Team that will be deleted's id.</param>

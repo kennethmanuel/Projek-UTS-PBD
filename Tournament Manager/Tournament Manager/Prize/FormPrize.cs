@@ -25,14 +25,14 @@ namespace Tournament_Manager
         public void FormPrize_Load(object sender, EventArgs e)
         {
             FormatDataGrid();
-            //listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
+            listPrize = Prize.ReadData(FormMenu.selectedTournament, "");
             ViewDataGrid();
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string criteria = textBoxSearch.Text;
-            //listPrize = Prize.ReadData(FormMenu.selectedTournament,criteria);
+            listPrize = Prize.ReadData(FormMenu.selectedTournament,criteria);
             ViewDataGrid();
         }
 
@@ -70,6 +70,8 @@ namespace Tournament_Manager
             dataGridViewPrize.Columns.Add("PrizeAmount", "Prize Amount");
             dataGridViewPrize.Columns.Add("PricePercentage", "Price Percentage");
             dataGridViewPrize.Columns.Add("Tournaments_Id", "Tournament Id");           
+            dataGridViewPrize.Columns.Add("Name", "Name");           
+            dataGridViewPrize.Columns.Add("EntryFee", "Entry Fee");
 
             dataGridViewPrize.Columns["PrizeAmount"].DefaultCellStyle.Format = "#,###";
         }
@@ -81,7 +83,7 @@ namespace Tournament_Manager
             {
                 foreach (Prize p in listPrize)
                 {
-                    dataGridViewPrize.Rows.Add(p.Id, p.PlaceName, p.PrizeAmount, p.PrizePercentage, p.Tournament.Id);
+                    dataGridViewPrize.Rows.Add(p.Id, p.PlaceName, p.PrizeAmount, p.PrizePercentage, p.Tournament.Id, p.Tournament.Name, p.Tournament.Entryfee);
                 }
             }
             else

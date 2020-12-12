@@ -13,8 +13,7 @@ namespace TournamentClassLibrary
     {
         private int id;
         private string name;
-        private decimal entryfee;
-        private int currentRound;
+        private decimal entryfee;        
 
         #region Constructor
         public Tournaments(int id, string name, decimal entryfee )
@@ -69,8 +68,8 @@ namespace TournamentClassLibrary
         /// <param name="tournaments">Tournament that will be inserted</param>
         public static void AddTournament(Tournaments tournaments)
         {
-            string sql = "INSERT INTO tournaments " +
-                         "VALUES('" + tournaments.Id + "','" + tournaments.Name + "');";
+            string sql = "INSERT INTO tournaments(id, name, entryfee) " +
+                         "VALUES('" + tournaments.Id + "','" + tournaments.Name + "','" + tournaments.Entryfee + "');";
 
             Connection.ExecuteDML(sql);
         }
@@ -123,27 +122,27 @@ namespace TournamentClassLibrary
         /// Get a list of single tournament (GAK JELAS SOPO SING NGGAE METHOD IKI??)
         /// </summary>
         /// <returns></returns>
-        //public static List<Tournaments> ReadCombo(Tournaments selected)
-        //{
-        //    int tournamentsId = selected.Id;
+        public static List<Tournaments> ReadCombo(Tournaments selected)
+        {
+            int tournamentsId = selected.Id;
 
-        //    string sql = "SELECT * FROM tournaments where id='" + tournamentsId + "'";
+            string sql = "SELECT * FROM tournaments where id='" + tournamentsId + "'";
 
-        //    MySqlDataReader value = Connection.ExecuteQuery(sql);
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
 
-        //    List<Tournaments> tournamentList = new List<Tournaments>();
+            List<Tournaments> tournamentList = new List<Tournaments>();
 
-        //    while (value.Read() == true)
-        //    {
-        //        Tournaments t = new Tournaments(
-        //            int.Parse(value.GetValue(0).ToString()),
-        //            value.GetValue(1).ToString(),
-        //            decimal.Parse(value.GetValue(2).ToString()),
-        //            int.Parse(value.GetValue(3).ToString()));
+            while (value.Read() == true)
+            {
+                Tournaments t = new Tournaments(
+                    int.Parse(value.GetValue(0).ToString()),
+                    value.GetValue(1).ToString(),
+                    decimal.Parse(value.GetValue(2).ToString())
+                   );
 
-        //        tournamentList.Add(t);
-        //    }
-        //    return tournamentList;
-        //}
+                tournamentList.Add(t);
+            }
+            return tournamentList;
+        }
     }
 }

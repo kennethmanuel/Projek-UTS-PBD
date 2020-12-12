@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tournament_Manager.Player;
+using Tournament_Manager.Player_and_Team.Team;
 using Tournament_Manager.Team;
 using TournamentClassLibrary;
 
@@ -38,6 +39,8 @@ namespace Tournament_Manager
             dataGridViewPlayer.Columns.Add("Name", "Name");
             dataGridViewPlayer.Columns.Add("Email", "Email");
             dataGridViewPlayer.Columns.Add("Team_Id", "Team_Id");
+            dataGridViewPlayer.Columns.Add("Name", "Name");
+            dataGridViewPlayer.Columns.Add("TotalScore", "Total Score");
         }
 
         // Show data to datagridplayer
@@ -49,7 +52,7 @@ namespace Tournament_Manager
                 dataGridViewPlayer.Rows.Clear();
                 foreach(Players p in playerList)
                 {
-                    dataGridViewPlayer.Rows.Add(p.Id, p.Name, p.Email, p.Team.Name);
+                    dataGridViewPlayer.Rows.Add(p.Id, p.Name, p.Email, p.Team.Id, p.Team.Name, p.Team.TotalScore);
                 }
             }
             // playerlist doesn't have any player
@@ -190,8 +193,16 @@ namespace Tournament_Manager
             frm.Owner = this;
             frm.ShowDialog();
         }
+        private void buttonEditPoin_Click(object sender, EventArgs e)
+        {
+            FormEditPoint frm = new FormEditPoint();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
         #endregion
 
-        #endregion 
+        #endregion
+
+
     }
 }

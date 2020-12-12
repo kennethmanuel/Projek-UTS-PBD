@@ -49,9 +49,6 @@
             this.buttonViewPairing = new System.Windows.Forms.Button();
             this.linkLabelAbout = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelRound = new System.Windows.Forms.Label();
-            this.labelRoundValue = new System.Windows.Forms.Label();
-            this.buttonNextRound = new System.Windows.Forms.Button();
             this.menuStripControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,14 +65,14 @@
             this.menuStripControl.Location = new System.Drawing.Point(0, 0);
             this.menuStripControl.Name = "menuStripControl";
             this.menuStripControl.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStripControl.Size = new System.Drawing.Size(1061, 31);
+            this.menuStripControl.Size = new System.Drawing.Size(1061, 27);
             this.menuStripControl.TabIndex = 1;
             this.menuStripControl.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 27);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 23);
             // 
             // tournamentToolStripMenuItem
             // 
@@ -84,14 +81,14 @@
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem,
             this.generateTournamentStartingBracketToolStripMenuItem});
             this.tournamentToolStripMenuItem.Name = "tournamentToolStripMenuItem";
-            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(116, 27);
+            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(95, 23);
             this.tournamentToolStripMenuItem.Text = "Tournament";
             // 
             // loadAnotherTournamentFromDatabaseToolStripMenuItem
             // 
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Name = "loadAnotherTournamentFromDatabaseToolStripMenuItem";
-            this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
+            this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(329, 24);
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Text = "Load another tournament from database";
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.loadAnotherTournamentFromDatabaseToolStripMenuItem_Click);
             // 
@@ -99,7 +96,7 @@
             // 
             this.generateTournamentStartingBracketToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.generateTournamentStartingBracketToolStripMenuItem.Name = "generateTournamentStartingBracketToolStripMenuItem";
-            this.generateTournamentStartingBracketToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
+            this.generateTournamentStartingBracketToolStripMenuItem.Size = new System.Drawing.Size(329, 24);
             this.generateTournamentStartingBracketToolStripMenuItem.Text = "Quick generate tournament pairing";
             this.generateTournamentStartingBracketToolStripMenuItem.Click += new System.EventHandler(this.generateTournamentStartingBracketToolStripMenuItem_Click);
             // 
@@ -109,7 +106,7 @@
             this.teamAndPlayerToolStripMenuItem,
             this.matchToolStripMenuItem});
             this.playersTeamsToolStripMenuItem.Name = "playersTeamsToolStripMenuItem";
-            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(101, 27);
+            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(83, 23);
             this.playersTeamsToolStripMenuItem.Text = "View Data";
             // 
             // teamAndPlayerToolStripMenuItem
@@ -117,7 +114,7 @@
             this.teamAndPlayerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.teamAndPlayerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
@@ -126,7 +123,7 @@
             this.matchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.matchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.matchToolStripMenuItem.Text = "Match and Entry";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -135,14 +132,14 @@
             this.viewTournamentPrizesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prizeToolStripMenuItem});
             this.viewTournamentPrizesToolStripMenuItem.Name = "viewTournamentPrizesToolStripMenuItem";
-            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(206, 27);
+            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(167, 23);
             this.viewTournamentPrizesToolStripMenuItem.Text = "View Tournament Prizes";
             // 
             // prizeToolStripMenuItem
             // 
             this.prizeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(131, 28);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.prizeToolStripMenuItem.Text = "Prize";
             this.prizeToolStripMenuItem.Click += new System.EventHandler(this.prizeToolStripMenuItem_Click);
             // 
@@ -151,10 +148,10 @@
             this.labelTournament.AutoSize = true;
             this.labelTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.labelTournament.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTournament.Location = new System.Drawing.Point(461, 5);
+            this.labelTournament.Location = new System.Drawing.Point(657, 5);
             this.labelTournament.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTournament.Name = "labelTournament";
-            this.labelTournament.Size = new System.Drawing.Size(231, 23);
+            this.labelTournament.Size = new System.Drawing.Size(188, 19);
             this.labelTournament.TabIndex = 2;
             this.labelTournament.Text = "Currenty Edited Tournament:";
             // 
@@ -163,10 +160,10 @@
             this.labelTournamentValue.AutoSize = true;
             this.labelTournamentValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.labelTournamentValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTournamentValue.Location = new System.Drawing.Point(700, 5);
+            this.labelTournamentValue.Location = new System.Drawing.Point(893, 5);
             this.labelTournamentValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTournamentValue.Name = "labelTournamentValue";
-            this.labelTournamentValue.Size = new System.Drawing.Size(175, 23);
+            this.labelTournamentValue.Size = new System.Drawing.Size(142, 19);
             this.labelTournamentValue.TabIndex = 3;
             this.labelTournamentValue.Text = "<tournament_name>";
             this.labelTournamentValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -276,7 +273,7 @@
             this.linkLabelAbout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
             this.linkLabelAbout.Location = new System.Drawing.Point(47, 580);
             this.linkLabelAbout.Name = "linkLabelAbout";
-            this.linkLabelAbout.Size = new System.Drawing.Size(194, 23);
+            this.linkLabelAbout.Size = new System.Drawing.Size(158, 19);
             this.linkLabelAbout.TabIndex = 31;
             this.linkLabelAbout.TabStop = true;
             this.linkLabelAbout.Text = "Check us out on github.";
@@ -289,58 +286,16 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
             this.label2.Location = new System.Drawing.Point(12, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(612, 59);
+            this.label2.Size = new System.Drawing.Size(505, 47);
             this.label2.TabIndex = 32;
             this.label2.Text = "TOURNAMENT MANAGER ♔";
             // 
-            // labelRound
-            // 
-            this.labelRound.AutoSize = true;
-            this.labelRound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
-            this.labelRound.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRound.Location = new System.Drawing.Point(883, 5);
-            this.labelRound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelRound.Name = "labelRound";
-            this.labelRound.Size = new System.Drawing.Size(70, 23);
-            this.labelRound.TabIndex = 33;
-            this.labelRound.Text = "Round: ";
-            // 
-            // labelRoundValue
-            // 
-            this.labelRoundValue.AutoSize = true;
-            this.labelRoundValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.labelRoundValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRoundValue.Location = new System.Drawing.Point(955, 5);
-            this.labelRoundValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelRoundValue.Name = "labelRoundValue";
-            this.labelRoundValue.Size = new System.Drawing.Size(80, 23);
-            this.labelRoundValue.TabIndex = 34;
-            this.labelRoundValue.Text = "<round>";
-            this.labelRoundValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // buttonNextRound
-            // 
-            this.buttonNextRound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(136)))));
-            this.buttonNextRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNextRound.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonNextRound.Location = new System.Drawing.Point(704, 93);
-            this.buttonNextRound.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.buttonNextRound.Name = "buttonNextRound";
-            this.buttonNextRound.Size = new System.Drawing.Size(314, 39);
-            this.buttonNextRound.TabIndex = 35;
-            this.buttonNextRound.Text = "NEXT ROUND";
-            this.buttonNextRound.UseVisualStyleBackColor = false;
-            this.buttonNextRound.Click += new System.EventHandler(this.buttonNextRound_Click);
-            // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1061, 651);
-            this.Controls.Add(this.buttonNextRound);
-            this.Controls.Add(this.labelRoundValue);
-            this.Controls.Add(this.labelRound);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabelAbout);
             this.Controls.Add(this.buttonViewPairing);
@@ -391,8 +346,5 @@
         private System.Windows.Forms.Button buttonViewPairing;
         private System.Windows.Forms.LinkLabel linkLabelAbout;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelRound;
-        private System.Windows.Forms.Label labelRoundValue;
-        private System.Windows.Forms.Button buttonNextRound;
     }
 }

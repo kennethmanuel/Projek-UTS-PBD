@@ -67,37 +67,40 @@ namespace TournamentClassLibrary
         //    }
         //    return prizeList;
         //}
-        ///// <summary>
-        ///// read data prize
-        ///// </summary>
-        ///// <param name="criteria"></param>
-        ///// <param name="criteriaValue"></param>
-        ///// <returns></returns>
-        //public static List<Prize> ReadData(Tournaments selectedTournaments, string criteria)
-        //{
-        //    int tournamentsId = selectedTournaments.Id;
-        //    string sql = "";
-        //    if (criteria == "")
-        //    {
-        //        sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee From prizes p inner join tournaments t on p.tournaments_id = t.id where p.tournaments_id in (select tt.id from tournaments tt where tournaments_id=" + tournamentsId + ")";
-        //    }
-        //    else
-        //    {
-        //        sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id where p.tournaments_id in (select tt.id from tournaments tt where tournaments_id=" + tournamentsId + ") AND ( p.id LIKE '%" + criteria + "%' OR p.placeName LIKE '%" + criteria + "%' OR p.prizeAmount LIKE '%" + criteria + "%' OR p.prizePercentage LIKE '%" + criteria + "%'   )";
-        //    }
+        /// <summary>
+        /// read data prize
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <param name="criteriaValue"></param>
+        /// <returns></returns>
+        public static List<Prize> ReadData(Tournaments selectedTournaments, string criteria)
+        {
+            int tournamentsId = selectedTournaments.Id;
+            string sql = "";
+            if (criteria == "")
+            {
+                sql = "SELECT p.Id, p.PlaceName, p.PrizeAmount, p.PrizePercentage, p.Tournaments_Id, t.Name, t.EntryFee " +
+                        "FROM prizes p " +
+                        "INNER JOIN tournaments t ON p.Tournaments_Id = t.Id " +
+                        "WHERE p.Tournaments_Id =" + tournamentsId + "";
+            }
+            else
+            {
+                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id where p.tournaments_id in (select tt.id from tournaments tt where tournaments_id=" + tournamentsId + ") AND ( p.id LIKE '%" + criteria + "%' OR p.placeName LIKE '%" + criteria + "%' OR p.prizeAmount LIKE '%" + criteria + "%' OR p.prizePercentage LIKE '%" + criteria + "%'   )";
+            }
 
-        //    MySqlDataReader value = Connection.ExecuteQuery(sql);
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
 
-        //    List<Prize> listPrize = new List<Prize>();
+            List<Prize> listPrize = new List<Prize>();
 
-        //    while (value.Read() == true)
-        //    {
-        //        Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
-        //        Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), decimal.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
-        //        listPrize.Add(prize);
-        //    }
-        //    return listPrize;
-        //}
+            while (value.Read() == true)
+            {
+                Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
+                Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), decimal.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
+                listPrize.Add(prize);
+            }
+            return listPrize;
+        }
 
         /// <summary>
         /// Generate new ID
@@ -150,21 +153,24 @@ namespace TournamentClassLibrary
                 return false;
             }
         }
-        //public static Prize SelectPrize(int prizeId)
-        //{
-        //    string sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.Tournaments_Id = t.Id  WHERE p.id=" + prizeId;
+        public static Prize SelectPrize(int prizeId)
+        {
+            string sql = "SELECT p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee " + 
+                    " FROM prizes p " + 
+                    " INNER JOIN tournaments t ON p.Tournaments_Id = t.Id  " + 
+                    " WHERE p.id=" + prizeId;
 
-        //    MySqlDataReader value = Connection.ExecuteQuery(sql);
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
 
-        //    value.Read();
+            value.Read();
 
-        //    Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
+            Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
             
-        //    Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), decimal.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
+            Prize prize = new Prize(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString(), decimal.Parse(value.GetValue(2).ToString()), double.Parse(value.GetValue(3).ToString()), tournaments);
             
             
-        //    return prize;
-        //}
+            return prize;
+        }
 
         public static void EditPrize(Prize p)
         {

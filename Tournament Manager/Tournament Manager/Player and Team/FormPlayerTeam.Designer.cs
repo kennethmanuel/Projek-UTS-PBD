@@ -42,6 +42,7 @@
             this.buttonAddTeam = new System.Windows.Forms.Button();
             this.dataGridViewTeam = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonEditPoin = new System.Windows.Forms.Button();
             this.tabControlTeam.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlayer)).BeginInit();
@@ -69,11 +70,11 @@
             this.tabPagePlayer.Controls.Add(this.buttonEditPlayer);
             this.tabPagePlayer.Controls.Add(this.buttonAddPlayer);
             this.tabPagePlayer.Controls.Add(this.dataGridViewPlayer);
-            this.tabPagePlayer.Location = new System.Drawing.Point(4, 32);
+            this.tabPagePlayer.Location = new System.Drawing.Point(4, 26);
             this.tabPagePlayer.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePlayer.Name = "tabPagePlayer";
             this.tabPagePlayer.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePlayer.Size = new System.Drawing.Size(742, 443);
+            this.tabPagePlayer.Size = new System.Drawing.Size(742, 449);
             this.tabPagePlayer.TabIndex = 1;
             this.tabPagePlayer.Text = "Players";
             // 
@@ -83,7 +84,7 @@
             this.textBoxSearchPlayer.Location = new System.Drawing.Point(16, 50);
             this.textBoxSearchPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchPlayer.Name = "textBoxSearchPlayer";
-            this.textBoxSearchPlayer.Size = new System.Drawing.Size(307, 30);
+            this.textBoxSearchPlayer.Size = new System.Drawing.Size(307, 25);
             this.textBoxSearchPlayer.TabIndex = 7;
             this.textBoxSearchPlayer.TextChanged += new System.EventHandler(this.TextBoxSearchPlayer_TextChanged);
             // 
@@ -145,16 +146,17 @@
             // tabPageTeam
             // 
             this.tabPageTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.tabPageTeam.Controls.Add(this.buttonEditPoin);
             this.tabPageTeam.Controls.Add(this.textBoxSearchTeam);
             this.tabPageTeam.Controls.Add(this.buttonDeleteTeam);
             this.tabPageTeam.Controls.Add(this.buttonEditTeam);
             this.tabPageTeam.Controls.Add(this.buttonAddTeam);
             this.tabPageTeam.Controls.Add(this.dataGridViewTeam);
-            this.tabPageTeam.Location = new System.Drawing.Point(4, 32);
+            this.tabPageTeam.Location = new System.Drawing.Point(4, 26);
             this.tabPageTeam.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageTeam.Name = "tabPageTeam";
             this.tabPageTeam.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageTeam.Size = new System.Drawing.Size(742, 443);
+            this.tabPageTeam.Size = new System.Drawing.Size(742, 449);
             this.tabPageTeam.TabIndex = 0;
             this.tabPageTeam.Text = "Teams";
             // 
@@ -162,10 +164,10 @@
             // 
             this.textBoxSearchTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
             this.textBoxSearchTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBoxSearchTeam.Location = new System.Drawing.Point(15, 50);
+            this.textBoxSearchTeam.Location = new System.Drawing.Point(15, 55);
             this.textBoxSearchTeam.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchTeam.Name = "textBoxSearchTeam";
-            this.textBoxSearchTeam.Size = new System.Drawing.Size(307, 30);
+            this.textBoxSearchTeam.Size = new System.Drawing.Size(307, 25);
             this.textBoxSearchTeam.TabIndex = 8;
             this.textBoxSearchTeam.TextChanged += new System.EventHandler(this.TextBoxSearchTeam_TextChanged);
             // 
@@ -174,7 +176,7 @@
             this.buttonDeleteTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonDeleteTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonDeleteTeam.Location = new System.Drawing.Point(604, 46);
+            this.buttonDeleteTeam.Location = new System.Drawing.Point(603, 49);
             this.buttonDeleteTeam.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeleteTeam.Name = "buttonDeleteTeam";
             this.buttonDeleteTeam.Size = new System.Drawing.Size(123, 34);
@@ -188,7 +190,7 @@
             this.buttonEditTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonEditTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonEditTeam.Location = new System.Drawing.Point(476, 46);
+            this.buttonEditTeam.Location = new System.Drawing.Point(476, 49);
             this.buttonEditTeam.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditTeam.Name = "buttonEditTeam";
             this.buttonEditTeam.Size = new System.Drawing.Size(123, 34);
@@ -202,7 +204,7 @@
             this.buttonAddTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonAddTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonAddTeam.Location = new System.Drawing.Point(348, 46);
+            this.buttonAddTeam.Location = new System.Drawing.Point(349, 49);
             this.buttonAddTeam.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddTeam.Name = "buttonAddTeam";
             this.buttonAddTeam.Size = new System.Drawing.Size(123, 34);
@@ -236,9 +238,23 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "PLAYER AND TEAMS";
             // 
+            // buttonEditPoin
+            // 
+            this.buttonEditPoin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
+            this.buttonEditPoin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditPoin.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.buttonEditPoin.Location = new System.Drawing.Point(15, 12);
+            this.buttonEditPoin.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEditPoin.Name = "buttonEditPoin";
+            this.buttonEditPoin.Size = new System.Drawing.Size(123, 34);
+            this.buttonEditPoin.TabIndex = 9;
+            this.buttonEditPoin.Text = "Edit Point";
+            this.buttonEditPoin.UseVisualStyleBackColor = false;
+            this.buttonEditPoin.Click += new System.EventHandler(this.buttonEditPoin_Click);
+            // 
             // FormPlayerTeam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(771, 580);
@@ -279,5 +295,6 @@
         private System.Windows.Forms.TextBox textBoxSearchPlayer;
         private System.Windows.Forms.TextBox textBoxSearchTeam;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonEditPoin;
     }
 }
