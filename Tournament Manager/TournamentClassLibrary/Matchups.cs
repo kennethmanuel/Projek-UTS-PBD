@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace TournamentClassLibrary
 {
-    // Masih belum (N-M relationship)
     /// <summary>
     /// Matchups show what team which team win a matchupentry
     /// </summary>

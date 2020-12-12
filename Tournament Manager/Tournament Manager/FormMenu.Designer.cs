@@ -49,6 +49,7 @@
             this.buttonViewPairing = new System.Windows.Forms.Button();
             this.linkLabelAbout = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,30 +66,31 @@
             this.menuStripControl.Location = new System.Drawing.Point(0, 0);
             this.menuStripControl.Name = "menuStripControl";
             this.menuStripControl.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStripControl.Size = new System.Drawing.Size(1061, 27);
+            this.menuStripControl.Size = new System.Drawing.Size(1061, 31);
             this.menuStripControl.TabIndex = 1;
             this.menuStripControl.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 27);
             // 
             // tournamentToolStripMenuItem
             // 
             this.tournamentToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.tournamentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem,
-            this.generateTournamentStartingBracketToolStripMenuItem});
+            this.generateTournamentStartingBracketToolStripMenuItem,
+            this.pairToolStripMenuItem});
             this.tournamentToolStripMenuItem.Name = "tournamentToolStripMenuItem";
-            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(95, 23);
+            this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(116, 27);
             this.tournamentToolStripMenuItem.Text = "Tournament";
             // 
             // loadAnotherTournamentFromDatabaseToolStripMenuItem
             // 
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Name = "loadAnotherTournamentFromDatabaseToolStripMenuItem";
-            this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(329, 24);
+            this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Text = "Load another tournament from database";
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.loadAnotherTournamentFromDatabaseToolStripMenuItem_Click);
             // 
@@ -96,7 +98,7 @@
             // 
             this.generateTournamentStartingBracketToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.generateTournamentStartingBracketToolStripMenuItem.Name = "generateTournamentStartingBracketToolStripMenuItem";
-            this.generateTournamentStartingBracketToolStripMenuItem.Size = new System.Drawing.Size(329, 24);
+            this.generateTournamentStartingBracketToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
             this.generateTournamentStartingBracketToolStripMenuItem.Text = "Quick generate tournament pairing";
             this.generateTournamentStartingBracketToolStripMenuItem.Click += new System.EventHandler(this.generateTournamentStartingBracketToolStripMenuItem_Click);
             // 
@@ -106,7 +108,7 @@
             this.teamAndPlayerToolStripMenuItem,
             this.matchToolStripMenuItem});
             this.playersTeamsToolStripMenuItem.Name = "playersTeamsToolStripMenuItem";
-            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(83, 23);
+            this.playersTeamsToolStripMenuItem.Size = new System.Drawing.Size(101, 27);
             this.playersTeamsToolStripMenuItem.Text = "View Data";
             // 
             // teamAndPlayerToolStripMenuItem
@@ -114,7 +116,7 @@
             this.teamAndPlayerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.teamAndPlayerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
@@ -123,7 +125,7 @@
             this.matchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.matchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.matchToolStripMenuItem.Text = "Match and Entry";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -132,14 +134,14 @@
             this.viewTournamentPrizesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prizeToolStripMenuItem});
             this.viewTournamentPrizesToolStripMenuItem.Name = "viewTournamentPrizesToolStripMenuItem";
-            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(167, 23);
+            this.viewTournamentPrizesToolStripMenuItem.Size = new System.Drawing.Size(206, 27);
             this.viewTournamentPrizesToolStripMenuItem.Text = "View Tournament Prizes";
             // 
             // prizeToolStripMenuItem
             // 
             this.prizeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.prizeToolStripMenuItem.Text = "Prize";
             this.prizeToolStripMenuItem.Click += new System.EventHandler(this.prizeToolStripMenuItem_Click);
             // 
@@ -148,10 +150,10 @@
             this.labelTournament.AutoSize = true;
             this.labelTournament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.labelTournament.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTournament.Location = new System.Drawing.Point(657, 5);
+            this.labelTournament.Location = new System.Drawing.Point(568, 5);
             this.labelTournament.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTournament.Name = "labelTournament";
-            this.labelTournament.Size = new System.Drawing.Size(188, 19);
+            this.labelTournament.Size = new System.Drawing.Size(231, 23);
             this.labelTournament.TabIndex = 2;
             this.labelTournament.Text = "Currenty Edited Tournament:";
             // 
@@ -160,10 +162,10 @@
             this.labelTournamentValue.AutoSize = true;
             this.labelTournamentValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.labelTournamentValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTournamentValue.Location = new System.Drawing.Point(893, 5);
+            this.labelTournamentValue.Location = new System.Drawing.Point(807, 5);
             this.labelTournamentValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTournamentValue.Name = "labelTournamentValue";
-            this.labelTournamentValue.Size = new System.Drawing.Size(142, 19);
+            this.labelTournamentValue.Size = new System.Drawing.Size(175, 23);
             this.labelTournamentValue.TabIndex = 3;
             this.labelTournamentValue.Text = "<tournament_name>";
             this.labelTournamentValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -262,7 +264,7 @@
             this.buttonViewPairing.Name = "buttonViewPairing";
             this.buttonViewPairing.Size = new System.Drawing.Size(314, 39);
             this.buttonViewPairing.TabIndex = 30;
-            this.buttonViewPairing.Text = "♟Generate Starting Pairing ♟";
+            this.buttonViewPairing.Text = "♟Generate Pairing ♟";
             this.buttonViewPairing.UseVisualStyleBackColor = false;
             this.buttonViewPairing.Click += new System.EventHandler(this.buttonViewPairing_Click);
             // 
@@ -273,10 +275,10 @@
             this.linkLabelAbout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
             this.linkLabelAbout.Location = new System.Drawing.Point(47, 580);
             this.linkLabelAbout.Name = "linkLabelAbout";
-            this.linkLabelAbout.Size = new System.Drawing.Size(158, 19);
+            this.linkLabelAbout.Size = new System.Drawing.Size(163, 23);
             this.linkLabelAbout.TabIndex = 31;
             this.linkLabelAbout.TabStop = true;
-            this.linkLabelAbout.Text = "Check us out on github.";
+            this.linkLabelAbout.Text = "Check us on github.";
             this.linkLabelAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelAbout_LinkClicked);
             // 
             // label2
@@ -284,15 +286,23 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label2.Location = new System.Drawing.Point(12, 74);
+            this.label2.Location = new System.Drawing.Point(41, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(505, 47);
+            this.label2.Size = new System.Drawing.Size(612, 59);
             this.label2.TabIndex = 32;
             this.label2.Text = "TOURNAMENT MANAGER ♔";
             // 
+            // pairToolStripMenuItem
+            // 
+            this.pairToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
+            this.pairToolStripMenuItem.Name = "pairToolStripMenuItem";
+            this.pairToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
+            this.pairToolStripMenuItem.Text = "Pair";
+            this.pairToolStripMenuItem.Click += new System.EventHandler(this.pairToolStripMenuItem_Click);
+            // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1061, 651);
@@ -346,5 +356,6 @@
         private System.Windows.Forms.Button buttonViewPairing;
         private System.Windows.Forms.LinkLabel linkLabelAbout;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem pairToolStripMenuItem;
     }
 }

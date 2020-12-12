@@ -141,6 +141,7 @@ namespace Tournament_Manager
                 if (sucess)
                 {
                     MessageBox.Show("Tournament has been deleted.", "information");
+            
 
                     FormTournament form = new FormTournament();
                     form.Owner = this;
@@ -154,15 +155,15 @@ namespace Tournament_Manager
             }
         }
 
-        private void buttonNextRound_Click(object sender, EventArgs e)
+        private void pairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Cek apakah semua skor sudah terisi
-            // Ganti Round di tournament jadi Round + 1
-            // Jika sudah, lakukan pairing!
-                // 1. Pairing round robin
-                // 
-            // 
-
+            FormPairing formPairing = new FormPairing()
+            {
+                Owner = this
+            };
+            this.Hide();
+            
+            formPairing.ShowDialog();
         }
     }
 }

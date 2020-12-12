@@ -35,7 +35,7 @@ namespace TournamentClassLibrary
         /// <param name="criteria">Search criteria for team (ex: "id" or "name")</param>
         /// <param name="criteriaValue">Search value for selected criteria (ex: "1" or "team secret")</param>
         /// <returns></returns>
-        public static List<Teams> ReadData(string criteria, string criteriaValue = "")
+        public static List<Teams> ReadData(string criteria = "", string criteriaValue = "")
         {
             string sql;
 
