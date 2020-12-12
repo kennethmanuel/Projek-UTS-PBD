@@ -85,7 +85,7 @@
             this.textBoxSearchPlayer.Name = "textBoxSearchPlayer";
             this.textBoxSearchPlayer.Size = new System.Drawing.Size(307, 30);
             this.textBoxSearchPlayer.TabIndex = 7;
-            this.textBoxSearchPlayer.TextChanged += new System.EventHandler(this.textBoxSearchPlayer_TextChanged);
+            this.textBoxSearchPlayer.TextChanged += new System.EventHandler(this.TextBoxSearchPlayer_TextChanged);
             // 
             // buttonDeletePlayer
             // 
@@ -99,7 +99,7 @@
             this.buttonDeletePlayer.TabIndex = 6;
             this.buttonDeletePlayer.Text = "Delete Player";
             this.buttonDeletePlayer.UseVisualStyleBackColor = false;
-            this.buttonDeletePlayer.Click += new System.EventHandler(this.buttonDeletePlayer_Click);
+            this.buttonDeletePlayer.Click += new System.EventHandler(this.ButtonDeletePlayer_Click);
             // 
             // buttonEditPlayer
             // 
@@ -113,7 +113,7 @@
             this.buttonEditPlayer.TabIndex = 5;
             this.buttonEditPlayer.Text = "Edit Player";
             this.buttonEditPlayer.UseVisualStyleBackColor = false;
-            this.buttonEditPlayer.Click += new System.EventHandler(this.buttonEditPlayer_Click);
+            this.buttonEditPlayer.Click += new System.EventHandler(this.ButtonEditPlayer_Click);
             // 
             // buttonAddPlayer
             // 
@@ -127,7 +127,7 @@
             this.buttonAddPlayer.TabIndex = 4;
             this.buttonAddPlayer.Text = "Add New Player";
             this.buttonAddPlayer.UseVisualStyleBackColor = false;
-            this.buttonAddPlayer.Click += new System.EventHandler(this.buttonAddPlayer_Click);
+            this.buttonAddPlayer.Click += new System.EventHandler(this.ButtonAddPlayer_Click);
             // 
             // dataGridViewPlayer
             // 
@@ -167,7 +167,7 @@
             this.textBoxSearchTeam.Name = "textBoxSearchTeam";
             this.textBoxSearchTeam.Size = new System.Drawing.Size(307, 30);
             this.textBoxSearchTeam.TabIndex = 8;
-            this.textBoxSearchTeam.TextChanged += new System.EventHandler(this.textBoxSearchTeam_TextChanged);
+            this.textBoxSearchTeam.TextChanged += new System.EventHandler(this.TextBoxSearchTeam_TextChanged);
             // 
             // buttonDeleteTeam
             // 
@@ -181,7 +181,7 @@
             this.buttonDeleteTeam.TabIndex = 3;
             this.buttonDeleteTeam.Text = "Delete Team";
             this.buttonDeleteTeam.UseVisualStyleBackColor = false;
-            this.buttonDeleteTeam.Click += new System.EventHandler(this.buttonDeleteTeam_Click);
+            this.buttonDeleteTeam.Click += new System.EventHandler(this.ButtonDeleteTeam_Click);
             // 
             // buttonEditTeam
             // 
@@ -195,7 +195,7 @@
             this.buttonEditTeam.TabIndex = 2;
             this.buttonEditTeam.Text = "Edit Team";
             this.buttonEditTeam.UseVisualStyleBackColor = false;
-            this.buttonEditTeam.Click += new System.EventHandler(this.buttonEditTeam_Click);
+            this.buttonEditTeam.Click += new System.EventHandler(this.ButtonEditTeam_Click);
             // 
             // buttonAddTeam
             // 
@@ -209,7 +209,7 @@
             this.buttonAddTeam.TabIndex = 1;
             this.buttonAddTeam.Text = "Add New Team";
             this.buttonAddTeam.UseVisualStyleBackColor = false;
-            this.buttonAddTeam.Click += new System.EventHandler(this.buttonAddTeam_Click);
+            this.buttonAddTeam.Click += new System.EventHandler(this.ButtonAddTeam_Click);
             // 
             // dataGridViewTeam
             // 

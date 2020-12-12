@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelRound = new System.Windows.Forms.Label();
             this.labelRoundValue = new System.Windows.Forms.Label();
+            this.buttonNextRound = new System.Windows.Forms.Button();
             this.menuStripControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +117,7 @@
             this.teamAndPlayerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.teamAndPlayerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
@@ -125,7 +126,7 @@
             this.matchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.matchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
             this.matchToolStripMenuItem.Text = "Match and Entry";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -317,12 +318,27 @@
             this.labelRoundValue.Text = "<round>";
             this.labelRoundValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // buttonNextRound
+            // 
+            this.buttonNextRound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(136)))));
+            this.buttonNextRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNextRound.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.buttonNextRound.Location = new System.Drawing.Point(704, 93);
+            this.buttonNextRound.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.buttonNextRound.Name = "buttonNextRound";
+            this.buttonNextRound.Size = new System.Drawing.Size(314, 39);
+            this.buttonNextRound.TabIndex = 35;
+            this.buttonNextRound.Text = "NEXT ROUND";
+            this.buttonNextRound.UseVisualStyleBackColor = false;
+            this.buttonNextRound.Click += new System.EventHandler(this.buttonNextRound_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1061, 651);
+            this.Controls.Add(this.buttonNextRound);
             this.Controls.Add(this.labelRoundValue);
             this.Controls.Add(this.labelRound);
             this.Controls.Add(this.label2);
@@ -377,5 +393,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelRound;
         private System.Windows.Forms.Label labelRoundValue;
+        private System.Windows.Forms.Button buttonNextRound;
     }
 }

@@ -192,8 +192,8 @@ namespace TournamentClassLibrary
         public static void EditPlayer(Players player)
         {
             string sql = "UPDATE players " +
-                         "SET Name='" + player.Name.Replace("'", "\\'") + "',Email='" + player.Email + "',Team_Id='" + player.Team.Id + "'" +
-
+                         "SET Name='" + player.Name.Replace("'", "\\'") + 
+                           "',Email='" + player.Email + "',Team_Id='" + player.Team.Id + "'" +
                          "WHERE Id='" + player.Id + "'";
 
             Connection.ExecuteDML(sql);

@@ -124,8 +124,8 @@ namespace TournamentClassLibrary
         public static void EditTeams(Teams teams)
         {
             string sql = "UPDATE teams " +
-                         "SET name='" + teams.Name.Replace("'", "\\'") + "' " +
-                         "SET totalscore'" + teams.TotalScore + "' " +
+                         "SET name ='" + teams.Name.Replace("'", "\\'") + "', " +
+                             "totalscore ='" + teams.TotalScore + "' " +
                          "WHERE id='" + teams.Id + "'";
 
             Connection.ExecuteDML(sql);

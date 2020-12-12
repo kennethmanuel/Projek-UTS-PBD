@@ -153,5 +153,16 @@ namespace Tournament_Manager
                 }
             }
         }
+
+        private void buttonNextRound_Click(object sender, EventArgs e)
+        {
+            // Cek apakah semua skor sudah terisi
+            // Ganti Round di tournament jadi Round + 1
+            // Jika sudah, lakukan pairing!
+                // 1. Pairing round robin
+                // 
+            // 
+
+        }
     }
 }

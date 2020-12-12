@@ -83,16 +83,16 @@ namespace Tournament_Manager.Match
         {
             //Menampilkan Data dari database tabel matchup
             FormatDataGridMatchup();            
-            matchupList = Matchups.ReadData("", "");            
+            matchupList = Matchups.ReadData();            
             ShowDataGridMatchup();
             
             //Menampilkan Data dari database tabel matchupEntries
             FormatDataGridMatchupEntries();
-            entryList = MatchupEntries.ReadData("", "");
+            entryList = MatchupEntries.ReadData();
             ShowDataGridMatchupEntries();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonNewMatchup_Click(object sender, EventArgs e)
         {
 
         }

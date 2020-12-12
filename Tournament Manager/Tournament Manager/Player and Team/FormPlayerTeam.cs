@@ -104,7 +104,7 @@ namespace Tournament_Manager
         }
 
         #region Player
-        private void textBoxSearchPlayer_TextChanged(object sender, EventArgs e)
+        private void TextBoxSearchPlayer_TextChanged(object sender, EventArgs e)
         {
             // Get texboxsearch
             string playerSearchCriteria = textBoxSearchPlayer.Text;
@@ -117,7 +117,7 @@ namespace Tournament_Manager
         }
 
         // Open FormAddPlayer
-        private void buttonAddPlayer_Click(object sender, EventArgs e)
+        private void ButtonAddPlayer_Click(object sender, EventArgs e)
         {
             FormAddPlayer frm = new FormAddPlayer();
             frm.Owner = this;
@@ -125,7 +125,7 @@ namespace Tournament_Manager
         }
 
         // Open FormDeletePlayer
-        private void buttonDeletePlayer_Click(object sender, EventArgs e)
+        private void ButtonDeletePlayer_Click(object sender, EventArgs e)
         {
             int selectedIndex = dataGridViewPlayer.CurrentCell.RowIndex;
 
@@ -136,7 +136,7 @@ namespace Tournament_Manager
             frm.ShowDialog();
         }
 
-        private void buttonEditPlayer_Click(object sender, EventArgs e)
+        private void ButtonEditPlayer_Click(object sender, EventArgs e)
         {
             // selected index from datagridview
             int selectedIndex = dataGridViewPlayer.CurrentCell.RowIndex;
@@ -149,7 +149,7 @@ namespace Tournament_Manager
         #endregion
 
         #region team
-        private void textBoxSearchTeam_TextChanged(object sender, EventArgs e)
+        private void TextBoxSearchTeam_TextChanged(object sender, EventArgs e)
         {
             // Get texboxsearch
             string teamSearchCriteria = textBoxSearchTeam.Text;
@@ -162,7 +162,7 @@ namespace Tournament_Manager
         }
 
         // Open FormEditTeam
-        private void buttonEditTeam_Click(object sender, EventArgs e)
+        private void ButtonEditTeam_Click(object sender, EventArgs e)
         {
             int selectedIndex = dataGridViewTeam.CurrentCell.RowIndex;
             selectedTeamId = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
@@ -173,7 +173,7 @@ namespace Tournament_Manager
         }
 
         // Open FormDeleteTeam
-        private void buttonDeleteTeam_Click(object sender, EventArgs e)
+        private void ButtonDeleteTeam_Click(object sender, EventArgs e)
         {
             int selectedIndex = dataGridViewTeam.CurrentCell.RowIndex;
             selectedTeamId = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
@@ -184,7 +184,7 @@ namespace Tournament_Manager
         }
 
         // Open FormAddTeam
-        private void buttonAddTeam_Click(object sender, EventArgs e)
+        private void ButtonAddTeam_Click(object sender, EventArgs e)
         {
             FormAddTeam frm = new FormAddTeam();
             frm.Owner = this;

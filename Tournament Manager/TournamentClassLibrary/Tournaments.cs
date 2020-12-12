@@ -17,12 +17,11 @@ namespace TournamentClassLibrary
         private int currentRound;
 
         #region Constructor
-        public Tournaments(int id, string name, decimal entryfee, int currentRound)
+        public Tournaments(int id, string name, decimal entryfee )
         {
             this.Id = id;
             this.Name = name;
             this.Entryfee = entryfee;
-            this.CurrentRound = currentRound;
         }
         #endregion
 
@@ -30,7 +29,6 @@ namespace TournamentClassLibrary
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public decimal Entryfee { get => entryfee; set => entryfee = value; }
-        public int CurrentRound { get => currentRound; set => currentRound = value; }
         #endregion
 
         /// <summary>
@@ -56,38 +54,13 @@ namespace TournamentClassLibrary
                 // tournament entryfee
                 decimal entryFee = decimal.Parse(value.GetValue(2).ToString());
 
-                // current tournament round
-                int currentRound = int.Parse(value.GetValue(3).ToString());
-                   
                 // tournament
-                Tournaments tournament = new Tournaments(tournamentId, tournamentName, entryFee, currentRound);
+                Tournaments tournament = new Tournaments(tournamentId, tournamentName, entryFee);
 
                 tournamentList.Add(tournament);
             }
 
             return tournamentList;
-        }
-
-        /// <summary>
-        /// Get tournament's current round.
-        /// </summary>
-        /// <returns></returns>
-        public int GetCurrentRound()
-        {
-            string sql = "SELECT currentround " +
-                         "FROM tournaments " +
-                         "WHERE id = '" + this.Id + "'";
-
-            MySqlDataReader value = Connection.ExecuteQuery(sql);
-
-            int round = -1;
-
-            if(value.Read())
-            {
-                round = int.Parse(value.GetValue(0).ToString());
-            }
-
-            return round;
         }
 
         /// <summary>
@@ -97,7 +70,7 @@ namespace TournamentClassLibrary
         public static void AddTournament(Tournaments tournaments)
         {
             string sql = "INSERT INTO tournaments " +
-                         "VALUES('" + tournaments.Id + "','" + tournaments.Name + "','" + tournaments.Entryfee + "','" + 1 + "');";
+                         "VALUES('" + tournaments.Id + "','" + tournaments.Name + "');";
 
             Connection.ExecuteDML(sql);
         }

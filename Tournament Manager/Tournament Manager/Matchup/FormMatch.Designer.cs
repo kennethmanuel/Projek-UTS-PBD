@@ -110,7 +110,7 @@
             this.buttonNewMatchup.TabIndex = 1;
             this.buttonNewMatchup.Text = "Add New Matchup";
             this.buttonNewMatchup.UseVisualStyleBackColor = false;
-            this.buttonNewMatchup.Click += new System.EventHandler(this.button1_Click);
+            this.buttonNewMatchup.Click += new System.EventHandler(this.ButtonNewMatchup_Click);
             // 
             // dataGridViewMatchup
             // 

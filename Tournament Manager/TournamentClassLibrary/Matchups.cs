@@ -47,13 +47,13 @@ namespace TournamentClassLibrary
 
             if(criteria == "")
             {
-                sql = "SELECT m.id, m.winnerid, m.round, t.name as winner_name, t.totalscore winner_totalscore" +
+                sql = "SELECT m.id, m.winnerid, m.round, t.name as winner_name, t.totalscore winner_totalscore " +
                       "FROM matchup m " +
                       "INNER JOIN teams t ON m.winnerid = t.id";
             }
             else
             {
-                sql = "SELECT m.id, m.winnerid, m.round, t.name as winner_name, t.totalscore winner_totalscore" +
+                sql = "SELECT m.id, m.winnerid, m.round, t.name as winner_name, t.totalscore winner_totalscore " +
                       "FROM matchup m " +
                       "INNER JOIN teams t ON m.winnerid = t.id " +
                       "WHERE " + criteria + " " +

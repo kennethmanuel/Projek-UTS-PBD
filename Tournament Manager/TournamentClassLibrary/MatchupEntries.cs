@@ -14,10 +14,10 @@ namespace TournamentClassLibrary
     {
         Matchups matchup;
         Teams team;
-        int score;
+        double score;
 
         #region Constructor
-        public MatchupEntries(Matchups matchup, Teams team, int score)
+        public MatchupEntries(Matchups matchup, Teams team, double score)
         {
             this.Matchup = matchup;
             this.Team = team;
@@ -28,42 +28,20 @@ namespace TournamentClassLibrary
         #region Property
         public Matchups Matchup { get => matchup; set => matchup = value; }
         public Teams Team { get => team; set => team = value; }
-        public int Score { get => score; set => score = value; }
+        public double Score { get => score; set => score = value; }
         #endregion
 
         #region Method
-        /// <summary>
-        /// Create list that contains matchup entries object from all database with specified criteria.
-        /// </summary>
-        /// <param name="criteria">Search criteria for MatchupEntries (parentmatchup_id, team_id, score, matchup_winner_id, matchup_round, team_name, team_totalscore)</param>
-        /// <param name="criteriaValue"></param>
-        /// <returns>Return list of MatchUpEntries with specified criteria.</returns>
-        public static List<MatchupEntries> ReadData(string criteria = "", string criteriaValue = "") 
+        public static List<MatchupEntries> ReadData() 
         {
-            string sql;
-
-            // empty arg ReadData()
-            if (criteria == "")
-            {
-                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, " +
-                             "mc.winnerid as matchup_winner_id, mc.round as matchup_round, " +
-                             "t.name as team_name, t.totalscore as team_totalscore" +
-                      "FROM teams t " +
-                      "INNER JOIN matchupentries m ON t.id = m.Teams_Id " +
-                      "INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id " +
-                      "ORDER BY m.ParentMatchup_Id ASC";
-            }
-            // with arg ReadData(id, 1)
-            else
-            {
-                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, " +
-                             "mc.winnerid as matchup_winner_id, mc.round as matchup_round, " +
-                             "t.name as team_name, t.totalscore as team_totalscore" +
-                      "FROM teams t" +
-                      "INNER JOIN matchupentries m ON t.id = m.Teams_Id " +
-                      "INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id " +
-                      "ORDER BY m.ParentMatchup_Id ASC WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
-            }
+            string sql =   "SELECT score, " +
+                               "teams_id, t.name AS team_name, t.totalscore team_totalscore, " +
+                               "m.id AS matchup_id, m.round AS matchup_round, " +
+                               "twinner.id AS winner_id, twinner.name AS winner_name, twinner.totalscore AS winner_totalscore " +
+                          "FROM matchupentries as me " +
+                          "INNER JOIN teams AS t ON me.teams_id = t.id " +
+                          "INNER JOIN matchup AS m ON me.parentmatchup_id = m.id " +
+                          "INNER JOIN teams AS twinner ON m.winnerid = twinner.id ";
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
@@ -71,28 +49,34 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                string parentMatchupId = value.GetValue(0).ToString();
+                // SCORE
+                double score = double.Parse(value.GetValue(0).ToString());
 
-                // winner team
+                // TEAM
                 int teamId = int.Parse(value.GetValue(1).ToString());
-                string teamName = value.GetValue(6).ToString();
-                double totalScore = double.Parse(value.GetValue(7).ToString());
-                Teams winnerTeam = new Teams(teamId, teamName, totalScore);
+                string teamName = value.GetValue(2).ToString();
+                double totalScore = double.Parse(value.GetValue(3).ToString());
+                Teams team = new Teams(teamId, teamName, totalScore);
 
-                int round = int.Parse(value.GetValue(5).ToString());
-                
-                // parent matchup
-                Matchups parentMatchup = new Matchups(parentMatchupId, winnerTeam, round);
+                // MATCHUP
+                // parent matchup id
+                string matchupId = value.GetValue(4).ToString();
+                // matchup winner team
+                int winnerId = int.Parse(value.GetValue(6).ToString());
+                string winnerName = value.GetValue(7).ToString();
+                double winnertotalScore = double.Parse(value.GetValue(8).ToString());
+                Teams winnerTeam = new Teams(winnerId, winnerName, winnertotalScore);
+                // matchup round
+                int matchRound = int.Parse(value.GetValue(5).ToString());
+                Matchups parentMatchup = new Matchups(matchupId, winnerTeam, matchRound);
 
-                // score
-                int score = int.Parse(value.GetValue(2).ToString());
-
-                // matchup entries
-                MatchupEntries m = new MatchupEntries(parentMatchup, winnerTeam, int.Parse(value.GetValue(2).ToString()));
+                // MATCHUP ENTRY
+                MatchupEntries matchupEntry = new MatchupEntries(parentMatchup, team, score);
 
                 // add matchupentries to list
-                matchupEntriesList.Add(m);
+                matchupEntriesList.Add(matchupEntry);
             }
+
             return matchupEntriesList;
         }
         #endregion
