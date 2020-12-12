@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TournamentClassLibrary
 {
@@ -34,10 +35,10 @@ namespace TournamentClassLibrary
 
             int totalTeam = teamList.Count() - 1;
 
-            for(int x = 0; x < totalTeam; x++)
+            for (int x = 0; x < totalTeam; x++)
             {
                 int round = 1;
-                for(int y = totalTeam; y > x; y--)
+                for (int y = totalTeam; y > x; y--)
                 {
                     Pairing pair = new Pairing(teamList[x], teamList[y], round);
 
@@ -47,15 +48,14 @@ namespace TournamentClassLibrary
 
             }
             return pairingList;
-        }
-
+        }       
         public static string TestPairing(List<Pairing> pairingList)
         {
             string output = "";
 
             foreach(Pairing pair in pairingList)
             {
-                output += pair.Team1.Name + " vs " + pair.Team2.Name + " " +  pair.Round + "\n";
+                output += pair.Team1.Name + " vs " + pair.Team2.Name + " " +  pair.Round + "\n";                
             }
 
             return output;

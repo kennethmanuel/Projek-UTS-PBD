@@ -195,6 +195,9 @@ namespace Tournament_Manager
         }
         private void buttonEditPoin_Click(object sender, EventArgs e)
         {
+            int selectedIndex = dataGridViewTeam.CurrentCell.RowIndex;
+            selectedTeamId = (int)dataGridViewTeam.Rows[selectedIndex].Cells[0].Value;
+
             FormEditPoint frm = new FormEditPoint();
             frm.Owner = this;
             frm.ShowDialog();

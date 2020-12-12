@@ -68,5 +68,10 @@ namespace Tournament_Manager
             this.Owner.Show();
 
         }
+
+        private void FormBracketGenerator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

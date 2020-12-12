@@ -13,26 +13,46 @@ namespace Tournament_Manager
 {
     public partial class FormPairing : Form
     {
+        List<Teams> listTeam = new List<Teams>();
+        List<Pairing> listPair = new List<Pairing>();
         public FormPairing()
         {
             InitializeComponent();
         }
-
+       
+      
         private void FormPairing_Load(object sender, EventArgs e)
         {
-
+            listTeam = TournamentEntry.ReadTeam(FormMenu.selectedTournament);
+            listPair = Pairing.GeneratePairing(listTeam);
+            FormatDataGrid();
+            TestPairing2();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Format DataGrid
+        /// </summary>
+        private void FormatDataGrid()
         {
-            List<Teams> listTeam = TournamentEntry.ReadTeam(FormMenu.selectedTournament);
+            dataGridViewPair.Columns.Clear();
+            dataGridViewPair.Columns.Add("Team1", "Team 1");
+            dataGridViewPair.Columns.Add("ScoreTeam1", "Score Team 1");
+            dataGridViewPair.Columns.Add("", "");
+            dataGridViewPair.Columns.Add("ScoreTeam2", "Score Team 2");
+            dataGridViewPair.Columns.Add("Team2", "Team 2");
+            dataGridViewPair.Columns.Add("Round", "Round");            
+        }
+        
+       /// <summary>
+       /// Display Data Value Datagrid from database
+       /// </summary>
+        public void TestPairing2()
+        {
+            string output = "";
 
-            List<Pairing> listPair =  Pairing.GeneratePairing(listTeam);
-
-            string test = Pairing.TestPairing(listPair);
-
-            MessageBox.Show(test);
-
+            foreach (Pairing pair in listPair)
+            {                
+                dataGridViewPair.Rows.Add(pair.Team1.Name,"" , "vs","" , pair.Team2.Name, pair.Round);
+            }        
 
         }
     }

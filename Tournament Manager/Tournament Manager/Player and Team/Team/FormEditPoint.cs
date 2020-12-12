@@ -21,12 +21,12 @@ namespace Tournament_Manager.Player_and_Team.Team
         private void FormEditPoint_Load(object sender, EventArgs e)
         {
             Teams selectedTeam = Teams.SelectTeam(selectedTeamId);
-            textBoxTeamId.Enabled = false;
-            textBoxTeamName.Enabled = false;
-
             textBoxTeamId.Text = selectedTeam.Id.ToString();
             textBoxTeamName.Text = selectedTeam.Name;
             textBoxTeamPoint.Text = selectedTeam.TotalScore.ToString();
+
+            textBoxTeamId.Enabled = false;
+            textBoxTeamName.Enabled = false;            
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
