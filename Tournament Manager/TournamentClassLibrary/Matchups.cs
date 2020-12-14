@@ -84,6 +84,27 @@ namespace TournamentClassLibrary
 
             return matchupList;
         }
+
+        public static string GenerateId()
+        {
+            string sql = "SELECT MAX(Id) FROM matchup;";
+
+            string newId;
+
+            MySqlDataReader result = Connection.ExecuteQuery(sql);
+
+            if(result.Read())
+            {
+                int newIdInt = int.Parse(result.GetValue(0).ToString()) + 1;
+                newId = newIdInt.ToString();
+            }
+            else
+            {
+                newId = "1";
+            }
+
+            return newId;
+        }
         #endregion
     }
 }

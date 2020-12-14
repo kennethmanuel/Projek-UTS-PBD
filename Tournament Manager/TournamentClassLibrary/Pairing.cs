@@ -79,53 +79,94 @@ namespace TournamentClassLibrary
 
         public static void InsertPairing(List<Pairing> pairList)
         {
+            foreach(Pairing pair in pairList)
+            {
+                /////////////////////////////////////////////////////////////////////////////////////
 
+                // INSERT Matchup
+                // MatchupId
+                string newMatchupId = Matchups.GenerateId();
 
+                // WinnerId
+                int winnerId;
+                if(pair.Team1AddScore > pair.Team2AddScore)
+                {
+                    winnerId = pair.Team1.Id;
+                }
+                else if(pair.Team2AddScore > pair.Team1AddScore)
+                {
+                    winnerId = pair.Team2.Id;
+                }
+                else
+                {
+                    // SET winnerId 0 to draw
+                    winnerId = 0;
+                }
+
+                // Round
+                int round = pair.Round;
+
+                // SQL
+                string sql1 =
+                    "INSERT INTO matchup " +
+                    "VALUES ('" + newMatchupId + "','" + winnerId + "','" + round + "');";
+                Connection.ExecuteDML(sql1);
+
+                /////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////////////////////////////////////////////////////////////////////
+
+                // Parent matchupid
+                string parentMatchupId = newMatchupId;
+
+                /////////////////////////////////////////////////////////////////////////////////////
+
+                // INSERT matchupentries for team1
+                // Team1 Id
+                int team1Id = pair.Team1.Id;
+
+                // Team1 Score
+                double team1AddScore = pair.Team1AddScore;
+
+                // SQL
+                string sql2 =
+                    "INSERT INTO matchupentries " +
+                    "VALUES ('" + newMatchupId + "','" + team1Id + "','" + team1AddScore + "');";
+                Connection.ExecuteDML(sql2);
+                /////////////////////////////////////////////////////////////////////////////////////
+
+                // INSERT matchupentries for team2
+                // Team2 Id
+
+                int team2Id = pair.Team2.Id;
+
+                // Team2 Score
+                double team2AddScore = pair.Team2AddScore;
+
+                // SQL
+                string sql3 =
+                    "INSERT INTO matchupentries " +
+                    "VALUES ('" + newMatchupId + "','" + team2Id + "','" + team2AddScore + "');";
+                Connection.ExecuteDML(sql3);
+                /////////////////////////////////////////////////////////////////////////////////////
+
+                // UPDATE team1 score
+                double newTeam1Score = pair.Team1.TotalScore + team1AddScore;
+                string sql4 =
+                    "UPDATE teams " +
+                    "SET totalscore='" + newTeam1Score + "';";
+                Connection.ExecuteDML(sql4);
+
+                // Update team2 score
+                double newTeam2Score = pair.Team2.TotalScore + team2AddScore;
+                string sql5 =
+                    "UPDATE teams " +
+                    "SET totalscore ='" + newTeam2Score + "';";
+                Connection.ExecuteDML(sql5);
+
+                /////////////////////////////////////////////////////////////////////////////////////
+            }
         }
-
-        //public static List<Pairing> GenerateRoundRobinOdd(Tournaments selectedTournament)
-        //{
-        //    List<Pairing> pairingList = new List<Pairing>();
-
-        //    // Initialize the list of teams
-        //    List<Teams> teamList = TournamentEntry.ReadTeam(selectedTournament);
-        //    Teams[] teamArray = teamList.ToArray();
-
-        //    int totalTeam = teamList.Count();
-
-        //    int totalPairing = (totalTeam - 1) / 2;
-
-        //    // Start the rounds
-        //    for(int round = 0; round < totalTeam; round++)
-        //    {
-        //        for(int i = 0; i < totalPairing; i++)
-        //        {
-        //            Teams team1 = teamArray[totalPairing - i];
-        //            Teams team2 = teamArray[totalPairing + i + 1];
-
-        //            Pairing pair = new Pairing(team1, team2, round);
-        //            pairingList.Add(pair);
-        //        }
-
-        //        // Set bye (!!!!!!)
-        //        Pairing by1ePair = new Pairing(teamArray[0], teamArray[0], round);
-        //        pairingList.Add(byePair);
-
-        //        // Rotate array
-        //        RotateArray(teamArray);
-        //    }
-
-        //    return pairingList;
-        //}
-
-        //public static void RotateArray (Teams[] teamArray)
-        //{
-        //    Teams tmp = teamArray[teamArray.Length - 1];
-        //    Array.Copy(teamArray, 0, teamArray, 1, teamArray.Length - 1);
-        //    teamArray[0] = tmp;
-        //}
-
         #endregion
-
     }
-}1
+}

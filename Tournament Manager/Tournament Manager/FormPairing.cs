@@ -85,5 +85,5 @@ namespace Tournament_Manager
 
         }
     }
-    }
 }
+
