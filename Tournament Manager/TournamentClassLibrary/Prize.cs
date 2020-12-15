@@ -39,34 +39,7 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
-        /// <summary>
-        /// Create list that contains Prize object from selected database with all criteria selected.
-        /// </summary>
-        /// <param name="criteriaValue"></param>
-        /// <returns></returns>
-        //public static List<Prize> BatchSearch(string criteriaValue)
-        //{
-        //    string sql = "SELECT p.id, p.placename, p.prizeamount, p.prizepercentage,t.id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id WHERE p.id LIKE '%" + criteriaValue + "%' OR p.placename LIKE '%" + criteriaValue + "%' p.prizeamount LIKE '%" + criteriaValue + "%' OR p.prizepercentage LIKE '%" + criteriaValue + "%' OR t.name LIKE '%" + criteriaValue + "%'";
-
-        //    MySqlDataReader value = Connection.ExecuteQuery(sql);
-
-        //    List<Prize> prizeList = new List<Prize>();
-
-        //    while (value.Read() == true)
-        //    {
-        //        Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
-
-        //        Prize p = new Prize(
-        //            int.Parse(value.GetValue(0).ToString()),
-        //            value.GetValue(1).ToString(),
-        //            decimal.Parse(value.GetValue(2).ToString()),
-        //            double.Parse(value.GetValue(3).ToString()),
-        //            tournaments);
-
-        //        prizeList.Add(p);
-        //    }
-        //    return prizeList;
-        //}
+        
         /// <summary>
         /// read data prize
         /// </summary>

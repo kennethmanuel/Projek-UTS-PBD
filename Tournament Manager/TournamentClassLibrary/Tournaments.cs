@@ -30,6 +30,7 @@ namespace TournamentClassLibrary
         public decimal Entryfee { get => entryfee; set => entryfee = value; }
         #endregion
 
+        #region Method
         /// <summary>
         /// Create a list of all Tournaments object.
         /// </summary>
@@ -145,6 +146,6 @@ namespace TournamentClassLibrary
             }
             return tournamentList;
         }
-
+        #endregion
     }
 }

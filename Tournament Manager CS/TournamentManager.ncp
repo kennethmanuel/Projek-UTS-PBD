@@ -8,7 +8,7 @@
         <Name>Tournaments</Name>
         <Access>Public</Access>
         <Location left="10" top="387" />
-        <Size width="209" height="211" />
+        <Size width="209" height="213" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Decimal EntryFee</Member>
         <Member type="Field">int Id</Member>
@@ -16,6 +16,8 @@
         <Member type="Method">public static List&lt;Tournaments&gt; ReadData()</Member>
         <Member type="Method">public static void AddTournament()</Member>
         <Member type="Method">public static int GenerateCode()</Member>
+        <Member type="Method">public static bool DeleteTournament(Tournaments tournament, out string exceptionMessage)</Member>
+        <Member type="Method">public static List&lt;Tournaments&gt; ReadCombo()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -29,7 +31,6 @@
         <Member type="Field">string PlaceName</Member>
         <Member type="Field">Decimal PrizeAmount</Member>
         <Member type="Field">double PricePercentage</Member>
-        <Member type="Method">public static List&lt;Prize&gt; BatchSearch()</Member>
         <Member type="Method">public static List&lt;Prize&gt; ReadData()</Member>
         <Member type="Method">public static string GenerateCode()</Member>
         <Member type="Method">public static void AddData()</Member>
@@ -42,7 +43,7 @@
         <Name>Teams</Name>
         <Access>Public</Access>
         <Location left="774" top="312" />
-        <Size width="162" height="247" />
+        <Size width="162" height="298" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int Id</Member>
         <Member type="Field">string Name</Member>
@@ -54,13 +55,16 @@
         <Member type="Method">public static string DeleteTeams()</Member>
         <Member type="Method">public static string GenerateCode()</Member>
         <Member type="Method">public static Teams SelectedTeam()</Member>
+        <Member type="Method">public static int CountTeams()</Member>
+        <Member type="Method">public static int CountTeams(int tournamentsId)</Member>
+        <Member type="Method">public List&lt;Teams&gt; LeaderBoard(Tournaments tournament)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Players</Name>
         <Access>Public</Access>
         <Location left="1021" top="10" />
-        <Size width="162" height="264" />
+        <Size width="162" height="281" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int Id</Member>
         <Member type="Field">string Name</Member>
@@ -73,6 +77,7 @@
         <Member type="Method">public void EditPlayer()</Member>
         <Member type="Method">public string DeletePlayer()</Member>
         <Member type="Method">public string GenerateCode()</Member>
+        <Member type="Method">public static int CountPlayer()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -85,6 +90,7 @@
         <Member type="Field">int Teams_Id</Member>
         <Member type="Method">public static List&lt;Teams&gt; ReadTeam()</Member>
         <Member type="Method">public static List&lt;Players&gt; ReadPlayer()</Member>
+        <Member type="Method">public static int CalculateParcitipant(Tournaments tournaments)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -96,24 +102,44 @@
         <Member type="Field">string Id</Member>
         <Member type="Field">int Round</Member>
         <Member type="Method">public static List&lt;Matchup&gt; ReadData(string criteria, string criteriaValue)</Member>
+        <Member type="Method">public static string GenerateId()</Member>
+        <Member type="Method">public static void AddMatchup()</Member>
+        <Member type="Method">public bool EditMatchup()</Member>
+        <Member type="Method">public static Matchups SelectMatchup()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>MatchupEntries</Name>
         <Access>Public</Access>
-        <Location left="835" top="637" />
+        <Location left="1065" top="662" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">string ParentMatchup_Id</Member>
         <Member type="Field">int Teams_Id</Member>
         <Member type="Field">int Score</Member>
+        <Member type="Method">public static List&lt;MatchupEntries&gt; ReadData()</Member>
+        <Member type="Method">public static void Add()</Member>
+        <Member type="Method">public static void Edit(Matchups matchup, Teams team, double score)</Member>
+        <Member type="Method">public static void Delete()</Member>
+        <Member type="Method">public void GenerateId()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Pairing</Name>
+        <Access>Public</Access>
+        <Location left="562" top="21" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int team1</Member>
+        <Member type="Field">Team team2</Member>
+        <Member type="Field">int round</Member>
+        <Member type="Method">public static List&lt;Pairing&gt; GeneratePairing()</Member>
+        <Member type="Method">public static string TestPairing()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="0" second="1">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -130,8 +156,6 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -144,8 +168,6 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="0" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -162,8 +184,6 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -172,13 +192,11 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="6">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>910</X>
-          <Y>584</Y>
+          <Y>635</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -186,13 +204,19 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="5" second="6">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
         <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>0..1</StartMultiplicity>
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
     </Relationships>
