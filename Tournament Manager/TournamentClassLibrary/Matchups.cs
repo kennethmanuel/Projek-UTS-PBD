@@ -15,19 +15,22 @@ namespace TournamentClassLibrary
         #region Data Member
         private string id;        
         private int round;
+        private DateTime date;
         #endregion
 
         #region Constructor
-        public Matchups(string id, int round)
+        public Matchups(string id, int round, DateTime date)
         {
             this.Id = id;         
             this.Round = round;
+            this.Date = date;
         }
         #endregion
 
         #region Property
         public string Id { get => id; set => id = value; }
         public int Round { get => round; set => round = value; }      
+        public DateTime Date { get => date; set => date = value; }
         #endregion
 
         #region Method
@@ -41,7 +44,7 @@ namespace TournamentClassLibrary
         {
             int tournamentId = selectedTournament.Id;
             string sql =
-                    "SELECT DISTINCT m.id, round " +
+                    "SELECT DISTINCT m.id, round, date " +
                     "FROM matchup m " +
                     "INNER JOIN matchupentries me ON m.id = me.parentmatchup_id " +
                     "INNER JOIN teams t ON me.teams_id = t.id " +
@@ -63,9 +66,12 @@ namespace TournamentClassLibrary
                 // matchup round
                 int matchupRound = int.Parse(value.GetValue(1).ToString());
 
-                Matchups m = new Matchups(matchupId, matchupRound);
+                // matchup date
+                DateTime matchupDate = DateTime.Parse(value.GetValue(2).ToString());
 
-                matchupList.Add(m);
+                Matchups matchup = new Matchups(matchupId, matchupRound, matchupDate);
+
+                matchupList.Add(matchup);
             }
 
             return matchupList;
@@ -75,7 +81,7 @@ namespace TournamentClassLibrary
         {
             string sql = "SELECT MAX(Id) FROM matchup;";
 
-            string newId = "";
+            string newId;
 
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
@@ -97,8 +103,9 @@ namespace TournamentClassLibrary
         /// <param name="matchup"></param>
         public static void AddMatchup(Matchups matchup)
         {
-            string sql = "INSERT INTO matchup(id, round) " +
-                           "VALUES ('" + matchup.Id + "','" + matchup.Round + "')";
+            string sql = "INSERT INTO matchup(id, round, date) " +
+                           "VALUES ('" + matchup.Id + "','" + matchup.Round + "','" + matchup.date.ToString("yyyy-MM-dd") + "')";
+
             Connection.ExecuteDML(sql);
         }
         /// <summary>
@@ -108,25 +115,17 @@ namespace TournamentClassLibrary
         public static void EditMatchup(Matchups matchup)
         {
             string sql = "UPDATE matchup " +
-                        "SET round='" + matchup.Round + "' " +
+                        "SET round='" + matchup.Round + "', " +
+                            "date= '" + matchup.date.ToString("yyyy-MM-dd") + "' " +
                         "WHERE Id='" + matchup.Id + "'";
+
             Connection.ExecuteDML(sql);
         }
-        public static bool DeleteMatchup(Matchups matchup, out string exceptionMessage)
+        public static void DeleteMatchup(Matchups matchup)
         {
             string sql = "DELETE FROM matchup " +
-                        "WHERE Id='" + matchup.Id + "'";
-            exceptionMessage = "";
-            try
-            {
-                Connection.ExecuteDML(sql);
-                return true;
-            }
-            catch(MySqlException ex)
-            {
-                exceptionMessage = ex.Message;
-                return false;
-            }
+                    "WHERE Id='" + matchup.Id + "'";
+            Connection.ExecuteDML(sql);
         }
 
         public static Matchups SelectMatchup(string matchupId)
@@ -140,10 +139,56 @@ namespace TournamentClassLibrary
 
             string id = value.GetValue(0).ToString();
             int round = int.Parse(value.GetValue(1).ToString());
+            DateTime date = DateTime.Parse(value.GetValue(2).ToString());
 
-            Matchups matchup = new Matchups(id, round);
+            Matchups matchup = new Matchups(id, round, date);
 
             return matchup;
+        }
+
+        public static Matchups SelectMatchup(int matchupId)
+        {
+            string sql = "SELECT * FROM matchup m " +
+                         "WHERE id =" + matchupId;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            value.Read();
+
+            string id = value.GetValue(0).ToString();
+            int round = int.Parse(value.GetValue(1).ToString());
+            DateTime date = DateTime.Parse(value.GetValue(2).ToString());
+
+            Matchups matchup = new Matchups(id, round, date);
+
+            return matchup;
+        }
+
+        public static List<MatchupEntries> GetEntries(Matchups matchup)
+        {
+            string sql = "SELECT * FROM matchupentries " +
+                         "WHERE parentmatchup_id = " + matchup.Id;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<MatchupEntries> matchupEntriesList = new List<MatchupEntries>();
+
+            while(value.Read())
+            {
+                string parentId = value.GetValue(0).ToString();
+                Matchups parentMatchup = Matchups.SelectMatchup(parentId);
+
+                int teamid = int.Parse(value.GetValue(1).ToString());
+                Teams team = Teams.SelectTeam(teamid);
+
+                double score = double.Parse(value.GetValue(2).ToString());
+
+                MatchupEntries matchupEntry = new MatchupEntries(parentMatchup, team, score);
+
+                matchupEntriesList.Add(matchupEntry);
+            }
+
+            return matchupEntriesList;
         }
         #endregion
     }

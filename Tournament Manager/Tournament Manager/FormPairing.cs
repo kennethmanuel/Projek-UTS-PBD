@@ -104,9 +104,6 @@ namespace Tournament_Manager
 
         private void buttonInsertMatchup_Click(object sender, EventArgs e)
         {
-            FormAddMatchup form = new FormAddMatchup();
-            form.Owner = this;
-            form.ShowDialog();
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)

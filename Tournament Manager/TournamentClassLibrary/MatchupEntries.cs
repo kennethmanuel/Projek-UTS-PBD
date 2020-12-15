@@ -81,25 +81,18 @@ namespace TournamentClassLibrary
         public static void Edit(Matchups matchup, Teams team, double score)
         {
             string sql = "UPDATE matchupentries " +
-                         "SET parentmatchup_id = " + matchup.Id + ", " +
-                             "teams_id = " + team.Id +
-                             "score = " + score + ");";
+                         "SET score = " + score + " " +
+                         "WHERE parentmatchup_id='" + matchup.Id + "' " +
+                         "AND teams_id = '" + team.Id + "'";
 
             Connection.ExecuteDML(sql);
         }
 
-        public static void Delete(Matchups matchup)
+        public static void Delete(Matchups matchup, Teams team)
         {
             string sql = "DELETE FROM matchupentries " +
-                         "WHERE id=" + matchup.Id + ";";
-
-            Connection.ExecuteDML(sql);
-        }
-
-        public void Delete(int matchupId)
-        {
-            string sql = "DELETE FROM matchupentries " +
-                         "WHERE id=" + matchupId + ";";
+                         "WHERE parentmatchup_id='" + matchup.Id + "' " +
+                         "AND teams_id = '" + team.Id + "'";
 
             Connection.ExecuteDML(sql);
         }
@@ -124,6 +117,7 @@ namespace TournamentClassLibrary
 
             return newId;
         }
+
 
         #endregion
     }

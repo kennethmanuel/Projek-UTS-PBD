@@ -278,6 +278,24 @@ namespace TournamentClassLibrary
 
             return teamList;
         }
+
+        public void AddScore(double addScore)
+        {
+            string sql = "UPDATE teams " +
+                         "SET totalscore=totalscore+" + addScore + " " +
+                         "WHERE id='" + this.Id + "'";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public void SubstractScore(double prevScore)
+        {
+            string sql = "UPDATE teams " +
+                         "SET totalscore=totalscore-" + prevScore + " " +
+                         "WHERE id='" + this.Id + "'";
+
+            Connection.ExecuteDML(sql);
+        }
         #endregion
     }
 }

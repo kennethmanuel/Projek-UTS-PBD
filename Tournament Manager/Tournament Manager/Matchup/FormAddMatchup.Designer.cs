@@ -43,6 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePickerMatchup = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBoxTeam1
@@ -50,10 +52,10 @@
             this.comboBoxTeam1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.comboBoxTeam1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBoxTeam1.FormattingEnabled = true;
-            this.comboBoxTeam1.Location = new System.Drawing.Point(14, 121);
-            this.comboBoxTeam1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.comboBoxTeam1.Location = new System.Drawing.Point(19, 186);
+            this.comboBoxTeam1.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
             this.comboBoxTeam1.Name = "comboBoxTeam1";
-            this.comboBoxTeam1.Size = new System.Drawing.Size(147, 25);
+            this.comboBoxTeam1.Size = new System.Drawing.Size(195, 31);
             this.comboBoxTeam1.TabIndex = 19;
             // 
             // comboBoxTeam2
@@ -61,30 +63,30 @@
             this.comboBoxTeam2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.comboBoxTeam2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBoxTeam2.FormattingEnabled = true;
-            this.comboBoxTeam2.Location = new System.Drawing.Point(442, 121);
-            this.comboBoxTeam2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.comboBoxTeam2.Location = new System.Drawing.Point(537, 185);
+            this.comboBoxTeam2.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
             this.comboBoxTeam2.Name = "comboBoxTeam2";
-            this.comboBoxTeam2.Size = new System.Drawing.Size(144, 25);
+            this.comboBoxTeam2.Size = new System.Drawing.Size(191, 31);
             this.comboBoxTeam2.TabIndex = 20;
             // 
             // textBoxScore1
             // 
             this.textBoxScore1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxScore1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBoxScore1.Location = new System.Drawing.Point(171, 121);
-            this.textBoxScore1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.textBoxScore1.Location = new System.Drawing.Point(228, 186);
+            this.textBoxScore1.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
             this.textBoxScore1.Name = "textBoxScore1";
-            this.textBoxScore1.Size = new System.Drawing.Size(97, 25);
+            this.textBoxScore1.Size = new System.Drawing.Size(128, 30);
             this.textBoxScore1.TabIndex = 21;
             // 
             // textBoxScore2
             // 
             this.textBoxScore2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxScore2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBoxScore2.Location = new System.Drawing.Point(335, 121);
-            this.textBoxScore2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.textBoxScore2.Location = new System.Drawing.Point(395, 185);
+            this.textBoxScore2.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
             this.textBoxScore2.Name = "textBoxScore2";
-            this.textBoxScore2.Size = new System.Drawing.Size(97, 25);
+            this.textBoxScore2.Size = new System.Drawing.Size(128, 30);
             this.textBoxScore2.TabIndex = 22;
             // 
             // label3
@@ -92,22 +94,22 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label3.Location = new System.Drawing.Point(289, 124);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Location = new System.Drawing.Point(370, 189);
+            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 19);
+            this.label3.Size = new System.Drawing.Size(14, 23);
             this.label3.TabIndex = 23;
-            this.label3.Text = "VS";
+            this.label3.Text = ":";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label1.Location = new System.Drawing.Point(422, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(509, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 19);
+            this.label1.Size = new System.Drawing.Size(70, 23);
             this.label1.TabIndex = 24;
             this.label1.Text = "ROUND";
             // 
@@ -115,10 +117,10 @@
             // 
             this.textBoxRound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxRound.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBoxRound.Location = new System.Drawing.Point(490, 6);
-            this.textBoxRound.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.textBoxRound.Location = new System.Drawing.Point(599, 22);
+            this.textBoxRound.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
             this.textBoxRound.Name = "textBoxRound";
-            this.textBoxRound.Size = new System.Drawing.Size(97, 25);
+            this.textBoxRound.Size = new System.Drawing.Size(128, 30);
             this.textBoxRound.TabIndex = 25;
             // 
             // label2
@@ -126,10 +128,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label2.Location = new System.Drawing.Point(64, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(85, 148);
+            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 19);
+            this.label2.Size = new System.Drawing.Size(64, 23);
             this.label2.TabIndex = 26;
             this.label2.Text = "Team 1";
             // 
@@ -138,10 +140,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label4.Location = new System.Drawing.Point(485, 90);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Location = new System.Drawing.Point(595, 147);
+            this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 19);
+            this.label4.Size = new System.Drawing.Size(64, 23);
             this.label4.TabIndex = 27;
             this.label4.Text = "Team 2";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -151,10 +153,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label5.Location = new System.Drawing.Point(195, 90);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Location = new System.Drawing.Point(260, 148);
+            this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 19);
+            this.label5.Size = new System.Drawing.Size(52, 23);
             this.label5.TabIndex = 28;
             this.label5.Text = "Score";
             // 
@@ -163,10 +165,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label6.Location = new System.Drawing.Point(359, 90);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(427, 147);
+            this.label6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 19);
+            this.label6.Size = new System.Drawing.Size(52, 23);
             this.label6.TabIndex = 29;
             this.label6.Text = "Score";
             // 
@@ -175,10 +177,10 @@
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonAdd.Location = new System.Drawing.Point(470, 161);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.buttonAdd.Location = new System.Drawing.Point(573, 235);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(116, 39);
+            this.buttonAdd.Size = new System.Drawing.Size(155, 43);
             this.buttonAdd.TabIndex = 30;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -189,9 +191,10 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label7.Location = new System.Drawing.Point(7, 12);
+            this.label7.Location = new System.Drawing.Point(9, 15);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(274, 57);
+            this.label7.Size = new System.Drawing.Size(365, 70);
             this.label7.TabIndex = 31;
             this.label7.Text = "ADD MATCHUP";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -201,10 +204,10 @@
             this.textBoxId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.textBoxId.Enabled = false;
             this.textBoxId.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBoxId.Location = new System.Drawing.Point(315, 6);
-            this.textBoxId.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.textBoxId.Location = new System.Drawing.Point(366, 22);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(97, 25);
+            this.textBoxId.Size = new System.Drawing.Size(128, 30);
             this.textBoxId.TabIndex = 33;
             // 
             // label8
@@ -212,19 +215,43 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label8.Location = new System.Drawing.Point(282, 9);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Location = new System.Drawing.Point(322, 26);
+            this.label8.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 19);
+            this.label8.Size = new System.Drawing.Size(27, 23);
             this.label8.TabIndex = 32;
             this.label8.Text = "ID";
             // 
+            // dateTimePickerMatchup
+            // 
+            this.dateTimePickerMatchup.CalendarMonthBackground = System.Drawing.Color.White;
+            this.dateTimePickerMatchup.CalendarTitleBackColor = System.Drawing.Color.AliceBlue;
+            this.dateTimePickerMatchup.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dateTimePickerMatchup.Location = new System.Drawing.Point(411, 75);
+            this.dateTimePickerMatchup.Name = "dateTimePickerMatchup";
+            this.dateTimePickerMatchup.Size = new System.Drawing.Size(317, 30);
+            this.dateTimePickerMatchup.TabIndex = 34;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.label9.Location = new System.Drawing.Point(348, 79);
+            this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 23);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "DATE:";
+            // 
             // FormAddMatchup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(600, 212);
+            this.ClientSize = new System.Drawing.Size(754, 311);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dateTimePickerMatchup);
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -241,6 +268,7 @@
             this.Controls.Add(this.comboBoxTeam2);
             this.Controls.Add(this.comboBoxTeam1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormAddMatchup";
             this.Text = "FormAddMatchup";
             this.Load += new System.EventHandler(this.FormAddMatchup_Load);
@@ -266,5 +294,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePickerMatchup;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -35,15 +35,26 @@ namespace Tournament_Manager.Tournament_Matchup
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             try
-            {                
-                Matchups mat = new Matchups(textBoxId.Text, int.Parse(textBoxRound.Text));
+            {
+                string matchupId = textBoxId.Text;
+                int matchupRound = int.Parse(textBoxRound.Text);
+                DateTime matchupDate = dateTimePickerMatchup.Value;
+
+                Matchups mat = new Matchups(matchupId, matchupRound, matchupDate);
                 Matchups.AddMatchup(mat);
 
                 Teams team1 = (Teams)comboBoxTeam1.SelectedItem; 
                 Teams team2 = (Teams)comboBoxTeam2.SelectedItem;
-                
-                MatchupEntries.Add(mat, team1, double.Parse(textBoxScore1.Text));
-                MatchupEntries.Add(mat, team2, double.Parse(textBoxScore2.Text));
+
+
+                double team1AddScore = double.Parse(textBoxScore1.Text);
+                double team2AddScore = double.Parse(textBoxScore2.Text);
+
+                MatchupEntries.Add(mat, team1, team1AddScore);
+                MatchupEntries.Add(mat, team2, team2AddScore);
+
+                team1.AddScore(team1AddScore);
+                team2.AddScore(team2AddScore);
 
                 MessageBox.Show("Matchup has been Saved", "Information");
             }
