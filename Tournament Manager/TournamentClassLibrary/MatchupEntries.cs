@@ -32,16 +32,15 @@ namespace TournamentClassLibrary
         #endregion
 
         #region Method
-        public static List<MatchupEntries> ReadData() 
+        public static List<MatchupEntries> ReadData(Tournaments tournament) 
         {
-            string sql =   "SELECT score, " +
-                               "teams_id, t.name AS team_name, t.totalscore team_totalscore, " +
-                               "m.id AS matchup_id, m.round AS matchup_round, " +
-                               "twinner.id AS winner_id, twinner.name AS winner_name, twinner.totalscore AS winner_totalscore " +
-                          "FROM matchupentries as me " +
-                          "INNER JOIN teams AS t ON me.teams_id = t.id " +
-                          "INNER JOIN matchup AS m ON me.parentmatchup_id = m.id " +
-                          "INNER JOIN teams AS twinner ON m.winnerid = twinner.id ";
+            string sql =
+                        "SELECT parentmatchup_id, teams_id, score " +
+                        "FROM matchupentries me " +
+                        "WHERE me.teams_id IN ( " +
+                            "SELECT teams_id " +
+                            "FROM tournamententry " +
+                            "WHERE tournaments_id =  " + tournament.Id + ") "; 
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
@@ -50,25 +49,16 @@ namespace TournamentClassLibrary
             while (value.Read() == true)
             {
                 // SCORE
-                double score = double.Parse(value.GetValue(0).ToString());
+                double score = double.Parse(value.GetValue(2).ToString());
 
                 // TEAM
-                int teamId = int.Parse(value.GetValue(1).ToString());
-                string teamName = value.GetValue(2).ToString();
-                double totalScore = double.Parse(value.GetValue(3).ToString());
-                Teams team = new Teams(teamId, teamName, totalScore);
+                int teamid = int.Parse(value.GetValue(1).ToString());
+                Teams team = Teams.SelectTeam(teamid);
 
                 // MATCHUP
                 // parent matchup id
-                string matchupId = value.GetValue(4).ToString();
-                // matchup winner team
-                int winnerId = int.Parse(value.GetValue(6).ToString());
-                string winnerName = value.GetValue(7).ToString();
-                double winnertotalScore = double.Parse(value.GetValue(8).ToString());
-                Teams winnerTeam = new Teams(winnerId, winnerName, winnertotalScore);
-                // matchup round
-                int matchRound = int.Parse(value.GetValue(5).ToString());
-                Matchups parentMatchup = new Matchups(matchupId, matchRound);
+                string matchupid = value.GetValue(0).ToString();
+                Matchups parentMatchup = Matchups.SelectMatchup(matchupid);
 
                 // MATCHUP ENTRY
                 MatchupEntries matchupEntry = new MatchupEntries(parentMatchup, team, score);
@@ -118,7 +108,7 @@ namespace TournamentClassLibrary
         {
             string sql = "SELECT MAX(Id) FROM matchupentries";
 
-            string newId;
+            string newId = "";
 
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 

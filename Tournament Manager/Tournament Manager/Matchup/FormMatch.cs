@@ -24,14 +24,14 @@ namespace Tournament_Manager.Match
         private void FormatDataGridMatchup()
         {
             dataGridViewMatchup.Columns.Add("Id", "Id");
-            dataGridViewMatchup.Columns.Add("TeamId", "TeamId");
-            dataGridViewMatchup.Columns.Add("TeamName", "TeamName");
             dataGridViewMatchup.Columns.Add("Round", "Round");
         }
         private void FormatDataGridMatchupEntries()
         {
             dataGridViewEntry.Columns.Add("ParentMatchup_Id", "ParentMatchupId");
-            dataGridViewEntry.Columns.Add("Round", "Round");          
+            dataGridViewEntry.Columns.Add("TeamId", "TeamId");
+            dataGridViewEntry.Columns.Add("TeamName", "TeamName");
+            dataGridViewEntry.Columns.Add("Score", "Score");          
         }
 
         private void ShowDataGridMatchup()
@@ -41,7 +41,7 @@ namespace Tournament_Manager.Match
                 dataGridViewMatchup.Rows.Clear();
                 foreach (Matchups m in matchupList)
                 {
-                    dataGridViewMatchup.Rows.Add(m.Id,  m.Round);
+                    dataGridViewMatchup.Rows.Add(m.Id, m.Round);
                 }
             }
             else
@@ -55,9 +55,9 @@ namespace Tournament_Manager.Match
             if (entryList.Count > 0)
             {
                 dataGridViewEntry.Rows.Clear();
-                foreach (MatchupEntries e in entryList)
+                foreach (MatchupEntries matchupentries in entryList)
                 {
-                    dataGridViewEntry.Rows.Add(e.Matchup.Id, e.Team.Id, e.Score, e.Matchup.Round, e.Team.Name);
+                    dataGridViewEntry.Rows.Add(matchupentries.Matchup.Id, matchupentries.Team.Id, matchupentries.Team.Name, matchupentries.Score);
                 }
             }
             else
@@ -81,12 +81,12 @@ namespace Tournament_Manager.Match
         {
             //Menampilkan Data dari database tabel matchup
             FormatDataGridMatchup();            
-            matchupList = Matchups.ReadData(FormMenu.selectedTournament,"");            
+            matchupList = Matchups.ReadData(FormMenu.selectedTournament);            
             ShowDataGridMatchup();
             
             //Menampilkan Data dari database tabel matchupEntries
             FormatDataGridMatchupEntries();
-            entryList = MatchupEntries.ReadData();
+            entryList = MatchupEntries.ReadData(FormMenu.selectedTournament);
             ShowDataGridMatchupEntries();
         }
 
@@ -97,14 +97,16 @@ namespace Tournament_Manager.Match
 
         private void textBoxSearchMatchup_TextChanged(object sender, EventArgs e)
         {
-            // Get texboxsearch
-            string matchupSearchCriteria = textBoxSearchMatchup.Text;
-
             // Player search query with criteria
-            matchupList = Matchups.ReadData(FormMenu.selectedTournament, matchupSearchCriteria);
+            matchupList = Matchups.ReadData(FormMenu.selectedTournament);
 
             // Refresh datagridplayer
             ShowDataGridMatchup();
+        }
+
+        private void buttonEditMatchup_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

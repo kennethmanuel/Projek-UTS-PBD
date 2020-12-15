@@ -130,8 +130,13 @@ namespace Tournament_Manager
 
         private void buttonViewPairing_Click(object sender, EventArgs e)
         {
-            // Open FormBracketGenerator
-            generateTournamentStartingBracketToolStripMenuItem_Click(sender, e);
+            FormPairing formPairing = new FormPairing()
+            {
+                Owner = this
+            };
+            this.Hide();
+            
+            formPairing.ShowDialog();
         }
 
         private void linkLabelAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

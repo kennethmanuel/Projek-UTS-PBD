@@ -33,12 +33,10 @@
             this.textBoxSearchMatchup = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEditMatchup = new System.Windows.Forms.Button();
-            this.buttonNewMatchup = new System.Windows.Forms.Button();
             this.dataGridViewMatchup = new System.Windows.Forms.DataGridView();
             this.tabPageMatchupEntry = new System.Windows.Forms.TabPage();
             this.buttonDeleteEntry = new System.Windows.Forms.Button();
             this.buttonEditEntry = new System.Windows.Forms.Button();
-            this.buttonNewEntry = new System.Windows.Forms.Button();
             this.dataGridViewEntry = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -65,7 +63,6 @@
             this.tabPageMatchup.Controls.Add(this.textBoxSearchMatchup);
             this.tabPageMatchup.Controls.Add(this.buttonDelete);
             this.tabPageMatchup.Controls.Add(this.buttonEditMatchup);
-            this.tabPageMatchup.Controls.Add(this.buttonNewMatchup);
             this.tabPageMatchup.Controls.Add(this.dataGridViewMatchup);
             this.tabPageMatchup.Location = new System.Drawing.Point(4, 32);
             this.tabPageMatchup.Name = "tabPageMatchup";
@@ -90,7 +87,7 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonDelete.ForeColor = System.Drawing.Color.Black;
-            this.buttonDelete.Location = new System.Drawing.Point(568, 46);
+            this.buttonDelete.Location = new System.Drawing.Point(569, 46);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(158, 35);
             this.buttonDelete.TabIndex = 3;
@@ -103,26 +100,13 @@
             this.buttonEditMatchup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditMatchup.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonEditMatchup.ForeColor = System.Drawing.Color.Black;
-            this.buttonEditMatchup.Location = new System.Drawing.Point(440, 46);
+            this.buttonEditMatchup.Location = new System.Drawing.Point(441, 46);
             this.buttonEditMatchup.Name = "buttonEditMatchup";
             this.buttonEditMatchup.Size = new System.Drawing.Size(122, 35);
             this.buttonEditMatchup.TabIndex = 2;
             this.buttonEditMatchup.Text = "Edit Matchup";
             this.buttonEditMatchup.UseVisualStyleBackColor = false;
-            // 
-            // buttonNewMatchup
-            // 
-            this.buttonNewMatchup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
-            this.buttonNewMatchup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNewMatchup.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonNewMatchup.ForeColor = System.Drawing.Color.Black;
-            this.buttonNewMatchup.Location = new System.Drawing.Point(301, 46);
-            this.buttonNewMatchup.Name = "buttonNewMatchup";
-            this.buttonNewMatchup.Size = new System.Drawing.Size(133, 35);
-            this.buttonNewMatchup.TabIndex = 1;
-            this.buttonNewMatchup.Text = "Add New Matchup";
-            this.buttonNewMatchup.UseVisualStyleBackColor = false;
-            this.buttonNewMatchup.Click += new System.EventHandler(this.ButtonNewMatchup_Click);
+            this.buttonEditMatchup.Click += new System.EventHandler(this.buttonEditMatchup_Click);
             // 
             // dataGridViewMatchup
             // 
@@ -140,7 +124,6 @@
             this.tabPageMatchupEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
             this.tabPageMatchupEntry.Controls.Add(this.buttonDeleteEntry);
             this.tabPageMatchupEntry.Controls.Add(this.buttonEditEntry);
-            this.tabPageMatchupEntry.Controls.Add(this.buttonNewEntry);
             this.tabPageMatchupEntry.Controls.Add(this.dataGridViewEntry);
             this.tabPageMatchupEntry.Location = new System.Drawing.Point(4, 32);
             this.tabPageMatchupEntry.Name = "tabPageMatchupEntry";
@@ -170,17 +153,6 @@
             this.buttonEditEntry.TabIndex = 5;
             this.buttonEditEntry.Text = "Edit Entry";
             this.buttonEditEntry.UseVisualStyleBackColor = false;
-            // 
-            // buttonNewEntry
-            // 
-            this.buttonNewEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
-            this.buttonNewEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNewEntry.Location = new System.Drawing.Point(346, 46);
-            this.buttonNewEntry.Name = "buttonNewEntry";
-            this.buttonNewEntry.Size = new System.Drawing.Size(122, 35);
-            this.buttonNewEntry.TabIndex = 4;
-            this.buttonNewEntry.Text = "Add Entry";
-            this.buttonNewEntry.UseVisualStyleBackColor = false;
             // 
             // dataGridViewEntry
             // 
@@ -237,12 +209,10 @@
         private System.Windows.Forms.TabPage tabPageMatchup;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonEditMatchup;
-        private System.Windows.Forms.Button buttonNewMatchup;
         private System.Windows.Forms.DataGridView dataGridViewMatchup;
         private System.Windows.Forms.TabPage tabPageMatchupEntry;
         private System.Windows.Forms.Button buttonDeleteEntry;
         private System.Windows.Forms.Button buttonEditEntry;
-        private System.Windows.Forms.Button buttonNewEntry;
         private System.Windows.Forms.DataGridView dataGridViewEntry;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxSearchMatchup;

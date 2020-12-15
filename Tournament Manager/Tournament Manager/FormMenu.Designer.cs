@@ -33,7 +33,6 @@
             this.tournamentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateTournamentStartingBracketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playersTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamAndPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,8 +83,7 @@
             this.tournamentToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.tournamentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem,
-            this.generateTournamentStartingBracketToolStripMenuItem,
-            this.pairToolStripMenuItem});
+            this.generateTournamentStartingBracketToolStripMenuItem});
             this.tournamentToolStripMenuItem.Name = "tournamentToolStripMenuItem";
             this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(116, 27);
             this.tournamentToolStripMenuItem.Text = "Tournament";
@@ -105,14 +103,6 @@
             this.generateTournamentStartingBracketToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
             this.generateTournamentStartingBracketToolStripMenuItem.Text = "Quick generate tournament pairing";
             this.generateTournamentStartingBracketToolStripMenuItem.Click += new System.EventHandler(this.generateTournamentStartingBracketToolStripMenuItem_Click);
-            // 
-            // pairToolStripMenuItem
-            // 
-            this.pairToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
-            this.pairToolStripMenuItem.Name = "pairToolStripMenuItem";
-            this.pairToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
-            this.pairToolStripMenuItem.Text = "Pair";
-            this.pairToolStripMenuItem.Click += new System.EventHandler(this.pairToolStripMenuItem_Click);
             // 
             // playersTeamsToolStripMenuItem
             // 
@@ -396,7 +386,6 @@
         private System.Windows.Forms.Button buttonViewPairing;
         private System.Windows.Forms.LinkLabel linkLabelAbout;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolStripMenuItem pairToolStripMenuItem;
         private System.Windows.Forms.ListBox listBoxInfo;
         private System.Windows.Forms.DataGridView dataGridViewLeaderboard;
         private System.Windows.Forms.Label label1;

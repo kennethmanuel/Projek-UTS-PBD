@@ -30,8 +30,6 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewPair = new System.Windows.Forms.DataGridView();
-            this.buttonInsert = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonInsertMatchup = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.buttonPrint2 = new System.Windows.Forms.Button();
@@ -57,35 +55,11 @@
             this.dataGridViewPair.AllowUserToDeleteRows = false;
             this.dataGridViewPair.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPair.Location = new System.Drawing.Point(37, 149);
-            this.dataGridViewPair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewPair.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewPair.Name = "dataGridViewPair";
             this.dataGridViewPair.RowHeadersWidth = 51;
             this.dataGridViewPair.Size = new System.Drawing.Size(1092, 539);
             this.dataGridViewPair.TabIndex = 21;
-            // 
-            // buttonInsert
-            // 
-            this.buttonInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
-            this.buttonInsert.Location = new System.Drawing.Point(977, 97);
-            this.buttonInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(152, 37);
-            this.buttonInsert.TabIndex = 22;
-            this.buttonInsert.Text = "Insert Pairing";
-            this.buttonInsert.UseVisualStyleBackColor = false;
-            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
-            this.button1.Location = new System.Drawing.Point(801, 97);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 37);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonInsertMatchup
             // 
@@ -105,7 +79,7 @@
             // buttonPrint2
             // 
             this.buttonPrint2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
-            this.buttonPrint2.Location = new System.Drawing.Point(618, 97);
+            this.buttonPrint2.Location = new System.Drawing.Point(977, 97);
             this.buttonPrint2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPrint2.Name = "buttonPrint2";
             this.buttonPrint2.Size = new System.Drawing.Size(152, 37);
@@ -122,8 +96,6 @@
             this.ClientSize = new System.Drawing.Size(1189, 726);
             this.Controls.Add(this.buttonPrint2);
             this.Controls.Add(this.buttonInsertMatchup);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.dataGridViewPair);
             this.Controls.Add(this.label5);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -138,8 +110,6 @@
         #endregion
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridViewPair;
-        private System.Windows.Forms.Button buttonInsert;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonInsertMatchup;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Button buttonPrint2;

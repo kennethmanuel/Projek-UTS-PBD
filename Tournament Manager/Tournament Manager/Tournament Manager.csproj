@@ -159,12 +159,6 @@
     <Compile Include="Matchup\FormAddMatchup.Designer.cs">
       <DependentUpon>FormAddMatchup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Matchup\FormDeleteMatchup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Matchup\FormDeleteMatchup.Designer.cs">
-      <DependentUpon>FormDeleteMatchup.cs</DependentUpon>
-    </Compile>
     <Compile Include="Matchup\FormEditMatchup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,9 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Matchup\FormAddMatchup.resx">
       <DependentUpon>FormAddMatchup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Matchup\FormDeleteMatchup.resx">
-      <DependentUpon>FormDeleteMatchup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Matchup\FormEditMatchup.resx">
       <DependentUpon>FormEditMatchup.cs</DependentUpon>

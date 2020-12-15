@@ -97,12 +97,13 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Delete tournament
         /// </summary>
-        /// <param name="t">Tournament name</param>
+        /// <param name="tournament">Tournament name</param>
         /// <param name="exceptionMessage">Error message for debugging</param>
         /// <returns>true = delete success, false = delete failed</returns>
-        public static bool DeleteTournament(Tournaments t, out string exceptionMessage)
+        public static bool DeleteTournament(Tournaments tournament, out string exceptionMessage)
         {
-            string sql = "DELETE FROM tournaments WHERE id=" + t.Id;
+            string sql = "DELETE FROM tournamententry WHERE id = " + tournament.Id + "; " +
+                         "DELETE FROM tournaments WHERE id=" + tournament.Id + ";";
 
             exceptionMessage = "";
 

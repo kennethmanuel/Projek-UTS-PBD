@@ -14,7 +14,9 @@ namespace Tournament_Manager.Tournament_Matchup
     public partial class FormAddMatchup : Form
     {
         List<Matchups> listMatchup = new List<Matchups>();
-        List<Teams> listteams = new List<Teams>(); 
+        List<Teams> listTeam1 = new List<Teams>();
+        List<Teams> listTeam2 = new List<Teams>();
+
         public FormAddMatchup()
         {
             InitializeComponent();
@@ -53,10 +55,11 @@ namespace Tournament_Manager.Tournament_Matchup
 
         private void FormAddMatchup_Load(object sender, EventArgs e)
         {
-            listteams = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
+            listTeam1 = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
+            listTeam2 = TournamentEntry.ReadTeam(FormMenu.selectedTournament);
 
-            comboBoxTeam1.DataSource = listteams;
-            comboBoxTeam2.DataSource = listteams;
+            comboBoxTeam1.DataSource = listTeam1;
+            comboBoxTeam2.DataSource = listTeam2;
 
             comboBoxTeam1.DisplayMember = "Name";
             comboBoxTeam2.DisplayMember = "Name";
