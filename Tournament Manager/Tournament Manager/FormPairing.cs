@@ -127,6 +127,11 @@ namespace Tournament_Manager
             printer.PrintDataGridView(dataGridViewPair);
 
         }
+
+        private void FormPairing_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
+        }
     }
 }
 

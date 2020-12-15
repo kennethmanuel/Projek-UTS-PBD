@@ -32,7 +32,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tournamentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generateTournamentStartingBracketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playersTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamAndPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,8 +81,7 @@
             // 
             this.tournamentToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.tournamentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadAnotherTournamentFromDatabaseToolStripMenuItem,
-            this.generateTournamentStartingBracketToolStripMenuItem});
+            this.loadAnotherTournamentFromDatabaseToolStripMenuItem});
             this.tournamentToolStripMenuItem.Name = "tournamentToolStripMenuItem";
             this.tournamentToolStripMenuItem.Size = new System.Drawing.Size(116, 27);
             this.tournamentToolStripMenuItem.Text = "Tournament";
@@ -95,14 +93,6 @@
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Text = "Load another tournament from database";
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.loadAnotherTournamentFromDatabaseToolStripMenuItem_Click);
-            // 
-            // generateTournamentStartingBracketToolStripMenuItem
-            // 
-            this.generateTournamentStartingBracketToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
-            this.generateTournamentStartingBracketToolStripMenuItem.Name = "generateTournamentStartingBracketToolStripMenuItem";
-            this.generateTournamentStartingBracketToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
-            this.generateTournamentStartingBracketToolStripMenuItem.Text = "Quick generate tournament pairing";
-            this.generateTournamentStartingBracketToolStripMenuItem.Click += new System.EventHandler(this.generateTournamentStartingBracketToolStripMenuItem_Click);
             // 
             // playersTeamsToolStripMenuItem
             // 
@@ -198,7 +188,7 @@
             this.buttonViewPlayer.TabIndex = 25;
             this.buttonViewPlayer.Text = "♚View Participating Player ♚";
             this.buttonViewPlayer.UseVisualStyleBackColor = false;
-            this.buttonViewPlayer.Click += new System.EventHandler(this.buttonViewPlayer_Click);
+            this.buttonViewPlayer.Click += new System.EventHandler(this.ButtonViewPlayer_Click);
             // 
             // buttonViewTeam
             // 
@@ -212,7 +202,7 @@
             this.buttonViewTeam.TabIndex = 26;
             this.buttonViewTeam.Text = "♛View Participating Team ♛";
             this.buttonViewTeam.UseVisualStyleBackColor = false;
-            this.buttonViewTeam.Click += new System.EventHandler(this.buttonViewTeam_Click);
+            this.buttonViewTeam.Click += new System.EventHandler(this.ButtonViewTeam_Click);
             // 
             // buttonView
             // 
@@ -373,7 +363,6 @@
         private System.Windows.Forms.Label labelTournamentValue;
         private System.Windows.Forms.ToolStripMenuItem viewTournamentPrizesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generateTournamentStartingBracketToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playersTeamsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teamAndPlayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matchToolStripMenuItem;

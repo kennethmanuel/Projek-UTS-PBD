@@ -41,7 +41,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(464, 38);
+            this.label5.Location = new System.Drawing.Point(335, 44);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(265, 59);
@@ -58,7 +58,7 @@
             this.dataGridViewPair.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewPair.Name = "dataGridViewPair";
             this.dataGridViewPair.RowHeadersWidth = 51;
-            this.dataGridViewPair.Size = new System.Drawing.Size(1092, 539);
+            this.dataGridViewPair.Size = new System.Drawing.Size(888, 489);
             this.dataGridViewPair.TabIndex = 21;
             // 
             // buttonInsertMatchup
@@ -79,7 +79,7 @@
             // buttonPrint2
             // 
             this.buttonPrint2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
-            this.buttonPrint2.Location = new System.Drawing.Point(977, 97);
+            this.buttonPrint2.Location = new System.Drawing.Point(773, 97);
             this.buttonPrint2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPrint2.Name = "buttonPrint2";
             this.buttonPrint2.Size = new System.Drawing.Size(152, 37);
@@ -93,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1189, 726);
+            this.ClientSize = new System.Drawing.Size(962, 666);
             this.Controls.Add(this.buttonPrint2);
             this.Controls.Add(this.buttonInsertMatchup);
             this.Controls.Add(this.dataGridViewPair);
@@ -101,6 +101,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPairing";
             this.Text = "FormPairing";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPairing_FormClosing);
             this.Load += new System.EventHandler(this.FormPairing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPair)).EndInit();
             this.ResumeLayout(false);

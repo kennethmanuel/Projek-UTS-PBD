@@ -42,7 +42,6 @@
             this.buttonAddTeam = new System.Windows.Forms.Button();
             this.dataGridViewTeam = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.buttonEditPoin = new System.Windows.Forms.Button();
             this.tabControlTeam.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlayer)).BeginInit();
@@ -52,14 +51,14 @@
             // 
             // tabControlTeam
             // 
-            this.tabControlTeam.Controls.Add(this.tabPagePlayer);
             this.tabControlTeam.Controls.Add(this.tabPageTeam);
+            this.tabControlTeam.Controls.Add(this.tabPagePlayer);
             this.tabControlTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tabControlTeam.Location = new System.Drawing.Point(11, 90);
             this.tabControlTeam.Margin = new System.Windows.Forms.Padding(2);
             this.tabControlTeam.Name = "tabControlTeam";
             this.tabControlTeam.SelectedIndex = 0;
-            this.tabControlTeam.Size = new System.Drawing.Size(750, 479);
+            this.tabControlTeam.Size = new System.Drawing.Size(718, 479);
             this.tabControlTeam.TabIndex = 1;
             // 
             // tabPagePlayer
@@ -70,11 +69,11 @@
             this.tabPagePlayer.Controls.Add(this.buttonEditPlayer);
             this.tabPagePlayer.Controls.Add(this.buttonAddPlayer);
             this.tabPagePlayer.Controls.Add(this.dataGridViewPlayer);
-            this.tabPagePlayer.Location = new System.Drawing.Point(4, 26);
+            this.tabPagePlayer.Location = new System.Drawing.Point(4, 32);
             this.tabPagePlayer.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePlayer.Name = "tabPagePlayer";
             this.tabPagePlayer.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePlayer.Size = new System.Drawing.Size(742, 449);
+            this.tabPagePlayer.Size = new System.Drawing.Size(710, 443);
             this.tabPagePlayer.TabIndex = 1;
             this.tabPagePlayer.Text = "Players";
             // 
@@ -84,7 +83,7 @@
             this.textBoxSearchPlayer.Location = new System.Drawing.Point(16, 50);
             this.textBoxSearchPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchPlayer.Name = "textBoxSearchPlayer";
-            this.textBoxSearchPlayer.Size = new System.Drawing.Size(307, 25);
+            this.textBoxSearchPlayer.Size = new System.Drawing.Size(277, 30);
             this.textBoxSearchPlayer.TabIndex = 7;
             this.textBoxSearchPlayer.TextChanged += new System.EventHandler(this.TextBoxSearchPlayer_TextChanged);
             // 
@@ -93,7 +92,7 @@
             this.buttonDeletePlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonDeletePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeletePlayer.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonDeletePlayer.Location = new System.Drawing.Point(601, 46);
+            this.buttonDeletePlayer.Location = new System.Drawing.Point(570, 50);
             this.buttonDeletePlayer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeletePlayer.Name = "buttonDeletePlayer";
             this.buttonDeletePlayer.Size = new System.Drawing.Size(123, 34);
@@ -107,7 +106,7 @@
             this.buttonEditPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonEditPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditPlayer.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonEditPlayer.Location = new System.Drawing.Point(474, 46);
+            this.buttonEditPlayer.Location = new System.Drawing.Point(443, 50);
             this.buttonEditPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditPlayer.Name = "buttonEditPlayer";
             this.buttonEditPlayer.Size = new System.Drawing.Size(123, 34);
@@ -121,7 +120,7 @@
             this.buttonAddPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonAddPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddPlayer.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonAddPlayer.Location = new System.Drawing.Point(345, 46);
+            this.buttonAddPlayer.Location = new System.Drawing.Point(316, 50);
             this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddPlayer.Name = "buttonAddPlayer";
             this.buttonAddPlayer.Size = new System.Drawing.Size(123, 34);
@@ -132,6 +131,7 @@
             // 
             // dataGridViewPlayer
             // 
+            this.dataGridViewPlayer.AllowUserToAddRows = false;
             this.dataGridViewPlayer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(92)))), ((int)(((byte)(84)))));
             this.dataGridViewPlayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPlayer.Location = new System.Drawing.Point(16, 94);
@@ -140,23 +140,22 @@
             this.dataGridViewPlayer.ReadOnly = true;
             this.dataGridViewPlayer.RowHeadersWidth = 51;
             this.dataGridViewPlayer.RowTemplate.Height = 24;
-            this.dataGridViewPlayer.Size = new System.Drawing.Size(712, 334);
+            this.dataGridViewPlayer.Size = new System.Drawing.Size(675, 334);
             this.dataGridViewPlayer.TabIndex = 2;
             // 
             // tabPageTeam
             // 
             this.tabPageTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.tabPageTeam.Controls.Add(this.buttonEditPoin);
             this.tabPageTeam.Controls.Add(this.textBoxSearchTeam);
             this.tabPageTeam.Controls.Add(this.buttonDeleteTeam);
             this.tabPageTeam.Controls.Add(this.buttonEditTeam);
             this.tabPageTeam.Controls.Add(this.buttonAddTeam);
             this.tabPageTeam.Controls.Add(this.dataGridViewTeam);
-            this.tabPageTeam.Location = new System.Drawing.Point(4, 26);
+            this.tabPageTeam.Location = new System.Drawing.Point(4, 32);
             this.tabPageTeam.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageTeam.Name = "tabPageTeam";
             this.tabPageTeam.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageTeam.Size = new System.Drawing.Size(742, 449);
+            this.tabPageTeam.Size = new System.Drawing.Size(710, 443);
             this.tabPageTeam.TabIndex = 0;
             this.tabPageTeam.Text = "Teams";
             // 
@@ -167,7 +166,7 @@
             this.textBoxSearchTeam.Location = new System.Drawing.Point(15, 55);
             this.textBoxSearchTeam.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchTeam.Name = "textBoxSearchTeam";
-            this.textBoxSearchTeam.Size = new System.Drawing.Size(307, 25);
+            this.textBoxSearchTeam.Size = new System.Drawing.Size(277, 30);
             this.textBoxSearchTeam.TabIndex = 8;
             this.textBoxSearchTeam.TextChanged += new System.EventHandler(this.TextBoxSearchTeam_TextChanged);
             // 
@@ -176,7 +175,7 @@
             this.buttonDeleteTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonDeleteTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonDeleteTeam.Location = new System.Drawing.Point(603, 49);
+            this.buttonDeleteTeam.Location = new System.Drawing.Point(571, 49);
             this.buttonDeleteTeam.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeleteTeam.Name = "buttonDeleteTeam";
             this.buttonDeleteTeam.Size = new System.Drawing.Size(123, 34);
@@ -190,7 +189,7 @@
             this.buttonEditTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonEditTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonEditTeam.Location = new System.Drawing.Point(476, 49);
+            this.buttonEditTeam.Location = new System.Drawing.Point(437, 49);
             this.buttonEditTeam.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditTeam.Name = "buttonEditTeam";
             this.buttonEditTeam.Size = new System.Drawing.Size(123, 34);
@@ -204,7 +203,7 @@
             this.buttonAddTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
             this.buttonAddTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddTeam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonAddTeam.Location = new System.Drawing.Point(349, 49);
+            this.buttonAddTeam.Location = new System.Drawing.Point(310, 49);
             this.buttonAddTeam.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddTeam.Name = "buttonAddTeam";
             this.buttonAddTeam.Size = new System.Drawing.Size(123, 34);
@@ -215,6 +214,7 @@
             // 
             // dataGridViewTeam
             // 
+            this.dataGridViewTeam.AllowUserToAddRows = false;
             this.dataGridViewTeam.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(92)))), ((int)(((byte)(84)))));
             this.dataGridViewTeam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTeam.Location = new System.Drawing.Point(15, 98);
@@ -223,7 +223,7 @@
             this.dataGridViewTeam.ReadOnly = true;
             this.dataGridViewTeam.RowHeadersWidth = 51;
             this.dataGridViewTeam.RowTemplate.Height = 24;
-            this.dataGridViewTeam.Size = new System.Drawing.Size(712, 334);
+            this.dataGridViewTeam.Size = new System.Drawing.Size(679, 334);
             this.dataGridViewTeam.TabIndex = 0;
             // 
             // label5
@@ -231,33 +231,19 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(183, 28);
+            this.label5.Location = new System.Drawing.Point(163, 28);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(392, 60);
             this.label5.TabIndex = 20;
             this.label5.Text = "PLAYER AND TEAMS";
             // 
-            // buttonEditPoin
-            // 
-            this.buttonEditPoin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(152)))));
-            this.buttonEditPoin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditPoin.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buttonEditPoin.Location = new System.Drawing.Point(15, 12);
-            this.buttonEditPoin.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEditPoin.Name = "buttonEditPoin";
-            this.buttonEditPoin.Size = new System.Drawing.Size(123, 34);
-            this.buttonEditPoin.TabIndex = 9;
-            this.buttonEditPoin.Text = "Edit Point";
-            this.buttonEditPoin.UseVisualStyleBackColor = false;
-            this.buttonEditPoin.Click += new System.EventHandler(this.buttonEditPoin_Click);
-            // 
             // FormPlayerTeam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(771, 580);
+            this.ClientSize = new System.Drawing.Size(743, 580);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControlTeam);
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,6 +281,5 @@
         private System.Windows.Forms.TextBox textBoxSearchPlayer;
         private System.Windows.Forms.TextBox textBoxSearchTeam;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonEditPoin;
     }
 }
