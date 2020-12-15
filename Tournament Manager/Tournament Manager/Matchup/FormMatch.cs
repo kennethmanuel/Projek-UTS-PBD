@@ -31,10 +31,7 @@ namespace Tournament_Manager.Match
         private void FormatDataGridMatchupEntries()
         {
             dataGridViewEntry.Columns.Add("ParentMatchup_Id", "ParentMatchupId");
-            dataGridViewEntry.Columns.Add("TeamsId", "TeamsId");
-            dataGridViewEntry.Columns.Add("score", "Score");
-            dataGridViewEntry.Columns.Add("Round", "Round");
-            dataGridViewEntry.Columns.Add("name", "Name");
+            dataGridViewEntry.Columns.Add("Round", "Round");          
         }
 
         private void ShowDataGridMatchup()
@@ -44,7 +41,7 @@ namespace Tournament_Manager.Match
                 dataGridViewMatchup.Rows.Clear();
                 foreach (Matchups m in matchupList)
                 {
-                    dataGridViewMatchup.Rows.Add(m.Id, m.TeamId.Id, m.TeamId.Name, m.Round);
+                    dataGridViewMatchup.Rows.Add(m.Id,  m.Round);
                 }
             }
             else
@@ -89,8 +86,8 @@ namespace Tournament_Manager.Match
             
             //Menampilkan Data dari database tabel matchupEntries
             FormatDataGridMatchupEntries();
-            //entryList = MatchupEntries.ReadData();
-            //ShowDataGridMatchupEntries();
+            entryList = MatchupEntries.ReadData();
+            ShowDataGridMatchupEntries();
         }
 
         private void ButtonNewMatchup_Click(object sender, EventArgs e)

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TournamentClassLibrary;
 using DGVPrinterHelper;
+using Tournament_Manager.Tournament_Matchup;
 
 namespace Tournament_Manager
 {
@@ -103,7 +104,9 @@ namespace Tournament_Manager
 
         private void buttonInsertMatchup_Click(object sender, EventArgs e)
         {
-
+            FormAddMatchup form = new FormAddMatchup();
+            form.Owner = this;
+            form.ShowDialog();
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)

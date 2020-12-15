@@ -68,7 +68,7 @@ namespace TournamentClassLibrary
                 Teams winnerTeam = new Teams(winnerId, winnerName, winnertotalScore);
                 // matchup round
                 int matchRound = int.Parse(value.GetValue(5).ToString());
-                Matchups parentMatchup = new Matchups(matchupId, winnerTeam, matchRound);
+                Matchups parentMatchup = new Matchups(matchupId, matchRound);
 
                 // MATCHUP ENTRY
                 MatchupEntries matchupEntry = new MatchupEntries(parentMatchup, team, score);
@@ -80,7 +80,7 @@ namespace TournamentClassLibrary
             return matchupEntriesList;
         }
 
-        public void Add(Matchups matchup, Teams team, double score)
+        public static void Add(Matchups matchup, Teams team, double score)
         {
             string sql = "INSERT INTO matchupentries " +
                          "VALUES (" + matchup.Id + "," + team.Id + "," + score + ");";
@@ -88,7 +88,7 @@ namespace TournamentClassLibrary
             Connection.ExecuteDML(sql);
         }
 
-        public void Edit(Matchups matchup, Teams team, double score)
+        public static void Edit(Matchups matchup, Teams team, double score)
         {
             string sql = "UPDATE matchupentries " +
                          "SET parentmatchup_id = " + matchup.Id + ", " +
@@ -98,7 +98,7 @@ namespace TournamentClassLibrary
             Connection.ExecuteDML(sql);
         }
 
-        public void Delete(Matchups matchup)
+        public static void Delete(Matchups matchup)
         {
             string sql = "DELETE FROM matchupentries " +
                          "WHERE id=" + matchup.Id + ";";

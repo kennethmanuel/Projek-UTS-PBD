@@ -13,24 +13,21 @@ namespace TournamentClassLibrary
     public class Matchups
     {
         #region Data Member
-        private string id;
-        private Teams teamId;
+        private string id;        
         private int round;
         #endregion
 
         #region Constructor
-        public Matchups(string id, Teams teamId, int round)
+        public Matchups(string id, int round)
         {
-            this.Id = id;
-            this.TeamId = teamId;
+            this.Id = id;         
             this.Round = round;
         }
         #endregion
 
         #region Property
         public string Id { get => id; set => id = value; }
-        public int Round { get => round; set => round = value; }
-        public Teams TeamId { get => teamId; set => teamId = value; }
+        public int Round { get => round; set => round = value; }      
         #endregion
 
         #region Method
@@ -47,23 +44,21 @@ namespace TournamentClassLibrary
 
             if (criteriaValue == "")
             {
-                sql = "SELECT m.id, m.teamid, m.round, t.name , t.totalscore " +
-                      "FROM matchup m " +
-                      "INNER JOIN teams t ON m.teamid = t.id " +
-                      "WHERE t.id IN (SELECT teams_id " +
+                sql = "SELECT m.id, m.round " +
+                      "FROM matchup m " +                      
+                      "WHERE m.id IN (SELECT teams_id " +
                                      "FROM tournamententry " +
                                      "WHERE tournaments_id = " + tournamentId + ")";
             }
             else
             {
-                sql = "SELECT m.id, m.teamid, m.round, t.name , t.totalscore " +
+                sql = "SELECT m.id, m.round, t.name , t.totalscore " +
                       "FROM matchup m " +
                       "INNER JOIN teams t ON m.teamid = t.id " +
                      "WHERE t.id IN (SELECT teams_id " +
                                      "FROM tournamententry " +
                                      "WHERE tournaments_id = " + tournamentId + ")" + 
-                      "AND (m.id LIKE '%" + criteriaValue + "%' " +
-                      "OR m.teamid LIKE '%" + criteriaValue + "%' " +
+                      "AND (m.id LIKE '%" + criteriaValue + "%' " +                    
                       "OR m.round LIKE '%" + criteriaValue + "%' " +
                       "OR t.name LIKE '%" + criteriaValue + "%' " +
                       "OR t.totalscore LIKE '%" + criteriaValue + "%' )";
@@ -76,18 +71,12 @@ namespace TournamentClassLibrary
             while (value.Read() == true)
             {
                 // matchup id
-                string matchupId = value.GetValue(0).ToString();
-
-                // winner team
-                int teamId = int.Parse(value.GetValue(1).ToString());
-                string teamName = value.GetValue(3).ToString();
-                double teamTotalScore = double.Parse(value.GetValue(4).ToString());
-                Teams team = new Teams(teamId, teamName, teamTotalScore);
+                string matchupId = value.GetValue(0).ToString();              
 
                 // matchup round
-                int matchupRound = int.Parse(value.GetValue(2).ToString());
+                int matchupRound = int.Parse(value.GetValue(1).ToString());
 
-                Matchups m = new Matchups(matchupId, team, matchupRound);
+                Matchups m = new Matchups(matchupId, matchupRound);
 
                 matchupList.Add(m);
             }
@@ -103,7 +92,7 @@ namespace TournamentClassLibrary
 
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
-            if (result.Read())
+            if (result.Read() && result.GetValue(0) != null)
             {
                 int newIdInt = int.Parse(result.GetValue(0).ToString()) + 1;
                 newId = newIdInt.ToString();
@@ -121,8 +110,8 @@ namespace TournamentClassLibrary
         /// <param name="matchup"></param>
         public static void AddMatchup(Matchups matchup)
         {
-            string sql = "INSERT INTO matchup(id, teamId, round) " +
-                           "VALUES ('" + matchup.Id + "','" + matchup.TeamId + "','" + matchup.Round + "')";
+            string sql = "INSERT INTO matchup(id, round) " +
+                           "VALUES ('" + matchup.Id + "','" + matchup.Round + "')";
             Connection.ExecuteDML(sql);
         }
         /// <summary>
@@ -132,8 +121,7 @@ namespace TournamentClassLibrary
         public static void EditMatchup(Matchups matchup)
         {
             string sql = "UPDATE matchup " +
-                        " SET teamId='" + matchup.TeamId +
-                        "', round='" + matchup.Round + "' " +
+                        " SET round='" + matchup.Round + "' " +
                         "WHERE Id='" + matchup.Id + "'";
             Connection.ExecuteDML(sql);
         }

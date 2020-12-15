@@ -14,6 +14,7 @@ namespace Tournament_Manager.Tournament_Matchup
     public partial class FormAddMatchup : Form
     {
         List<Matchups> listMatchup = new List<Matchups>();
+        List<Teams> listteams = new List<Teams>(); 
         public FormAddMatchup()
         {
             InitializeComponent();
@@ -31,29 +32,31 @@ namespace Tournament_Manager.Tournament_Matchup
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Matchups mat = new Matchups(id, round);
-            //    Matchups.AddMatchup(mat);
+            try
+            {                
+                Matchups mat = new Matchups(textBoxId.Text, int.Parse(textBoxRound.Text));
+                Matchups.AddMatchup(mat);
 
-            //    MatchupEntries entr1 = new MatchupEntries(mat, team1, score1);
-            //    MatchupEntries entr2 = new MatchupEntries(mat, team2, score2);
+                Teams team1 = (Teams)comboBoxTeam1.SelectedItem; 
+                Teams team2 = (Teams)comboBoxTeam2.SelectedItem;
+                
+                MatchupEntries.Add(mat, team1, double.Parse(textBoxScore1.Text));
+                MatchupEntries.Add(mat, team2, double.Parse(textBoxScore2.Text));
 
-            //    MatchupEntries.add(entr1);
-            //    MatchupEntries.add(entr2);
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
+                MessageBox.Show("Matchup has been Saved", "Information");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Matchups cannot be saved. Error Message: " + ex.Message, "Error");
+            }
         }
 
         private void FormAddMatchup_Load(object sender, EventArgs e)
         {
-            listMatchup = Matchups.ReadData(FormMenu.selectedTournament, "");
+            listteams = TournamentEntry.ReadTeam(FormMenu.selectedTournament, "");
 
-            comboBoxTeam1.DataSource = listMatchup;
-            comboBoxTeam2.DataSource = listMatchup;
+            comboBoxTeam1.DataSource = listteams;
+            comboBoxTeam2.DataSource = listteams;
 
             comboBoxTeam1.DisplayMember = "Name";
             comboBoxTeam2.DisplayMember = "Name";
@@ -62,6 +65,7 @@ namespace Tournament_Manager.Tournament_Matchup
             comboBoxTeam1.DropDownStyle = ComboBoxStyle.DropDownList;
 
             string newCode = Matchups.GenerateId();
+            textBoxId.Text = newCode;
         }
     }
 }
