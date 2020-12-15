@@ -11,16 +11,12 @@ namespace TournamentClassLibrary
     {
         private Teams team1;
         private Teams team2;
-        private int round;
-        private double team1AddScore;
-        private double team2AddScore;
+        private int round;        
 
         #region Property
         public Teams Team1 { get => team1; set => team1 = value; }
         public Teams Team2 { get => team2; set => team2 = value; }
-        public int Round { get => round; set => round = value; }
-        public double Team1AddScore { get => team1AddScore; set => team1AddScore = value; }
-        public double Team2AddScore { get => team2AddScore; set => team2AddScore = value; }
+        public int Round { get => round; set => round = value; }        
         #endregion
 
         #region Constructor
@@ -28,18 +24,14 @@ namespace TournamentClassLibrary
         {
             this.Team1 = team1;
             this.Team2 = team2;
-            this.Round = round;
-            this.Team1AddScore = 0;
-            this.Team2AddScore = 0;
+            this.Round = round;            
         }
 
         public Pairing(Teams team1, Teams team2, int round, double team1AddScore, double team2AddScore)
         {
             this.Team1 = team1;
             this.Team2 = team2;
-            this.Round = round;
-            this.Team1AddScore = team1AddScore;
-            this.Team2AddScore = team2AddScore;
+            this.Round = round;          
         }
         #endregion
 

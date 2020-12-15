@@ -40,6 +40,7 @@
             this.buttonNewEntry = new System.Windows.Forms.Button();
             this.dataGridViewEntry = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxSearchMatchup = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageMatchup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatchup)).BeginInit();
@@ -61,14 +62,15 @@
             // tabPageMatchup
             // 
             this.tabPageMatchup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.tabPageMatchup.Controls.Add(this.textBoxSearchMatchup);
             this.tabPageMatchup.Controls.Add(this.buttonDelete);
             this.tabPageMatchup.Controls.Add(this.buttonEditMatchup);
             this.tabPageMatchup.Controls.Add(this.buttonNewMatchup);
             this.tabPageMatchup.Controls.Add(this.dataGridViewMatchup);
-            this.tabPageMatchup.Location = new System.Drawing.Point(4, 32);
+            this.tabPageMatchup.Location = new System.Drawing.Point(4, 26);
             this.tabPageMatchup.Name = "tabPageMatchup";
             this.tabPageMatchup.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMatchup.Size = new System.Drawing.Size(742, 443);
+            this.tabPageMatchup.Size = new System.Drawing.Size(742, 449);
             this.tabPageMatchup.TabIndex = 0;
             this.tabPageMatchup.Text = "Matchup";
             // 
@@ -82,7 +84,7 @@
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(158, 35);
             this.buttonDelete.TabIndex = 3;
-            this.buttonDelete.Text = "Delete Macthup";
+            this.buttonDelete.Text = "Delete Matchup";
             this.buttonDelete.UseVisualStyleBackColor = false;
             // 
             // buttonEditMatchup
@@ -104,9 +106,9 @@
             this.buttonNewMatchup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewMatchup.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonNewMatchup.ForeColor = System.Drawing.Color.Black;
-            this.buttonNewMatchup.Location = new System.Drawing.Point(230, 46);
+            this.buttonNewMatchup.Location = new System.Drawing.Point(301, 46);
             this.buttonNewMatchup.Name = "buttonNewMatchup";
-            this.buttonNewMatchup.Size = new System.Drawing.Size(204, 35);
+            this.buttonNewMatchup.Size = new System.Drawing.Size(133, 35);
             this.buttonNewMatchup.TabIndex = 1;
             this.buttonNewMatchup.Text = "Add New Matchup";
             this.buttonNewMatchup.UseVisualStyleBackColor = false;
@@ -130,10 +132,10 @@
             this.tabPageMatchupEntry.Controls.Add(this.buttonEditEntry);
             this.tabPageMatchupEntry.Controls.Add(this.buttonNewEntry);
             this.tabPageMatchupEntry.Controls.Add(this.dataGridViewEntry);
-            this.tabPageMatchupEntry.Location = new System.Drawing.Point(4, 32);
+            this.tabPageMatchupEntry.Location = new System.Drawing.Point(4, 26);
             this.tabPageMatchupEntry.Name = "tabPageMatchupEntry";
             this.tabPageMatchupEntry.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMatchupEntry.Size = new System.Drawing.Size(742, 443);
+            this.tabPageMatchupEntry.Size = new System.Drawing.Size(742, 449);
             this.tabPageMatchupEntry.TabIndex = 1;
             this.tabPageMatchupEntry.Text = "Entry";
             // 
@@ -194,9 +196,19 @@
             this.label5.Text = "MATCHUP";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBoxSearchMatchup
+            // 
+            this.textBoxSearchMatchup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
+            this.textBoxSearchMatchup.Location = new System.Drawing.Point(15, 52);
+            this.textBoxSearchMatchup.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSearchMatchup.Name = "textBoxSearchMatchup";
+            this.textBoxSearchMatchup.Size = new System.Drawing.Size(260, 25);
+            this.textBoxSearchMatchup.TabIndex = 8;
+            this.textBoxSearchMatchup.TextChanged += new System.EventHandler(this.textBoxSearchMatchup_TextChanged);
+            // 
             // FormMatch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(771, 580);
@@ -211,6 +223,7 @@
             this.Load += new System.EventHandler(this.FormMatch_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageMatchup.ResumeLayout(false);
+            this.tabPageMatchup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatchup)).EndInit();
             this.tabPageMatchupEntry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntry)).EndInit();
@@ -232,5 +245,6 @@
         private System.Windows.Forms.Button buttonNewEntry;
         private System.Windows.Forms.DataGridView dataGridViewEntry;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxSearchMatchup;
     }
 }

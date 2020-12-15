@@ -14,23 +14,23 @@ namespace TournamentClassLibrary
     {
         #region Data Member
         private string id;
-        private Teams winnerTeam;
+        private Teams teamId;
         private int round;
         #endregion
 
         #region Constructor
-        public Matchups(string id, Teams winnerTeam, int round)
+        public Matchups(string id, Teams teamId, int round)
         {
             this.Id = id;
-            this.WinnerTeam = winnerTeam;
+            this.TeamId = teamId;
             this.Round = round;
         }
         #endregion
 
         #region Property
         public string Id { get => id; set => id = value; }
-        public Teams WinnerTeam { get => winnerTeam; set => winnerTeam = value; }
         public int Round { get => round; set => round = value; }
+        public Teams TeamId { get => teamId; set => teamId = value; }
         #endregion
 
         #region Method
@@ -40,30 +40,40 @@ namespace TournamentClassLibrary
         /// <param name="criteria">Criteria for search (id, winnerid, round, winner_name, winner_totalscore).</param>
         /// <param name="criteriaValue"></param>
         /// <returns></returns>
-        public static List<Matchups> ReadData(string criteria = "", string criteriaValue = "")
+        public static List<Matchups> ReadData(Tournaments selectedTournament, string criteriaValue = "")
         {
+            int tournamentId = selectedTournament.Id;
             string sql;
 
-            if(criteria == "")
+            if (criteriaValue == "")
             {
-                sql = "SELECT m.id, m.winnerid, m.round, t.name as winner_name, t.totalscore winner_totalscore " +
+                sql = "SELECT m.id, m.teamid, m.round, t.name , t.totalscore " +
                       "FROM matchup m " +
-                      "INNER JOIN teams t ON m.winnerid = t.id";
+                      "INNER JOIN teams t ON m.teamid = t.id " +
+                      "WHERE t.id IN (SELECT teams_id " +
+                                     "FROM tournamententry " +
+                                     "WHERE tournaments_id = " + tournamentId + ")";
             }
             else
             {
-                sql = "SELECT m.id, m.winnerid, m.round, t.name as winner_name, t.totalscore winner_totalscore " +
+                sql = "SELECT m.id, m.teamid, m.round, t.name , t.totalscore " +
                       "FROM matchup m " +
-                      "INNER JOIN teams t ON m.winnerid = t.id " +
-                      "WHERE " + criteria + " " +
-                      "LIKE '%" + criteriaValue + "%'";
+                      "INNER JOIN teams t ON m.teamid = t.id " +
+                     "WHERE t.id IN (SELECT teams_id " +
+                                     "FROM tournamententry " +
+                                     "WHERE tournaments_id = " + tournamentId + ")" + 
+                      "AND (m.id LIKE '%" + criteriaValue + "%' " +
+                      "OR m.teamid LIKE '%" + criteriaValue + "%' " +
+                      "OR m.round LIKE '%" + criteriaValue + "%' " +
+                      "OR t.name LIKE '%" + criteriaValue + "%' " +
+                      "OR t.totalscore LIKE '%" + criteriaValue + "%' )";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
             List<Matchups> matchupList = new List<Matchups>();
 
-            while(value.Read() == true)
+            while (value.Read() == true)
             {
                 // matchup id
                 string matchupId = value.GetValue(0).ToString();
@@ -93,7 +103,7 @@ namespace TournamentClassLibrary
 
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
-            if(result.Read())
+            if (result.Read())
             {
                 int newIdInt = int.Parse(result.GetValue(0).ToString()) + 1;
                 newId = newIdInt.ToString();
@@ -104,6 +114,44 @@ namespace TournamentClassLibrary
             }
 
             return newId;
+        }
+        /// <summary>
+        /// Add spesific matchup to database
+        /// </summary>
+        /// <param name="matchup"></param>
+        public static void AddMatchup(Matchups matchup)
+        {
+            string sql = "INSERT INTO matchup(id, teamId, round) " +
+                           "VALUES ('" + matchup.Id + "','" + matchup.TeamId + "','" + matchup.Round + "')";
+            Connection.ExecuteDML(sql);
+        }
+        /// <summary>
+        /// Edit spesific matchup
+        /// </summary>
+        /// <param name="matchup"></param>
+        public static void EditMatchup(Matchups matchup)
+        {
+            string sql = "UPDATE matchup " +
+                        " SET teamId='" + matchup.TeamId +
+                        "', round='" + matchup.Round + "' " +
+                        "WHERE Id='" + matchup.Id + "'";
+            Connection.ExecuteDML(sql);
+        }
+        public static bool DeleteMatchup(Matchups matchup, out string exceptionMessage)
+        {
+            string sql = "DELETE FROM matchup " +
+                        " WHERE Id='" + matchup.Id + "'";
+            exceptionMessage = "";
+            try
+            {
+                Connection.ExecuteDML(sql);
+                return true;
+            }
+            catch(MySqlException ex)
+            {
+                exceptionMessage = ex.Message;
+                return false;
+            }
         }
         #endregion
     }

@@ -36,10 +36,8 @@ namespace Tournament_Manager
         {
             dataGridViewPair.Columns.Clear();
             dataGridViewPair.Columns.Add("Team1Id", "Team 1 Id");
-            dataGridViewPair.Columns.Add("Team1", "Team 1");
-            dataGridViewPair.Columns.Add("ScoreTeam1", "Score Team 1");
-            dataGridViewPair.Columns.Add("", "");
-            dataGridViewPair.Columns.Add("ScoreTeam2", "Score Team 2");
+            dataGridViewPair.Columns.Add("Team1", "Team 1");          
+            dataGridViewPair.Columns.Add("", "");           
             dataGridViewPair.Columns.Add("Team2", "Team 2");
             dataGridViewPair.Columns.Add("Team2Id", "Team 2 Id");
 
@@ -53,7 +51,7 @@ namespace Tournament_Manager
         {
             foreach (Pairing pair in listPair)
             {
-                dataGridViewPair.Rows.Add(pair.Team1.Id, pair.Team1.Name, "", "vs", "", pair.Team2.Name, pair.Team2.Id, pair.Round);
+                dataGridViewPair.Rows.Add(pair.Team1.Id, pair.Team1.Name, "vs", pair.Team2.Name, pair.Team2.Id, pair.Round);
             }
         }
 
@@ -97,6 +95,11 @@ namespace Tournament_Manager
             int team1Score = Convert.ToInt32(dataGridViewPair.Rows[rows].Cells["ScoreTeam1"].Value);
 
             MessageBox.Show(team1Score.ToString());
+
+        }
+
+        private void buttonInsertMatchup_Click(object sender, EventArgs e)
+        {
 
         }
     }
