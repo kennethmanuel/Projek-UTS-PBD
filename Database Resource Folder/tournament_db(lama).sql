@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2020 at 04:26 PM
+-- Generation Time: Dec 12, 2020 at 05:47 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -30,19 +30,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `matchup` (
   `Id` varchar(45) NOT NULL,
-  `Round` int(11) DEFAULT NULL,
-  `Date` datetime DEFAULT NULL
+  `WinnerId` int(11) NOT NULL,
+  `Round` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `matchup`
 --
 
-INSERT INTO `matchup` (`Id`, `Round`, `Date`) VALUES
-('1', 1, '2021-12-01 00:00:00'),
-('2', 1, '2020-12-31 00:00:00'),
-('3', 2, '2020-12-24 00:00:00'),
-('4', 2, '2020-12-28 00:00:00');
+INSERT INTO `matchup` (`Id`, `WinnerId`, `Round`) VALUES
+('001', 6, 1),
+('002', 5, 1),
+('003', 2, 1),
+('004', 4, 1),
+('005', 5, 2),
+('006', 2, 2),
+('007', 2, 3),
+('008', 10, 1),
+('009', 12, 1),
+('010', 12, 2);
 
 -- --------------------------------------------------------
 
@@ -61,14 +67,26 @@ CREATE TABLE `matchupentries` (
 --
 
 INSERT INTO `matchupentries` (`ParentMatchup_Id`, `Teams_Id`, `Score`) VALUES
-('1', 1, 1),
-('1', 2, 0),
-('2', 9, 0),
-('2', 10, 1),
-('3', 11, 0),
-('3', 12, 1),
-('4', 4, 0),
-('4', 6, 1);
+('001', 6, 1),
+('001', 7, 0),
+('002', 3, 0),
+('002', 5, 1),
+('003', 1, 0),
+('003', 2, 1),
+('004', 4, 1),
+('004', 8, 0),
+('005', 5, 1),
+('005', 6, 0),
+('006', 2, 1),
+('006', 4, 0),
+('007', 2, 1),
+('007', 5, 0),
+('008', 9, 0),
+('008', 10, 1),
+('009', 11, 0),
+('009', 12, 1),
+('010', 10, 0),
+('010', 12, 1);
 
 -- --------------------------------------------------------
 
@@ -88,22 +106,38 @@ CREATE TABLE `players` (
 --
 
 INSERT INTO `players` (`Id`, `Name`, `Email`, `Team_Id`) VALUES
-(1, 'Kevin', 'kevin091@gmail.com', 1),
-(2, 'kenneth', 'kenneth@gmail.com', 1),
-(3, 'Billy', 'Billy091@gmail.com', 2),
-(4, 'Tyson', 'kenneth@gmail.com', 3),
-(5, 'Yudha', 'Yudha0956@gmail.com', 4),
-(6, 'Yogi', 'yogui5487@gmail.com', 5),
-(7, 'Ryan', 'ryan0909@gmail.com', 6),
-(8, 'Didi', 'Didi@gmail.com', 7),
-(9, 'Andrew', 'andrew193@gmail.com', 8),
-(10, 'Howard', 'Howard12@gmail.com', 9),
-(11, 'rondo', 'rondo@gmail.com', 9),
-(12, 'Allen', 'alle@yahoo.com', 9),
-(13, 'Rama', 'rama@hotmail.com', 10),
-(14, 'Rivaldo', 'rivaldo@gmail.com', 10),
-(15, 'Harden', 'harden@gmail.com', 11),
-(16, 'Powell', 'Powell12@gmail.com', 12);
+(1, 'Parker Mclellan', 'parker@gmail.com', 1),
+(2, 'Cai Hubbard', 'caihubbard@gmail.com', 1),
+(3, 'Soraya Watkins', 'soraya@gmail.com', 1),
+(4, 'Afsana Livingston', 'afsana@gmail.com', 2),
+(5, 'Mario Andreas', 'mario @gmail.com', 2),
+(6, 'Nicky Suherman', 'nicky@gmail.com', 2),
+(7, 'Valentino Lucas', 'valentino@gmail.com', 3),
+(8, 'John Paul', 'pauljo@gmail.com', 3),
+(9, 'Xem Dagh', 'xemdagh@gmail.com', 3),
+(10, 'Georgiana Lim', 'georgiana@gmail.com', 4),
+(11, 'Stephen Beattie', 'stephen@gmail.com', 4),
+(12, 'Kris Bowman', 'kris@gmail.com', 4),
+(13, 'Richard Kent', 'richard@gmail.com', 5),
+(14, 'Kiana Owens', 'kiana@outlook.com', 5),
+(15, 'Rees Leal', 'rees@outlook.com', 5),
+(16, 'Britany Larson', 'britany@outlook.com', 6),
+(17, 'Ronan Bassett', 'ronan@outlook.com', 6),
+(18, 'Vinny Swanson', 'vinny@outook.com', 6),
+(19, 'Lorelai Ochoa', 'lorelai@outlook.com', 7),
+(20, 'Susanna Odom', 'susanna@outlook.com', 7),
+(21, 'Cindy Macleod', 'cindy@outlook.com', 7),
+(22, 'Cataleya Conner', 'cataleya@outlook.com', 8),
+(23, 'Kean Leech', 'kean@outlook.com', 8),
+(24, 'Luna Schwartz', 'luna@outlook.com', 8),
+(25, 'Pooja Cherry', 'pooja@protonmail.com', 9),
+(26, 'Kadeem Lindsey', 'lindsey@protonmail.com', 9),
+(27, 'Meg Butt', 'butt@urbutt.com', 10),
+(28, 'Hunter Rodrigues', 'hunter@urbutt.com', 10),
+(29, 'Albert Houghton', 'houghton@sigma.ac.id', 11),
+(30, 'Eoin Pritchard', 'eoin@sigma.ac.id', 11),
+(31, 'Teejay Clark', 'teejay@valve.com', 12),
+(32, 'Umayr Kim', 'kim@valve.com', 12);
 
 -- --------------------------------------------------------
 
@@ -124,9 +158,10 @@ CREATE TABLE `prizes` (
 --
 
 INSERT INTO `prizes` (`Id`, `PlaceName`, `PrizeAmount`, `PrizePercentage`, `Tournaments_Id`) VALUES
-(1, 'Champion', '1000000', 0.5, 1),
-(2, 'Legend', '1500000', 0.8, 2),
-(3, 'Winner 1st', '750000', 1, 3);
+(1, 'Champion', '1440000', 0.6, 1),
+(2, 'Runner Up', '600000', 0.25, 1),
+(3, 'Third Place', '360000', 0.15, 1),
+(4, 'Grand Champion', '800000', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -145,18 +180,18 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`Id`, `Name`, `Totalscore`) VALUES
-(1, 'TNC Predator', 5),
-(2, 'Team Nigma', 4),
-(3, 'EHOME', 3),
-(4, 'Team Aster', 2),
-(5, 'Thunder Predator', 1),
-(6, 'Cyber Legacy', 0),
-(7, 'Team NP', 7),
-(8, '4 Zoomers', 0),
-(9, 'Team USA', 4),
-(10, 'Team Indonesia', 6),
-(11, 'Bob Chess', 4),
-(12, 'Team Morphy', 6);
+(1, 'Cows', 0),
+(2, 'Blushing Flys', 0),
+(3, 'Bright Sheep', 0),
+(4, 'AEON', 0),
+(5, 'Cat Lover', 0),
+(6, 'Shadow Ninja', 0),
+(7, 'Wibu lokal', 0),
+(8, 'Ligma Balls', 0),
+(9, 'Flying Ninja', 0),
+(10, 'Sister Destroyer', 0),
+(11, 'Ligma Dig', 0),
+(12, 'Sugma Dig', 0);
 
 -- --------------------------------------------------------
 
@@ -184,8 +219,8 @@ INSERT INTO `tournamententry` (`Tournaments_Id`, `Teams_Id`) VALUES
 (1, 8),
 (2, 9),
 (2, 10),
-(3, 11),
-(3, 12);
+(2, 11),
+(2, 12);
 
 -- --------------------------------------------------------
 
@@ -204,9 +239,8 @@ CREATE TABLE `tournaments` (
 --
 
 INSERT INTO `tournaments` (`Id`, `Name`, `EntryFee`) VALUES
-(1, 'DOTA 2', '1000000'),
-(2, 'Basketball 3x3 ', '300000'),
-(3, 'Team Chess Tournament', '500000');
+(1, 'Team Chess Tournament', '300000'),
+(2, 'Badminton Ganda 2v2', '200000');
 
 --
 -- Indexes for dumped tables
@@ -216,7 +250,8 @@ INSERT INTO `tournaments` (`Id`, `Name`, `EntryFee`) VALUES
 -- Indexes for table `matchup`
 --
 ALTER TABLE `matchup`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `fk_Team_has_Team_Team1_idx` (`WinnerId`);
 
 --
 -- Indexes for table `matchupentries`
@@ -263,6 +298,12 @@ ALTER TABLE `tournaments`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `matchup`
+--
+ALTER TABLE `matchup`
+  ADD CONSTRAINT `fk_Team_has_Team_Team1` FOREIGN KEY (`WinnerId`) REFERENCES `teams` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `matchupentries`

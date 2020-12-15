@@ -42,10 +42,11 @@
         <Name>Teams</Name>
         <Access>Public</Access>
         <Location left="774" top="312" />
-        <Size width="162" height="230" />
+        <Size width="162" height="247" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int Id</Member>
         <Member type="Field">string Name</Member>
+        <Member type="Field">Double TotalScore</Member>
         <Member type="Method">public static List&lt;Teams&gt; ReadData(string criteria, string criteriaValue)</Member>
         <Member type="Method">public static List&lt;Teams&gt; BatchSearch()</Member>
         <Member type="Method">public static void AddTeams(Teams t)</Member>
@@ -58,7 +59,7 @@
       <Entity type="Class">
         <Name>Players</Name>
         <Access>Public</Access>
-        <Location left="1045" top="76" />
+        <Location left="1021" top="10" />
         <Size width="162" height="264" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int Id</Member>
@@ -89,11 +90,10 @@
       <Entity type="Class">
         <Name>Matchup</Name>
         <Access>Public</Access>
-        <Location left="574" top="619" />
+        <Location left="595" top="637" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">string Id</Member>
-        <Member type="Field">int WinnerId</Member>
         <Member type="Field">int Round</Member>
         <Member type="Method">public static List&lt;Matchup&gt; ReadData(string criteria, string criteriaValue)</Member>
         <Modifier>None</Modifier>
@@ -101,7 +101,7 @@
       <Entity type="Class">
         <Name>MatchupEntries</Name>
         <Access>Public</Access>
-        <Location left="947" top="619" />
+        <Location left="835" top="637" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">string ParentMatchup_Id</Member>
@@ -112,6 +112,8 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -128,6 +130,8 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="3">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -140,6 +144,8 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="0" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -156,6 +162,8 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -163,24 +171,14 @@
         <StartMultiplicity>1</StartMultiplicity>
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
-      <Relationship type="Association" first="2" second="5">
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>805</X>
-          <Y>567</Y>
-        </BendPoint>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Aggregation</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>1..*</EndMultiplicity>
-      </Relationship>
       <Relationship type="Association" first="2" second="6">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>910</X>
-          <Y>567</Y>
+          <Y>584</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
@@ -188,6 +186,8 @@
         <EndMultiplicity>1..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="5" second="6">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
