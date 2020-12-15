@@ -104,6 +104,16 @@ namespace Tournament_Manager
 
             // Show data to datagridplayer
             ShowDataGridPlayers();
+
+            if(FormMenu.buttonPlayerClicked == true)
+            {
+                tabControlTeam.SelectedIndex = 1;
+                FormMenu.buttonPlayerClicked = false;
+            }
+            else
+            {
+                tabControlTeam.SelectedIndex = 0;
+            }
         }
 
         #region Player

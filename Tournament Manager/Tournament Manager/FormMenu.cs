@@ -20,6 +20,7 @@ namespace Tournament_Manager
         List<Teams> teamList;
         // Selected tournament from FormTournament.cs
         public static Tournaments selectedTournament;
+        public static bool buttonPlayerClicked = false;
 
         public FormMenu()
         {
@@ -90,24 +91,17 @@ namespace Tournament_Manager
             form.ShowDialog();
         }
 
-        private void generateTournamentStartingBracketToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Open FormBracketGenerator
-            FormBracketGenerator form = new FormBracketGenerator();
-            form.Owner = this;
-            form.ShowDialog();
-        }
-
-        private void buttonViewTeam_Click(object sender, EventArgs e)
+        public void ButtonViewTeam_Click(object sender, EventArgs e)
         {
             // Open FormPlayerTeam
             teamAndPlayerToolStripMenuItem_Click(sender, e);
         }
 
-        private void buttonViewPlayer_Click(object sender, EventArgs e)
+        public void ButtonViewPlayer_Click(object sender, EventArgs e)
         {
             // Open FormPlayerTeam
             teamAndPlayerToolStripMenuItem_Click(sender, e);
+            buttonPlayerClicked = true;
         }
 
         private void buttonView_Click(object sender, EventArgs e)
