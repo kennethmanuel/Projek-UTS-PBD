@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2020 at 04:26 PM
+-- Generation Time: Dec 15, 2020 at 08:51 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -103,7 +103,31 @@ INSERT INTO `players` (`Id`, `Name`, `Email`, `Team_Id`) VALUES
 (13, 'Rama', 'rama@hotmail.com', 10),
 (14, 'Rivaldo', 'rivaldo@gmail.com', 10),
 (15, 'Harden', 'harden@gmail.com', 11),
-(16, 'Powell', 'Powell12@gmail.com', 12);
+(16, 'Powell', 'Powell12@gmail.com', 12),
+(17, 'Parker Mclellan', 'parker@gmail.com', 1),
+(18, 'Cai Hubbard', 'caihubbard@gmail.com', 12),
+(19, 'Bob', 'Bob@gmail.com', 13),
+(20, 'Arthur Coy', 'Coy@gmail.com', 16),
+(21, 'David Degea', '1De@gmail.com', 17),
+(22, 'Ben Tnyson', 'ben@gmail.com', 19),
+(23, 'Lahm', '1lane@gmail.com', 18),
+(24, 'Russell', 'bill@gmail.com', 4),
+(25, 'Valencia', 'Valencia@gmail.com', 4),
+(26, 'Rudy', 'habrud@gmail.com', 2),
+(27, 'Beckam', '23@gmail.com', 10),
+(28, 'Henderson', 'hen12345@gmail.com', 19),
+(29, 'Bill Rusael', 'Bill141@gmail.com', 17),
+(30, 'Tom', 'Tom52@gmail.com', 4),
+(31, 'Ederson', 'eder@valve.com', 13),
+(32, 'Umayr Kim', 'kim@valve.com', 15),
+(33, 'Wira Negara', 'Wira@valve.com', 3),
+(34, 'YTunan', 'yunan@valve.com', 19),
+(35, 'Umar', 'umar@gmail.com', 13),
+(36, 'jordan', 'jordan@valve.com', 12),
+(37, 'ariza', 'trevor@valve.com', 14),
+(38, 'Kim', 'kim12@valve.com', 16),
+(39, 'madora', 'm13@valve.com', 12),
+(40, 'basir', 'bas12354@valve.com', 12);
 
 -- --------------------------------------------------------
 
@@ -126,7 +150,13 @@ CREATE TABLE `prizes` (
 INSERT INTO `prizes` (`Id`, `PlaceName`, `PrizeAmount`, `PrizePercentage`, `Tournaments_Id`) VALUES
 (1, 'Champion', '1000000', 0.5, 1),
 (2, 'Legend', '1500000', 0.8, 2),
-(3, 'Winner 1st', '750000', 1, 3);
+(3, 'Winner 1st', '750000', 1, 3),
+(4, '2st', '700000', 0.5, 1),
+(5, '3rd', '5000000', 0.5, 1),
+(6, 'Master', '7000000', 0.8, 2),
+(7, 'Elite', '5000000', 0.8, 2),
+(8, 'Second 2st', '500000', 1, 3),
+(9, 'Good 3rd', '300000', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -156,7 +186,15 @@ INSERT INTO `teams` (`Id`, `Name`, `Totalscore`) VALUES
 (9, 'Team USA', 4),
 (10, 'Team Indonesia', 6),
 (11, 'Bob Chess', 4),
-(12, 'Team Morphy', 6);
+(12, 'Team Morphy', 6),
+(13, 'Cows', 0),
+(14, 'Blushing Flys', 0),
+(15, 'AEON', 0),
+(16, 'Wibu Lokal', 0),
+(17, 'Flying Ninja', 0),
+(18, 'Bright Sheep', 0),
+(19, 'Sister Destroyer', 0),
+(20, 'Shadow Ninja', 0);
 
 -- --------------------------------------------------------
 
@@ -182,6 +220,8 @@ INSERT INTO `tournamententry` (`Tournaments_Id`, `Teams_Id`) VALUES
 (1, 6),
 (1, 7),
 (1, 8),
+(1, 14),
+(1, 19),
 (2, 9),
 (2, 10),
 (3, 11),
