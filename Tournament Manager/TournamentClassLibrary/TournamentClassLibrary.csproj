@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DGVPrinterHelper.cs" />
     <Compile Include="Matchups.cs" />
     <Compile Include="MatchupEntries.cs" />
     <Compile Include="Pairing.cs" />

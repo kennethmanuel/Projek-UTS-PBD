@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TournamentClassLibrary;
+using DGVPrinterHelper;
 
 namespace Tournament_Manager
 {
@@ -27,6 +29,7 @@ namespace Tournament_Manager
             listPair = Pairing.GeneratePairing(listTeam);
             FormatDataGrid();
             AddPairToDataGrid();
+            
         }
 
         /// <summary>
@@ -100,6 +103,25 @@ namespace Tournament_Manager
 
         private void buttonInsertMatchup_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            printDocument1.Print();
+        }
+
+        private void buttonPrint2_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Pairing";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "abc";
+            printer.PrintDataGridView(dataGridViewPair);
 
         }
     }
