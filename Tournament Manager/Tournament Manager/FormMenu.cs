@@ -17,7 +17,7 @@ namespace Tournament_Manager
     public partial class FormMenu : Form
     {
         FormTournament formTournament;
-
+        List<Teams> teamList;
         // Selected tournament from FormTournament.cs
         public static Tournaments selectedTournament;
 
@@ -34,6 +34,18 @@ namespace Tournament_Manager
 
             // Change selected tournament label with the proper one
             labelTournamentValue.Text = selectedTournament.Name;
+
+            // Get info
+            int totalTeam = Teams.CountTeams(selectedTournament);
+            int totalPlayer = Players.CountPlayer(selectedTournament);
+            listBoxInfo.Items.Add("Total participating teams: " + totalTeam);
+            listBoxInfo.Items.Add("Total participating player: " + totalPlayer);
+
+            // Get data from db
+            teamList = Teams.Leaderboard(FormMenu.selectedTournament);
+
+            // Show data to datagridteams
+            ShowDataGridTeams();
         }
 
         private void FormMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -164,6 +176,18 @@ namespace Tournament_Manager
             this.Hide();
             
             formPairing.ShowDialog();
+        }
+
+        private void ShowDataGridTeams()
+        {
+            if(teamList.Count > 0)
+            {
+                dataGridViewLeaderboard.DataSource = teamList;
+            }
+            else
+            {
+                dataGridViewLeaderboard.DataSource = null;
+            }
         }
     }
 }

@@ -43,14 +43,12 @@ namespace TournamentClassLibrary
         {
             string sql;
 
-            // no arg (ex: ReadData())
             if (criteria == "")
             {
                 sql = "SELECT p.id, p.name, p.email, p.team_id, t.name as team_name, t.totalscore as team_totalscore " +
                       "FROM players p " +
                       "INNER JOIN teams t ON p.team_id = t.id";
             }
-            // with arg (ex: ReadData(name, 'beth harmon'))
             else
             {
                 sql = "SELECT p.id, p.name, p.email, p.team_id, t.name as team_name, t.totalscore as team_totalscore " +
@@ -247,6 +245,34 @@ namespace TournamentClassLibrary
             }
 
             return newId;
+        }
+
+        public static int CountPlayer(Tournaments tournament)
+        {
+            string sql = "SELECT COUNT(*) " +
+                         "FROM players p " +
+                         "INNER JOIN teams t ON p.team_id = t.id " +
+                         "INNER JOIN tournamententry te ON t.id = te.teams_id " +
+                         "WHERE te.tournaments_id = " + tournament.Id;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+            value.Read();
+            int totalPlayer =  int.Parse(value.GetValue(0).ToString());
+            return totalPlayer;
+        }
+
+        public static int CountPlayer(int tournamentid)
+        {
+            string sql = "SELECT COUNT(*) " +
+                         "FROM players p " +
+                         "INNER JOIN teams t ON p.team_id = t.id " +
+                         "INNER JOIN tournamententry te ON t.id = te.teams_id " +
+                         "WHERE te.tournaments_id = x " + tournamentid;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+            value.Read();
+            int totalPlayer =  int.Parse(value.GetValue(0).ToString());
+            return totalPlayer;
         }
         #endregion
     }

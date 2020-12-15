@@ -219,7 +219,65 @@ namespace TournamentClassLibrary
 
             return t;
         }
-        
+
+        public static int CountTeams(Tournaments tournament)
+        {
+            string sql = "SELECT COUNT(*) " +
+                         "FROM teams t " +
+                         "INNER JOIN tournamententry te ON t.id = te.teams_id " +
+                         "WHERE te.tournaments_id = " + tournament.Id;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            value.Read();
+
+            int totalTeams = int.Parse(value.GetValue(0).ToString());
+
+            return totalTeams;
+        }
+
+        public static int CountTeams(int tournamentId)
+        {
+            string sql = "SELECT COUNT(*) " +
+                         "FROM teams t " +
+                         "INNER JOIN tournamententry te ON t.id = te.teams_id " +
+                         "WHERE te.tournaments_id = " + tournamentId;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            value.Read();
+
+            int totalTeams = int.Parse(value.GetValue(0).ToString());
+
+            return totalTeams;
+        }
+
+        public static List<Teams> Leaderboard(Tournaments tournament)
+        {
+            string sql = "SELECT * FROM teams t " +
+                         "WHERE t.id IN (SELECT teams_id " +
+                                        "FROM tournamententry " +
+                                        "WHERE tournaments_id = " + tournament.Id + ")" +
+                         "ORDER BY totalscore DESC ";
+;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<Teams> teamList = new List<Teams>();
+
+            while (value.Read() == true)
+            {
+                int teamId = int.Parse(value.GetValue(0).ToString());
+                string teamName = value.GetValue(1).ToString();
+                double totalScore = double.Parse(value.GetValue(2).ToString());
+
+                Teams t = new Teams(teamId, teamName, totalScore);
+
+                teamList.Add(t);
+            }
+
+            return teamList;
+        }
         #endregion
     }
 }

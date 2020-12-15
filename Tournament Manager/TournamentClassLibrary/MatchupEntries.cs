@@ -79,6 +79,62 @@ namespace TournamentClassLibrary
 
             return matchupEntriesList;
         }
+
+        public void Add(Matchups matchup, Teams team, double score)
+        {
+            string sql = "INSERT INTO matchupentries " +
+                         "VALUES (" + matchup.Id + "," + team.Id + "," + score + ");";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public void Edit(Matchups matchup, Teams team, double score)
+        {
+            string sql = "UPDATE matchupentries " +
+                         "SET parentmatchup_id = " + matchup.Id + ", " +
+                             "teams_id = " + team.Id +
+                             "score = " + score + ");";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public void Delete(Matchups matchup)
+        {
+            string sql = "DELETE FROM matchupentries " +
+                         "WHERE id=" + matchup.Id + ";";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public void Delete(int matchupId)
+        {
+            string sql = "DELETE FROM matchupentries " +
+                         "WHERE id=" + matchupId + ";";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public string GenerateId()
+        {
+            string sql = "SELECT MAX(Id) FROM matchupentries";
+
+            string newId;
+
+            MySqlDataReader result = Connection.ExecuteQuery(sql);
+
+            if(result.Read())
+            {
+                int newIdInt = int.Parse(result.GetValue(0).ToString()) + 1;
+                newId = newIdInt.ToString();
+            }
+            else
+            {
+                newId = "1";
+            }
+
+            return newId;
+        }
+
         #endregion
     }
 }

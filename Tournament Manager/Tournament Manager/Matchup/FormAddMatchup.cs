@@ -31,21 +31,21 @@ namespace Tournament_Manager.Tournament_Matchup
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                /*Matchups mat = new Matchups(id, round);
-                Matchups.AddMatchup(mat);
+            //try
+            //{
+            //    Matchups mat = new Matchups(id, round);
+            //    Matchups.AddMatchup(mat);
 
-                MatchupEntries entr1 = new MatchupEntries(mat, team1, score1);
-                MatchupEntries entr2 = new MatchupEntries(mat, team2, score2);
+            //    MatchupEntries entr1 = new MatchupEntries(mat, team1, score1);
+            //    MatchupEntries entr2 = new MatchupEntries(mat, team2, score2);
 
-                MatchupEntries.add(entr1);
-                MatchupEntries.add(entr2);*/
-            }
-            catch (Exception ex)
-            {
+            //    MatchupEntries.add(entr1);
+            //    MatchupEntries.add(entr2);
+            //}
+            //catch (Exception ex)
+            //{
 
-            }
+            //}
         }
 
         private void FormAddMatchup_Load(object sender, EventArgs e)

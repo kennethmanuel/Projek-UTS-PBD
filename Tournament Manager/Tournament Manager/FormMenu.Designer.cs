@@ -33,6 +33,7 @@
             this.tournamentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadAnotherTournamentFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateTournamentStartingBracketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playersTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamAndPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +50,11 @@
             this.buttonViewPairing = new System.Windows.Forms.Button();
             this.linkLabelAbout = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBoxInfo = new System.Windows.Forms.ListBox();
+            this.dataGridViewLeaderboard = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStripControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLeaderboard)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripControl
@@ -102,6 +106,14 @@
             this.generateTournamentStartingBracketToolStripMenuItem.Text = "Quick generate tournament pairing";
             this.generateTournamentStartingBracketToolStripMenuItem.Click += new System.EventHandler(this.generateTournamentStartingBracketToolStripMenuItem_Click);
             // 
+            // pairToolStripMenuItem
+            // 
+            this.pairToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
+            this.pairToolStripMenuItem.Name = "pairToolStripMenuItem";
+            this.pairToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
+            this.pairToolStripMenuItem.Text = "Pair";
+            this.pairToolStripMenuItem.Click += new System.EventHandler(this.pairToolStripMenuItem_Click);
+            // 
             // playersTeamsToolStripMenuItem
             // 
             this.playersTeamsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -116,7 +128,7 @@
             this.teamAndPlayerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.teamAndPlayerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
@@ -125,7 +137,7 @@
             this.matchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.matchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
             this.matchToolStripMenuItem.Text = "Match and Entry";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -141,7 +153,7 @@
             // 
             this.prizeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(131, 28);
             this.prizeToolStripMenuItem.Text = "Prize";
             this.prizeToolStripMenuItem.Click += new System.EventHandler(this.prizeToolStripMenuItem_Click);
             // 
@@ -175,10 +187,10 @@
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(36)))), ((int)(((byte)(29)))));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonDelete.Location = new System.Drawing.Point(764, 570);
+            this.buttonDelete.Location = new System.Drawing.Point(708, 570);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(271, 39);
+            this.buttonDelete.Size = new System.Drawing.Size(314, 39);
             this.buttonDelete.TabIndex = 24;
             this.buttonDelete.Text = "Delete Current Tournament";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -292,13 +304,37 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "TOURNAMENT MANAGER ♔";
             // 
-            // pairToolStripMenuItem
+            // listBoxInfo
             // 
-            this.pairToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
-            this.pairToolStripMenuItem.Name = "pairToolStripMenuItem";
-            this.pairToolStripMenuItem.Size = new System.Drawing.Size(407, 28);
-            this.pairToolStripMenuItem.Text = "Pair";
-            this.pairToolStripMenuItem.Click += new System.EventHandler(this.pairToolStripMenuItem_Click);
+            this.listBoxInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.listBoxInfo.FormattingEnabled = true;
+            this.listBoxInfo.ItemHeight = 22;
+            this.listBoxInfo.Location = new System.Drawing.Point(727, 83);
+            this.listBoxInfo.Name = "listBoxInfo";
+            this.listBoxInfo.Size = new System.Drawing.Size(295, 48);
+            this.listBoxInfo.TabIndex = 33;
+            // 
+            // dataGridViewLeaderboard
+            // 
+            this.dataGridViewLeaderboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLeaderboard.Location = new System.Drawing.Point(727, 205);
+            this.dataGridViewLeaderboard.Name = "dataGridViewLeaderboard";
+            this.dataGridViewLeaderboard.RowHeadersVisible = false;
+            this.dataGridViewLeaderboard.RowHeadersWidth = 51;
+            this.dataGridViewLeaderboard.RowTemplate.Height = 24;
+            this.dataGridViewLeaderboard.Size = new System.Drawing.Size(295, 334);
+            this.dataGridViewLeaderboard.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
+            this.label1.Location = new System.Drawing.Point(720, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(300, 45);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Current Standings";
             // 
             // FormMenu
             // 
@@ -306,6 +342,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1061, 651);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridViewLeaderboard);
+            this.Controls.Add(this.listBoxInfo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabelAbout);
             this.Controls.Add(this.buttonViewPairing);
@@ -329,6 +368,7 @@
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.menuStripControl.ResumeLayout(false);
             this.menuStripControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLeaderboard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +397,8 @@
         private System.Windows.Forms.LinkLabel linkLabelAbout;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem pairToolStripMenuItem;
+        private System.Windows.Forms.ListBox listBoxInfo;
+        private System.Windows.Forms.DataGridView dataGridViewLeaderboard;
+        private System.Windows.Forms.Label label1;
     }
 }

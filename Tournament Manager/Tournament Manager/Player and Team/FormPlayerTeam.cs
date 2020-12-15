@@ -47,7 +47,7 @@ namespace Tournament_Manager
         private void ShowDataGridPlayers()
         {
             // if playerList have player
-            if(playerList.Count >0)
+            if(playerList.Count > 0)
             {
                 dataGridViewPlayer.Rows.Clear();
                 foreach(Players p in playerList)
@@ -65,7 +65,7 @@ namespace Tournament_Manager
         // Show data to datagridteams
         private void ShowDataGridTeams()
         {
-            if(teamList.Count >0)
+            if(teamList.Count > 0)
             {
                 dataGridViewTeam.DataSource = teamList;
             }
