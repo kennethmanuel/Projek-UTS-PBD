@@ -28,6 +28,7 @@ namespace Tournament_Manager
             FormatDataGrid();
             AddPairToDataGrid();
         }
+
         /// <summary>
         /// Format DataGrid
         /// </summary>
@@ -58,31 +59,44 @@ namespace Tournament_Manager
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            List<Pairing> pairList = new List<Pairing>();
-
-            for (int rows = 0; rows < dataGridViewPair.Rows.Count; rows++)
+            try
             {
-                // ID!!!
-                int team1Id = (int)dataGridViewPair.Rows[rows].Cells["Team1Id"].Value;
-                Teams team1 = Teams.SelectTeam(team1Id);
+                List<Pairing> pairList = new List<Pairing>();
 
-                int team2Id = (int)dataGridViewPair.Rows[rows].Cells["Team2Id"].Value;
-                Teams team2 = Teams.SelectTeam(team2Id);
+                for (int rows = 0; rows < dataGridViewPair.Rows.Count; rows++)
+                {
+                    // ID!!!
+                    int team1Id = (int)dataGridViewPair.Rows[rows].Cells["Team1Id"].Value;
+                    Teams team1 = Teams.SelectTeam(team1Id);
 
-                //masih salah ambil data team 1 dan 2 score
-                //double team1Score = (double)dataGridViewPair.Rows[rows].Cells["ScoreTeam1"].Value;
+                    int team2Id = (int)dataGridViewPair.Rows[rows].Cells["Team2Id"].Value;
+                    Teams team2 = Teams.SelectTeam(team2Id);
 
-                //double team2Score = (double)dataGridViewPair.Rows[rows].Cells["ScoreTeam1"].Value;
+                    // >>>
+                    double team1Score = (double)Convert.ToInt32(dataGridViewPair.Rows[rows].Cells["ScoreTeam1"].Value);
 
-                //int round = (int)dataGridViewPair.Rows[rows].Cells["Round"].Value;
+                    double team2Score = (double)Convert.ToInt32(dataGridViewPair.Rows[rows].Cells["ScoreTeam2"].Value);
 
-                //Pairing pair = new Pairing(team1, team2, round, team1Score, team2Score);
+                    int round = (int)dataGridViewPair.Rows[rows].Cells["Round"].Value;
 
-                //pairList.Add(pair);
+                    Pairing pair = new Pairing(team1, team2, round, team1Score, team2Score);
+
+                    pairList.Add(pair);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Fail");
+            }
+        }
 
-            //INSERT TO DATABASE
-            //InsertPairing(pairList)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int rows = 0;
+
+            int team1Score = Convert.ToInt32(dataGridViewPair.Rows[rows].Cells["ScoreTeam1"].Value);
+
+            MessageBox.Show(team1Score.ToString());
 
         }
     }
