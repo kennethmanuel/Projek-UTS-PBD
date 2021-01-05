@@ -36,20 +36,26 @@ namespace TournamentClassLibrary
         /// <summary>
         /// Create list that contains Players object from all database with specified criteria.
         /// </summary>
-        /// <param name="criteria"></param>
+        /// <param name="criteria">Criteria for player fields (available value: id, name, email, team_id, team_name, team_totalscore)</param>
         /// <param name="criteriaValue"></param>
-        /// <returns></returns>
-        public static List<Players> ReadData(string criteria, string criteriaValue)
+        /// <returns>List of player</returns>
+        public static List<Players> ReadData(string criteria = "", string criteriaValue = "")
         {
-            string sql = "";
+            string sql;
 
             if (criteria == "")
             {
-                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id";
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name as team_name, t.totalscore as team_totalscore " +
+                      "FROM players p " +
+                      "INNER JOIN teams t ON p.team_id = t.id";
             }
             else
             {
-                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                sql = "SELECT p.id, p.name, p.email, p.team_id, t.name as team_name, t.totalscore as team_totalscore " +
+                      "FROM players p " +
+                      "INNER JOIN teams t ON p.team_id = t.id " +
+                      "WHERE " + criteria + " " +
+                      "LIKE '%" + criteriaValue + "%'";
                 
             }
 
@@ -59,16 +65,28 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                Teams team = new Teams(int.Parse(value.GetValue(3).ToString()), value.GetValue(4).ToString());
+                // player id
+                int playerId = int.Parse(value.GetValue(0).ToString());
 
-                Players p = new Players(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    value.GetValue(2).ToString(),
-                    team);
+                // player name
+                string playerName = value.GetValue(1).ToString();
 
+                // player email
+                string playerEmail = value.GetValue(2).ToString();
+
+                // player team
+                int teamId = int.Parse(value.GetValue(3).ToString());
+                string teamName = value.GetValue(4).ToString();
+                double teamTotalScore = double.Parse(value.GetValue(5).ToString());
+                Teams team = new Teams(teamId, teamName, teamTotalScore);
+
+                // player
+                Players p = new Players(playerId, playerName, playerEmail, team);
+
+                // add to list
                 playerList.Add(p);
             }
+
             return playerList;
         }
 
@@ -79,7 +97,13 @@ namespace TournamentClassLibrary
         /// <returns></returns>
         public static List<Players> BatchSearch(string criteriaValue)
         {
-            string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id WHERE p.id LIKE '%" + criteriaValue + "%' OR p.name LIKE '%" + criteriaValue + "%' OR p.EMAIL LIKE '%" + criteriaValue + "%' or t.name LIKE '%" + criteriaValue + "%'";
+            string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name, t.totalscore " +
+                         "FROM players p " +
+                         "INNER JOIN teams t ON p.team_id = t.id " +
+                         "WHERE p.id LIKE '%" + criteriaValue + "%' " +
+                         "OR p.name LIKE '%" + criteriaValue + "%' " +
+                         "OR p.EMAIL LIKE '%" + criteriaValue + "%' " +
+                         "OR t.name LIKE '%" + criteriaValue + "%'";
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
@@ -87,16 +111,28 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                Teams team = new Teams(int.Parse(value.GetValue(3).ToString()), value.GetValue(4).ToString());
+                // id
+                int playerId = int.Parse(value.GetValue(0).ToString());
 
-                Players p = new Players(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    value.GetValue(2).ToString(),
-                    team);
+                // name
+                string playerName = value.GetValue(1).ToString();
 
+                // email
+                string playerEmail = value.GetValue(2).ToString();
+
+                // team
+                int teamId = int.Parse(value.GetValue(3).ToString());
+                string teamName = value.GetValue(4).ToString();
+                double teamTotalScore = double.Parse(value.GetValue(5).ToString());
+                Teams team = new Teams(teamId, teamName, teamTotalScore);
+
+                // player
+                Players p = new Players(playerId, playerName, playerEmail, team); 
+
+                // add to list
                 playerList.Add(p);
             }
+
             return playerList;
         }
 
@@ -108,54 +144,72 @@ namespace TournamentClassLibrary
         /// <returns></returns>
         public static Players SelectPlayer(int playerId)
         {
-            string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name FROM players p INNER JOIN teams t ON p.team_id = t.id  WHERE p.id=" + playerId;
+            string sql = "SELECT p.id, p.name, p.email, p.team_id, t.name, t.totalscore " +
+                         "FROM players p " +
+                         "INNER JOIN teams t ON p.team_id = t.id  " +
+                         "WHERE p.id=" + playerId;
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
             value.Read();
-            
-            Teams team = new Teams(int.Parse(value.GetValue(3).ToString()), value.GetValue(4).ToString());
 
-            Players p = new Players(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    value.GetValue(2).ToString(),
-                   team);
-           
+            // name
+            string playerName = value.GetValue(1).ToString();
+
+            // email
+            string playerEmail = value.GetValue(2).ToString();
+
+            // team
+            int teamId = int.Parse(value.GetValue(3).ToString());
+            string teamName = value.GetValue(4).ToString();
+            double teamTotalScore = double.Parse(value.GetValue(5).ToString());
+            Teams team = new Teams(teamId, teamName, teamTotalScore);
+
+            // player
+            Players p = new Players(playerId, playerName, playerEmail, team); 
+
             return p;
         }
 
         /// <summary>
-        /// Add Player to database
+        /// Add specific player to database.
         /// </summary>
-        /// <param name="p"></param>
-        public static void AddPlayer(Players p)
+        /// <param name="player">Selected player.</param>
+        public static void AddPlayer(Players player)
         {
-            string sql = "insert into players(Id, Name, Email, Team_id) values ('" + p.Id + "','" + p.Name.Replace("'", "\\'") + "','" + p.Email + "','" + p.Team.Id + "')";
+            string sql = "INSERT INTO players(Id, Name, Email, Team_id) " +
+                         "VALUES ('" + player.Id + "','" + player.Name.Replace("'", "\\'") + "','" + player.Email + "','" + player.Team.Id + "')";
+
             Connection.ExecuteDML(sql);
         }
 
         /// <summary>
-        /// Edit player from database
+        /// Edit specific player.
         /// </summary>
-        /// <param name="p"></param>
-        public static void EditPlayer(Players p)
+        /// <param name="player">Selected player.</param>
+        public static void EditPlayer(Players player)
         {
-            string sql = "update players set Name='" + p.Name.Replace("'", "\\'") + "',Email='" + p.Email + "',Team_Id='" + p.Team.Id +
-                "'where Id='" + p.Id + "'";
+            string sql = "UPDATE players " +
+                         "SET Name='" + player.Name.Replace("'", "\\'") + 
+                           "',Email='" + player.Email + "',Team_Id='" + player.Team.Id + "'" +
+                         "WHERE Id='" + player.Id + "'";
+
             Connection.ExecuteDML(sql);
         }
 
         /// <summary>
-        /// Delete Player from database
+        /// Delete specific player.
         /// </summary>
-        /// <param name="pl"></param>
-        /// <returns></returns>
-        public static bool DeletePlayer(Players p, out string exceptionMessage)
+        /// <param name="player">Selected player.</param>
+        /// <param name="exceptionMessage">Exception message for debugging.</param>
+        /// <returns>True if delete player success, false if fail to delete the player.</returns>
+        public static bool DeletePlayer(Players player, out string exceptionMessage)
         {
-            string sql = "Delete from players where Id='" + p.Id + "'";
+            string sql = "DELETE FROM players " +
+                         "WHERE Id='" + player.Id + "'";
 
             exceptionMessage = "";
+
             try
             {
                 Connection.ExecuteDML(sql);
@@ -168,41 +222,57 @@ namespace TournamentClassLibrary
             }
         }
 
-        //public static string DeletePlayer(Players pl)
-        //{
-        //    string sql = "Delete from players where Id='" + pl.Id + "'";
-        //    try
-        //    {
-        //        Connection.ExecuteDML(sql);
-        //        return "1";
-        //    }
-        //    catch(MySqlException ex)
-        //    {
-        //        return ex.Message + ". Sql Command: " + sql;
-        //    }
-        //}
-
-
         /// <summary>
-        /// Generate new Id
+        /// Generate new Id.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>New id for players.</returns>
         public static string GenerateId()
         {
-            string sql = "select max(Id) from Players";
-            string code = "";
+            string sql = "SELECT MAX(Id) FROM Players";
+
+            string newId;
+
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
-            if (result.Read() == true)
+            if (result.Read())
             {
-                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
-                code = newCode.ToString();
+                int newIdInt = int.Parse(result.GetValue(0).ToString()) + 1;
+                newId = newIdInt.ToString();
             }
             else
             {
-                code = "1";
+                newId = "1";
             }
-            return code;
+
+            return newId;
+        }
+
+        public static int CountPlayer(Tournaments tournament)
+        {
+            string sql = "SELECT COUNT(*) " +
+                         "FROM players p " +
+                         "INNER JOIN teams t ON p.team_id = t.id " +
+                         "INNER JOIN tournamententry te ON t.id = te.teams_id " +
+                         "WHERE te.tournaments_id = " + tournament.Id;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+            value.Read();
+            int totalPlayer =  int.Parse(value.GetValue(0).ToString());
+            return totalPlayer;
+        }
+
+        public static int CountPlayer(int tournamentid)
+        {
+            string sql = "SELECT COUNT(*) " +
+                         "FROM players p " +
+                         "INNER JOIN teams t ON p.team_id = t.id " +
+                         "INNER JOIN tournamententry te ON t.id = te.teams_id " +
+                         "WHERE te.tournaments_id = x " + tournamentid;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+            value.Read();
+            int totalPlayer =  int.Parse(value.GetValue(0).ToString());
+            return totalPlayer;
         }
         #endregion
     }

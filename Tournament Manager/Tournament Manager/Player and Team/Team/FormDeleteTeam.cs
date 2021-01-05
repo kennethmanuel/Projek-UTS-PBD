@@ -15,8 +15,12 @@ namespace Tournament_Manager.Team
 {
     public partial class FormDeleteTeam : Form
     {
+        // list available team
         List<Teams> listTeams = new List<Teams>();
-        int selectedTeamId = FormPlayerTeam.selectedTeam;
+
+        // list selected team
+        int selectedTeamId = FormPlayerTeam.selectedTeamId;
+
         public FormDeleteTeam()
         {
             InitializeComponent();
@@ -24,45 +28,32 @@ namespace Tournament_Manager.Team
 
         private void FormDeleteTeam_Load(object sender, EventArgs e)
         {
+            // create team object based on selected teamid
             Teams selectedTeam = Teams.SelectTeam(selectedTeamId);
 
+            // match selected control with the newly created team object
             textBoxTeamId.Text = selectedTeam.Id.ToString();
             textBoxTeamName.Text = selectedTeam.Name;
         }
 
-        private void textBoxTeamId_TextChanged(object sender, EventArgs e)
-        {
-            listTeams = Teams.ReadData("Id", textBoxTeamId.Text);
-            if (listTeams.Count > 0)
-            {
-                textBoxTeamName.Text = listTeams[0].Name;
-                buttonDelete.Focus();
-            }
-            else
-            {
-                MessageBox.Show("Team Id is not found.", "Error");
-                textBoxTeamName.Text = "";
-            }
-        }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Team has been Deleted. Are you sure ?", "confirm", MessageBoxButtons.YesNo);
+            DialogResult confirm = MessageBox.Show("Team will be deleted. Are you sure?", "Confirm", MessageBoxButtons.YesNo);
 
             if (confirm == System.Windows.Forms.DialogResult.Yes)
             {
-                Teams t = new Teams(int.Parse(textBoxTeamId.Text), textBoxTeamName.Text);
-                string add = Teams.DeleteTeams(t);
+                bool delete = Teams.DeleteTeams(selectedTeamId, out string errorMessage);
 
-                if (add == "1")
+                if (delete)
                 {
                     MessageBox.Show("Team has been deleted.", "information");
                 }
                 else
                 {
-                    MessageBox.Show("Team Failed to deleted. Message error: ", add);
+                    MessageBox.Show("Team Failed to deleted. Message error: " +  errorMessage);
                 }
 
+                // Open form playerteam and close form delete team
                 FormPlayerTeam formPlayerTeam = (FormPlayerTeam)this.Owner;
                 formPlayerTeam.FormPlayerTeam_Load(buttonDelete, e);
                 this.Close();

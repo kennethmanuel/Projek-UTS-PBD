@@ -19,7 +19,7 @@ namespace Tournament_Manager
             InitializeComponent();
         }
 
-        private void buttonCreateTournament_Click(object sender, EventArgs e)
+        private void ButtonCreateTournament_Click(object sender, EventArgs e)
         {
             try
             {
@@ -27,16 +27,16 @@ namespace Tournament_Manager
                 int newCode = Tournaments.GenerateCode();
 
                 // Create tournament 
-                Tournaments t = new Tournaments(newCode, textBoxTournamentName.Text, decimal.Parse(textBoxEntryFee.Text));
-                
+                Tournaments newTournament = new Tournaments(newCode, textBoxTournamentName.Text, decimal.Parse(textBoxEntryFee.Text));
+
                 // Add tournament to db
-                Tournaments.AddTournament(t);
+                Tournaments.AddTournament(newTournament);
 
                 // Load selected tournament
-                FormTournament form = (FormTournament)this.Owner;
-                form.selectedTournament = t;
+                FormTournament formTournament = (FormTournament)this.Owner;
+                formTournament.selectedTournament = newTournament;
                 this.Hide(); 
-                form.buttonLoadTournament_Click(buttonCreateTournament, e);
+                formTournament.buttonLoadTournament_Click(buttonCreateTournament, e);
             }
             catch(Exception ex)
             {

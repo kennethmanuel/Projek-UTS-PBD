@@ -17,9 +17,10 @@ namespace Tournament_Manager
     public partial class FormMenu : Form
     {
         FormTournament formTournament;
-
+        List<Teams> teamList;
         // Selected tournament from FormTournament.cs
         public static Tournaments selectedTournament;
+        public static bool buttonPlayerClicked = false;
 
         public FormMenu()
         {
@@ -28,13 +29,24 @@ namespace Tournament_Manager
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            formTournament = (FormTournament)this.Owner;
-
             // Get selectedTournament from FormTournament.cs
+            formTournament = (FormTournament)this.Owner;
             selectedTournament = formTournament.selectedTournament;
 
             // Change selected tournament label with the proper one
-            labelTournamentName.Text = selectedTournament.Name;
+            labelTournamentValue.Text = selectedTournament.Name;
+
+            // Get info
+            int totalTeam = Teams.CountTeams(selectedTournament);
+            int totalPlayer = Players.CountPlayer(selectedTournament);
+            listBoxInfo.Items.Add("Total participating teams: " + totalTeam);
+            listBoxInfo.Items.Add("Total participating player: " + totalPlayer);
+
+            // Get data from db
+            teamList = Teams.Leaderboard(FormMenu.selectedTournament);
+
+            // Show data to datagridteams
+            ShowDataGridTeams();
         }
 
         private void FormMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -79,24 +91,17 @@ namespace Tournament_Manager
             form.ShowDialog();
         }
 
-        private void generateTournamentStartingBracketToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Open FormBracketGenerator
-            FormBracketGenerator form = new FormBracketGenerator();
-            form.Owner = this;
-            form.ShowDialog();
-        }
-
-        private void buttonViewTeam_Click(object sender, EventArgs e)
+        public void ButtonViewTeam_Click(object sender, EventArgs e)
         {
             // Open FormPlayerTeam
             teamAndPlayerToolStripMenuItem_Click(sender, e);
         }
 
-        private void buttonViewPlayer_Click(object sender, EventArgs e)
+        public void ButtonViewPlayer_Click(object sender, EventArgs e)
         {
             // Open FormPlayerTeam
             teamAndPlayerToolStripMenuItem_Click(sender, e);
+            buttonPlayerClicked = true;
         }
 
         private void buttonView_Click(object sender, EventArgs e)
@@ -119,8 +124,13 @@ namespace Tournament_Manager
 
         private void buttonViewPairing_Click(object sender, EventArgs e)
         {
-            // Open FormBracketGenerator
-            generateTournamentStartingBracketToolStripMenuItem_Click(sender, e);
+            FormPairing formPairing = new FormPairing()
+            {
+                Owner = this
+            };
+            this.Hide();
+            
+            formPairing.ShowDialog();
         }
 
         private void linkLabelAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -142,6 +152,7 @@ namespace Tournament_Manager
                 if (sucess)
                 {
                     MessageBox.Show("Tournament has been deleted.", "information");
+            
 
                     FormTournament form = new FormTournament();
                     form.Owner = this;
@@ -152,6 +163,29 @@ namespace Tournament_Manager
                 {
                     MessageBox.Show("Fail to delete tournament: " + exceptionMessage);
                 }
+            }
+        }
+
+        private void pairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPairing formPairing = new FormPairing()
+            {
+                Owner = this
+            };
+            this.Hide();
+            
+            formPairing.ShowDialog();
+        }
+
+        private void ShowDataGridTeams()
+        {
+            if(teamList.Count > 0)
+            {
+                dataGridViewLeaderboard.DataSource = teamList;
+            }
+            else
+            {
+                dataGridViewLeaderboard.DataSource = null;
             }
         }
     }

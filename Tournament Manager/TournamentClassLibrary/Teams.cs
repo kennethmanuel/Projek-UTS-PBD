@@ -11,38 +11,45 @@ namespace TournamentClassLibrary
     {
         private int id;
         private string name;
+        private double totalScore;
 
         #region Constructor
-        public Teams(int id, string name)
+        public Teams(int id, string name, double totalScore = 0)
         {
             this.Id = id;
             this.Name = name;
+            this.TotalScore = totalScore;
         }
         #endregion
 
         #region Property
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
+        public double TotalScore { get => totalScore; set => totalScore = value; }
         #endregion
 
         #region Methods
         /// <summary>
         /// Create a list of Teams object from a selected database with a specified criteria.
         /// </summary>
-        /// <param name="criteria"></param>
-        /// <param name="criteriaValue"></param>
+        /// <param name="criteria">Search criteria for team (ex: "id" or "name")</param>
+        /// <param name="criteriaValue">Search value for selected criteria (ex: "1" or "team secret")</param>
         /// <returns></returns>
-        public static List<Teams> ReadData(string criteria, string criteriaValue)
+        public static List<Teams> ReadData(string criteria = "", string criteriaValue = "")
         {
-            string sql = "";
+            string sql;
 
             if(criteria == "")
             {
-                sql = "SELECT * FROM teams";
+                sql = "SELECT * " +
+                      "FROM teams";
             }
             else
             {
-                sql = "SELECT * FROM teams WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
+                sql = "SELECT * " +
+                      "FROM teams " +
+                      "WHERE " + criteria + " " +
+                      "LIKE '%" + criteriaValue + "%'";
             }
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -51,18 +58,23 @@ namespace TournamentClassLibrary
 
             while(value.Read() == true)
             {
-                Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString());
+                int teamId = int.Parse(value.GetValue(0).ToString());
+                string teamName = value.GetValue(1).ToString();
+                double totalScore = double.Parse(value.GetValue(2).ToString());
+
+                Teams t = new Teams(teamId, teamName, totalScore);
 
                 teamList.Add(t);
             }
+
             return teamList;
         }
 
         /// <summary>
-        /// Create list of a Teams object from a selected database with all criteria selected.
+        /// Create list of team from all tournament.
         /// </summary>
-        /// <param name="criteriaValue"></param>
-        /// <returns></returns>
+        /// <param name="criteriaValue">Search value from all criteria.</param>
+        /// <returns>List of team with selected criteria.</returns>
         public static List<Teams> BatchSearch(string criteriaValue)
         {
             string sql = "SELECT * FROM teams WHERE id LIKE '%" + criteriaValue + "%' OR name LIKE '%" + criteriaValue + "%'";
@@ -73,94 +85,217 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString());
+                int teamId = int.Parse(value.GetValue(0).ToString());
+                string teamName = value.GetValue(1).ToString();
+                double totalScore = double.Parse(value.GetValue(2).ToString());
+
+                Teams t = new Teams(teamId, teamName, totalScore);
 
                 teamList.Add(t);
             }
+
             return teamList;
         }
 
         /// <summary>
-        /// Add new team to database
+        /// Add team to specific tournament.
         /// </summary>
-        /// <param name="p"></param>
-        public static void AddTeams(Teams t, Tournaments selectedTournament)
+        /// <param name="team">Team that will be added.</param>
+        /// <param name="selectedTournament">Selected tournament.</param>
+        public static void AddTeams(Teams team, Tournaments selectedTournament)
         {
-            string sql = "insert into teams(Id, Name) values ('" + t.Id + "','" + t.Name.Replace("'", "\\'") + "');  INSERT INTO tournamententry VALUES ('"+ selectedTournament.Id + "', '" + t.Id +  "');";
-            
+            string sql = 
+                // INSERT to teams
+                "INSERT INTO teams(id, name, totalscore) " +
+                "VALUES ('" + team.Id + "','"
+                            + team.Name.Replace("'", "\\'") 
+                            + "','" + team.totalScore + "'); " +
+                // INSERT to tournamentEntry
+                "INSERT INTO tournamententry " +
+                "VALUES ('"+ selectedTournament.Id + "', '" + team.Id + "');";
+
             Connection.ExecuteDML(sql);
         }
 
         /// <summary>
         /// EditTeam from database
         /// </summary>
-        /// <param name="t"></param>
-        public static void EditTeams(Teams t)
+        /// <param name="teams"></param>
+        public static void EditTeams(Teams teams)
         {
-            string sql = "update teams set Name='" + t.Name.Replace("'", "\\'") + "' where Id='" + t.Id + "'";
+            string sql = "UPDATE teams " +
+                         "SET name ='" + teams.Name.Replace("'", "\\'") + "', " +
+                             "totalscore ='" + teams.TotalScore + "' " +
+                         "WHERE id='" + teams.Id + "'";
+
             Connection.ExecuteDML(sql);
         }
 
         /// <summary>
-        /// Delete Team from database
+        /// Edit Point from database
         /// </summary>
-        /// <param name="team"></param>
-        /// <returns></returns>
-        public static string DeleteTeams(Teams team)
+        /// <param name="teams"></param>
+        public static void EditPoint(Teams teams)
         {
-            string sql = "DELETE FROM players WHERE team_id="+ team
-                .Id+"; DELETE FROM tournamententry  WHERE teams_id="+team.Id+"; DELETE FROM Teams WHERE Id = '" + team.Id + "';";
+            string sql = "UPDATE teams " +
+                         "SET totalscore ='" + teams.TotalScore + "' " +
+                         "WHERE id='" + teams.Id + "'";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        /// <summary>
+        /// Delete specific team.
+        /// </summary>
+        /// <param name="teamId">Team that will be deleted's id.</param>
+        /// <param name="errorMessage">Error message for debugging.</param>
+        /// <returns>Return true if success, false otherwise.</returns>
+        public static bool DeleteTeams(int teamId, out string errorMessage)
+        {
+            errorMessage = "";
+
+            string sql = 
+                         // DELETE from Player
+                         "DELETE FROM players " +
+                         "WHERE team_id=" + teamId + "; " +
+                         // DELETE FROM TournamentEntry
+                         "DELETE FROM tournamententry " +
+                         "WHERE teams_id = " + teamId + "; " +
+                         // DELETE FROM Teams
+                         "DELETE FROM Teams " +
+                         "WHERE Id = '" + teamId + "';";
+
             try
             {
                 Connection.ExecuteDML(sql);
-                return "1";
+                return true;
             }
             catch (MySqlException ex)
             {
-                return ex.Message + ". Sql Command: " + sql;
+                errorMessage = ex.Message;
+                return false;
             }
         }
 
         /// <summary>
-        /// Generate new Id
+        /// Generate new team Id.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>New id for team.</returns>
         public static string GenerateCode()
         {
-            string sql = "select max(Id) from Teams";
-            string code = "";
+            string sql = "SELECT MAX(Id) FROM Teams";
+            int code;
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
             if (result.Read() == true)
             {
-                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
-                code = newCode.ToString();
+                code = int.Parse(result.GetValue(0).ToString()) + 1;
             }
             else
             {
-                code = "1";
+                code = 1;
             }
-            return code;
+            return code.ToString();
         }
 
         /// <summary>
-        /// Select a team based on its id
+        /// Select a team with specific id.
         /// </summary>
-        /// <param name="teamId"></param>
-        /// <returns></returns>
+        /// <param name="teamId">Team's id that will be selected</param>
+        /// <returns>Return a team corresponding selected team id</returns>
         public static Teams SelectTeam(int teamId)
         {
-            string sql = "SELECT * FROM teams t WHERE t.id=" + teamId;
+            string sql = "SELECT * FROM teams t " +
+                         "WHERE t.id=" + teamId;
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
             value.Read();
 
-            Teams t = new Teams(int.Parse(value.GetValue(0).ToString()), value.GetValue(1).ToString());
+            string teamName = value.GetValue(1).ToString();
+            double totalScore = double.Parse(value.GetValue(2).ToString());
+
+            Teams t = new Teams(teamId, teamName, totalScore);
 
             return t;
         }
-        
+
+        public static int CountTeams(Tournaments tournament)
+        {
+            string sql = "SELECT COUNT(*) " +
+                         "FROM teams t " +
+                         "INNER JOIN tournamententry te ON t.id = te.teams_id " +
+                         "WHERE te.tournaments_id = " + tournament.Id;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            value.Read();
+
+            int totalTeams = int.Parse(value.GetValue(0).ToString());
+
+            return totalTeams;
+        }
+
+        public static int CountTeams(int tournamentId)
+        {
+            string sql = "SELECT COUNT(*) " +
+                         "FROM teams t " +
+                         "INNER JOIN tournamententry te ON t.id = te.teams_id " +
+                         "WHERE te.tournaments_id = " + tournamentId;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            value.Read();
+
+            int totalTeams = int.Parse(value.GetValue(0).ToString());
+
+            return totalTeams;
+        }
+
+        public static List<Teams> Leaderboard(Tournaments tournament)
+        {
+            string sql = "SELECT * FROM teams t " +
+                         "WHERE t.id IN (SELECT teams_id " +
+                                        "FROM tournamententry " +
+                                        "WHERE tournaments_id = " + tournament.Id + ")" +
+                         "ORDER BY totalscore DESC ";
+;
+
+            MySqlDataReader value = Connection.ExecuteQuery(sql);
+
+            List<Teams> teamList = new List<Teams>();
+
+            while (value.Read() == true)
+            {
+                int teamId = int.Parse(value.GetValue(0).ToString());
+                string teamName = value.GetValue(1).ToString();
+                double totalScore = double.Parse(value.GetValue(2).ToString());
+
+                Teams t = new Teams(teamId, teamName, totalScore);
+
+                teamList.Add(t);
+            }
+
+            return teamList;
+        }
+
+        public void AddScore(double addScore)
+        {
+            string sql = "UPDATE teams " +
+                         "SET totalscore=totalscore+" + addScore + " " +
+                         "WHERE id='" + this.Id + "'";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public void SubstractScore(double prevScore)
+        {
+            string sql = "UPDATE teams " +
+                         "SET totalscore=totalscore-" + prevScore + " " +
+                         "WHERE id='" + this.Id + "'";
+
+            Connection.ExecuteDML(sql);
+        }
         #endregion
     }
 }

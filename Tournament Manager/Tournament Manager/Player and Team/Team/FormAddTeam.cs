@@ -22,7 +22,7 @@ namespace Tournament_Manager
         {
             try
             {
-                Teams t = new Teams(int.Parse(textBoxTeamId.Text), textBoxTeamName.Text);
+                Teams t = new Teams(int.Parse(textBoxTeamId.Text), textBoxTeamName.Text, 0);
                 Teams.AddTeams(t, FormMenu.selectedTournament);
                 MessageBox.Show("Team has been Saved", "information");
             }

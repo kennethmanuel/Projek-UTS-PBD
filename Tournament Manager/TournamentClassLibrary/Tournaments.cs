@@ -13,10 +13,10 @@ namespace TournamentClassLibrary
     {
         private int id;
         private string name;
-        private decimal entryfee;
+        private decimal entryfee;        
 
         #region Constructor
-        public Tournaments(int id, string name, decimal entryfee)
+        public Tournaments(int id, string name, decimal entryfee )
         {
             this.Id = id;
             this.Name = name;
@@ -31,9 +31,9 @@ namespace TournamentClassLibrary
         #endregion
 
         /// <summary>
-        /// Create a list of all Tournaments object from a selected database.
+        /// Create a list of all Tournaments object.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>list of tournament</returns>
         public static List<Tournaments> ReadData()
         {
             string sql = "SELECT * FROM tournaments";
@@ -44,50 +44,67 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                Tournaments t = new Tournaments(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    decimal.Parse(value.GetValue(2).ToString()));
+                // tournamentid
+                int tournamentId = int.Parse(value.GetValue(0).ToString());
 
-                tournamentList.Add(t);
+                // tournament name
+                string tournamentName = value.GetValue(1).ToString();
+
+                // tournament entryfee
+                decimal entryFee = decimal.Parse(value.GetValue(2).ToString());
+
+                // tournament
+                Tournaments tournament = new Tournaments(tournamentId, tournamentName, entryFee);
+
+                tournamentList.Add(tournament);
             }
+
             return tournamentList;
         }
 
         /// <summary>
-        /// Add tournament to db
+        /// Add tournament to database
         /// </summary>
-        /// <param name="t"></param>
-        public static void AddTournament(Tournaments t)
+        /// <param name="tournaments">Tournament that will be inserted</param>
+        public static void AddTournament(Tournaments tournaments)
         {
-            string sql = "INSERT INTO tournaments (id, name, entryfee) VALUES('" + t.Id + "','" + t.Name + "','" + t.Entryfee + "');";
+            string sql = "INSERT INTO tournaments(id, name, entryfee) " +
+                         "VALUES('" + tournaments.Id + "','" + tournaments.Name + "','" + tournaments.Entryfee + "');";
 
             Connection.ExecuteDML(sql);
         }
 
+        /// <summary>
+        /// Generate tournament id
+        /// </summary>
+        /// <returns>Create id for tournament</returns>
         public static int GenerateCode()
         {
             string sql = "SELECT MAX(id) FROM tournaments";
+
             int code = 1;
+
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
             if (result.Read() == true)
             {
-                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
-                code = newCode;
+                code = int.Parse(result.GetValue(0).ToString()) + 1;
             }
+
             return code;
         }
 
         /// <summary>
         /// Delete tournament
         /// </summary>
-        /// <param name="t">Tournament name</param>
+        /// <param name="tournament">Tournament name</param>
         /// <param name="exceptionMessage">Error message for debugging</param>
         /// <returns>true = delete success, false = delete failed</returns>
-        public static bool DeleteTournament(Tournaments t, out string exceptionMessage)
+        public static bool DeleteTournament(Tournaments tournament, out string exceptionMessage)
         {
-            string sql = "DELETE FROM tournaments WHERE id=" + t.Id;
+            string sql = "DELETE FROM tournamententry WHERE id = " + tournament.Id + "; " +
+                         "DELETE FROM tournaments WHERE id=" + tournament.Id + ";";
+
             exceptionMessage = "";
 
             try
@@ -102,9 +119,14 @@ namespace TournamentClassLibrary
             }
         }
 
+        /// <summary>
+        /// Get a list of single tournament (GAK JELAS SOPO SING NGGAE METHOD IKI??)
+        /// </summary>
+        /// <returns></returns>
         public static List<Tournaments> ReadCombo(Tournaments selected)
         {
             int tournamentsId = selected.Id;
+
             string sql = "SELECT * FROM tournaments where id='" + tournamentsId + "'";
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
@@ -116,11 +138,13 @@ namespace TournamentClassLibrary
                 Tournaments t = new Tournaments(
                     int.Parse(value.GetValue(0).ToString()),
                     value.GetValue(1).ToString(),
-                    decimal.Parse(value.GetValue(2).ToString()));
+                    decimal.Parse(value.GetValue(2).ToString())
+                   );
 
                 tournamentList.Add(t);
             }
             return tournamentList;
         }
+
     }
 }

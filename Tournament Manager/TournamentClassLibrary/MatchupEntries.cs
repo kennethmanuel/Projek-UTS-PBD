@@ -12,17 +12,12 @@ namespace TournamentClassLibrary
     /// </summary>
     public class MatchupEntries
     {
-        #region Data Member
-        /// <summary>
-        /// Show 
-        /// </summary>
         Matchups matchup;
         Teams team;
-        int score;
-        #endregion
+        double score;
 
         #region Constructor
-        public MatchupEntries(Matchups matchup, Teams team, int score)
+        public MatchupEntries(Matchups matchup, Teams team, double score)
         {
             this.Matchup = matchup;
             this.Team = team;
@@ -33,36 +28,19 @@ namespace TournamentClassLibrary
         #region Property
         public Matchups Matchup { get => matchup; set => matchup = value; }
         public Teams Team { get => team; set => team = value; }
-        public int Score { get => score; set => score = value; }
+        public double Score { get => score; set => score = value; }
         #endregion
 
         #region Method
-        /// <summary>
-        /// Create list that contains matchup entries object from all database with specified criteria.
-        /// </summary>
-        /// <param name="criteria"></param>
-        /// <param name="criteriaValue"></param>
-        /// <returns></returns>
-        public static List<MatchupEntries> ReadData(string criteria, string criteriaValue)
+        public static List<MatchupEntries> ReadData(Tournaments tournament) 
         {
-            string sql = "";
-
-            if (criteria == "")
-            {
-                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, mc.id, mc.round, t.name" +
-                    " FROM teams t" +
-                    " INNER JOIN matchupentries m ON t.id = m.Teams_Id" +
-                    " INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id" +
-                    " ORDER BY `m`.`ParentMatchup_Id` ASC";
-            }
-            else
-            {
-                sql = "SELECT m.ParentMatchup_Id, m.Teams_Id, m.score, mc.id, mc.round, t.name" +
-                    " FROM teams t" +
-                    " INNER JOIN matchupentries m ON t.id = m.Teams_Id" +
-                    " INNER JOIN matchup mc ON mc.id = m.ParentMatchup_Id" +
-                    " ORDER BY `m`.`ParentMatchup_Id` ASC WHERE " + criteria + " LIKE '%" + criteriaValue + "%'";
-            }
+            string sql =
+                        "SELECT parentmatchup_id, teams_id, score " +
+                        "FROM matchupentries me " +
+                        "WHERE me.teams_id IN ( " +
+                            "SELECT teams_id " +
+                            "FROM tournamententry " +
+                            "WHERE tournaments_id =  " + tournament.Id + ") "; 
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
@@ -70,22 +48,77 @@ namespace TournamentClassLibrary
 
             while (value.Read() == true)
             {
-                Teams team = new Teams(
-                    int.Parse(value.GetValue(1).ToString()),
-                    value.GetValue(5).ToString());
+                // SCORE
+                double score = double.Parse(value.GetValue(2).ToString());
 
-                Matchups mc = new Matchups(value.GetValue(3).ToString(),
-                    team,
-                    int.Parse(value.GetValue(4).ToString()));
+                // TEAM
+                int teamid = int.Parse(value.GetValue(1).ToString());
+                Teams team = Teams.SelectTeam(teamid);
 
+                // MATCHUP
+                // parent matchup id
+                string matchupid = value.GetValue(0).ToString();
+                Matchups parentMatchup = Matchups.SelectMatchup(matchupid);
 
+                // MATCHUP ENTRY
+                MatchupEntries matchupEntry = new MatchupEntries(parentMatchup, team, score);
 
-                MatchupEntries m = new MatchupEntries(mc, team, int.Parse(value.GetValue(2).ToString()));
-
-                matchupEntriesList.Add(m);
+                // add matchupentries to list
+                matchupEntriesList.Add(matchupEntry);
             }
+
             return matchupEntriesList;
         }
+
+        public static void Add(Matchups matchup, Teams team, double score)
+        {
+            string sql = "INSERT INTO matchupentries " +
+                         "VALUES (" + matchup.Id + "," + team.Id + "," + score + ");";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public static void Edit(Matchups matchup, Teams team, double score)
+        {
+            string sql = "UPDATE matchupentries " +
+                         "SET score = " + score + " " +
+                         "WHERE parentmatchup_id='" + matchup.Id + "' " +
+                         "AND teams_id = '" + team.Id + "'";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public static void Delete(Matchups matchup, Teams team)
+        {
+            string sql = "DELETE FROM matchupentries " +
+                         "WHERE parentmatchup_id='" + matchup.Id + "' " +
+                         "AND teams_id = '" + team.Id + "'";
+
+            Connection.ExecuteDML(sql);
+        }
+
+        public string GenerateId()
+        {
+            string sql = "SELECT MAX(Id) FROM matchupentries";
+
+            string newId = "";
+
+            MySqlDataReader result = Connection.ExecuteQuery(sql);
+
+            if(result.Read())
+            {
+                int newIdInt = int.Parse(result.GetValue(0).ToString()) + 1;
+                newId = newIdInt.ToString();
+            }
+            else
+            {
+                newId = "1";
+            }
+
+            return newId;
+        }
+
+
         #endregion
     }
 }

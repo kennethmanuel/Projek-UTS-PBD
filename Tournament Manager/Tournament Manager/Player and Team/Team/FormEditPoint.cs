@@ -3,41 +3,42 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TournamentClassLibrary;
 
-namespace Tournament_Manager.Team
+namespace Tournament_Manager.Player_and_Team.Team
 {
-    public partial class FormEditTeam : Form
+    public partial class FormEditPoint : Tournament_Manager.Tournament_Matchup.FormAddMatchup
     {
         List<Teams> listteams = new List<Teams>();
         int selectedTeamId = FormPlayerTeam.selectedTeamId;
-        public FormEditTeam()
+        public FormEditPoint()
         {
             InitializeComponent();
         }
 
-        private void FormEditTeam_Load(object sender, EventArgs e)
+        private void FormEditPoint_Load(object sender, EventArgs e)
         {
             Teams selectedTeam = Teams.SelectTeam(selectedTeamId);
-
             textBoxTeamId.Text = selectedTeam.Id.ToString();
             textBoxTeamName.Text = selectedTeam.Name;
+            textBoxTeamPoint.Text = selectedTeam.TotalScore.ToString();
+
+            textBoxTeamId.Enabled = false;
+            textBoxTeamName.Enabled = false;            
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             try
             {
-                Teams t = new Teams(int.Parse(textBoxTeamId.Text), textBoxTeamName.Text);
-                Teams.EditTeams(t);
-                MessageBox.Show("Teams has been edited.", "information");
+                Teams t = new Teams(int.Parse(textBoxTeamId.Text), textBoxTeamName.Text, double.Parse(textBoxTeamPoint.Text));
+                Teams.EditPoint(t);
+                MessageBox.Show("Teams Point has been  edited.", "information");
 
-                FormPlayerTeam formPlayerTeam = (FormPlayerTeam)this.Owner;
-                formPlayerTeam.FormPlayerTeam_Load(buttonEdit, e);
+                FormPlayerTeam form = (FormPlayerTeam)this.Owner;
+                form.FormPlayerTeam_Load(buttonEdit, e);
                 this.Close();
             }
             catch (Exception ex)

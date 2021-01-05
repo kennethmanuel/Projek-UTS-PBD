@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DGVPrinterHelper.cs" />
     <Compile Include="Matchups.cs" />
     <Compile Include="MatchupEntries.cs" />
+    <Compile Include="Pairing.cs" />
     <Compile Include="Players.cs" />
     <Compile Include="Prize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

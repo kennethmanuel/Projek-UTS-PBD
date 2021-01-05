@@ -30,8 +30,8 @@ namespace Tournament_Manager.TournamentPrize
 
                 Tournaments tournaments = FormMenu.selectedTournament;
                 Prize p = new Prize(int.Parse(textBoxPrizeId.Text), textBoxPrizePlaceName.Text, int.Parse(textBoxPriceAmount.Text), double.Parse(textBoxPrizePercentage.Text), tournaments);
-                string add = Prize.DeletePrize(p);
-                if (add == "1")
+                bool success = Prize.DeletePrize(p, out string exceptionMessage);
+                if (success)
                 {
                     MessageBox.Show("Prize has been deleted.", "information");
                     FormPrize formPrize = (FormPrize)this.Owner;
@@ -40,7 +40,7 @@ namespace Tournament_Manager.TournamentPrize
                 }
                 else
                 {
-                    MessageBox.Show("Prize Failed to deleted. Message error: ", add);
+                    MessageBox.Show("Prize Failed to deleted. Message error: ", exceptionMessage);
                 }
             }
         }

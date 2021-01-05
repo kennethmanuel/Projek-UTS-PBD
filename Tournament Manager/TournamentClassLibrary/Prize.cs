@@ -44,29 +44,29 @@ namespace TournamentClassLibrary
         /// </summary>
         /// <param name="criteriaValue"></param>
         /// <returns></returns>
-        public static List<Prize> BatchSearch(string criteriaValue)
-        {
-            string sql = "SELECT p.id, p.placename, p.prizeamount, p.prizepercentage,t.id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id WHERE p.id LIKE '%" + criteriaValue + "%' OR p.placename LIKE '%" + criteriaValue + "%' p.prizeamount LIKE '%" + criteriaValue + "%' OR p.prizepercentage LIKE '%" + criteriaValue + "%' OR t.name LIKE '%" + criteriaValue + "%'";
+        //public static List<Prize> BatchSearch(string criteriaValue)
+        //{
+        //    string sql = "SELECT p.id, p.placename, p.prizeamount, p.prizepercentage,t.id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.tournaments_id = t.id WHERE p.id LIKE '%" + criteriaValue + "%' OR p.placename LIKE '%" + criteriaValue + "%' p.prizeamount LIKE '%" + criteriaValue + "%' OR p.prizepercentage LIKE '%" + criteriaValue + "%' OR t.name LIKE '%" + criteriaValue + "%'";
 
-            MySqlDataReader value = Connection.ExecuteQuery(sql);
+        //    MySqlDataReader value = Connection.ExecuteQuery(sql);
 
-            List<Prize> prizeList = new List<Prize>();
+        //    List<Prize> prizeList = new List<Prize>();
 
-            while (value.Read() == true)
-            {
-                Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
+        //    while (value.Read() == true)
+        //    {
+        //        Tournaments tournaments = new Tournaments(int.Parse(value.GetValue(4).ToString()), value.GetValue(5).ToString(), decimal.Parse(value.GetValue(6).ToString()));
 
-                Prize p = new Prize(
-                    int.Parse(value.GetValue(0).ToString()),
-                    value.GetValue(1).ToString(),
-                    decimal.Parse(value.GetValue(2).ToString()),
-                    double.Parse(value.GetValue(3).ToString()),
-                    tournaments);
+        //        Prize p = new Prize(
+        //            int.Parse(value.GetValue(0).ToString()),
+        //            value.GetValue(1).ToString(),
+        //            decimal.Parse(value.GetValue(2).ToString()),
+        //            double.Parse(value.GetValue(3).ToString()),
+        //            tournaments);
 
-                prizeList.Add(p);
-            }
-            return prizeList;
-        }
+        //        prizeList.Add(p);
+        //    }
+        //    return prizeList;
+        //}
         /// <summary>
         /// read data prize
         /// </summary>
@@ -79,7 +79,10 @@ namespace TournamentClassLibrary
             string sql = "";
             if (criteria == "")
             {
-                sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee From prizes p inner join tournaments t on p.tournaments_id = t.id where p.tournaments_id in (select tt.id from tournaments tt where tournaments_id=" + tournamentsId + ")";
+                sql = "SELECT p.Id, p.PlaceName, p.PrizeAmount, p.PrizePercentage, p.Tournaments_Id, t.Name, t.EntryFee " +
+                        "FROM prizes p " +
+                        "INNER JOIN tournaments t ON p.Tournaments_Id = t.Id " +
+                        "WHERE p.Tournaments_Id =" + tournamentsId + "";
             }
             else
             {
@@ -98,48 +101,64 @@ namespace TournamentClassLibrary
             }
             return listPrize;
         }
+
         /// <summary>
         /// Generate new ID
         /// </summary>
         /// <returns></returns>
         public static string GenerateCode()
         {
-            string sql = "select max(Id) from Prizes";
-            string code = "";
+            string sql = "SELECT MAX(Id) " +
+                         "FROM Prizes";
+
+            string newId;
+
             MySqlDataReader result = Connection.ExecuteQuery(sql);
 
-            if (result.Read() == true)
+            if (result.Read())
             {
-                int newCode = int.Parse(result.GetValue(0).ToString()) + 1;
-                code = newCode.ToString();
+                int newIdInt = int.Parse(result.GetValue(0).ToString()) + 1;
+                newId = newIdInt.ToString();
             }
             else
             {
-                code = "1";
+                newId = "1";
             }
-            return code;
+            return newId;
         }
+
         public static void AddData(Prize p)
         {
-            string sql = "insert into Prizes(Id, PlaceName, PrizeAmount, PrizePercentage, Tournaments_Id) values ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
+            string sql = "INSERT INTO Prizes(Id, PlaceName, PrizeAmount, PrizePercentage, Tournaments_Id) " +
+                         "VALUES ('" + p.Id + "','" + p.PlaceName.Replace("'", "\\'") + "','" + p.PrizeAmount + "','" + p.PrizePercentage + "','" + p.Tournament.Id + "')";
+
             Connection.ExecuteDML(sql);
         }
-        public static string DeletePrize(Prize p)
+
+        public static bool DeletePrize(Prize p, out string exceptionMessage)
         {
-            string sql = "Delete from prizes where Id='" + p.Id + "'";
+            string sql = "DELELTE FROM prizes " +
+                         "WHERE Id='" + p.Id + "'";
+
+            exceptionMessage = "";
+
             try
             {
                 Connection.ExecuteDML(sql);
-                return "1";
+                return true;
             }
             catch (MySqlException ex)
             {
-                return ex.Message + ". Sql Command: " + sql;
+                exceptionMessage = ex.Message;
+                return false;
             }
         }
         public static Prize SelectPrize(int prizeId)
         {
-            string sql = "select p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee FROM prizes p INNER JOIN tournaments t ON p.Tournaments_Id = t.Id  WHERE p.id=" + prizeId;
+            string sql = "SELECT p.id, p.placeName, p.prizeAmount, p.prizePercentage, p.tournaments_id, t.name, t.entryfee " + 
+                    " FROM prizes p " + 
+                    " INNER JOIN tournaments t ON p.Tournaments_Id = t.Id  " + 
+                    " WHERE p.id=" + prizeId;
 
             MySqlDataReader value = Connection.ExecuteQuery(sql);
 
@@ -152,9 +171,12 @@ namespace TournamentClassLibrary
             
             return prize;
         }
+
         public static void EditPrize(Prize p)
         {
-            string sql = "UPDATE prizes SET placename='" + p.PlaceName.Replace("'", "\\'") + "', prizeamount=" + p.PrizeAmount + ", prizepercentage=" + p.PrizePercentage +  ", tournaments_id=" + p.Tournament.Id + " WHERE id=" + p.Id ;
+            string sql = "UPDATE prizes " +
+                         "SET placename='" + p.PlaceName.Replace("'", "\\'") + "', prizeamount=" + p.PrizeAmount + ", prizepercentage=" + p.PrizePercentage +  ", tournaments_id=" + p.Tournament.Id + " " +
+                         "WHERE id=" + p.Id ;
 
             Connection.ExecuteDML(sql);
         }

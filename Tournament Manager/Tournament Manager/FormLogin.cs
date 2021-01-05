@@ -22,22 +22,18 @@ namespace Tournament_Manager
         {
             try
             {
-                // Username is empty
                 if (textBoxUsername.Text == "")
                 {
                     MessageBox.Show("Username can't be empty.");
                 }
-                // Server is empty
                 else if (textBoxServer.Text == "")
                 {
                     MessageBox.Show("Server name can't be empty.");
                 }
-                // Database is empty
                 else if (textBoxDatabase.Text == "")
                 {
                     MessageBox.Show("Database name can't be empty.");
                 }
-                // All necessarry info fulfilled
                 else
                 {
                     // Connect to database
