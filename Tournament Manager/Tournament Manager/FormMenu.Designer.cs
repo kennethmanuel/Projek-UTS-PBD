@@ -44,7 +44,6 @@
             this.buttonViewTeam = new System.Windows.Forms.Button();
             this.buttonView = new System.Windows.Forms.Button();
             this.buttonViewMatchups = new System.Windows.Forms.Button();
-            this.buttonMatchupEntries = new System.Windows.Forms.Button();
             this.buttonViewPairing = new System.Windows.Forms.Button();
             this.linkLabelAbout = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
@@ -108,7 +107,7 @@
             this.teamAndPlayerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.teamAndPlayerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.teamAndPlayerToolStripMenuItem.Name = "teamAndPlayerToolStripMenuItem";
-            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
+            this.teamAndPlayerToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.teamAndPlayerToolStripMenuItem.Text = "Team and Player";
             this.teamAndPlayerToolStripMenuItem.Click += new System.EventHandler(this.teamAndPlayerToolStripMenuItem_Click);
             // 
@@ -117,7 +116,7 @@
             this.matchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.matchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.matchToolStripMenuItem.Text = "Match and Entry";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.matchToolStripMenuItem_Click_1);
             // 
@@ -133,7 +132,7 @@
             // 
             this.prizeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
             this.prizeToolStripMenuItem.Name = "prizeToolStripMenuItem";
-            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(131, 28);
+            this.prizeToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.prizeToolStripMenuItem.Text = "Prize";
             this.prizeToolStripMenuItem.Click += new System.EventHandler(this.prizeToolStripMenuItem_Click);
             // 
@@ -232,31 +231,17 @@
             this.buttonViewMatchups.UseVisualStyleBackColor = false;
             this.buttonViewMatchups.Click += new System.EventHandler(this.buttonViewMatchups_Click);
             // 
-            // buttonMatchupEntries
-            // 
-            this.buttonMatchupEntries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(157)))), ((int)(((byte)(106)))));
-            this.buttonMatchupEntries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMatchupEntries.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonMatchupEntries.Location = new System.Drawing.Point(51, 442);
-            this.buttonMatchupEntries.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.buttonMatchupEntries.Name = "buttonMatchupEntries";
-            this.buttonMatchupEntries.Size = new System.Drawing.Size(314, 39);
-            this.buttonMatchupEntries.TabIndex = 29;
-            this.buttonMatchupEntries.Text = "♞View Matchup Entries♞";
-            this.buttonMatchupEntries.UseVisualStyleBackColor = false;
-            this.buttonMatchupEntries.Click += new System.EventHandler(this.buttonMatchupEntries_Click);
-            // 
             // buttonViewPairing
             // 
             this.buttonViewPairing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(93)))), ((int)(((byte)(14)))));
             this.buttonViewPairing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewPairing.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonViewPairing.Location = new System.Drawing.Point(51, 500);
+            this.buttonViewPairing.Location = new System.Drawing.Point(51, 442);
             this.buttonViewPairing.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.buttonViewPairing.Name = "buttonViewPairing";
             this.buttonViewPairing.Size = new System.Drawing.Size(314, 39);
             this.buttonViewPairing.TabIndex = 30;
-            this.buttonViewPairing.Text = "♟Generate Pairing ♟";
+            this.buttonViewPairing.Text = "♞Generate Pairing ♞";
             this.buttonViewPairing.UseVisualStyleBackColor = false;
             this.buttonViewPairing.Click += new System.EventHandler(this.buttonViewPairing_Click);
             // 
@@ -310,11 +295,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(196)))), ((int)(((byte)(161)))));
-            this.label1.Location = new System.Drawing.Point(720, 154);
+            this.label1.Location = new System.Drawing.Point(694, 157);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 45);
+            this.label1.Size = new System.Drawing.Size(355, 45);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Current Standings";
+            this.label1.Text = "♟ Current Standings ";
             // 
             // FormMenu
             // 
@@ -328,7 +313,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabelAbout);
             this.Controls.Add(this.buttonViewPairing);
-            this.Controls.Add(this.buttonMatchupEntries);
             this.Controls.Add(this.buttonViewMatchups);
             this.Controls.Add(this.buttonView);
             this.Controls.Add(this.buttonViewTeam);
@@ -371,7 +355,6 @@
         private System.Windows.Forms.Button buttonViewTeam;
         private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Button buttonViewMatchups;
-        private System.Windows.Forms.Button buttonMatchupEntries;
         private System.Windows.Forms.Button buttonViewPairing;
         private System.Windows.Forms.LinkLabel linkLabelAbout;
         private System.Windows.Forms.Label label2;
